@@ -6,11 +6,11 @@ import GlobalStyles from '../styles/GlobalStyles'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-  background: green;
+  background: var(--cfa-red);
 `
 
 const StyledFooter = styled.footer`
-  background: green;
+  background: var(--cfa-red);
 `
 
 const Layout = ({ children }) => {
