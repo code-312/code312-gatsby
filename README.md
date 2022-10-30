@@ -1,54 +1,30 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Code for Chicago - Gatsby
 
-## 🚀 Quick start
+This is the repository for the [Code for Chicago](www.codeforchicago.org) homepage. The idea is that this will replace the Jekyll implementation.
 
-1.  **Create a Gatsby site.**
+## Quick Start
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+Clone the project to your local computer.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+If you have Gatsby CLI then run `gatsby develop`
 
-2.  **Start developing.**
+Otherwise `npm start` will also work
 
-    Navigate into your new site’s directory and start it up.
+## Relevant Links
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+- [Figma](https://www.figma.com/file/VQUJeqPPTpdxtls8VwPoxA/Code-for-Chicago?node-id=590%3A4721)
+- [Trello](https://trello.com/b/R9csrAIP/meta-projects)
 
-3.  **Open the code and start customizing!**
+## Prettier Settings
 
-    Your site is now running at http://localhost:8000!
+This project requires you to have Prettier installed. [Here](https://www.robinwieruch.de/how-to-use-prettier-vscode/) is an article to help get you setup if you don't have it installed already.
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## Styled Components
 
-4.  **Learn more**
+We make use of CSS-in-JS as our approach to styles and specifically Styled Components. If you use VS Code it's strongly recommended you install the [styled components syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components).
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Netlify CMS
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+The previous instance of the Code for Chicago site used Netlify CMS so we will be implementing that again with Gatsby so that all our content transfers seamlessly.
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Currently the CMS is not set up.
