@@ -18,11 +18,8 @@ const Layout = ({ children }) => {
     <>
       <Reset />
       <GlobalStyles />
-      <Nav />
       <StyledHeader>
-        <h1>
-          <Link to="/">Code for Chicago</Link>
-        </h1>
+        <Nav />
       </StyledHeader>
 
       <main>{children}</main>
