@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Reset from '../styles/Reset'
 import GlobalStyles from '../styles/GlobalStyles'
-
+import Nav from './Nav'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
     <>
       <Reset />
       <GlobalStyles />
+      <Nav />
       <StyledHeader>
         <h1>
           <Link to="/">Code for Chicago</Link>
