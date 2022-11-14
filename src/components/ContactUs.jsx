@@ -1,9 +1,9 @@
 import React from "react";
 
 const ContactUs = ()=>(
-  <div>
-    <h1>Contact Us</h1>
-    <form method="POST" action="">
+  <section>
+    <h3>Contact Us</h3>
+    <form>
       <label htmlFor="email">
         Email
       </label>
@@ -14,7 +14,7 @@ const ContactUs = ()=>(
         <textarea name="message" id="message" placeholder="Your message"></textarea>
       <button type="submit">Submit</button>
     </form>
-  </div>
+  </section>
 )
 
 export default ContactUs
