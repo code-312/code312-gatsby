@@ -1,19 +1,15 @@
 import React from 'react'
-import skyline from '../images/skyline.svg'
 
-const Hero = () => {
+const Hero = ({ eyebrowText, mainHeading, content, img, imgDescription }) => {
   return (
     <section>
-      <div className="hero-content-container">
-        <h4>A CODE FOR AMERICA BRIGADE</h4>
-        <h1>Making community services work in a digital age</h1>
-        <p>
-          We forge partnerships between neighbors who use technology to improve
-          interactions with, and access to, public services.
-        </p>
-      </div>
+      <h2>
+        <span className="eyebrow-text">{eyebrowText}</span>
+        {mainHeading}
+      </h2>
+      <p>{content}</p>
       <div className="hero-image-container">
-        <img src={skyline} alt="skyline image" />
+        <img src={img} alt={imgDescription} />
       </div>
     </section>
   )
