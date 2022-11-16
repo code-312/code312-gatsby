@@ -1,17 +1,22 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 const UpcomingEvents = () => {
   return (
     <section>
-      <h1>No Upcoming Events</h1>
+      <h3>No Upcoming Events</h3>
       <p>
-        Join our <Link to="">Meeting group</Link> to stay up to date on what's
-        coming up.
+        Join our{' '}
+        <a href="https://www.meetup.com/code-for-chicago/" target="_blank">
+          Meeting group
+        </a>{' '}
+        to stay up to date on what's coming up.
       </p>
-      <button>
-        <Link to="">Join our Meetup group</Link>
-      </button>
+      <a
+        href="https://www.meetup.com/code-for-chicago/?action=join&_cookie-check=mMhgrIfroDbiH7dR"
+        target="_blank"
+      >
+        Join our Meetup group
+      </a>
     </section>
   )
 }
