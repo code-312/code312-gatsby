@@ -10,10 +10,6 @@ const StyledHeader = styled.header`
   background: var(--cfa-red);
 `
 
-const StyledFooter = styled.footer`
-  background: var(--cfa-red);
-`
-
 const Layout = ({ children }) => {
   return (
     <>
@@ -26,11 +22,6 @@ const Layout = ({ children }) => {
       </StyledHeader>
 
       <main>{children}</main>
-      <StyledFooter>
-        <small className="copyright">
-          &copy; {new Date().getFullYear()} Code for Chicago
-        </small>
-      </StyledFooter>
       <Footer/>
     </>
   )
