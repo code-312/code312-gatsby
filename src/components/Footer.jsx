@@ -2,7 +2,8 @@ import React from "react";
 import styled from 'styled-components'
 import logo from "../images/cfc_logo_short.svg"
 
-const StyledFooter = styled.header`
+const StyledFooter = styled.footer`
+width: 14rem;
 `
 const Footer = () => {
   return (
