@@ -1,21 +1,21 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import checkmark from '../images/join-us/checkmark.svg'
 import longArrowAltRight from '../images/join-us/long-arrow-alt-right.svg'
 
 const Checklist = () => {
   return (
     <section>
-      <h1 class="joinHeader">Ready To Join?</h1>
+      <h3 class="joinHeader">Ready To Join?</h3>
       <p>Complete the pre-onboarding checklist</p>
       <ul class="joinChecklist">
         <li>
           <img src={checkmark} alt="checkmark" class="joinCheckmark" />
-          <a href="https://codeforchicago.org/projects" target="_blank">
+          <Link to="https://codeforchicago.org/projects" target="_blank">
             Review our active projects
             <img src={longArrowAltRight} alt="arrow" />
-          </a>
+          </Link>
         </li>
-
         <li>
           <img src={checkmark} alt="checkmark" class="joinCheckmark" />
           <a
