@@ -1,5 +1,6 @@
-import { Link } from 'gatsby'
 import React from 'react'
+import { Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Card = ({
   eyebrowText,
@@ -13,7 +14,7 @@ const Card = ({
   return (
     <section>
       <div className="card-image-container">
-        <img src={imgUrl} alt={imageDescription} />
+        <GatsbyImage image={imgUrl} alt={imageDescription} />
       </div>
       <h2>
         <span>{eyebrowText}</span>
