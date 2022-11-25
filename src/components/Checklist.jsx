@@ -11,7 +11,7 @@ const Checklist = () => {
       <ul class="joinChecklist">
         <li>
           <img src={checkmark} alt="checkmark" class="joinCheckmark" />
-          <Link to="https://codeforchicago.org/projects" target="_blank">
+          <Link to="/projects" target="_blank">
             Review our active projects
             <img src={longArrowAltRight} alt="arrow" />
           </Link>
@@ -21,6 +21,7 @@ const Checklist = () => {
           <a
             href="https://docs.google.com/presentation/d/1_7zd36CeHqi15DTqL3Wmh3dLCiN8EVbfW2iy1j-gs0M/edit#slide=id.g113339d9e72_0_56"
             target="_blank"
+            rel="noreferrer"
           >
             Review &amp; agree to our code of conduct
             <img src={longArrowAltRight} alt="arrow" rel="noopener" />
@@ -31,6 +32,7 @@ const Checklist = () => {
           <a
             href="https://code-for-chicago-slack-invite.herokuapp.com/"
             target="_blank"
+            rel="noreferrer"
           >
             Join our Slack workspace
             <img src={longArrowAltRight} alt="arrow" />
