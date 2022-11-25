@@ -6,7 +6,11 @@ const UpcomingEvents = () => {
       <h3>No Upcoming Events</h3>
       <p>
         Join our{' '}
-        <a href="https://www.meetup.com/code-for-chicago/" target="_blank">
+        <a
+          href="https://www.meetup.com/code-for-chicago/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Meeting group
         </a>{' '}
         to stay up to date on what's coming up.
@@ -14,6 +18,7 @@ const UpcomingEvents = () => {
       <a
         href="https://www.meetup.com/code-for-chicago/?action=join&_cookie-check=mMhgrIfroDbiH7dR"
         target="_blank"
+        rel="noreferrer"
       >
         Join our Meetup group
       </a>
