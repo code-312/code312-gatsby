@@ -1,6 +1,7 @@
 import React from 'react'
 import CallToAction from '../components/CallToAction'
 import ContactUs from '../components/ContactUs'
+import ContentSection from '../components/ContentSection'
 import Hero from '../components/Hero'
 import IconTile from '../components/IconTile'
 import Layout from '../components/Layout'
