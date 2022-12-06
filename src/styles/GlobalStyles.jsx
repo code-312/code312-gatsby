@@ -18,6 +18,9 @@ const GlobalStyles = createGlobalStyle`
     --gray-600: #6c757d;
     --black: #333333;
     --white: #fff;
+    
+    // Font
+    font-family: 'Source Sans Pro', sans-serif;
   }
 
   .visually-hidden {
