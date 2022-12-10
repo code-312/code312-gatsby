@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 
-const Card = ({
+const ContentSection = ({
   eyebrowText,
   mainHeading,
   content,
@@ -12,18 +12,20 @@ const Card = ({
   imageDescription,
 }) => {
   return (
-    <article>
+    <section>
+      <div className="info">
+        <h3>
+          <span>{eyebrowText}</span>
+          {mainHeading}
+        </h3>
+        <p>{content}</p>
+        <Link to={linkUrl}>{linkText}</Link>
+      </div>
       <div className="image-container">
         <GatsbyImage image={imgUrl} alt={imageDescription} />
       </div>
-      <h3>
-        <span>{eyebrowText}</span>
-        {mainHeading}
-      </h3>
-      <p>{content}</p>
-      <Link to={linkUrl}>{linkText}</Link>
-    </article>
+    </section>
   )
 }
 
-export default Card
+export default ContentSection
