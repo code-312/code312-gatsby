@@ -14,9 +14,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/source-sans-pro": "^4.5.11",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.24.5",
-    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-netlify-cms": "^6.24.0",
     "gatsby-plugin-sharp": "^4.24.0",
