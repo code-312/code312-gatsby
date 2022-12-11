@@ -1,7 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const StyledSection = styled.section``;
 
 const ContactUs = ()=>(
-  <section>
+  <StyledSection>
     <h3>Contact Us</h3>
     <form>
       <label htmlFor="email">
@@ -14,7 +17,8 @@ const ContactUs = ()=>(
         <textarea name="message" id="message" placeholder="Your message"></textarea>
       <button type="submit">Submit</button>
     </form>
-  </section>
+  </StyledSection>
+  
 )
 
 export default ContactUs
