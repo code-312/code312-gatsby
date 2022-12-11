@@ -7,7 +7,7 @@ const HeroSection = styled.section`
   @media (min-width: 769px) {
     display: flex;
     align-items: center;
-    padding: 0px 0px 0px 48px;
+    padding-left: 48px;
     gap: 24px;
   }
 `
@@ -34,11 +34,9 @@ const ContentContainer = styled.div`
 `
 
 const EyebrowText = styled.span`
-  font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0.05em;
-  font-size: 16px;
   line-height: 21px;
   text-align: center;
   letter-spacing: 0.05em;
