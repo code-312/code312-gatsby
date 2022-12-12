@@ -8,6 +8,7 @@ import Layout from '../components/Layout'
 import TestImage from '../images/TestImage.png'
 import skyline from '../images/skyline.svg'
 import codeOfConduct from '../images/code-of-conduct.svg'
+import Card from "../components/Card"
 import CardPlaceholder from '../images/card-placeholder.svg'
 
 const Components = () => {
