@@ -3,14 +3,22 @@ import styled from "styled-components";
 // import Button from "../components/Button"
 
 const StyledSection = styled.section`
+width: min-content;
+color: #ffffff;
+background-color: #cf2045;
 h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-top: 2rem;
 }
 form{
   display: flex;
   flex-direction: column;
+  margin: 0 2rem 0 2rem;
   input, textarea {
     box-sizing: border-box;
     padding: 1rem;
+    margin: 1rem;
     border: 1px solid #606060;
     border-radius: 2.2px;
     background-color: #ffffff;
@@ -19,7 +27,10 @@ form{
     &.error {
       border: 2px solid #D90000;
     }
-
+  }
+  label {
+    font-weight: bold;
+    margin-left: 1rem;
   }
   #message{
     height: 240px;
@@ -29,7 +40,7 @@ form{
   }
   #email{
     height: 60px;
-    width: 250px;
+    width: 600px;
     &:hover, &:active{
       border: 2px solid #4EB2E3;
     }
