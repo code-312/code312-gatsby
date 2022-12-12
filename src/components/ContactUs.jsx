@@ -1,7 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+// import Button from "../components/Button"
 
-const StyledSection = styled.section``;
+const StyledSection = styled.section`
+h3 {}
+form{
+  input {
+    &:hover{}
+    &:active{}
+    &.disabled {}
+    &.error {}
+
+  }
+}
+`;
 
 const ContactUs = ()=>(
   <StyledSection>
@@ -10,12 +22,12 @@ const ContactUs = ()=>(
       <label htmlFor="email">
         Email
       </label>
-        <input type="email" name="email" id="email" placeholder="Your email"/>
+        <input type="email" name="email" id="email" placeholder="email"/>
       <label htmlFor="message">
         Message
       </label>
-        <textarea name="message" id="message" placeholder="Your message"></textarea>
-      <button type="submit">Submit</button>
+        <textarea name="message" id="message" placeholder="message"></textarea>
+      <Button type="submit" text="submit &#8594;"/>
     </form>
   </StyledSection>
   
