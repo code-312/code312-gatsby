@@ -1,5 +1,6 @@
 import React from 'react'
 import CallToAction from '../components/CallToAction'
+import Card from '../components/Card'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
 import Hero from '../components/Hero'
