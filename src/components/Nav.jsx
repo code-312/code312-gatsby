@@ -5,17 +5,71 @@ import brigadeLogo from '../images/cfc_logo_2021.svg'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
+import styled from 'styled-components'
+
+const StyledNav = styled.nav`
+  height: 6rem;
+  padding: 1.5rem 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+`
+
+const StyledMenuIcon = styled.button`
+  display: none;
+  @media (max-width: 992px) {
+    display: inline-block;
+  }
+`
+
+const StyledInternalLinks = styled.ul`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+  gap: 2rem;
+`
+
+const StyledBrigadeLogo = styled.img`
+  display: block;
+  height: auto;
+  min-width: 120px;
+
+  @media (max-width: 576px) {
+    min-width: 85px;
+  }
+`
+
+const StyledDonateAndSocialsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+`
+const StyledExternalLinks = styled.ul`
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 2rem;
+  margin-right: 1.5rem;
+  padding: 0;
+`
+
+const StyledSocialImg = styled.img`
+  min-width: 24px;
+`
 
 const Nav = () => {
   return (
-    <nav className="navbar" aria-label="main">
-      <button aria-label="open" className="menuIcon">
+    <StyledNav className="navbar" aria-label="main">
+      <StyledMenuIcon aria-label="open" className="menuIcon">
         <img src={hamburgerOpenMenu} alt="open menu" aria-hidden="true" />
-      </button>
-      <ul className="internalLinks">
+      </StyledMenuIcon>
+      <StyledInternalLinks className="internalLinks">
         <li id="logoContainer">
           <Link to="/">
-            <img
+            <StyledBrigadeLogo
               className="brigadeLogo"
               src={brigadeLogo}
               alt="Code For Chicago Logo"
@@ -34,16 +88,20 @@ const Nav = () => {
         <li activeClassName="active">
           <Link to="/about">About</Link>
         </li>
-      </ul>
-      <div className="donateAndSocials">
-        <ul className="externalLinks">
+      </StyledInternalLinks>
+      <StyledDonateAndSocialsContainer className="donateAndSocials">
+        <StyledExternalLinks className="externalLinks">
           <li className="socialLogo">
             <a
               href="https://www.meetup.com/code-for-chicago"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="socialImg" src={meetup} alt="Meetup" />
+              <StyledSocialImg
+                className="socialImg"
+                src={meetup}
+                alt="Meetup"
+              />
             </a>
           </li>
           <li className="socialLogo">
@@ -52,7 +110,11 @@ const Nav = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="socialImg" src={slackLogo} alt="Slack" />
+              <StyledSocialImg
+                className="socialImg"
+                src={slackLogo}
+                alt="Slack"
+              />
             </a>
           </li>
           <li className="socialLogo">
@@ -61,10 +123,14 @@ const Nav = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="socialImg" src={githubLogo} alt="GitHub" />
+              <StyledSocialImg
+                className="socialImg"
+                src={githubLogo}
+                alt="GitHub"
+              />
             </a>
           </li>
-        </ul>
+        </StyledExternalLinks>
         <a
           href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
           target="blank"
@@ -73,8 +139,8 @@ const Nav = () => {
         >
           Donate
         </a>
-      </div>
-    </nav>
+      </StyledDonateAndSocialsContainer>
+    </StyledNav>
   )
 }
 
