@@ -3,6 +3,7 @@ import styled from "styled-components";
 // import Button from "../components/Button"
 
 const StyledSection = styled.section`
+margin: 0 auto;
 width: min-content;
 color: #ffffff;
 background-color: #cf2045;
@@ -16,9 +17,8 @@ form{
   flex-direction: column;
   margin: 0 2rem 0 2rem;
   input, textarea {
-    box-sizing: border-box;
+    margin: 1rem 0; 
     padding: 1rem;
-    margin: 1rem;
     border: 1px solid #606060;
     border-radius: 2.2px;
     background-color: #ffffff;
@@ -30,7 +30,6 @@ form{
   }
   label {
     font-weight: bold;
-    margin-left: 1rem;
   }
   #message{
     height: 240px;
@@ -52,6 +51,18 @@ form{
       border: none;
     }
   }
+  button {
+    margin: 1rem 0 3rem 0;
+    padding: 1rem;
+    justify-content: center;
+    color: #ffffff;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 2.2px;
+    font-weight: bold;
+    width: 600px;
+    cursor: pointer;
+  }
 }
 `;
 
@@ -68,6 +79,7 @@ const ContactUs = ()=>(
       </label>
         <textarea name="message" id="message" placeholder="message" maxLength={300}></textarea>
       {/* <button type="submit">submit</button> will replace with Button component */}
+      <button type="submit">Submit</button>
     </form>
   </StyledSection>
   
