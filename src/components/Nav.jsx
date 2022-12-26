@@ -8,9 +8,6 @@ import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
-  --nav-background-color: white;
-  --nav-internal-links-color: #333333;
-
   height: 6rem;
   padding: 1.5rem 6rem;
   display: flex;
