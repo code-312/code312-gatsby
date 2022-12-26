@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import "@fontsource/source-sans-pro"
+import '@fontsource/source-sans-pro'
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -15,6 +15,8 @@ const GlobalStyles = createGlobalStyle`
     --light-grey: #bababa;
     --dark-grey: #606060; /* this is not used anywhere */
     --off-white: #f5f5f5;
+    --nav-background-color: white;
+    --nav-internal-links-color: #333333;
 
     --gray-600: #6c757d;
     --black: #333333;
