@@ -8,68 +8,71 @@ import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
 
 const StyledNav = styled.nav`
+  --nav-background-color: white;
+  --nav-internal-links-color: #333333;
+
   height: 6rem;
   padding: 1.5rem 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
-`
+  background: var(--nav-background-color);
 
-const StyledMenuIcon = styled.button`
-  display: none;
-  @media (max-width: 992px) {
-    display: inline-block;
+  .hamburgerMenu {
+    display: none;
   }
-`
 
-const StyledInternalLinks = styled.ul`
-  display: flex;
-  align-items: center;
-  padding: 0;
-  list-style-type: none;
-  gap: 2rem;
-`
+  .internalLinks {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+    gap: 2rem;
 
-const StyledBrigadeLogo = styled.img`
-  display: block;
-  height: auto;
-  min-width: 120px;
-
-  @media (max-width: 576px) {
-    min-width: 85px;
+    a {
+      color: var(--nav-internal-links-color);
+      text-decoration: none;
+    }
   }
-`
 
-const StyledDonateAndSocialsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  padding: 0;
-`
-const StyledExternalLinks = styled.ul`
-  display: flex;
-  align-items: center;
-  list-style-type: none;
-  gap: 2rem;
-  margin-right: 1.5rem;
-  padding: 0;
-`
+  .brigadeLogo {
+    display: block;
+    height: auto;
+    min-width: 7.5rem;
 
-const StyledSocialImg = styled.img`
-  min-width: 24px;
+    @media (max-width: 576px) {
+      min-width: 5.313rem;
+    }
+  }
+  .donateAndSocialsContainer {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  .externalLinks {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    gap: 2rem;
+    margin-right: 1.5rem;
+    padding: 0;
+  }
+  .socialImg {
+    min-width: 1.5rem;
+  }
 `
 
 const Nav = () => {
   return (
     <StyledNav className="navbar" aria-label="main">
-      <StyledMenuIcon aria-label="open" className="menuIcon">
+      <button aria-label="open" className="hamburgerMenu">
         <img src={hamburgerOpenMenu} alt="open menu" aria-hidden="true" />
-      </StyledMenuIcon>
-      <StyledInternalLinks className="internalLinks">
+      </button>
+      <ul className="internalLinks">
         <li id="logoContainer">
           <Link to="/">
-            <StyledBrigadeLogo
+            <img
               className="brigadeLogo"
               src={brigadeLogo}
               alt="Code For Chicago Logo"
@@ -88,20 +91,16 @@ const Nav = () => {
         <li activeClassName="active">
           <Link to="/about">About</Link>
         </li>
-      </StyledInternalLinks>
-      <StyledDonateAndSocialsContainer className="donateAndSocials">
-        <StyledExternalLinks className="externalLinks">
+      </ul>
+      <div className="donateAndSocialsContainer">
+        <ul className="externalLinks">
           <li className="socialLogo">
             <a
               href="https://www.meetup.com/code-for-chicago"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <StyledSocialImg
-                className="socialImg"
-                src={meetup}
-                alt="Meetup"
-              />
+              <img className="socialImg" src={meetup} alt="Meetup" />
             </a>
           </li>
           <li className="socialLogo">
@@ -110,11 +109,7 @@ const Nav = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <StyledSocialImg
-                className="socialImg"
-                src={slackLogo}
-                alt="Slack"
-              />
+              <img className="socialImg" src={slackLogo} alt="Slack" />
             </a>
           </li>
           <li className="socialLogo">
@@ -123,14 +118,10 @@ const Nav = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <StyledSocialImg
-                className="socialImg"
-                src={githubLogo}
-                alt="GitHub"
-              />
+              <img className="socialImg" src={githubLogo} alt="GitHub" />
             </a>
           </li>
-        </StyledExternalLinks>
+        </ul>
         <a
           href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
           target="blank"
@@ -139,7 +130,7 @@ const Nav = () => {
         >
           Donate
         </a>
-      </StyledDonateAndSocialsContainer>
+      </div>
     </StyledNav>
   )
 }
