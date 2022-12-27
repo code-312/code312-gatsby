@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import hamburgerOpenMenu from '../images/hamburger-open-menu.svg'
-import brigadeLogo from '../images/cfc_logo_2021.svg'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
@@ -70,9 +69,9 @@ const Nav = () => {
       <ul className="internal-links">
         <li id="logo-container">
           <Link to="/">
-            <GatsbyImage
+            <StaticImage
               className="brigade-logo"
-              image={brigadeLogo}
+              src="../images/cfc_logo_2021.svg"
               alt="Code For Chicago Logo"
             />
           </Link>
