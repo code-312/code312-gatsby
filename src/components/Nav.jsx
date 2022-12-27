@@ -28,7 +28,7 @@ const StyledNav = styled.nav`
     gap: 2rem;
 
     a {
-      color: var(--nav-internal-links-color);
+      color: var(--black);
       text-decoration: none;
     }
   }
@@ -65,18 +65,14 @@ const Nav = () => {
   return (
     <StyledNav className="navbar" aria-label="main">
       <button aria-label="open" className="hamburger-menu">
-        <GatsbyImage
-          image={hamburgerOpenMenu}
-          alt="open menu"
-          aria-hidden="true"
-        />
+        <img src={hamburgerOpenMenu} alt="open menu" aria-hidden="true" />
       </button>
       <ul className="internal-links">
         <li id="logo-container">
           <Link to="/">
-            <img
+            <GatsbyImage
               className="brigade-logo"
-              src={brigadeLogo}
+              image={brigadeLogo}
               alt="Code For Chicago Logo"
             />
           </Link>
