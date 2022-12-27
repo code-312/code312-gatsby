@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import hamburgerOpenMenu from '../images/hamburger-open-menu.svg'
 import brigadeLogo from '../images/cfc_logo_2021.svg'
 import slackLogo from '../images/slack.svg'
@@ -13,13 +14,13 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--nav-background-color);
+  background: var(--white);
 
-  .hamburgerMenu {
+  .hamburger-menu {
     display: none;
   }
 
-  .internalLinks {
+  .internal-links {
     display: flex;
     align-items: center;
     padding: 0;
@@ -32,7 +33,7 @@ const StyledNav = styled.nav`
     }
   }
 
-  .brigadeLogo {
+  .brigade-logo {
     display: block;
     height: auto;
     min-width: 7.5rem;
@@ -41,13 +42,13 @@ const StyledNav = styled.nav`
       min-width: 5.313rem;
     }
   }
-  .donateAndSocialsContainer {
+  .donate-and-socials-container {
     display: flex;
     align-items: center;
     list-style-type: none;
     padding: 0;
   }
-  .externalLinks {
+  .external-links {
     display: flex;
     align-items: center;
     list-style-type: none;
@@ -55,7 +56,7 @@ const StyledNav = styled.nav`
     margin-right: 1.5rem;
     padding: 0;
   }
-  .socialImg {
+  .social-img {
     min-width: 1.5rem;
   }
 `
@@ -63,14 +64,18 @@ const StyledNav = styled.nav`
 const Nav = () => {
   return (
     <StyledNav className="navbar" aria-label="main">
-      <button aria-label="open" className="hamburgerMenu">
-        <img src={hamburgerOpenMenu} alt="open menu" aria-hidden="true" />
+      <button aria-label="open" className="hamburger-menu">
+        <GatsbyImage
+          image={hamburgerOpenMenu}
+          alt="open menu"
+          aria-hidden="true"
+        />
       </button>
-      <ul className="internalLinks">
-        <li id="logoContainer">
+      <ul className="internal-links">
+        <li id="logo-container">
           <Link to="/">
             <img
-              className="brigadeLogo"
+              className="brigade-logo"
               src={brigadeLogo}
               alt="Code For Chicago Logo"
             />
@@ -89,33 +94,33 @@ const Nav = () => {
           <Link to="/about">About</Link>
         </li>
       </ul>
-      <div className="donateAndSocialsContainer">
-        <ul className="externalLinks">
-          <li className="socialLogo">
+      <div className="donate-and-socials-container">
+        <ul className="external-links">
+          <li className="social-logo">
             <a
               href="https://www.meetup.com/code-for-chicago"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="socialImg" src={meetup} alt="Meetup" />
+              <img className="social-img" src={meetup} alt="Meetup" />
             </a>
           </li>
-          <li className="socialLogo">
+          <li className="social-logo">
             <a
               href="https://code-for-chicago-slack-invite.herokuapp.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="socialImg" src={slackLogo} alt="Slack" />
+              <img className="social-img" src={slackLogo} alt="Slack" />
             </a>
           </li>
-          <li className="socialLogo">
+          <li className="social-logo">
             <a
               href="https://github.com/Code-For-Chicago/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="socialImg" src={githubLogo} alt="GitHub" />
+              <img className="social-img" src={githubLogo} alt="GitHub" />
             </a>
           </li>
         </ul>
