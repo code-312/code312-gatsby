@@ -15,7 +15,6 @@ const GlobalStyles = createGlobalStyle`
     --light-grey: #bababa;
     --dark-grey: #606060; /* this is not used anywhere */
     --off-white: #f5f5f5;
-    --white: white;
     --nav-internal-links-color: #333333;
 
     --gray-600: #6c757d;
