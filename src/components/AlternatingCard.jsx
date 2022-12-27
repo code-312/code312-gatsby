@@ -1,6 +1,14 @@
 import React from 'react'
 
-const AlternatingCard = ({thumbnail, alt, areas, title, description, url, urlText}) => {
+const AlternatingCard = ({
+  thumbnail,
+  alt,
+  areas,
+  title,
+  description,
+  url,
+  urlText,
+}) => {
   return (
     <>
       <div className="card-img-container">
