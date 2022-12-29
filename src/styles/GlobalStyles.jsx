@@ -10,11 +10,13 @@ const GlobalStyles = createGlobalStyle`
     --cfa-red-dark: #aa1a37;
     --cfa-blue: #359ed3;
     --cfa-blue-dark: #0d77ac;
+    --cfa-hero-bg: #b3ddf2;
 
     // Secondary
     --light-grey: #bababa;
     --dark-grey: #606060; /* this is not used anywhere */
     --off-white: #f5f5f5;
+    --tints-blizzard-black: #001426;
 
     --gray-600: #6c757d;
     --black: #333333;
