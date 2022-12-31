@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import Button from "../components/Button"
 
 const StyledSection = styled.section`
 margin: 0 auto;
@@ -78,7 +77,6 @@ const ContactUs = ()=>(
         Message
       </label>
         <textarea name="message" id="message" placeholder="message" maxLength={300}></textarea>
-      {/* <button type="submit">submit</button> will replace with Button component */}
       <button type="submit">Submit</button>
     </form>
   </StyledSection>
