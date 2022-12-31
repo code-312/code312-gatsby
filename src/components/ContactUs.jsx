@@ -5,8 +5,8 @@ import styled from "styled-components";
 const StyledSection = styled.section`
 margin: 0 auto;
 width: min-content;
-color: #ffffff;
-background-color: #cf2045;
+color: var(--white);
+background-color: var(--cfa-red);
 h3 {
   text-align: center;
   font-size: 2.5rem;
@@ -19,35 +19,35 @@ form{
   input, textarea {
     margin: 1rem 0; 
     padding: 1rem;
-    border: 1px solid #606060;
+    border: 1px solid var(--dark-grey);
     border-radius: 2.2px;
-    background-color: #ffffff;
+    background-color: var(--white);
     outline: none;
     resize: none;
     &.error {
-      border: 2px solid #D90000;
+      border: 2px solid var(--error-red);
     }
   }
   label {
     font-weight: bold;
   }
   #message{
-    height: 240px;
-    width: 600px;
+    height: 15rem;
+    width: 37.5rem;
 
     
   }
   #email{
-    height: 60px;
-    width: 600px;
+    height: 3.75rem;
+    width: 37.5rem;
     &:hover, &:active{
-      border: 2px solid #4EB2E3;
+      border: 2px solid var(--button-outline-blue);
     }
     &:focus {
-      outline: 2px solid #4EB2E3;
+      outline: 2px solid var(--button-outline-blue);
     }
     &:disabled {
-      background-color: #EFEFEF;
+      background-color: var(--off-white);
       border: none;
     }
   }
@@ -55,12 +55,12 @@ form{
     margin: 1rem 0 3rem 0;
     padding: 1rem;
     justify-content: center;
-    color: #ffffff;
+    color: var(--white);
     background-color: transparent;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--white);
     border-radius: 2.2px;
     font-weight: bold;
-    width: 600px;
+    width: 37.5rem;
     cursor: pointer;
   }
 }
