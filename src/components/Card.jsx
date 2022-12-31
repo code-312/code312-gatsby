@@ -14,7 +14,7 @@ const Card = ({
   return (
     <article>
       <div className="image-container">
-        <GatsbyImage image={imgUrl} alt={imageDescription} />
+        <img src={imgUrl} alt={imageDescription} />
       </div>
       <h3>
         <span>{eyebrowText}</span>

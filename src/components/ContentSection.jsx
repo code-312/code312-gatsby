@@ -22,7 +22,7 @@ const ContentSection = ({
         <Link to={linkUrl}>{linkText}</Link>
       </div>
       <div className="image-container">
-        <GatsbyImage image={imgUrl} alt={imageDescription} />
+        <img src={imgUrl} alt={imageDescription} />
       </div>
     </section>
   )
