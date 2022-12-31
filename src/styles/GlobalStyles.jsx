@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
     --dark-grey: #606060; /* this is not used anywhere */
     --off-white: #f5f5f5;
     --tints-blizzard-black: #001426;
+    --error-red: #D90000;
+    --button-outline-blue: #4EB2E3;
 
     --gray-600: #6c757d;
     --black: #333333;
