@@ -8,7 +8,6 @@ module.exports = {
     siteUrl: `https://www.codeforchicago.org`,
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
