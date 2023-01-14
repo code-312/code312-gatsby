@@ -19,6 +19,8 @@ const GlobalStyles = createGlobalStyle`
     --tints-blizzard-black: #001426;
     --error-red: #D90000;
     --button-outline-blue: #4EB2E3;
+    --dark-blue: #0075B8;
+    --dark-purple: #800080;
 
     --gray-600: #6c757d;
     --black: #333333;
@@ -26,6 +28,38 @@ const GlobalStyles = createGlobalStyle`
     
     // Font
     font-family: 'Source Sans Pro', sans-serif;
+
+    // Inline Hyperlinks
+    a {
+      color: var(--dark-blue);
+      font-weight: 400;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: var(--error-red);
+    }
+
+    a:active {
+      color: var(--dark-blue);
+      text-decoration: none;
+    }
+
+    a:focus {
+      border: 2px solid var(--dark-blue);
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: var(--dark-purple);
+      text-decoration: none;
+    }
+
+    a[aria-disabled="true"] {
+      color: var(--tints-blizzard-black);
+      text-decoration: none;
+      pointer-events: none;
+    }
   }
 
   .visually-hidden {
