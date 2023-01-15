@@ -6,7 +6,7 @@ import longRightArrowIcon from '../images/long-arrow-alt-right-red.svg'
 
 const StyledCard = styled.article`
   width: 12.563rem;
-  padding: 0px;
+  padding: 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   margin: 1rem;
