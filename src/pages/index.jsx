@@ -1,5 +1,4 @@
 import React from 'react'
-import ContentSection from '../components/ContentSection'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 
@@ -8,7 +7,6 @@ const IndexPage = () => {
     <Layout>
       <h2>homepage</h2>
       <Hero />
-      <ContentSection />
     </Layout>
   )
 }
