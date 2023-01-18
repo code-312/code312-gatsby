@@ -8,12 +8,12 @@ import longArrowAltRight from '../images/join-us/long-arrow-alt-right.svg'
 
 const StyledFooter = styled.footer`
   width: 100%;
-  padding: 1rem 0;
+  padding: 3rem 0;
   display: block;
   margin: 0 auto;
 
   @media (min-width: 1200px) {
-    padding: 0rem 15.25rem;
+    padding: 3rem 15.25rem;
   }
 
   .footer-content {
@@ -22,10 +22,10 @@ const StyledFooter = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
 
     @media (min-width: 1200px) {
-      width: 653.16px;
+      width: 40.813rem;
     }
   }
 
@@ -41,13 +41,6 @@ const StyledFooter = styled.footer`
     }
   }
 
-  .footer-socials-container {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    padding: 0;
-  }
-
   .donate-button-container {
     display: flex;
     align-items: center;
@@ -55,7 +48,7 @@ const StyledFooter = styled.footer`
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: var(--white);
-    border: 2px solid #d90000;
+    border: 2px solid var(--error-red);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
   }
@@ -74,6 +67,7 @@ const StyledFooter = styled.footer`
     list-style-type: none;
     gap: 1rem;
     padding: 0;
+    margin: 0;
   }
   .social-img {
     min-width: 1.5rem;
@@ -125,37 +119,36 @@ const Footer = () => {
               <Link to="/about">About</Link>
             </li>
           </ul>
-          <div className="footer-socials-container">
-            <ul className="external-links">
-              <li className="social-logo">
-                <a
-                  href="https://www.meetup.com/code-for-chicago"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img className="social-img" src={meetup} alt="Meetup" />
-                </a>
-              </li>
-              <li className="social-logo">
-                <a
-                  href="https://code-for-chicago-slack-invite.herokuapp.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img className="social-img" src={slackLogo} alt="Slack" />
-                </a>
-              </li>
-              <li className="social-logo">
-                <a
-                  href="https://github.com/Code-For-Chicago/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img className="social-img" src={githubLogo} alt="GitHub" />
-                </a>
-              </li>
-            </ul>
-          </div>
+
+          <ul className="external-links">
+            <li className="social-logo">
+              <a
+                href="https://www.meetup.com/code-for-chicago"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className="social-img" src={meetup} alt="Meetup" />
+              </a>
+            </li>
+            <li className="social-logo">
+              <a
+                href="https://code-for-chicago-slack-invite.herokuapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className="social-img" src={slackLogo} alt="Slack" />
+              </a>
+            </li>
+            <li className="social-logo">
+              <a
+                href="https://github.com/Code-For-Chicago/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className="social-img" src={githubLogo} alt="GitHub" />
+              </a>
+            </li>
+          </ul>
         </div>
         <div className="footer-text">
           <p>
