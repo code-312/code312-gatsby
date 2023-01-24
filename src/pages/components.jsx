@@ -1,5 +1,6 @@
 import React from 'react'
 import CallToAction from '../components/CallToAction'
+import Button from "../components/Button"
 import Card from '../components/Card'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
@@ -14,6 +15,7 @@ import CardPlaceholder from '../images/card-placeholder.svg'
 const Components = () => {
   return (
     <Layout>
+      <Button text="Submit" secondary small/>
       <CallToAction
         title="Title Goes Here"
         link="/components"
