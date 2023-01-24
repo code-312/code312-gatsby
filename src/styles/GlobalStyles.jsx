@@ -21,6 +21,7 @@ const GlobalStyles = createGlobalStyle`
     --button-outline-blue: #4EB2E3;
     --dark-blue: #0075B8;
     --dark-purple: #800080;
+    --dark-red: #FE0400;
 
     --gray-600: #6c757d;
     --black: #333333;
