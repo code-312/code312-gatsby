@@ -11,6 +11,14 @@ const StyledLongTextInput = styled.section`
   flex-direction: column;
   padding: 1.063rem 1rem;
 
+  :active {
+    border: 2px solid var(--button-outline-blue);
+  }
+
+  :focus-within {
+    border: 2px solid var(--button-outline-blue);
+  }
+
   label {
     font-weight: 400;
     color: var(--dark-grey);
@@ -22,6 +30,10 @@ const StyledLongTextInput = styled.section`
     resize: none;
     font-weight: 400;
     color: var(--tints-blizzard-black);
+  }
+
+  textarea:focus {
+    outline: none;
   }
 
   span {
@@ -36,10 +48,9 @@ const StyledLongTextInput = styled.section`
   }
 `
 
-const LongTextInput = () => {
+const LongTextInput = ({ maxWordCount = 300 }) => {
   const [text, setText] = useState('')
   const [wordCount, setWordCount] = useState(0)
-  const [maxWordCount, setMaxWordCount] = useState(300)
 
   const handleChange = (e) => {
     setText(e.target.value)
@@ -55,7 +66,11 @@ const LongTextInput = () => {
   }, [text])
 
   return (
-    <StyledLongTextInput>
+    <StyledLongTextInput
+      style={
+        wordCount > maxWordCount ? { borderColor: 'var(--error-red)' } : null
+      }
+    >
       <label for="long-text-input">Message</label>
       <textarea
         name="long-text-input"
