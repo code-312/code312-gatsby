@@ -43,14 +43,14 @@ const StyledLongTextInput = styled.section`
     color: var(--dark-grey);
   }
 
-  .max-word {
+  .max-character {
     color: var(--dark-red);
   }
 `
 
-const LongTextInput = ({ maxWordCount = 300 }) => {
+const LongTextInput = ({ maxCharacterCount = 300 }) => {
   const [text, setText] = useState('')
-  const [wordCount, setWordCount] = useState(0)
+  const [characterCount, setCharacterCount] = useState(0)
 
   const handleChange = (e) => {
     setText(e.target.value)
@@ -58,17 +58,19 @@ const LongTextInput = ({ maxWordCount = 300 }) => {
 
   useEffect(() => {
     if (text === '') {
-      setWordCount(0)
+      setCharacterCount(0)
     } else {
-      const newWordCount = text.split(' ').length
-      setWordCount(newWordCount)
+      const newCharacterCount = text.split('').length
+      setCharacterCount(newCharacterCount)
     }
   }, [text])
 
   return (
     <StyledLongTextInput
       style={
-        wordCount > maxWordCount ? { borderColor: 'var(--error-red)' } : null
+        characterCount > maxCharacterCount
+          ? { borderColor: 'var(--error-red)' }
+          : null
       }
     >
       <label for="long-text-input">Message</label>
@@ -79,8 +81,12 @@ const LongTextInput = ({ maxWordCount = 300 }) => {
         onChange={handleChange}
       />
       <span
-        className={wordCount > maxWordCount ? 'max-word' : ''}
-      >{`${wordCount}/${maxWordCount} words`}</span>
+        className={characterCount > maxCharacterCount ? 'max-character' : ''}
+      >
+        {`${characterCount}/${maxCharacterCount} ${
+          characterCount < 2 ? 'character' : 'characters'
+        }`}
+      </span>
     </StyledLongTextInput>
   )
 }
