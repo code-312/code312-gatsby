@@ -1,6 +1,6 @@
 import React from 'react'
 import CallToAction from '../components/CallToAction'
-import Button from "../components/Button"
+import Button from '../components/Button'
 import Card from '../components/Card'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
@@ -11,11 +11,13 @@ import TestImage from '../images/TestImage.png'
 import skyline from '../images/skyline.svg'
 import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
+import LongtextInput from '../components/LongTextInput'
 
 const Components = () => {
   return (
     <Layout>
-      <Button text="Submit" secondary small/>
+      <Button text="Submit" secondary small />
+      <LongtextInput />
       <CallToAction
         title="Title Goes Here"
         link="/components"
