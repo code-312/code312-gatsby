@@ -12,12 +12,14 @@ import TestImage from '../images/TestImage.png'
 import skyline from '../images/skyline.svg'
 import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
+import LongtextInput from '../components/LongTextInput'
 
 const Components = () => {
   return (
     <Layout>
       <Button text="Submit" secondary small />
       <ShortTextInput type="email" placeholder="enter your email" />
+      <LongtextInput />
       <CallToAction
         title="Title Goes Here"
         link="/components"
