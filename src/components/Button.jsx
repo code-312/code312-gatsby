@@ -3,31 +3,37 @@ import {Link} from 'gatsby'
 import styled from "styled-components"
 
 const StyledButton = styled.div`
-/* sample styling, will get overwritten to match figma template */
-a, button{
-  text-decoration: none;
-  outline:none;
-  color: #001426;
-  cursor: pointer;
-}
-.primary{
-  background-color: red;
-  border: 2px solid black;
-  width: 6.5rem;
-  height: 2.4rem;
-}
-.secondary{
-  background-color: green;
-  width: 8rem;
-}
-.textBtn{
-
-}
-.small{
-  width: 4rem;
-  height: 2rem;
-}
-`;
+  /* sample styling, will get overwritten to match figma template */
+  a,
+  button {
+    text-decoration: none;
+    outline: none;
+    color: #001426;
+    cursor: pointer;
+    margin-left: 13px;
+  }
+  .primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--white);
+    border: 2px solid var(--error-red);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2.2px;
+  }
+  .secondary {
+    background-color: green;
+    width: 8rem;
+  }
+  .textBtn {
+  }
+  .small {
+    width: 6rem;
+    height: 2rem;
+  }
+`
 
 const Button = ({ text, link, secondary, textBtn, small, handleClick }) => {
   let className = ['primary']
@@ -50,7 +56,7 @@ const Button = ({ text, link, secondary, textBtn, small, handleClick }) => {
         )
       ) : (
         <button className={className} onClick={handleClick}>
-          {text}
+            {text}
         </button>
       )}
     </StyledButton>

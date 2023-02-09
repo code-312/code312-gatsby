@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../components/Button'
 import Card from '../components/Card'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
@@ -9,6 +10,7 @@ const IndexPage = () => {
       <h2>homepage</h2>
       <Hero />
       <Card />
+      <Button text={"Submit"} />
     </Layout>
   )
 }
