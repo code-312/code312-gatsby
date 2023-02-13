@@ -38,7 +38,7 @@ const StyledFooter = styled.footer`
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     background-color: var(--white);
-    border: 2px solid var(--error-red);
+    border: 2px solid var(--dark-red);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
   }
@@ -65,11 +65,11 @@ const StyledFooter = styled.footer`
 
   .footer-text {
     text-align: center;
-    color: var(--light-grey);
+    color: var(--dark-grey);
     font-weight: 400;
 
     a {
-      color: var(--cfa-blue-dark);
+      color: var(--dark-blue);
       text-decoration: none;
     }
   }

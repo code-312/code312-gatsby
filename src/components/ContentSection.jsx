@@ -36,7 +36,7 @@ const StyledContentSection = styled.section`
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.938rem;
-    color: var(--tints-blizzard-black);
+    color: var(--blizzard-black);
   }
 
   .info > h3 > span {
@@ -64,7 +64,7 @@ const StyledContentSection = styled.section`
     line-height: 1.125rem;
     width: 6.25rem;
     height: 2.125rem;
-    border: 2px solid var(--error-red);
+    border: 2px solid var(--dark-red);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
   }
