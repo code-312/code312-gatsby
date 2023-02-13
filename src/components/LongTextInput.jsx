@@ -12,11 +12,11 @@ const StyledLongTextInput = styled.section`
   padding: 1.063rem 1rem;
 
   :active {
-    border: 2px solid var(--button-outline-blue);
+    border: 2px solid var(--medium-blue);
   }
 
   :focus-within {
-    border: 2px solid var(--button-outline-blue);
+    border: 2px solid var(--medium-blue);
   }
 
   label {
@@ -29,7 +29,7 @@ const StyledLongTextInput = styled.section`
     border: none;
     resize: none;
     font-weight: 400;
-    color: var(--tints-blizzard-black);
+    color: var(--blizzard-black);
   }
 
   textarea:focus {
@@ -69,7 +69,7 @@ const LongTextInput = ({ maxCharacterCount = 300 }) => {
     <StyledLongTextInput
       style={
         characterCount > maxCharacterCount
-          ? { borderColor: 'var(--error-red)' }
+          ? { borderColor: 'var(--dark-red)' }
           : null
       }
     >

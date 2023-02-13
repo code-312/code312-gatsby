@@ -48,7 +48,7 @@ const StyledCard = styled.article`
 
   .card-link {
     font-weight: 600;
-    color: var(--error-red);
+    color: var(--dark-red);
     width: 10.603rem;
     display: block;
     margin: 0 auto;
