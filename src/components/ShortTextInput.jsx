@@ -68,8 +68,6 @@ const ShortTextInput = ({ type, label, error, helper }) => {
   }
 
   return (
-    <form>
-
     <StyledShortTextInput>
       <div       
       style={ errorMsg ? { borderColor: 'var(--error-red)' }
@@ -89,8 +87,6 @@ const ShortTextInput = ({ type, label, error, helper }) => {
           {errorMsg ? error : helper}
         </span>
     </StyledShortTextInput>
-    <button type="submit"/>
-          </form>
   )
 }
 export default ShortTextInput;
