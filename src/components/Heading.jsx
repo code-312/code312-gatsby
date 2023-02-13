@@ -10,6 +10,7 @@ const StyledHeading = styled.div`
   .brow {
     font-size: 1.125rem;
     font-weight: 600;
+    text-transform: uppercase;
   }
 
   .heading {
