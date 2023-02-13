@@ -4,6 +4,8 @@ import styled from 'styled-components'
 const StyledHeading = styled.div`
   color: var(--tints-blizzard-black);
   text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  max-width: 35.1875rem;
 
   .brow {
     font-size: 1.125rem;
