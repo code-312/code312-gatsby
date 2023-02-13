@@ -28,7 +28,7 @@ const StyledShortTextInput = styled.section`
   label {
     font-weight: 300;
     font-size: .8em;
-    color: var(--light-grey);
+    color: var(--dark-grey);
     display: block;
     margin-bottom: .1rem;
   }
@@ -50,7 +50,7 @@ const StyledShortTextInput = styled.section`
     line-height: 1.3em;
     font-size: .8em;
     font-weight: 100;
-    color: var(--light-grey);
+    color: var(--dark-grey);
     margin-left: .2rem;
   }
 `
@@ -83,7 +83,7 @@ const ShortTextInput = ({ type, label, error, helper }) => {
           onInvalid={throwError}
           />
       </div>
-        <span style={errorMsg ? {color: 'var(--dark-red)'}: {color: 'var(--light-grey)'}}>
+        <span style={errorMsg ? {color: 'var(--dark-red)'}: {color: 'var(--dark-grey)'}}>
           {errorMsg ? error : helper}
         </span>
     </StyledShortTextInput>
