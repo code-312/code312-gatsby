@@ -9,7 +9,7 @@ const StyledContentSection = styled.section`
   align-items: center;
   padding: 3rem 1.5rem;
   gap: 1.5rem;
-  background: var(--white);
+  background: ${(props) => props.background || 'var(--white)'};
 
   @media (min-width: 649px) {
     padding: 4rem 3rem;
@@ -84,9 +84,10 @@ const ContentSection = ({
   linkText,
   imgUrl,
   imageDescription,
+  background,
 }) => {
   return (
-    <StyledContentSection>
+    <StyledContentSection background={background}>
       <div className="info">
         <h3>
           <span>{eyebrowText ? eyebrowText : 'Organizations'}</span>
