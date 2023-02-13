@@ -1,7 +1,7 @@
 import React from 'react'
 import CallToAction from '../components/CallToAction'
 import Button from "../components/Button"
-import ShortTextInput from "../components/TextInput"
+import ShortTextInput from "../components/ShortTextInput"
 import Card from '../components/Card'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
@@ -18,7 +18,7 @@ const Components = () => {
   return (
     <Layout>
       <Button text="Submit" secondary small />
-      <ShortTextInput type="email" placeholder="enter your email" />
+      <ShortTextInput label="Email*" type="email" helper="yourname@example.com" error="Please enter a valid email address in the format: yourname@example.com" />
       <LongtextInput />
       <CallToAction
         title="Title Goes Here"
