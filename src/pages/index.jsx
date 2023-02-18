@@ -10,7 +10,12 @@ const IndexPage = () => {
       <h2>homepage</h2>
       <Hero />
       <Card />
-      <Button text={"Submit"} />
+      <Button text={'Submit'} small />
+      <Button text={'Submit'} />
+      <Button text={'Button'} secondary small/>
+      <Button text={'Button'} secondary />
+      {/* <Button text={'Join us on Slack'} textBtn small/>
+      <Button text={'Join us on Slack'} textBtn /> */}
     </Layout>
   )
 }

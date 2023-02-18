@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
     --tints-blizzard-black: #001426;
     --error-red: #D90000;
     --button-outline-blue: #4EB2E3;
+    --blizzard-blue:#B3DDF2;
     --dark-blue: #0075B8;
     --dark-purple: #800080;
 
