@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import heroImg from '../images/skyline.svg'
 
 const StyledHeroSection = styled.section`
-  background-color: var(--cfa-hero-bg);
+  background-color: var(--blizzard-blue);
   display: flex;
   flex-direction: column;
 
@@ -46,7 +46,7 @@ const StyledHeroSection = styled.section`
     letter-spacing: 0.05em;
     text-transform: uppercase;
     height: 1.313rem;
-    color: var(--tints-blizzard-black);
+    color: var(--blizzard-black);
 
     @media (min-width: 649px) {
       font-size: 1.125rem;
@@ -61,7 +61,7 @@ const StyledHeroSection = styled.section`
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--tints-blizzard-black);
+    color: var(--blizzard-black);
     line-height: 3.438rem;
     flex: none;
 
@@ -117,7 +117,7 @@ const StyledHeroSection = styled.section`
     border: 2px solid #d90000;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
-    color: var(--tints-blizzard-black);
+    color: var(--blizzard-black);
     font-weight: 600;
     font-size: 0.875rem;
 

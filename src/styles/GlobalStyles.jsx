@@ -4,26 +4,21 @@ import '@fontsource/source-sans-pro'
 const GlobalStyles = createGlobalStyle`
   :root {
     // Branding colors
-
     // Primary
-    --cfa-red: #cf2045;
-    --cfa-red-dark: #aa1a37;
-    --cfa-blue: #359ed3;
-    --cfa-blue-dark: #0d77ac;
-    --cfa-hero-bg: #b3ddf2;
-
-    // Secondary
-    --light-grey: #bababa;
-    --dark-grey: #606060; /* this is not used anywhere */
-    --off-white: #f5f5f5;
-    --tints-blizzard-black: #001426;
-    --error-red: #D90000;
-    --button-outline-blue: #4EB2E3;
-    --blizzard-blue:#B3DDF2;
+    --blizzard-blue: #b3ddf2;
+    --medium-blue: #4eb2e3;
     --dark-blue: #0075B8;
+    --red: #fe0400;
+    --dark-red: #d90000;
+    --darker-red: #b90000;
+  
+    // Secondary
     --dark-purple: #800080;
 
-    --gray-600: #6c757d;
+    // Colors outside of design system
+    --light-grey: #efefef; 
+    --dark-grey: #606060; 
+    --blizzard-black: #001426;
     --black: #333333;
     --white: #fff;
     
@@ -38,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     a:hover {
-      color: var(--error-red);
+      color: var(--dark-red);
     }
 
     a:active {
@@ -57,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     a[aria-disabled="true"] {
-      color: var(--tints-blizzard-black);
+      color: var(--blizzard-black);
       text-decoration: none;
       pointer-events: none;
     }
