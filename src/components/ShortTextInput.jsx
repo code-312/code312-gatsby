@@ -1,28 +1,31 @@
 import React, {useState} from 'react'
-import { Link } from 'gatsby'
 import styled from "styled-components"
 
 const StyledShortTextInput = styled.section`
-    width: 37.5rem;
+    width: 23rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 1em 1em 2em 1em;
-
-  div {
+    
+    div {
     width: 23rem;
-    /* height: 15rem; */
     border: 1px solid var(--dark-grey);
     border-radius: 2.2px;
-    padding: .2rem 1rem;
-    /* margin: 1rem 1rem 2rem 1rem; */
+    padding: .1rem .5rem;
   }
+  
+  .error {
+  border: 2px solid var(--error-red);
+  color: var(--error-red);
+  }
+  
   div:active {
     border: 2px solid var(--button-outline-blue);
-  }
+  } 
 
   div:focus-within {
-    border: 2px solid var(--button-outline-blue);
+    border: 2px solid var(--medium-blue);
   }
 
   label {
@@ -41,7 +44,7 @@ const StyledShortTextInput = styled.section`
     color: var(--tints-blizzard-black);
   }
   
-  input:focus {
+  input:focus, input:active {
     outline: none;
   }
   
@@ -51,7 +54,6 @@ const StyledShortTextInput = styled.section`
     font-size: .8em;
     font-weight: 100;
     color: var(--dark-grey);
-    margin-left: .2rem;
   }
 `
 
@@ -69,10 +71,7 @@ const ShortTextInput = ({ type, label, error, helper }) => {
 
   return (
     <StyledShortTextInput>
-      <div       
-      style={ errorMsg ? { borderColor: 'var(--error-red)' }
-      : {borderColor: 'var(--button-outline-blue)}'}
-    }>
+      <div className={errorMsg ? error : null}>
         <label for="short-text-input">{label}</label>
         <input
           name="short-text-input"
@@ -83,8 +82,8 @@ const ShortTextInput = ({ type, label, error, helper }) => {
           onInvalid={throwError}
           />
       </div>
-        <span style={errorMsg ? {color: 'var(--dark-red)'}: {color: 'var(--dark-grey)'}}>
-          {errorMsg ? error : helper}
+        <span className={errorMsg ? error: null}>
+          {errorMsg ? error : helper ? helper : undefined}
         </span>
     </StyledShortTextInput>
   )
