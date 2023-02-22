@@ -18,7 +18,7 @@ const Components = () => {
   return (
     <Layout>
       <Button text="Submit" secondary small />
-      <ShortTextInput label="Email*" type="email" helper="yourname@example.com" error="Please enter a valid email address in the format: yourname@example.com" />
+      <ShortTextInput label="Email*" type="email" required="true" helper="yourname@example.com" error="Please enter a valid email address in the format: yourname@example.com" />
       <LongtextInput />
       <CallToAction
         title="Title Goes Here"
