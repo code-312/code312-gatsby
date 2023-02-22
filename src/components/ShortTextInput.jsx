@@ -2,14 +2,14 @@ import React, {useState} from 'react'
 import styled from "styled-components"
 
 const StyledShortTextInput = styled.section`
-  width: 23rem;
+  width: 21.6875rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* padding: 1em 0; */
     
   div {
-    width: 23rem;
+    width: 21.6875rem;
+    height: 3.6875rem;
     border: 1px solid var(--dark-grey);
     border-radius: 2.2px;
     padding: .1rem .5rem;
@@ -26,13 +26,12 @@ const StyledShortTextInput = styled.section`
   
   label {
     font-weight: 300;
-    font-size: .8em;
+    font-size: .875rem;
     color: var(--dark-grey);
     display: block;
   }
   
   input {
-    width: 21rem;
     border: none;
     resize: none;
     font-weight: 400;
@@ -45,9 +44,9 @@ const StyledShortTextInput = styled.section`
   }
   
   span {
-    width: 23rem;
-    height: 2.5em;
-    font-size: .8em;
+    width: 21.6875rem;
+    height: 3rem;
+    font-size: .875rem;
     font-weight: 100;
     color: var(--dark-grey);
   }
@@ -55,9 +54,10 @@ const StyledShortTextInput = styled.section`
   .errorBorder {
   border: 2px solid red;
   }
-
+  
   .errorText {
     color: red;
+    font-size: 1rem;
   }
   `
 
@@ -91,9 +91,9 @@ const ShortTextInput = ({ type, label, error, helper, required }) => {
           onInvalid={throwError}
           />
       </div>
-        <span className={errorMsg ? "errorText" : null}>
-          {errorMsg ? error : helper ? helper : undefined}
-        </span>
+        {(helper || errorMsg) ? <span className={errorMsg ? "errorText" : null}>           {errorMsg ? error : helper}
+        </span> : undefined}
+
     </StyledShortTextInput>
   )
 }
