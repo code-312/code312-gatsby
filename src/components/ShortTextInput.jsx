@@ -69,17 +69,9 @@ const ShortTextInput = ({ type, label, error, helper, required }) => {
     setText(e.target.value)
   }
 
-  const throwError = () => {
-    toggleErrorMsg(true)
-  }
-
-  const resetError = () => {
-    if (errorMsg) {toggleErrorMsg(true)}
-  }
-
   return (
     <StyledShortTextInput>
-      <div onClick={resetError} className={errorMsg ? "errorBorder" : null}>
+      <div className={errorMsg ? "errorBorder" : null}>
         <label for="short-text-input">{label}</label>
         <input
           name="short-text-input"
@@ -88,10 +80,9 @@ const ShortTextInput = ({ type, label, error, helper, required }) => {
           onChange={handleChange}
           type={type}
           required={required}
-          onInvalid={throwError}
           />
       </div>
-        {(helper || errorMsg) ? <span className={errorMsg ? "errorText" : null}>           {errorMsg ? error : helper}
+        {(helper || error) ? <span className={error ? "errorText" : null}>{error ? error : helper}
         </span> : undefined}
 
     </StyledShortTextInput>
