@@ -6,9 +6,7 @@ import Nav from './Nav'
 import Footer from './Footer'
 import styled from 'styled-components'
 
-const StyledHeader = styled.header`
-  background: var(--cfa-red);
-`
+const StyledHeader = styled.header``
 
 const Layout = ({ children }) => {
   return (
