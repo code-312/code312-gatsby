@@ -7,19 +7,8 @@ const StyledHeading = styled.div`
   padding: 4rem 1.5rem 3rem;
   max-width: 35.1875rem;
 
-  .brow {
-    font-size: 1.125rem;
-    font-weight: 600;
+  .eyebrow-1 {
     text-transform: uppercase;
-  }
-
-  .heading {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-
-  .description {
-    font-weight: 400;
   }
 `
 
@@ -36,13 +25,13 @@ const Heading = ({
       <HeadingTag>
         {browText && (
           <>
-            <span className="brow">{browText}</span>
+            <span className="eyebrow-1">{browText}</span>
             <br />
           </>
         )}
-        <span className="heading">{headingText}</span>
+        <span className="heading-2">{headingText}</span>
       </HeadingTag>
-      {description && <p className="description">{description}</p>}
+      {description && <p className="p1-body">{description}</p>}
     </StyledHeading>
   )
 }
