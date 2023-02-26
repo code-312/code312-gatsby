@@ -11,11 +11,18 @@ import TestImage from '../images/TestImage.png'
 import skyline from '../images/skyline.svg'
 import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
+import Heading from '../components/Heading'
 import LongtextInput from '../components/LongTextInput'
 
 const Components = () => {
   return (
     <Layout>
+      <Heading
+        browText="Volunteer Expectations"
+        headingText="Our culture is scrappy"
+        description="this content describes this section"
+        headingLevel="3"
+      />
       <Button text="Submit" secondary small />
       <LongtextInput />
       <CallToAction

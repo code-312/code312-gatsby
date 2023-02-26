@@ -67,6 +67,179 @@ const GlobalStyles = createGlobalStyle`
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
   }
+
+  .heading-1 {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.5;
+
+    @media (min-width: 40.5rem) {
+      font-size: 2.625rem;
+      line-height: 3.438;
+    }
+  }
+  .heading-2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 0.813;
+
+    @media (min-width: 40.5rem) {
+      font-size: 2rem;
+      line-height: 2.625;
+    }
+  }
+  .heading-3 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.438;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.5rem;
+      line-height: 1.938;
+    }
+  }
+  .heading-4 {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.313;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.125rem;
+      line-height: 1.438;
+    }
+  }
+  .heading-5 {
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.125;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1rem;
+      line-height: 1.313;
+    }
+  }
+  .heading-6 {
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 1;
+
+    @media (min-width: 40.5rem) {
+      font-size: 0.875rem;
+      line-height: 1.125;
+    }
+  }
+  .eyebrow-1 {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.313;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.125rem;
+      line-height: 1.438;
+    }
+  }
+  .eyebrow-2 {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.125;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1rem;
+      line-height: 1.313;
+    }
+  }
+  .eyebrow-3 {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1;
+
+    @media (min-width: 40.5rem) {
+      font-size: 0.875rem;
+      line-height: 1.125;
+    }
+  }
+  .p1-body {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.25rem;
+      line-height: 1.875;
+    }
+  }
+  .p1-strong {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.25rem;
+      line-height: 1.875;
+    }
+  }
+  .p2-body {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.313;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+  .p3-body {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1;
+
+    @media (min-width: 40.5rem) {
+      font-size: 0.875rem;
+      line-height: 1.313;
+    }
+  }
+  .label-1 {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.313;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.25rem;
+      line-height: 1.625;
+    }
+  }
+  .label-2 {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.125;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1rem;
+      line-height: 1.313;
+    }
+  }
+  .label-3 {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1;
+
+    @media (min-width: 40.5rem) {
+      font-size: 0.875rem;
+      line-height: 1.125;
+    }
+  }
+  .quote {
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.875;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.75rem;
+      line-height: 2.625;
+    }
+  }
+
+
 `
 
 export default GlobalStyles
