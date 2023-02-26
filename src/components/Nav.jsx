@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import hamburgerOpenMenu from '../images/hamburger-open-menu.svg'
 import brigadeLogo from '../images/cfc_logo_2021.svg'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
+import MobileNav from './MobileNav'
+import useWindow from '../hooks/useWindow'
 
 const StyledNav = styled.nav`
   height: 6rem;
@@ -14,9 +15,23 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   background: var(--white);
+  overflow: hidden;
 
   .hamburger-menu {
     display: none;
+    border: 1px solid red;
+
+    @media (max-width: 320px) {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 649px) {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .internal-links {
@@ -61,11 +76,13 @@ const StyledNav = styled.nav`
 `
 
 const Nav = () => {
+  const windowSize = useWindow()
+
+  if (windowSize.width < 1200) {
+    return <MobileNav />
+  }
   return (
     <StyledNav className="navbar" aria-label="main">
-      <button aria-label="open" className="hamburger-menu">
-        <img src={hamburgerOpenMenu} alt="open menu" aria-hidden="true" />
-      </button>
       <ul className="internal-links label-1">
         <li id="logo-container">
           <Link to="/">
