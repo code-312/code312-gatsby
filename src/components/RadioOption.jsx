@@ -88,34 +88,47 @@ const StyledRadioOption = styled.div`
         }
       }
     }
+  }
 
-    .error {
-      border: 1px solid var(--dark-red);
-      color: var(--dark-red);
-      background: var(--white);
+  .selected {
+    border: 1px solid var(--dark-blue);
+    color: var(--white);
+    background: var(--dark-blue);
 
-      input[type='radio'] {
-        border: 1px solid var(--dark-red);
+    input[type='radio'] {
+      border: 1px solid var(--white);
 
-        :before {
-          box-shadow: inset 1rem 1rem var(--dark-red);
-        }
-      }
-    }
-
-    .disabled {
-      cursor: not-allowed;
-      pointer-events: none;
-      border: 1px solid var(--dark-grey);
-      color: var(--dark-grey);
-      background: var(--light-grey);
-
-      input[type='radio'] {
-        border: 1px solid var(--dark-grey);
+      :before {
+        box-shadow: inset 1rem 1rem var(--white);
       }
     }
   }
 
+  .error {
+    border: 1px solid var(--dark-red);
+    color: var(--dark-red);
+    background: var(--white);
+
+    input[type='radio'] {
+      border: 1px solid var(--dark-red);
+
+      :before {
+        box-shadow: inset 1rem 1rem var(--dark-red);
+      }
+    }
+  }
+
+  .disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    border: 1px solid var(--dark-grey);
+    color: var(--dark-grey);
+    background: var(--light-grey);
+
+    input[type='radio'] {
+      border: 1px solid var(--dark-grey);
+    }
+  }
   .error-text {
     color: var(--dark-red);
     font-size: 1rem;
@@ -138,7 +151,7 @@ export const SampleRadioButtons = ({
 }) => {
   return (
     <StyledSampleRadioButtons>
-      <RadioOption optionLabel="Sample Option" error />
+      <RadioOption optionLabel="Sample Option" error disabled />
       <RadioOption optionLabel="Sample Option" />
     </StyledSampleRadioButtons>
   )
@@ -150,9 +163,12 @@ const RadioOption = ({ optionLabel, disabled, error }) => {
   const handleActive = () => {
     setActive(!active)
   }
+
+  let buttonContainer = ['button-container']
+
   return (
     <StyledRadioOption>
-      <div className="button-container">
+      <div className={buttonContainer}>
         <input type="radio" name="radio" onChange={handleActive} />
         <label className="form-control" htmlFor={optionLabel}>
           {optionLabel}
