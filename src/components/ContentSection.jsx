@@ -33,24 +33,12 @@ const StyledContentSection = styled.section`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.938rem;
     color: var(--blizzard-black);
   }
 
   .info > h3 > span {
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.313rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-  }
-
-  .info > p {
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .info > a {
@@ -59,9 +47,6 @@ const StyledContentSection = styled.section`
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.125rem;
     width: 6.25rem;
     height: 2.125rem;
     border: 2px solid var(--dark-red);
@@ -88,18 +73,22 @@ const ContentSection = ({
   return (
     <StyledContentSection>
       <div className="info">
-        <h3>
-          <span>{eyebrowText ? eyebrowText : 'Organizations'}</span>
+        <h3 className="heading-2">
+          <span className="eyebrow-1">
+            {eyebrowText ? eyebrowText : 'Organizations'}
+          </span>
           {mainHeading
             ? mainHeading
             : 'Are you a Chicagoland nonprofit that needs some tech help?'}
         </h3>
-        <p>
+        <p className="p1-body">
           {content
             ? content
             : "Have an idea how to make your community better? You've come to the right place. Either contact us or come to one of our meetups to get the conversation started. "}
         </p>
-        <Link to={linkUrl}>{linkText ? linkText : 'Learn More'}</Link>
+        <Link to={linkUrl} className="label-2">
+          {linkText ? linkText : 'Learn More'}
+        </Link>
       </div>
       <div className="image-container">
         <img src={imgUrl ? imgUrl : TestImage} alt={imageDescription} />

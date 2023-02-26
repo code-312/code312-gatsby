@@ -6,12 +6,12 @@ import longArrowAltRight from '../images/join-us/long-arrow-alt-right.svg'
 const Checklist = () => {
   return (
     <section>
-      <h3 class="joinHeader">Ready To Join?</h3>
-      <p>Complete the pre-onboarding checklist</p>
+      <h3 className="heading-3">Ready To Join?</h3>
+      <p className="p2-body">Complete the pre-onboarding checklist</p>
       <ul class="joinChecklist">
         <li>
           <img src={checkmark} alt="checkmark" class="joinCheckmark" />
-          <Link to="/projects" target="_blank">
+          <Link to="/projects" target="_blank" className="label-2">
             Review our active projects
             <img src={longArrowAltRight} alt="arrow" />
           </Link>
@@ -22,6 +22,7 @@ const Checklist = () => {
             href="https://docs.google.com/presentation/d/1_7zd36CeHqi15DTqL3Wmh3dLCiN8EVbfW2iy1j-gs0M/edit#slide=id.g113339d9e72_0_56"
             target="_blank"
             rel="noreferrer"
+            className="label-2"
           >
             Review &amp; agree to our code of conduct
             <img src={longArrowAltRight} alt="arrow" rel="noopener" />
@@ -33,6 +34,7 @@ const Checklist = () => {
             href="https://code-for-chicago-slack-invite.herokuapp.com/"
             target="_blank"
             rel="noreferrer"
+            className="label-2"
           >
             Join our Slack workspace
             <img src={longArrowAltRight} alt="arrow" />
