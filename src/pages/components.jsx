@@ -13,6 +13,8 @@ import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
 import Heading from '../components/Heading'
 import LongtextInput from '../components/LongTextInput'
+import Checklist from '../components/Checklist'
+import Quote from '../components/Quote'
 
 const Components = () => {
   return (
@@ -23,6 +25,8 @@ const Components = () => {
         description="this content describes this section"
         headingLevel="3"
       />
+      <Checklist />
+      <Quote />
       <Button text="Submit" secondary small />
       <LongtextInput />
       <CallToAction

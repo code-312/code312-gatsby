@@ -19,7 +19,6 @@ const StyledFooter = styled.footer`
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    font-size: 0.75rem;
   }
 
   .footer-links {
@@ -59,6 +58,7 @@ const StyledFooter = styled.footer`
     padding: 0;
     margin: 0;
   }
+
   .social-img {
     min-width: 1.5rem;
   }
@@ -66,7 +66,6 @@ const StyledFooter = styled.footer`
   .footer-text {
     text-align: center;
     color: var(--dark-grey);
-    font-weight: 400;
 
     a {
       color: var(--dark-blue);
@@ -80,14 +79,6 @@ const StyledFooter = styled.footer`
     .footer-content {
       gap: 1em;
     }
-
-    .donate-button-container > a {
-      font-size: 0.875rem;
-    }
-
-    .footer-text > p {
-      font-size: 0.875rem;
-    }
   }
 
   @media (min-width: 1200px) {
@@ -99,9 +90,6 @@ const StyledFooter = styled.footer`
     .footer-links {
       flex-direction: row;
       gap: 3rem;
-    }
-    .internal-links {
-      font-size: 1rem;
     }
   }
 `
@@ -115,14 +103,14 @@ const Footer = () => {
               href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
               target="blank"
               rel="noopener noreferrer"
-              className="button donateButton"
+              className="button donateButton label-3"
             >
               Donate
             </a>
 
             <img src={longArrowAltRight} alt="" />
           </div>
-          <ul className="internal-links">
+          <ul className="internal-links p2-body">
             <li activeClassName="active">
               <Link to="/projects">Projects</Link>
             </li>
@@ -168,7 +156,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer-text">
-          <p>
+          <p className="p3-body">
             <a
               href="https://codeforamerica.org/"
               target="_blank"
