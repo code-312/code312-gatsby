@@ -24,6 +24,7 @@ const StyledShortTextInput = styled.section`
     border: none;
     outline: none;
     background-color: var(--light-grey);
+    pointer-events: none;
   }
 
   label {
@@ -50,12 +51,9 @@ const StyledShortTextInput = styled.section`
     transition-duration: 200ms;
   }
 
-  .active-height {
-    height: 1.5rem;
-  }
-
   input:focus,
-  input:active {
+  input:active,
+  .active-height {
     outline: none;
     height: 1.5rem;
   }
@@ -95,7 +93,6 @@ const ShortTextInput = ({ type, label, error, helper, required, disabled }) => {
   return (
     <StyledShortTextInput>
       <label
-        disabled={disabled ? true : false}
         className={
           (text || focus ? 'p3-body' : 'p2-body') +
           ' ' +
@@ -103,8 +100,8 @@ const ShortTextInput = ({ type, label, error, helper, required, disabled }) => {
           ' ' +
           (disabled ? 'disabled' : '')
         }
-        onFocus={() => focusToggle()}
-        onBlur={() => focusToggle()}
+        onFocus={focusToggle}
+        onBlur={focusToggle}
       >
         {label}
         <input

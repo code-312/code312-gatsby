@@ -29,9 +29,8 @@ const Components = () => {
         label="Email*"
         type="email"
         required
-        // helper="this is help"
-        // error="This is an error"
-        disabled
+        helper="This is helper text"
+        error="This is an error"
       />
       <LongtextInput />
       <CallToAction
