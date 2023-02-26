@@ -36,12 +36,7 @@ const StyledCard = styled.article`
     gap: 0.5rem;
   }
 
-  .card-content {
-    font-weight: 400;
-  }
-
   .card-link {
-    font-weight: 600;
     color: var(--dark-red);
     width: 10.603rem;
     display: block;
@@ -80,7 +75,7 @@ const Card = ({
             </span>
             {mainHeading ? mainHeading : 'Title'}
           </h3>
-          <p className="card-content">
+          <p className="p2-body ">
             {content
               ? content
               : 'content dkajskldjas kdnaskdnajs djansljdnasld'}
@@ -90,13 +85,13 @@ const Card = ({
           {isDisabled ? (
             <Link
               to={linkUrl}
-              className="card-link disabled"
+              className="card-link label-2 disabled"
               disabled={isDisabled}
             >
               More Info Coming Soon
             </Link>
           ) : (
-            <Link to={linkUrl} className="card-link">
+            <Link to={linkUrl} className="card-link label-2">
               Join us on Slack
               <img src={longRightArrowIcon} alt="right-arrow" />
             </Link>

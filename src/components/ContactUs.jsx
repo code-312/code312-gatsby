@@ -6,15 +6,17 @@ const StyledSection = styled.section`
   width: min-content;
   color: var(--white);
   background-color: var(--blizzard-blue);
+
   h3 {
     text-align: center;
-    font-size: 2.5rem;
     padding-top: 2rem;
   }
+
   form {
     display: flex;
     flex-direction: column;
     margin: 0 2rem 0 2rem;
+
     input,
     textarea {
       margin: 1rem 0;
@@ -28,9 +30,7 @@ const StyledSection = styled.section`
         border: 2px solid var(--dark-red);
       }
     }
-    label {
-      font-weight: bold;
-    }
+
     #message {
       height: 15rem;
       width: 37.5rem;
@@ -67,9 +67,11 @@ const StyledSection = styled.section`
 
 const ContactUs = () => (
   <StyledSection>
-    <h3>Contact Us</h3>
+    <h3 className="heading-2">Contact Us</h3>
     <form>
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email" className="label-2">
+        Email
+      </label>
       <input
         type="email"
         name="email"
@@ -77,14 +79,19 @@ const ContactUs = () => (
         placeholder="email"
         maxLength={50}
       />
-      <label htmlFor="message">Message</label>
+      <label htmlFor="message" className="label-2">
+        Message
+      </label>
       <textarea
         name="message"
         id="message"
         placeholder="message"
         maxLength={300}
+        className="p2-body"
       ></textarea>
-      <button type="submit">Submit</button>
+      <button type="submit" className="label-2">
+        Submit
+      </button>
     </form>
   </StyledSection>
 )
