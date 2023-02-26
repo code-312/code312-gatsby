@@ -25,7 +25,13 @@ const Components = () => {
         headingLevel="3"
       />
       <Button text="Submit" secondary small />
-      <ShortTextInput label="Email*" type="email" required="true" />
+      <ShortTextInput
+        label="Email*"
+        type="email"
+        required
+        helper="this is help"
+        error="This is an error"
+      />
       <LongtextInput />
       <CallToAction
         title="Title Goes Here"

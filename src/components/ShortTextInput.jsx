@@ -2,23 +2,23 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const StyledShortTextInput = styled.section`
-  width: 21.6875rem;
+  max-width: 37.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  div {
-  }
-
   label:active {
-    border: 2px solid var(--button-outline-blue);
+    border: 2px solid var(--medium-blue);
+    color: var(--dark-blue);
   }
 
   label:focus-within {
-    border: 2px solid var(--medium-blue);
+    outline: 2px solid var(--medium-blue);
   }
 
-  
+  label:hover {
+    border: 2px solid var(--medium-blue);
+  }
 
   label {
     width: 21.6875rem;
@@ -26,24 +26,32 @@ const StyledShortTextInput = styled.section`
     border: 1px solid var(--dark-grey);
     border-radius: 2.2px;
     padding: 0.1rem 0.5rem;
-    font-weight: 300;
-    font-size: 0.875rem;
     color: var(--dark-grey);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   input {
+    height: 0;
     display: block;
     border: none;
     resize: none;
     font-weight: 400;
-    color: var(--tints-blizzard-black);
+    color: var(--blizzard-black);
     margin: 0 0 0.2rem 0;
+    transition-property: height;
+    transition-duration: 200ms;
+  }
+
+  .active-height {
+    height: 1.5rem;
   }
 
   input:focus,
   input:active {
     outline: none;
+    height: 1.5rem;
   }
 
   span {
@@ -66,6 +74,7 @@ const StyledShortTextInput = styled.section`
 
 const ShortTextInput = ({ type, label, error, helper, required }) => {
   const [text, setText] = useState('')
+  const [focus, setFocus] = useState(false)
 
   const handleChange = (e) => {
     setText(e.target.value)
@@ -73,7 +82,15 @@ const ShortTextInput = ({ type, label, error, helper, required }) => {
 
   return (
     <StyledShortTextInput>
-      <label className={error ? 'errorBorder' : null}>
+      <label
+        className={
+          (text || focus ? 'p3-body' : 'p2-body') +
+          ' ' +
+          (error ? 'errorBorder' : '')
+        }
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
+      >
         {label}
         <input
           name="short-text-input"
@@ -82,13 +99,14 @@ const ShortTextInput = ({ type, label, error, helper, required }) => {
           onChange={handleChange}
           type={type}
           required={required}
+          className={text ? 'active-height' : null}
         />
       </label>
-      {helper || error ? (
+      {(helper || error) && (
         <span className={error ? 'errorText' : null}>
           {error ? error : helper}
         </span>
-      ) : undefined}
+      )}
     </StyledShortTextInput>
   )
 }
