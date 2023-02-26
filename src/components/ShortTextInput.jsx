@@ -20,6 +20,12 @@ const StyledShortTextInput = styled.section`
     border: 2px solid var(--medium-blue);
   }
 
+  .disabled {
+    border: none;
+    outline: none;
+    background-color: var(--light-grey);
+  }
+
   label {
     width: 21.6875rem;
     height: 3.6875rem;
@@ -62,17 +68,17 @@ const StyledShortTextInput = styled.section`
     color: var(--dark-grey);
   }
 
-  .errorBorder {
+  .error-border {
     border: 2px solid red;
   }
 
-  .errorText {
+  .error-text {
     color: red;
     font-size: 1rem;
   }
 `
 
-const ShortTextInput = ({ type, label, error, helper, required }) => {
+const ShortTextInput = ({ type, label, error, helper, required, disabled }) => {
   const [text, setText] = useState('')
   const [focus, setFocus] = useState(false)
 
@@ -80,19 +86,29 @@ const ShortTextInput = ({ type, label, error, helper, required }) => {
     setText(e.target.value)
   }
 
+  const focusToggle = () => {
+    if (!disabled) {
+      setFocus(!focus)
+    }
+  }
+
   return (
     <StyledShortTextInput>
       <label
+        disabled={disabled ? true : false}
         className={
           (text || focus ? 'p3-body' : 'p2-body') +
           ' ' +
-          (error ? 'errorBorder' : '')
+          (error ? 'error-border' : '') +
+          ' ' +
+          (disabled ? 'disabled' : '')
         }
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
+        onFocus={() => focusToggle()}
+        onBlur={() => focusToggle()}
       >
         {label}
         <input
+          disabled={disabled ? true : false}
           name="short-text-input"
           id="short-text-input"
           value={text}
@@ -103,7 +119,7 @@ const ShortTextInput = ({ type, label, error, helper, required }) => {
         />
       </label>
       {(helper || error) && (
-        <span className={error ? 'errorText' : null}>
+        <span className={error ? 'error-text' : null}>
           {error ? error : helper}
         </span>
       )}
