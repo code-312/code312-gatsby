@@ -1,6 +1,7 @@
 import React from 'react'
-import {Link} from 'gatsby'
-import styled from "styled-components"
+import { Link } from 'gatsby'
+import arrowImage from '../images/long-arrow-right-red.svg' 
+import styled from 'styled-components'
 
 const StyledButton = styled.div`
   /* sample styling, will get overwritten to match figma template */
@@ -8,106 +9,62 @@ const StyledButton = styled.div`
   button {
     text-decoration: none;
     outline: none;
-    color: #001426;
+    color: var(--blizzard-black);
     cursor: pointer;
-    margin-left: 13px;
-    margin-bottom: 22px;
+    img {
+      padding-left: 0.25rem;
+    }
   }
   .primary {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
-    gap: 0.3rem;
-    /* position: absolute; */
     width: 7rem;
     height: 2.3rem;
-    left: 1rem;
-    top: 6rem;
     background: var(--white);
-    border: 3px solid var(--error-red);
+    border: 3px solid var(--dark-red);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
+    &.small {
+      width: 6rem;
+      height: 2rem;
+    }
   }
-  .primary:hover {
-    color: var(--white);
-    /* position: absolute; */
-    height: 34px;
-    left: 9rem;
-    background: var(--error-red);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.6);
+  .primary,
+  .primary.small {
+    &:hover {
+      color: var(--white);
+      background: var(--dark-red);
+      box-shadow: 2px 3px 4px var(--shadow-black);
+      border-radius: 2.2px;
+      img {
+        fill: white;
+      }
+    }
+    &:active {
+      background: var(--darker-red);
+      box-shadow: none;
+    }
+    &:focus {
+      border: 2px solid var(--white);
+      outline: 2px solid var(--medium-blue);
+      border-radius: 2.2px;
+    }
+    &:disabled {
+      color: var(--dark-grey);
+      background: var(--light-grey);
+      border: none;
+      box-shadow: none;
+    }
   }
-  /* .primary:focus {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: .13rem;
-    gap: 0.25rem;
-    position: absolute;
-    width: 7rem;
-    height: 3rem;
-    left: 27rem;
-    top: 100px;
-    border: 2px solid #4eb2e3;
-    border-radius: 2.2px; 
-  } */
-  .primary:disabled {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    gap: 4px;
-
-    position: absolute;
-    width: 103.21px;
-    height: 37px;
-    left: 570px;
-    top: 102px;
-    background: #efefef;
-    border-radius: 2.2px;
-  }
-  .primarysmall {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    /* position: absolute; */
-    width: 6rem;
-    height: 2rem;
-    left: 1rem;
-    top: 2rem;
-    gap: 0.25rem;
-    background-color: var(--white);
-    border: 3px solid var(--error-red);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 2.2px;
-  }
-  .primarysmall:hover {
-    color: var(--white);
-    left: 9rem;
-    background: #d90000;
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.6);
-  }
-  .primarysmall:active {
-    left: 17rem;
-  }
-  /* .primarysmall:focus {
-  } */
   .secondary {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
-    gap: 0.6rem;
-    /* position: absolute; */
     width: 5rem;
     height: 2rem;
-    left: 1rem;
-    top: 15rem;
     background: var(--white);
     border: 2px solid var(--blizzard-blue);
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
@@ -120,11 +77,8 @@ const StyledButton = styled.div`
     align-items: center;
     padding: 0.5rem 1rem;
     gap: 0.6rem;
-    /* position: absolute; */
     width: 4.6rem;
     height: 2rem;
-    left: 1rem;
-    top: 11rem;
     background: var(--white);
     border: 2px solid var(--blizzard-blue);
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
@@ -143,35 +97,43 @@ const StyledButton = styled.div`
   }
 `
 
-const Button = ({ text, link, secondary, textBtn, small, handleClick }) => {
+const Button = ({ text, link, secondary, textBtn, small, handleClick, arrow }) => {
   let className = ['primary']
   if (secondary) className = ['secondary']
   if (textBtn) className = ['textBtn']
   if (small) className.push('small')
-  className = className.join('');
-    
+  className = className.join(' ')
+
   return (
-    < StyledButton >
-       {link ? (
+    <StyledButton>
+      {link ? (
         link[0] !== '/' ? (
-          <a className={className} href={link} target="_blank" rel="noopener noreferrer">
+          <a
+            className={className}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {text}
+            {arrow && <img src={arrowImage}/>}
           </a>
         ) : (
           <Link to={link} className={className}>
             {text}
+            {arrow && <img src={arrowImage}/>}
           </Link>
         )
       ) : (
-          <button className={className} onClick={handleClick}>
-            {text}
+        <button className={className} onClick={handleClick}>
+          {text}
+          {arrow && <img src={arrowImage}/>}
         </button>
       )}
     </StyledButton>
-  ) 
+  )
 }
 
-export default Button;
+export default Button
 
 // instructions for use as a component:
 
