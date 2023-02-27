@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import arrowImage from '../images/long-arrow-right-red.svg' 
 import styled from 'styled-components'
+import { FaLongArrowAltRight } from 'react-icons/fa'
+import textArrow from '../images/text-button-arrow.svg'
 
 const StyledButton = styled.div`
   /* sample styling, will get overwritten to match figma template */
@@ -11,7 +12,7 @@ const StyledButton = styled.div`
     outline: none;
     color: var(--blizzard-black);
     cursor: pointer;
-    img {
+    svg {
       padding-left: 0.25rem;
     }
   }
@@ -30,6 +31,9 @@ const StyledButton = styled.div`
       width: 6rem;
       height: 2rem;
     }
+    svg {
+      fill: red;
+    }
   }
   .primary,
   .primary.small {
@@ -38,8 +42,8 @@ const StyledButton = styled.div`
       background: var(--dark-red);
       box-shadow: 2px 3px 4px var(--shadow-black);
       border-radius: 2.2px;
-      img {
-        fill: white;
+      svg {
+        fill: var(--white);
       }
     }
     &:active {
@@ -56,6 +60,9 @@ const StyledButton = styled.div`
       background: var(--light-grey);
       border: none;
       box-shadow: none;
+      svg {
+        fill:var(--dark-grey)
+      }
     }
   }
   .secondary {
@@ -97,7 +104,15 @@ const StyledButton = styled.div`
   }
 `
 
-const Button = ({ text, link, secondary, textBtn, small, handleClick, arrow }) => {
+const Button = ({
+  text,
+  link,
+  secondary,
+  textBtn,
+  small,
+  handleClick,
+  arrow,
+}) => {
   let className = ['primary']
   if (secondary) className = ['secondary']
   if (textBtn) className = ['textBtn']
@@ -115,18 +130,18 @@ const Button = ({ text, link, secondary, textBtn, small, handleClick, arrow }) =
             rel="noopener noreferrer"
           >
             {text}
-            {arrow && <img src={arrowImage}/>}
+            {arrow && <img src={arrowImage} alt="right arrow" />}
           </a>
         ) : (
           <Link to={link} className={className}>
             {text}
-            {arrow && <img src={arrowImage}/>}
+            {arrow && <img src={arrowImage} alt="right arrow" />}
           </Link>
         )
       ) : (
-        <button className={className} onClick={handleClick}>
+        <button className={className} onClick={handleClick} >
           {text}
-          {arrow && <img src={arrowImage}/>}
+          {arrow && <FaLongArrowAltRight alt="right arrow" />} 
         </button>
       )}
     </StyledButton>
