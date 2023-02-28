@@ -1,6 +1,7 @@
 import React from 'react'
 import CallToAction from '../components/CallToAction'
 import Button from '../components/Button'
+import ShortTextInput from '../components/ShortTextInput'
 import Card from '../components/Card'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
@@ -28,6 +29,13 @@ const Components = () => {
       <Checklist />
       <Quote />
       <Button text="Submit" secondary small />
+      <ShortTextInput
+        label="Email*"
+        type="email"
+        required
+        helper="This is helper text"
+        error="This is an error"
+      />
       <LongtextInput />
       <CallToAction
         title="Title Goes Here"

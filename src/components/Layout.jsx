@@ -16,7 +16,6 @@ const Layout = ({ children }) => {
       <StyledHeader>
         <Nav />
       </StyledHeader>
-
       <main>{children}</main>
       <Footer></Footer>
     </>
