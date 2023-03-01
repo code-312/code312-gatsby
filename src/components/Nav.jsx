@@ -73,12 +73,21 @@ const StyledNav = styled.nav`
   .social-img {
     min-width: 1.5rem;
   }
+
+  .donateButton {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--dark-red);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 2.2px;
+    text-decoration: none;
+    color: var(--blizzard-black);
+  }
 `
 
 const Nav = () => {
-  const windowSize = useWindow()
+  const windowWidth = useWindow()
 
-  if (windowSize.width < 1200) {
+  if (windowWidth < 1200) {
     return <MobileNav />
   }
   return (
@@ -140,7 +149,7 @@ const Nav = () => {
           href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
           target="blank"
           rel="noopener noreferrer"
-          className="button donateButton label-2"
+          className="button donateButton label-3"
         >
           Donate
         </a>
