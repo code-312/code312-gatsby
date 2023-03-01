@@ -6,22 +6,27 @@ import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
 
 const StyledMobileNav = styled.nav`
+  width: 100%;
+
   .internal-links {
     list-style: none;
     padding: 0;
 
     li {
-      height: 53px;
+      height: 3.313rem;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-    }
 
-    li a {
-      padding: 1rem;
-      text-decoration: none;
-      color: var(--blizzard-black);
-      border-bottom: 1px solid var(--light-grey);
+      a {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--blizzard-black);
+        border-bottom: 1px solid var(--light-grey);
+      }
     }
   }
 
