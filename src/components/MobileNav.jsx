@@ -10,6 +10,12 @@ import { Link } from 'gatsby'
 const StyledMobileNav = styled.nav`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  background: var(--white);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
 
   .menu-top {
     display: flex;
@@ -24,7 +30,9 @@ const StyledMobileNav = styled.nav`
     }
   }
 
-  .hamburger-menu {
+  .hambuger-button {
+    background: transparent;
+    border: none;
     cursor: pointer;
   }
 
@@ -55,12 +63,13 @@ const MobileNav = ({ windowWidth }) => {
   return (
     <StyledMobileNav>
       <div className="menu-top">
-        <img
-          src={isExpanded ? mobileMenuExpanded : mobileMenuClosed}
-          alt="hamburger menu icon"
-          onClick={handleMenuExpansion}
-          className={isExpanded ? 'Close menu icon' : 'Expand menu icon'}
-        />
+        <button className="hambuger-button" onClick={handleMenuExpansion}>
+          <img
+            src={isExpanded ? mobileMenuExpanded : mobileMenuClosed}
+            alt="hamburger menu icon"
+            className={isExpanded ? 'Close menu icon' : 'Expand menu icon'}
+          />
+        </button>
         <Link to="/">
           <img
             src={windowWidth < 648 ? CfCLogoMobile : brigadeLogo}
