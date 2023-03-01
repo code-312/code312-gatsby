@@ -52,20 +52,19 @@ const MobileNav = ({ windowWidth }) => {
     setIsExpanded((prev) => !prev)
   }
 
-  console.log(windowWidth)
   return (
     <StyledMobileNav>
       <div className="menu-top">
         <img
           src={isExpanded ? mobileMenuExpanded : mobileMenuClosed}
-          alt=""
+          alt="hamburger menu icon"
           onClick={handleMenuExpansion}
-          className="hamburger-menu"
+          className={isExpanded ? 'Close menu icon' : 'Expand menu icon'}
         />
         <Link to="/">
           <img
             src={windowWidth < 648 ? CfCLogoMobile : brigadeLogo}
-            alt=""
+            alt="CfC logo"
             className="brigade-logo"
           />
         </Link>
