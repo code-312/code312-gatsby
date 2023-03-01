@@ -17,23 +17,6 @@ const StyledNav = styled.nav`
   background: var(--white);
   overflow: hidden;
 
-  .hamburger-menu {
-    display: none;
-    border: 1px solid red;
-
-    @media (max-width: 320px) {
-      display: block;
-      width: 20px;
-      height: 20px;
-    }
-
-    @media (max-width: 649px) {
-      display: block;
-      width: 20px;
-      height: 20px;
-    }
-  }
-
   .internal-links {
     display: flex;
     align-items: center;
@@ -88,7 +71,7 @@ const Nav = () => {
   const windowWidth = useWindow()
 
   if (windowWidth < 1200) {
-    return <MobileNav />
+    return <MobileNav windowWidth={windowWidth} />
   }
   return (
     <StyledNav className="navbar" aria-label="main">
