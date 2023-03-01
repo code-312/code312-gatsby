@@ -7,7 +7,7 @@ import Footer from './Footer'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.8rem;
 `
 
 const Layout = ({ children }) => {
