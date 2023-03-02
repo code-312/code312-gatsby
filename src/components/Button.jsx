@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 import textArrow from '../images/text-button-arrow.svg'
-
 const StyledButton = styled.div`
   /* sample styling, will get overwritten to match figma template */
   a,
@@ -13,7 +12,8 @@ const StyledButton = styled.div`
     color: var(--blizzard-black);
     cursor: pointer;
     svg {
-      padding-left: 0.25rem;
+      margin-right: -.25rem;
+      padding: 0.12rem;
     }
   }
   .primary {
@@ -54,6 +54,11 @@ const StyledButton = styled.div`
       border: 2px solid var(--white);
       outline: 2px solid var(--medium-blue);
       border-radius: 2.2px;
+      background: var(--dark-red);
+      color:var(--white);
+      svg {
+        fill: var(--white)
+      }
     }
     &:disabled {
       color: var(--dark-grey);
@@ -61,7 +66,7 @@ const StyledButton = styled.div`
       border: none;
       box-shadow: none;
       svg {
-        fill:var(--dark-grey)
+        fill: var(--dark-grey);
       }
     }
   }
@@ -71,36 +76,53 @@ const StyledButton = styled.div`
     align-items: center;
     padding: 0.5rem 1rem;
     width: 5rem;
-    height: 2rem;
+    height: 2.31rem;
     background: var(--white);
     border: 2px solid var(--blizzard-blue);
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
+    &.small {
+      width: 4.63rem;
+      height: 2.13rem;
+    }
   }
-  .secondarysmall {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    gap: 0.6rem;
-    width: 4.6rem;
-    height: 2rem;
-    background: var(--white);
-    border: 2px solid var(--blizzard-blue);
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 2.2px;
+  .secondary,
+  .secondary.small {
+    &:hover {
+      box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.6);
+    }
+    &:active {
+      background: var(--blizzard-blue);
+      box-shadow: none;
+    }
+    &:focus {
+      background: var(--white);
+      border: 1.5px solid var(--medium-blue);
+      border-radius: 3.3px;
+      outline: 2px solid var(--medium-blue);
+    }
+    &:disabled {
+      border: 2px solid var(--light-grey);
+      color: var(--dark-grey);
+    }
   }
+
   .textBtn {
     width: 8.5rem;
-    height: 1.3rem;
+    height: 1.31rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    gap: 0.5rem;
+    padding: 0px;
     border: none;
-    color: var(--error-red);
+    color: var(--dark-red);
+    border-radius: 2.2px;
+    background: none;
+    &.small{
+      height: 1.12rem;
+      width: 5.75rem;
+      gap: 8px;
+    }
   }
 `
 
@@ -130,12 +152,12 @@ const Button = ({
             rel="noopener noreferrer"
           >
             {text}
-            {arrow && <img src={arrowImage} alt="right arrow" />}
+            {arrow && <img src={textArrow} alt="right arrow" />}
           </a>
         ) : (
           <Link to={link} className={className}>
             {text}
-            {arrow && <img src={arrowImage} alt="right arrow" />}
+            {arrow && <img src={textArrow} alt="right arrow" />}
           </Link>
         )
       ) : (
