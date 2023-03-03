@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { FaLongArrowAltRight } from 'react-icons/fa'
@@ -12,7 +12,7 @@ const StyledButton = styled.div`
     color: var(--blizzard-black);
     cursor: pointer;
     svg {
-      margin-right: -.25rem;
+      margin-right: -0.25rem;
       padding: 0.12rem;
     }
   }
@@ -55,9 +55,9 @@ const StyledButton = styled.div`
       outline: 2px solid var(--medium-blue);
       border-radius: 2.2px;
       background: var(--dark-red);
-      color:var(--white);
+      color: var(--white);
       svg {
-        fill: var(--white)
+        fill: var(--white);
       }
     }
     &:disabled {
@@ -118,7 +118,7 @@ const StyledButton = styled.div`
     color: var(--dark-red);
     border-radius: 2.2px;
     background: none;
-    &.small{
+    &.small {
       height: 1.12rem;
       width: 5.75rem;
       gap: 8px;
@@ -135,6 +135,8 @@ const Button = ({
   handleClick,
   arrow,
 }) => {
+  const [isDisabled, setIsDisabled] = useState(false);
+
   let className = ['primary']
   if (secondary) className = ['secondary']
   if (textBtn) className = ['textBtn']
@@ -161,9 +163,9 @@ const Button = ({
           </Link>
         )
       ) : (
-        <button className={className} onClick={handleClick} >
+        <button className={className} onClick={handleClick} disabled={isDisabled}>
           {text}
-          {arrow && <FaLongArrowAltRight alt="right arrow" />} 
+          {arrow && <FaLongArrowAltRight alt="right arrow" />}
         </button>
       )}
     </StyledButton>
