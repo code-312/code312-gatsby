@@ -13,16 +13,14 @@ const StyledMobileNav = styled.nav`
     padding: 0;
 
     li {
-      height: 3.313rem;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
 
       a {
+        height: 3.313rem;
         padding: 1rem;
         display: flex;
         align-items: center;
-        justify-content: center;
         text-decoration: none;
         color: var(--blizzard-black);
         border-bottom: 1px solid var(--light-grey);
@@ -48,10 +46,11 @@ const StyledMobileNav = styled.nav`
     height: 3.528rem;
 
     li {
-      height: 53px;
+      height: 3.313rem;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
+      text-align: center;
     }
 
     @media (min-width: 648px) {
