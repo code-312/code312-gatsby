@@ -15,7 +15,7 @@ const IndexPage = () => {
       <Button text={'Button'} secondary small />
       <Button text={'Button'} secondary />
       <Button text={'Link'} textBtn arrow link small />
-      <Button text={'Link'} textBtn arrow link />
+      <Button text={'Join Us on Slack'} textBtn arrow link />
     </Layout>
   )
 }

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 import textArrow from '../images/text-button-arrow.svg'
 const StyledButton = styled.div`
-  /* sample styling, will get overwritten to match figma template */
   a,
   button {
     text-decoration: none;
@@ -135,7 +134,7 @@ const Button = ({
   handleClick,
   arrow,
 }) => {
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false)
 
   let className = ['primary']
   if (secondary) className = ['secondary']
@@ -163,7 +162,11 @@ const Button = ({
           </Link>
         )
       ) : (
-        <button className={className} onClick={handleClick} disabled={isDisabled}>
+        <button
+          className={className}
+          onClick={handleClick}
+          disabled={isDisabled}
+        >
           {text}
           {arrow && <FaLongArrowAltRight alt="right arrow" />}
         </button>
