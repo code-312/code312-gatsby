@@ -73,6 +73,7 @@ const StyledButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    /* position: relative; */
     padding: 0.5rem 1rem;
     width: 5rem;
     height: 2.31rem;
@@ -96,9 +97,10 @@ const StyledButton = styled.div`
     }
     &:focus {
       background: var(--white);
-      border: 1.5px solid var(--medium-blue);
+      border: 1.5px solid var(--white);
       border-radius: 3.3px;
       outline: 2px solid var(--medium-blue);
+      box-shadow: inset 0 0 3px var(--medium-blue);
     }
     &:disabled {
       border: 2px solid var(--light-grey);
