@@ -16,16 +16,10 @@ const StyledCard = styled.article`
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.938rem;
   }
 
   .eyebrow-text {
-    font-weight: 600;
-    font-size: 1rem;
     text-transform: uppercase;
-    line-height: 1.313rem;
   }
 
   .card-details {
@@ -42,12 +36,7 @@ const StyledCard = styled.article`
     gap: 0.5rem;
   }
 
-  .card-content {
-    font-weight: 400;
-  }
-
   .card-link {
-    font-weight: 600;
     color: var(--dark-red);
     width: 10.603rem;
     display: block;
@@ -80,13 +69,13 @@ const Card = ({
       />
       <div className="card-details">
         <div className="content-container">
-          <h3 className="card-header">
-            <span className="eyebrow-text">
+          <h3 className="card-header heading-3">
+            <span className="eyebrow-text eyebrow-1">
               {eyebrowText ? eyebrowText : 'Subtitle'}
             </span>
             {mainHeading ? mainHeading : 'Title'}
           </h3>
-          <p className="card-content">
+          <p className="p2-body ">
             {content
               ? content
               : 'content dkajskldjas kdnaskdnajs djansljdnasld'}
@@ -96,13 +85,13 @@ const Card = ({
           {isDisabled ? (
             <Link
               to={linkUrl}
-              className="card-link disabled"
+              className="card-link label-2 disabled"
               disabled={isDisabled}
             >
               More Info Coming Soon
             </Link>
           ) : (
-            <Link to={linkUrl} className="card-link">
+            <Link to={linkUrl} className="card-link label-2">
               Join us on Slack
               <img src={arrow} alt="right-arrow" />
             </Link>

@@ -39,18 +39,12 @@ const StyledHeroSection = styled.section`
 
   .eyebrow-text {
     font-style: normal;
-    font-weight: 600;
     letter-spacing: 0.05em;
-    line-height: 1.313rem;
     text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     height: 1.313rem;
     color: var(--blizzard-black);
-
-    @media (min-width: 649px) {
-      font-size: 1.125rem;
-    }
 
     @media (min-width: 769px) {
       text-align: left;
@@ -59,14 +53,10 @@ const StyledHeroSection = styled.section`
 
   .main-heading {
     text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
     color: var(--blizzard-black);
-    line-height: 3.438rem;
     flex: none;
 
     @media (min-width: 649px) {
-      font-size: 2.625rem;
       margin: 0 3rem;
     }
     @media (min-width: 769px) {
@@ -118,12 +108,6 @@ const StyledHeroSection = styled.section`
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
     color: var(--blizzard-black);
-    font-weight: 600;
-    font-size: 0.875rem;
-
-    @media (min-width: 649px) {
-      font-size: 1rem;
-    }
   }
 `
 
@@ -137,13 +121,13 @@ const Hero = ({
   return (
     <StyledHeroSection>
       <div className="content-container">
-        <span className="eyebrow-text">
+        <span className="eyebrow-text eyebrow-1">
           {eyebrowText ? eyebrowText : 'A code for america brigade'}
         </span>
-        <h2 className="main-heading">
+        <h2 className="main-heading heading-1">
           {mainHeading ? mainHeading : 'Community service in a digital age'}
         </h2>
-        <button className="button">
+        <button className="button label-2">
           {buttonText ? buttonText : 'Get Started'}
         </button>
       </div>
