@@ -73,7 +73,6 @@ const StyledButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position: relative; */
     padding: 0.5rem 1rem;
     width: 5rem;
     height: 2.31rem;
@@ -107,7 +106,6 @@ const StyledButton = styled.div`
       color: var(--dark-grey);
     }
   }
-
   .textBtn {
     width: 8.5rem;
     height: 1.31rem;
@@ -119,10 +117,23 @@ const StyledButton = styled.div`
     color: var(--dark-red);
     border-radius: 2.2px;
     background: none;
+    text-decoration: none;
     &.small {
       height: 1.12rem;
       width: 5.75rem;
-      gap: 8px;
+    }
+  }
+  .textBtn,
+  .textBtn.small {
+    &:active {
+      color: var(--dark-red);
+      img {
+        display: none;
+      }
+    }
+    &:focus {
+      border: 2px solid var(--medium-blue);
+      border-radius: 2.2px;
     }
   }
 `
