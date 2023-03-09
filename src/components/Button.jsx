@@ -155,8 +155,6 @@ const Button = ({
   if (small) className.push('small')
   className = className.join(' ')
 
-  className = className.join(' ')
-
   return (
     <StyledButton>
       {link ? (
@@ -187,7 +185,6 @@ const Button = ({
         </button>
       )}
     </StyledButton>
-  )
   )
 }
 
