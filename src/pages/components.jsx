@@ -3,6 +3,7 @@ import CallToAction from '../components/CallToAction'
 import Button from '../components/Button'
 import ShortTextInput from '../components/ShortTextInput'
 import Card from '../components/Card'
+import CardBlock from '../components/CardBlock'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
 import Hero from '../components/Hero'
@@ -51,6 +52,12 @@ const Components = () => {
         imgUrl={CardPlaceholder}
         imageDescription={'image for testing components'}
       />
+      <CardBlock>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+      </CardBlock>
       <ContactUs />
       <ContentSection
         eyebrowText={'Eyebrow Text Goes Here'}

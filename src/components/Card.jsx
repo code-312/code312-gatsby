@@ -12,6 +12,10 @@ const StyledCard = styled.article`
   margin: 1rem;
   overflow: hidden;
 
+  #card-image{
+    width: 100%;
+  }
+
   .card-header {
     display: flex;
     flex-direction: column;
@@ -26,7 +30,8 @@ const StyledCard = styled.article`
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 10.603rem;
+    min-width: 10.603rem;
+    max-width: 100%;
     padding: 1rem;
   }
 
@@ -64,6 +69,7 @@ const Card = ({
   return (
     <StyledCard>
       <img
+        id="card-image"
         src={imgUrl ? imgUrl : defaultCardImage}
         alt={imageDescription ? imageDescription : 'Description'}
       />
