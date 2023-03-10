@@ -8,6 +8,10 @@ import meetup from '../images/meetup.svg'
 const StyledMobileNav = styled.nav`
   width: 100%;
 
+  .label-1 {
+    margin: 0;
+  }
+
   .internal-links {
     list-style: none;
     padding: 0;
