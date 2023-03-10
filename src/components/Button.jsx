@@ -13,7 +13,6 @@ const StyledButton = styled.div`
     svg {
       margin-right: -0.25rem;
       padding: 0.12rem;
-      transition: margin-left 0.5s ease;
     }
   }
   .primary {
@@ -111,7 +110,7 @@ const StyledButton = styled.div`
     width: 8.5rem;
     height: 1.31rem;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     padding: 0px;
     border: none;
@@ -126,9 +125,10 @@ const StyledButton = styled.div`
   }
   .textBtn,
   .textBtn.small {
+    transition: padding-left 250ms ease;
     &:hover {
       img {
-        margin-left: 10px;
+        padding-left: .75rem;
       }
     }
     &:active {
