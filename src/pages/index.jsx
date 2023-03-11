@@ -3,11 +3,25 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import ContentSection from '../components/ContentSection'
 import Organizations from '../images/Organizations.png'
+import Heading from '../components/Heading'
+import IconTile from '../components/IconTile'
+import styled from 'styled-components'
+
+const WorkWithUs = styled.section``
 
 const IndexPage = () => {
   return (
     <Layout>
       <Hero />
+
+      <WorkWithUs>
+        <Heading
+          headingText="Work With Us"
+          description="Whoever you are, there is a place for you here! Join us for co-working, project, service, and social events."
+        />
+        <IconTile />
+      </WorkWithUs>
+
       <ContentSection
         background={'var(--blizzard-blue)'}
         eyebrowText={'Organizations'}
