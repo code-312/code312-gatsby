@@ -158,16 +158,7 @@ const GlobalStyles = createGlobalStyle`
       line-height: 1.125;
     }
   }
-  .p1-body {
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5;
-
-    @media (min-width: 40.5rem) {
-      font-size: 1.25rem;
-      line-height: 1.875;
-    }
-  }
+  
   .p1-strong {
     font-weight: 700;
     font-size: 1rem;
@@ -178,6 +169,17 @@ const GlobalStyles = createGlobalStyle`
       line-height: 1.875;
     }
   }
+  .p1-body {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    @media (min-width: 40.5rem) {
+      font-size: 1.25rem;
+      line-height: 1.875;
+    }
+  }
+  
   .p2-body {
     font-weight: 400;
     font-size: 0.875rem;

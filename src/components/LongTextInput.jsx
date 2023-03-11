@@ -20,7 +20,6 @@ const StyledLongTextInput = styled.section`
   }
 
   label {
-    font-weight: 400;
     color: var(--dark-grey);
   }
 
@@ -28,7 +27,6 @@ const StyledLongTextInput = styled.section`
     flex: 1;
     border: none;
     resize: none;
-    font-weight: 400;
     color: var(--blizzard-black);
   }
 
@@ -39,7 +37,6 @@ const StyledLongTextInput = styled.section`
   span {
     display: block;
     margin-left: auto;
-    font-weight: 400;
     color: var(--dark-grey);
   }
 
@@ -73,7 +70,7 @@ const LongTextInput = ({ maxCharacterCount = 300 }) => {
           : null
       }
     >
-      <label for="long-text-input">Message</label>
+      <label for="long-text-input p2-body">Message</label>
       <textarea
         name="long-text-input"
         id="long-text-input"
@@ -81,7 +78,7 @@ const LongTextInput = ({ maxCharacterCount = 300 }) => {
         onChange={handleChange}
       />
       <span
-        className={characterCount > maxCharacterCount ? 'max-character' : ''}
+        className={`${characterCount} > ${maxCharacterCount} ? 'max-character p3-body' : 'p3-body'`}
       >
         {`${characterCount}/${maxCharacterCount} ${
           characterCount < 2 ? 'character' : 'characters'

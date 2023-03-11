@@ -9,8 +9,8 @@ const IconTile = ({ icon, title, description }) => {
   return (
     <StyledTile>
       {icon && <img src={icon} alt={title} />}
-      {title && <h4>{title}</h4>}
-      {description && <p>{description}</p>}
+      {title && <h4 className="heading-3">{title}</h4>}
+      {description && <p className="p2-body">{description}</p>}
     </StyledTile>
   )
 }

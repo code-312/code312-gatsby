@@ -6,7 +6,9 @@ import Nav from './Nav'
 import Footer from './Footer'
 import styled from 'styled-components'
 
-const StyledHeader = styled.header``
+const StyledHeader = styled.header`
+  margin-bottom: 2.9rem;
+`
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +18,6 @@ const Layout = ({ children }) => {
       <StyledHeader>
         <Nav />
       </StyledHeader>
-
       <main>{children}</main>
       <Footer></Footer>
     </>

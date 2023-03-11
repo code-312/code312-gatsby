@@ -16,10 +16,10 @@ const AlternatingCard = ({
       </div>
       <div className="image-left-card-text">
         <div className="card-info">
-          <h5 className="cardTitle">{areas}</h5>
-          <h2 className="cardText">{title}</h2>
-          <p className="cardText">{description}</p>
-          <p>
+          <h5 className="cardTitle eyebrow-1">{areas}</h5>
+          <h2 className="cardText heading-2">{title}</h2>
+          <p className="cardText p1-body">{description}</p>
+          <p className="label-2">
             <a href={url} target="_blank">
               {urlText}
               <i className="fas fa-long-arrow-alt-right"></i>
