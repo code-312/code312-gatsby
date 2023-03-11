@@ -16,7 +16,8 @@ const StyledContentSection = styled.section`
   }
 
   @media (min-width: 769px) {
-    flex-direction: row;
+    flex-direction: ${(props) => (props.imgLeft ? 'row-reverse' : 'row')};
+    /* flex-direction: row; */
   }
 
   .info {
@@ -70,9 +71,10 @@ const ContentSection = ({
   imgUrl,
   imageDescription,
   background,
+  imgLeft,
 }) => {
   return (
-    <StyledContentSection background={background}>
+    <StyledContentSection background={background} imgLeft={imgLeft}>
       <div className="info">
         <h3 className="heading-2">
           <span className="eyebrow-1">
@@ -87,9 +89,20 @@ const ContentSection = ({
             ? content
             : "Have an idea how to make your community better? You've come to the right place. Either contact us or come to one of our meetups to get the conversation started. "}
         </p>
-        <Link to={linkUrl} className="label-2">
-          {linkText ? linkText : 'Learn More'}
-        </Link>
+        {linkUrl[0] !== '/' ? (
+          <a
+            className="label-2"
+            href={linkUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {linkText}
+          </a>
+        ) : (
+          <Link to={linkUrl} className="label-2">
+            {linkText ? linkText : 'Learn More'}
+          </Link>
+        )}
       </div>
       <div className="image-container">
         <img src={imgUrl ? imgUrl : TestImage} alt={imageDescription} />

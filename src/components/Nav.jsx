@@ -85,16 +85,16 @@ const Nav = () => {
             />
           </Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/projects">Projects</Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/portfolio">Portfolio</Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/join">Join Us</Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/about">About</Link>
         </li>
       </ul>

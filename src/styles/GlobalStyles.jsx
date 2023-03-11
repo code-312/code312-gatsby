@@ -71,173 +71,173 @@ const GlobalStyles = createGlobalStyle`
   .heading-1 {
     font-weight: 700;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.5rem;
 
     @media (min-width: 40.5rem) {
       font-size: 2.625rem;
-      line-height: 3.438;
+      line-height: 3.438rem;
     }
   }
   .heading-2 {
     font-weight: 700;
     font-size: 1.5rem;
-    line-height: 0.813;
+    line-height: 0.813rem;
 
     @media (min-width: 40.5rem) {
       font-size: 2rem;
-      line-height: 2.625;
+      line-height: 2.625rem;
     }
   }
   .heading-3 {
     font-weight: 700;
     font-size: 1.125rem;
-    line-height: 1.438;
+    line-height: 1.438rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1.5rem;
-      line-height: 1.938;
+      line-height: 1.938rem;
     }
   }
   .heading-4 {
     font-weight: 700;
     font-size: 1rem;
-    line-height: 1.313;
+    line-height: 1.313rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1.125rem;
-      line-height: 1.438;
+      line-height: 1.438rem;
     }
   }
   .heading-5 {
     font-weight: 700;
     font-size: 0.875rem;
-    line-height: 1.125;
+    line-height: 1.125rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1rem;
-      line-height: 1.313;
+      line-height: 1.313rem;
     }
   }
   .heading-6 {
     font-weight: 700;
     font-size: 0.75rem;
-    line-height: 1;
+    line-height: 1rem;
 
     @media (min-width: 40.5rem) {
       font-size: 0.875rem;
-      line-height: 1.125;
+      line-height: 1.125rem;
     }
   }
   .eyebrow-1 {
     font-weight: 600;
     font-size: 1rem;
-    line-height: 1.313;
+    line-height: 1.313rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1.125rem;
-      line-height: 1.438;
+      line-height: 1.438rem;
     }
   }
   .eyebrow-2 {
     font-weight: 600;
     font-size: 0.875rem;
-    line-height: 1.125;
+    line-height: 1.125rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1rem;
-      line-height: 1.313;
+      line-height: 1.313rem;
     }
   }
   .eyebrow-3 {
     font-weight: 600;
     font-size: 0.75rem;
-    line-height: 1;
+    line-height: 1rem;
 
     @media (min-width: 40.5rem) {
       font-size: 0.875rem;
-      line-height: 1.125;
+      line-height: 1.125rem;
     }
   }
   
   .p1-strong {
     font-weight: 700;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.5rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1.25rem;
-      line-height: 1.875;
+      line-height: 1.875rem;
     }
   }
   .p1-body {
     font-weight: 400;
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.5rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1.25rem;
-      line-height: 1.875;
+      line-height: 1.875rem;
     }
   }
   
   .p2-body {
     font-weight: 400;
     font-size: 0.875rem;
-    line-height: 1.313;
+    line-height: 1.313rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.5rem;
     }
   }
   .p3-body {
     font-weight: 400;
     font-size: 0.75rem;
-    line-height: 1;
+    line-height: 1rem;
 
     @media (min-width: 40.5rem) {
       font-size: 0.875rem;
-      line-height: 1.313;
+      line-height: 1.313rem;
     }
   }
   .label-1 {
     font-weight: 600;
     font-size: 1rem;
-    line-height: 1.313;
+    line-height: 1.313rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1.25rem;
-      line-height: 1.625;
+      line-height: 1.625rem;
     }
   }
   .label-2 {
     font-weight: 600;
     font-size: 0.875rem;
-    line-height: 1.125;
+    line-height: 1.125rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1rem;
-      line-height: 1.313;
+      line-height: 1.313rem;
     }
   }
   .label-3 {
     font-weight: 600;
     font-size: 0.75rem;
-    line-height: 1;
+    line-height: 1rem;
 
     @media (min-width: 40.5rem) {
       font-size: 0.875rem;
-      line-height: 1.125;
+      line-height: 1.125rem;
     }
   }
   .quote {
     font-weight: 700;
     font-size: 1.25rem;
-    line-height: 1.875;
+    line-height: 1.875rem;
 
     @media (min-width: 40.5rem) {
       font-size: 1.75rem;
-      line-height: 2.625;
+      line-height: 2.625rem;
     }
   }
 
