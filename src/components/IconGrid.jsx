@@ -6,8 +6,20 @@ const StyledIconGrid = styled.div`
   max-width: 68.75rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  width: 100vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
   gap: 1.5rem;
+  margin: 0 auto;
+  padding: 2rem;
+
+  @media (max-width: 1080px) {
+    gap: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 const IconGrid = ({ icons }) => {

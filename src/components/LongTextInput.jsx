@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import styled from 'styled-components'
 
 const StyledLongTextInput = styled.section`
-  width: 37.5rem;
+  width: 100%;
   height: 15rem;
   border: 1px solid var(--dark-grey);
   background: var(--white);

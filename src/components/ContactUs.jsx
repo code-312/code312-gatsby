@@ -25,6 +25,11 @@ const StyledSection = styled.section`
     margin: 0 auto;
     padding: 1.5rem 0 4rem;
     min-width: 37.5rem;
+    @media (max-width: 640px) {
+      min-width: 0;
+      width: 100%;
+      padding: 1.5rem 1.5rem 3rem;
+    }
   }
 `
 

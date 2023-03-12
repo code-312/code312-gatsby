@@ -26,7 +26,7 @@ const IndexPage = () => {
     { img: developers, title: 'Developers' },
     { img: designers, title: 'Designers' },
     { img: datascientists, title: 'Data Scientists' },
-    { img: projectmanagers, title: 'ProjectManagers' },
+    { img: projectmanagers, title: 'Project Managers' },
     { img: productmanagers, title: 'Product Managers' },
     { img: communityorganizers, title: 'Community Organizers' },
     { img: socialworkers, title: 'Social Workers' },

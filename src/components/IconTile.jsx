@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledTile = styled.article`
-  max-width: 16.0625rem;
   height: 11.4375rem;
   padding: 0 1rem;
   box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
@@ -12,6 +11,7 @@ const StyledTile = styled.article`
   justify-content: center;
   align-items: center;
   gap: 1.25rem;
+  width: 100%;
 
   h4 {
     text-align: center;
