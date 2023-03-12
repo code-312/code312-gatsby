@@ -36,7 +36,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <Hero />
-
       <WorkWithUs>
         <Heading
           headingText="Work With Us"
