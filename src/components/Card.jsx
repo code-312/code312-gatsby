@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import defaultCardImage from '../images/card-placeholder.svg'
-import longRightArrowIcon from '../images/long-arrow-alt-right-red.svg'
+import arrow from '../images/long-arrow-right-red.svg'
 
 const StyledCard = styled.article`
   width: 12.563rem;
@@ -99,7 +99,7 @@ const Card = ({
           ) : (
             <Link to={linkUrl} className="card-link label-2">
               Join us on Slack
-              <img src={longRightArrowIcon} alt="right-arrow" />
+              <img src={arrow} alt="right-arrow" />
             </Link>
           )}
         </div>
