@@ -125,7 +125,9 @@ const StyledButton = styled.div`
   }
   .textBtn,
   .textBtn.small {
-    transition: padding-left 250ms ease;
+    img {
+      transition: padding-left 250ms ease;
+    }
     &:hover {
       img {
         padding-left: .75rem;
