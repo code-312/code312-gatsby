@@ -6,6 +6,7 @@ const StyledLongTextInput = styled.section`
   width: 37.5rem;
   height: 15rem;
   border: 1px solid var(--dark-grey);
+  background: var(--white);
   border-radius: 2.2px;
   display: flex;
   flex-direction: column;
@@ -70,7 +71,7 @@ const LongTextInput = ({ maxCharacterCount = 300 }) => {
           : null
       }
     >
-      <label for="long-text-input p2-body">Message</label>
+      <label htmlFor="long-text-input p2-body">Message</label>
       <textarea
         name="long-text-input"
         id="long-text-input"

@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 import textArrow from '../images/text-button-arrow.svg'
 const StyledButton = styled.div`
+  align-self: ${(props) => (props.center ? 'center' : 'flex-start')};
+
   a,
   button {
     text-decoration: none;
@@ -20,7 +22,6 @@ const StyledButton = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
-    width: 7rem;
     height: 2.3rem;
     background: var(--white);
     border: 3px solid var(--dark-red);
@@ -36,6 +37,9 @@ const StyledButton = styled.div`
   }
   .primary,
   .primary.small {
+    &:visited {
+      color: black;
+    }
     &:hover {
       color: var(--white);
       background: var(--dark-red);
@@ -74,7 +78,6 @@ const StyledButton = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
-    width: 5rem;
     height: 2.31rem;
     background: var(--white);
     border: 2px solid var(--blizzard-blue);
@@ -130,7 +133,7 @@ const StyledButton = styled.div`
     }
     &:hover {
       img {
-        padding-left: .75rem;
+        padding-left: 0.75rem;
       }
     }
     &:active {
@@ -154,6 +157,7 @@ const Button = ({
   small,
   handleClick,
   arrow,
+  center,
 }) => {
   const [isDisabled, setIsDisabled] = useState(false)
 
@@ -164,7 +168,7 @@ const Button = ({
   className = className.join(' ')
 
   return (
-    <StyledButton>
+    <StyledButton center={center}>
       {link ? (
         link[0] !== '/' ? (
           <a
@@ -185,7 +189,8 @@ const Button = ({
       ) : (
         <button
           className={className}
-          onClick={handleClick}
+          onClick={!Link && !handleClick ? null : handleClick}
+          type={!Link && !handleClick ? 'submit' : 'button'}
           disabled={isDisabled}
         >
           {text}

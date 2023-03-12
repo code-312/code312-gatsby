@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const StyledShortTextInput = styled.section`
-  max-width: 37.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background: var(--white);
+  width: 100%;
 
   label:active {
     border: 2px solid var(--medium-blue);
@@ -28,7 +29,6 @@ const StyledShortTextInput = styled.section`
   }
 
   label {
-    width: 21.6875rem;
     height: 3.6875rem;
     border: 1px solid var(--dark-grey);
     border-radius: 2.2px;
