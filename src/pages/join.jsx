@@ -10,8 +10,7 @@ const JoinPage = () => {
     <Layout>
       <Hero
         eyebrowText="JOIN US"
-        // mainHeading="Be part of the change in your community"
-        mainHeading="Be part of the...community"
+        mainHeading="Be part of the change in your commmunity"
         buttonText="Start Onboarding"
       />
       <Heading

@@ -9,13 +9,18 @@ const StyledHeroSection = styled.section`
 
   @media (min-width: 769px) {
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding-left: 3rem;
+    padding-left: 0rem;
     gap: 1.5rem;
   }
 
   @media (min-width: 1400px) {
     padding-left: 6rem;
+  }
+
+  .no-image {
+    padding: 0;
   }
 
   .content-container {
@@ -37,6 +42,11 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  .container-no-image {
+    justify-content: center;
+    align-items: center;
+  }
+
   .eyebrow-text {
     font-style: normal;
     letter-spacing: 0.05em;
@@ -55,6 +65,7 @@ const StyledHeroSection = styled.section`
     text-align: center;
     color: var(--blizzard-black);
     flex: none;
+    line-height: 1.4;
 
     @media (min-width: 649px) {
       margin: 0 3rem;
@@ -92,6 +103,10 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  .heading-no-image {
+    text-align: center;
+  }
+
   .hero-image {
     @media (min-width: 769px) {
       width: 100%;
@@ -119,25 +134,31 @@ const Hero = ({
   buttonText,
 }) => {
   return (
-    <StyledHeroSection>
-      <div className="content-container">
+    <StyledHeroSection className={img ? null : 'no-image'}>
+      <div className={`content-container ${img ? null : 'container-no-image'}`}>
         <span className="eyebrow-text eyebrow-1">
           {eyebrowText ? eyebrowText : 'A code for america brigade'}
         </span>
-        <h2 className="main-heading heading-1">
+        <h2
+          className={`main-heading heading-1 ${
+            img ? null : 'heading-no-image'
+          }`}
+        >
           {mainHeading ? mainHeading : 'Community service in a digital age'}
         </h2>
         <button className="button label-2">
           {buttonText ? buttonText : 'Get Started'}
         </button>
       </div>
-      <div className="hero-image-container">
-        <img
-          src={img ? img : heroImg}
-          alt={imgDescription}
-          className="hero-image"
-        />
-      </div>
+      {img ? (
+        <div className="hero-image-container">
+          <img
+            src={img ? img : heroImg}
+            alt={imgDescription}
+            className="hero-image"
+          />
+        </div>
+      ) : null}
     </StyledHeroSection>
   )
 }
