@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+// TODO: talk to Doug about best way to handle dynamic classes based on props
+
 const StyledRadioOption = styled.div`
   .button-container {
     *,
