@@ -137,7 +137,7 @@ const Hero = ({
     <StyledHeroSection className={img ? null : 'no-image'}>
       <div className={`content-container ${img ? null : 'container-no-image'}`}>
         <span className="eyebrow-text eyebrow-1">
-          {eyebrowText ? eyebrowText : 'A code for america brigade'}
+          {eyebrowText ? eyebrowText : null}
         </span>
         <h2
           className={`main-heading heading-1 ${
