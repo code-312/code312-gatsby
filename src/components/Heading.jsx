@@ -22,6 +22,8 @@ const Heading = ({
   browText,
   headingLevel = '3',
   description,
+  ctaButton,
+  ctaLink,
 }) => {
   const HeadingTag = `h${headingLevel}`
 

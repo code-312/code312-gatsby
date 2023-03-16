@@ -6,18 +6,14 @@ import Nav from './Nav'
 import Footer from './Footer'
 import styled from 'styled-components'
 
-const StyledHeader = styled.header`
-  margin-bottom: 2.9rem;
-`
-
 const Layout = ({ children }) => {
   return (
     <>
       <Reset />
       <GlobalStyles />
-      <StyledHeader>
+      <header>
         <Nav />
-      </StyledHeader>
+      </header>
       <main>{children}</main>
       <Footer></Footer>
     </>
