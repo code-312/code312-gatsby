@@ -132,11 +132,13 @@ const Nav = () => {
               <img className="social-img" src={githubLogo} alt="GitHub" />
             </a>
           </li>
+          <li>
+            <Button
+              link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
+              text="Donate"
+            />
+          </li>
         </ul>
-        <Button
-          link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-          text="Donate"
-        />
       </div>
     </StyledNav>
   )
