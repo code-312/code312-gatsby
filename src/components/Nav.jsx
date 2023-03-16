@@ -6,6 +6,7 @@ import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
 import MobileNav from './MobileNav'
+import Button from './Button'
 import useWindow from '../hooks/useWindow'
 
 const StyledNav = styled.nav`
@@ -54,7 +55,11 @@ const StyledNav = styled.nav`
     padding: 0;
   }
   .social-img {
-    min-width: 1.5rem;
+    min-width: 1.875rem;
+  }
+
+  .meetup {
+    min-width: 2.25rem;
   }
 
   .donateButton {
@@ -106,7 +111,7 @@ const Nav = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="social-img" src={meetup} alt="Meetup" />
+              <img className="social-img meetup" src={meetup} alt="Meetup" />
             </a>
           </li>
           <li className="social-logo">
@@ -128,14 +133,10 @@ const Nav = () => {
             </a>
           </li>
         </ul>
-        <a
-          href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-          target="blank"
-          rel="noopener noreferrer"
-          className="button donateButton label-3"
-        >
-          Donate
-        </a>
+        <Button
+          link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
+          text="Donate"
+        />
       </div>
     </StyledNav>
   )

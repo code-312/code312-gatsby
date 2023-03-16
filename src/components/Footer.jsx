@@ -37,6 +37,12 @@ const StyledFooter = styled.footer`
     padding: 0;
     list-style-type: none;
     gap: 2rem;
+    a {
+      text-decoration: none;
+      &:visited {
+        color: var(--dark-blue);
+      }
+    }
   }
 
   .external-links {
