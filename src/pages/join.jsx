@@ -1,5 +1,4 @@
 import React from 'react'
-import Card from '../components/Card'
 import IconTile from '../components/IconTile'
 import IconGrid from '../components/IconGrid'
 import Hero from '../components/Hero'
@@ -34,21 +33,21 @@ const JoinPage = () => {
       img: question,
       title: 'Ask Questions',
       description: 'Don’t be afraid to ask someone questions!',
-      link:'View Projects'
+      link: 'View Projects',
     },
     {
       img: available,
       title: 'Availability',
       description:
         'We know life happens so let your team know if you have capacity.',
-      link:'View Conduct'
+      link: 'View Conduct',
     },
     {
       img: handOff,
       title: 'Hand-Off Tasks',
       description:
         'Ensure your work continues and transfer your tasks to another!',
-      link:"Join Slack"
+      link: 'Join Slack',
     },
   ]
 
@@ -56,18 +55,20 @@ const JoinPage = () => {
     {
       img: active,
       title: 'Active Projects',
-      description: 'Check out the projects that are actively recruiting volunteers.'
+      description:
+        'Check out the projects that are actively recruiting volunteers.',
     },
     {
       img: codeconduct2,
       title: 'Code of Conduct',
-      description: 'Review and agree to our code of conduct.'
+      description: 'Review and agree to our code of conduct.',
     },
     {
       img: slack,
       title: 'Join Our Slack',
-      description: 'Check out our Slack where all of our collaboration happens.'
-    }
+      description:
+        'Check out our Slack where all of our collaboration happens.',
+    },
   ]
   return (
     <Layout>
@@ -84,8 +85,8 @@ const JoinPage = () => {
         description="This is content that describes this section."
         headingLevel="3"
       />
-      <IconGrid icons={icons}>
-        {/* <IconTile
+      <IconGrid icons={icons} />
+      {/* <IconTile
           icon={code}
           title={'Code of Conduct'}
           description={'We ensure we keep teamwork safe and fun.'}
@@ -109,7 +110,6 @@ const JoinPage = () => {
             'Ensure your work continues and transfer your tasks to another!'
           }
         /> */}
-      </IconGrid>
       <ContentSection
         eyebrowText={'PART 1: START ONBOARDING REGISTRATION'}
         mainHeading={'To start onboarding, complete our onboarding form'}
@@ -129,7 +129,8 @@ const JoinPage = () => {
         }
         linkUrl={'/components'}
         linkText={'Join Our Slack'}
-        imgLeft={form2}
+        imgLeft={true}
+        imgUrl={form2}
         imageDescription={'picture of the onboarding form step 2'}
       />
       <ContentSection
@@ -151,7 +152,7 @@ const JoinPage = () => {
         description="This is content that describes this section."
         headingLevel="3"
       />
-      <IconGrid icons={icons2}/>
+      <IconGrid icons={icons2} />
       {/* <section className="icon-container">
         <IconTile
           icon={active}

@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledTile = styled.article`
-  height: 11.4375rem;
+  min-height: 11.4375rem;
+  max-width: 16rem;
+  min-width: 12rem;
   padding: 0 1rem;
   box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
