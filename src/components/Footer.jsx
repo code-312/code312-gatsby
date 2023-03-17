@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
+import Button from './Button'
 import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
 import longArrowAltRight from '../images/join-us/long-arrow-alt-right.svg'
@@ -30,24 +31,18 @@ const StyledFooter = styled.footer`
     gap: 1em;
   }
 
-  .donate-button-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: var(--white);
-    border: 2px solid var(--dark-red);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 2.2px;
-  }
-
   .internal-links {
     display: flex;
     align-items: center;
     padding: 0;
     list-style-type: none;
     gap: 2rem;
+    a {
+      text-decoration: none;
+      &:visited {
+        color: var(--dark-blue);
+      }
+    }
   }
 
   .external-links {
@@ -89,6 +84,7 @@ const StyledFooter = styled.footer`
     }
     .footer-links {
       flex-direction: row;
+      align-items: center;
       gap: 3rem;
     }
   }
@@ -98,29 +94,23 @@ const Footer = () => {
     <StyledFooter>
       <div className="footer-content">
         <div className="footer-links">
-          <div className="donate-button-container">
-            <a
-              href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-              target="blank"
-              rel="noopener noreferrer"
-              className="button donateButton label-3"
-            >
-              Donate
-            </a>
-
-            <img src={longArrowAltRight} alt="" />
-          </div>
+          <Button
+            text="Donate"
+            link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
+            center
+            arrow
+          />
           <ul className="internal-links p2-body">
-            <li activeClassName="active">
+            <li activeclassname="active">
               <Link to="/projects">Projects</Link>
             </li>
-            <li activeClassName="active">
+            <li activeclassname="active">
               <Link to="/portfolio">Portfolio</Link>
             </li>
-            <li activeClassName="active">
+            <li activeclassname="active">
               <Link to="/join">Join Us</Link>
             </li>
-            <li activeClassName="active">
+            <li activeclassname="active">
               <Link to="/about">About</Link>
             </li>
           </ul>
