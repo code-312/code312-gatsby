@@ -11,6 +11,7 @@ const StyledFooter = styled.footer`
   padding: 1.5rem 2rem;
   display: block;
   margin: 0 auto;
+  max-width: 45.5rem;
 
   .footer-content {
     margin: 0 auto;

@@ -26,6 +26,10 @@ const StyledContentSection = styled.section`
     flex-direction: column;
     gap: 0.5rem;
 
+    p:last-of-type {
+      margin-bottom: 1.5rem;
+    }
+
     @media (min-width: 1200px) {
       flex: 1;
     }

@@ -78,6 +78,8 @@ const IndexPage = () => {
       <Heading
         headingText="No Upcoming Events"
         description="Join our Meetup group to stay up to date on what’s coming up."
+        ctaButton="Join our Meetup Group"
+        ctaLink="https://www.meetup.com/code-for-chicago/"
       />
       <ContactUs />
     </Layout>
