@@ -50,7 +50,7 @@ const StyledNav = styled.nav`
     display: flex;
     align-items: center;
     list-style-type: none;
-    gap: 2rem;
+    gap: 1rem;
     margin-right: 1.5rem;
     padding: 0;
   }
@@ -79,7 +79,7 @@ const Nav = () => {
     return <MobileNav windowWidth={windowWidth} />
   }
   return (
-    <StyledNav className="navbar" aria-label="main">
+    <StyledNav className="width-wrapper" aria-label="main">
       <ul className="internal-links label-1">
         <li id="logo-container">
           <Link to="/">

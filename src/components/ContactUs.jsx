@@ -13,8 +13,12 @@ const StyledSection = styled.section`
 
   h3 {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 4rem;
     color: var(--blizzard-black);
+
+    @media (max-width: 640px) {
+      padding-top: 3rem;
+    }
   }
 
   form {
