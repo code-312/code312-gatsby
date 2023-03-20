@@ -11,10 +11,10 @@ const StyledIconGrid = styled.div`
   justify-items: center;
   gap: 1.5rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
 
   @media (max-width: 1080px) {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   @media (max-width: 640px) {
