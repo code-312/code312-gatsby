@@ -12,6 +12,8 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -19,6 +21,22 @@ module.exports = {
         path: './src/images/',
       },
       __key: 'images',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'portfolio',
+        path: './_posts/portfolio',
+      },
+      __key: 'portfolio',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'projects',
+        path: './_posts/projects',
+      },
+      __key: 'projects',
     },
   ],
 }

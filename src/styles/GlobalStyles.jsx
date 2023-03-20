@@ -69,6 +69,12 @@ const GlobalStyles = createGlobalStyle`
     white-space: nowrap; /* added line */
   }
 
+  .width-wrapper {
+    max-width: 75rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   .heading-1 {
     font-weight: 700;
     font-size: 2rem;

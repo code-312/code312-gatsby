@@ -5,6 +5,7 @@ import heroImg from '../images/skyline.svg'
 const StyledHeroSection = styled.section`
   background-color: var(--blizzard-blue);
   display: flex;
+  justify-content: center;
   flex-direction: column;
 
   @media (min-width: 769px) {
@@ -27,18 +28,11 @@ const StyledHeroSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 3rem 1.5rem;
+    margin: 7rem 0 3.5rem;
 
     @media (min-width: 769px) {
       align-items: flex-start;
-      padding: 4rem 0;
-      gap: 1.5rem;
       width: 31.188rem;
-      height: 20.625rem;
-    }
-    @media (min-width: 1200px) {
-      width: 33.75rem;
     }
   }
 
@@ -55,6 +49,7 @@ const StyledHeroSection = styled.section`
     text-transform: uppercase;
     height: 1.313rem;
     color: var(--blizzard-black);
+    margin-bottom: 0.5rem;
 
     @media (min-width: 769px) {
       text-align: left;
@@ -68,14 +63,11 @@ const StyledHeroSection = styled.section`
     line-height: 1.4;
 
     @media (min-width: 649px) {
-      margin: 0 3rem;
+      margin: 0 3rem 0.5rem;
     }
     @media (min-width: 769px) {
       text-align: left;
       margin: 0;
-    }
-    @media (min-width: 1200px) {
-      padding-right: 1rem;
     }
   }
 
@@ -87,19 +79,13 @@ const StyledHeroSection = styled.section`
       align-items: flex-start;
       padding: 0;
       gap: 0.625rem;
-      width: 12.375rem;
       height: 26.313rem;
-      padding-top: 4rem;
-    }
-
-    @media (min-width: 1000px) {
-      width: 35rem;
+      padding-top: 2rem;
+      margin-top: 7rem;
     }
 
     @media (min-width: 1200px) {
-      width: 38.25rem;
-      flex-direction: row;
-      justify-content: center;
+      margin-top: 2rem;
     }
   }
 
@@ -117,6 +103,7 @@ const StyledHeroSection = styled.section`
   }
 
   .button {
+    margin-top: 2rem;
     padding: 0.5rem 1rem;
     background-color: var(--white);
     border: 2px solid #d90000;
