@@ -4,7 +4,7 @@ import IconTile from '../components/IconTile'
 
 const StyledIconGrid = styled.div`
   width: 100vw;
-  max-width: 68.75rem;
+  max-width: 1432px;
   margin: 0 auto;
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr; */
@@ -15,7 +15,7 @@ const StyledIconGrid = styled.div`
   flex-flow: wrap;
   /* align-items: center; */
   gap: 1.5rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 0 2rem 2rem;
 
   @media (max-width: 1080px) {

@@ -17,7 +17,7 @@ const StyledHeroSection = styled.section`
   }
 
   @media (min-width: 1400px) {
-    padding-left: 6rem;
+    /* padding-left: 6rem; */
   }
 
   .no-image {
