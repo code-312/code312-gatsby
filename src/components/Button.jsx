@@ -167,6 +167,14 @@ const Button = ({
   if (small) className.push('small')
   className = className.join(' ')
 
+  const longArrowOrTextArrow = () => {
+    if (arrow && className.includes('primary')) {
+      return <FaLongArrowAltRight alt="right arrow" />
+    } if (arrow && className.includes('textBtn')) {
+      return <img src={textArrow} alt="right arrow" />
+    }
+  }
+
   return (
     <StyledButton center={center}>
       {link ? (
@@ -178,12 +186,12 @@ const Button = ({
             rel="noopener noreferrer"
           >
             {text}
-            {arrow && <img src={textArrow} alt="right arrow" />}
+            {longArrowOrTextArrow()}
           </a>
         ) : (
           <Link to={link} className={className}>
             {text}
-            {arrow && <img src={textArrow} alt="right arrow" />}
+            {longArrowOrTextArrow()}
           </Link>
         )
       ) : (
@@ -194,7 +202,7 @@ const Button = ({
           disabled={isDisabled}
         >
           {text}
-          {arrow && <FaLongArrowAltRight alt="right arrow" />}
+          {longArrowOrTextArrow()}
         </button>
       )}
     </StyledButton>
