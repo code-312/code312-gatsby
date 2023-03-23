@@ -7,13 +7,14 @@ const StyledTile = styled.article`
   min-height: 11.4375rem;
   max-width: 16rem;
   min-width: 12rem;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
   box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   gap: 1.25rem;
   width: 100%;
 
@@ -26,7 +27,7 @@ const StyledTile = styled.article`
     color: var(--red);
     /* width: 10.603rem; */
     display: block;
-    margin-bottom: 1rem;
+    /* margin-bottom: 0.5rem; */
     display: flex;
     align-items: center;
     gap: 0.5rem;
