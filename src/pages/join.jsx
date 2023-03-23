@@ -1,5 +1,4 @@
 import React from 'react'
-import IconTile from '../components/IconTile'
 import IconGrid from '../components/IconGrid'
 import Hero from '../components/Hero'
 import Heading from '../components/Heading'
@@ -20,7 +19,6 @@ import handOff from '../images/join-us/hand-off.svg'
 import form3 from '../images/join-us/form3.png'
 import form2 from '../images/join-us/form2.png'
 import form from '../images/join-us/form.png'
-import TestImage from '../images/TestImage.png'
 
 const JoinPage = () => {
   const icons = [
@@ -32,7 +30,7 @@ const JoinPage = () => {
     {
       img: question,
       title: 'Ask Questions',
-      description: 'Don’t be afraid to ask someone questions!',
+      description: 'Don\’t be afraid to ask someone questions!',
       link: 'View Projects',
     },
     {
@@ -57,17 +55,23 @@ const JoinPage = () => {
       title: 'Active Projects',
       description:
         'Check out the projects that are actively recruiting volunteers.',
+      btnText: 'View Projects',
+      linkUrl: '/projects',
     },
     {
       img: codeconduct2,
       title: 'Code of Conduct',
       description: 'Review and agree to our code of conduct.',
+      btnText: 'View Conduct',
+      linkUrl: '/',
     },
     {
       img: slack,
       title: 'Join Our Slack',
       description:
         'Check out our Slack where all of our collaboration happens.',
+      btnText: 'Join Slack',
+      linkUrl: '/',
     },
   ]
   return (

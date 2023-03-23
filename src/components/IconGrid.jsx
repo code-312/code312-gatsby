@@ -24,7 +24,6 @@ const StyledIconGrid = styled.div`
 `
 
 const IconGrid = ({ icons }) => {
-  console.log(icons.length)
   return (
     <StyledIconGrid>
       {icons.map((icon) => {
@@ -34,6 +33,8 @@ const IconGrid = ({ icons }) => {
             title={icon.title}
             description={icon.description}
             key={icon.title}
+            btnText={icon.btnText ? icon.btnText : null}
+            linkUrl={icon.linkUrl ? icon.linkUrl : null}
           />
         )
       })}
