@@ -11,11 +11,6 @@ import active from '../images/join-us/active.svg'
 import slack from '../images/join-us/slack.svg'
 import codeconduct2 from '../images/join-us/codeconduct2.svg'
 import handOff from '../images/join-us/hand-off.svg'
-// import attendMeetings from '../images/join-us/attend-meetings.svg'
-// import ghost from '../images/join-us/ghost.svg'
-// import initiative from '../images/join-us/initiative.svg'
-// import meet from '../images/join-us/we-meet.png'
-// import turtle from '../images/join-us/turtle.png'
 import form3 from '../images/join-us/form3.png'
 import form2 from '../images/join-us/form2.png'
 import form from '../images/join-us/form.png'
@@ -56,14 +51,14 @@ const JoinPage = () => {
       description:
         'Check out the projects that are actively recruiting volunteers.',
       btnText: 'View Projects',
-      linkUrl: '/projects',
+      linkUrl: '/random',
     },
     {
       img: codeconduct2,
       title: 'Code of Conduct',
       description: 'Review and agree to our code of conduct.',
       btnText: 'View Conduct',
-      linkUrl: '/',
+      linkUrl: '/random',
     },
     {
       img: slack,
@@ -71,49 +66,23 @@ const JoinPage = () => {
       description:
         'Check out our Slack where all of our collaboration happens.',
       btnText: 'Join Slack',
-      linkUrl: '/',
+      linkUrl: '/random',
     },
   ]
   return (
     <Layout>
       <Hero
         eyebrowText="JOIN US"
-        mainHeading="Be part of the change in your commmunity"
-        // subHeading="Start the process of joining one of our on-going projects."
+        mainHeading="Be part of the change in your community"
         buttonText="Start Onboarding"
       />
       <Heading
         browText="Volunteer Expectations"
         headingText="Our culture is scrappy"
-        // description="We try our best to be organized, but we rely on our volunteers to shape how they want to contribute."
         description="This is content that describes this section."
         headingLevel="3"
       />
       <IconGrid icons={icons} />
-      {/* <IconTile
-          icon={code}
-          title={'Code of Conduct'}
-          description={'We ensure we keep teamwork safe and fun.'}
-        />
-        <IconTile
-          icon={question}
-          title={'Ask Questions'}
-          description={'Don’t be afraid to ask someone questions! '}
-        />
-        <IconTile
-          icon={available}
-          title={'Availability'}
-          description={
-            'We know life happens so let your team know if you have capacity.'
-          }
-        />
-        <IconTile
-          icon={handOff}
-          title={'Hand-Off Tasks'}
-          description={
-            'Ensure your work continues and transfer your tasks to another!'
-          }
-        /> */}
       <ContentSection
         eyebrowText={'PART 1: START ONBOARDING REGISTRATION'}
         mainHeading={'To start onboarding, complete our onboarding form'}
@@ -157,27 +126,6 @@ const JoinPage = () => {
         headingLevel="3"
       />
       <IconGrid icons={icons2} />
-      {/* <section className="icon-container">
-        <IconTile
-          icon={active}
-          title={'Active Projects'}
-          description={
-            'Check out the projects that are actively recruiting volunteers.'
-          }
-        />
-        <IconTile
-          icon={codeconduct2}
-          title={'Code of Conduct'}
-          description={'Review and agree to our code of conduct.'}
-        />
-        <IconTile
-          icon={slack}
-          title={'Join Our Slack'}
-          description={
-            'Check out our Slack where all of our collaboration happens.'
-          }
-        />
-      </section> */}
       <Hero
         mainHeading="Have you completed the pre-onboarding checklist?"
         buttonText="Start Onboarding"
