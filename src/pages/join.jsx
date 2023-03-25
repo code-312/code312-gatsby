@@ -25,7 +25,7 @@ const JoinPage = () => {
     {
       img: question,
       title: 'Ask Questions',
-      description: 'Don\’t be afraid to ask someone questions!',
+      description: 'Don’t be afraid to ask someone questions!',
       link: 'View Projects',
     },
     {
@@ -84,40 +84,35 @@ const JoinPage = () => {
       />
       <IconGrid icons={icons} />
       <ContentSection
-        eyebrowText={'PART 1: START ONBOARDING REGISTRATION'}
-        mainHeading={'To start onboarding, complete our onboarding form'}
-        content={
-          'The form gathers basic info like which project you want to join and your availability. Someone will review your response within 7 actual days and follow-up in Slack.'
-        }
-        linkUrl={'/components'}
-        linkText={'Start Onboarding'}
+        background="var(--light-grey)"
+        eyebrowText="PART 1: START ONBOARDING REGISTRATION"
+        mainHeading="To start onboarding, complete our onboarding form"
+        content="The form gathers basic info like which project you want to join and your availability. Someone will review your response within 7 actual days and follow-up in Slack."
+        linkUrl="/components"
+        linkText="Start Onboarding"
         imgUrl={form}
-        imageDescription={'picture of the onboarding form step 1'}
+        imageDescription="picture of the onboarding form step 1"
       />
       <ContentSection
-        eyebrowText={'PART 2: VOLUNTEER SKILLS'}
-        mainHeading={"Next, we'll learn more about your specific skills"}
-        content={
-          'Someone will reach out in Slack to assign you a new task of completing another form. This will give us a better idea of which project to place you.'
-        }
-        linkUrl={'/components'}
-        linkText={'Join Our Slack'}
+        background="var(--light-grey)"
+        eyebrowText="PART 2: VOLUNTEER SKILLS"
+        mainHeading="Next, we'll learn more about your specific skills"
+        content="Someone will reach out in Slack to assign you a new task of completing another form. This will give us a better idea of which project to place you."
+        linkUrl="/components"
+        linkText="Join Our Slack"
         imgLeft={true}
         imgUrl={form2}
-        imageDescription={'picture of the onboarding form step 2'}
+        imageDescription="picture of the onboarding form step 2"
       />
       <ContentSection
-        eyebrowText={'PART 3: PROJECT FIT'}
-        mainHeading={
-          "Finally, you'll be assigned a project that is a best fit for you"
-        }
-        content={
-          "In this process you'll learn more about the project, shadow a meeting, and meet the people you'll collaborate with."
-        }
-        linkUrl={'/components'}
-        linkText={'View Active Projects'}
+        background="var(--light-grey)"
+        eyebrowText="PART 3: PROJECT FIT"
+        mainHeading="Finally, you'll be assigned a project that is a best fit for you"
+        content="In this process you'll learn more about the project, shadow a meeting, and meet the people you'll collaborate with."
+        linkUrl="/components"
+        linkText="View Active Projects"
         imgUrl={form3}
-        imageDescription={'picture of the onboarding form step 3'}
+        imageDescription="picture of the onboarding form step 3"
       />
       <Heading
         browText="Start onboarding today"

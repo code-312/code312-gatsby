@@ -1,10 +1,14 @@
 import React from 'react'
-import IconGrid from '../components/IconGrid'
 import Hero from '../components/Hero'
 import Heading from '../components/Heading'
+import CardBlock from '../components/CardBlock'
+import Card from '../components/Card'
 import Layout from '../components/Layout'
-import ContentSection from '../components/ContentSection'
-import code from '../images/join-us/code.svg'
+import IconGrid from '../components/IconGrid'
+import CfCSite from '../images/projects/CfCSite.png'
+import voma from '../images/projects/voma.png'
+import rescue from '../images/projects/rescue.png'
+import cst from '../images/projects/cst.png'
 import question from '../images/join-us/question-mark.svg'
 import available from '../images/join-us/available.svg'
 import active from '../images/join-us/active.svg'
@@ -16,68 +20,58 @@ import form2 from '../images/join-us/form2.png'
 import form from '../images/join-us/form.png'
 
 const ProjectsPage = () => {
-  
+  const icons = [
+    {
+      title: 'Join Our Slack',
+      description:
+        'Check out our Slack where all of our collaboration happens.',
+    },
+  ]
 
   return (
     <Layout>
       <Hero
-        // eyebrowText="JOIN US"
-        // mainHeading="Be part of the change in your commmunity"
-        // buttonText="Start Onboarding"
+        eyebrowText="PROJECTS"
+        mainHeading="Explore active projects to get involved"
       />
       <Heading
-        // browText="Volunteer Expectations"
-        // headingText="Our culture is scrappy"
-        // description="This is content that describes this section."
-        // headingLevel="3"
+        browText="Needs volunteers"
+        headingText="Currently Recruiting"
+        description="These projects are actively recruiting for new volunteers."
+        headingLevel="3"
       />
-      <IconGrid />
-      <ContentSection
-        // eyebrowText={'PART 1: START ONBOARDING REGISTRATION'}
-        // mainHeading={'To start onboarding, complete our onboarding form'}
-        // content={
-        //   'The form gathers basic info like which project you want to join and your availability. Someone will review your response within 7 actual days and follow-up in Slack.'
-        // }
-        // linkUrl={'/components'}
-        // linkText={'Start Onboarding'}
-        // imgUrl={form}
-        // imageDescription={'picture of the onboarding form step 1'}
-      />
-      <ContentSection
-        // eyebrowText={'PART 2: VOLUNTEER SKILLS'}
-        // mainHeading={"Next, we'll learn more about your specific skills"}
-        // content={
-        //   'Someone will reach out in Slack to assign you a new task of completing another form. This will give us a better idea of which project to place you.'
-        // }
-        // linkUrl={'/components'}
-        // linkText={'Join Our Slack'}
-        // imgLeft={true}
-        // imgUrl={form2}
-        // imageDescription={'picture of the onboarding form step 2'}
-      />
-      <ContentSection
-        // eyebrowText={'PART 3: PROJECT FIT'}
-        // mainHeading={
-        //   "Finally, you'll be assigned a project that is a best fit for you"
-        // }
-        // content={
-        //   "In this process you'll learn more about the project, shadow a meeting, and meet the people you'll collaborate with."
-        // }
-        // linkUrl={'/components'}
-        // linkText={'View Active Projects'}
-        // imgUrl={form3}
-        // imageDescription={'picture of the onboarding form step 3'}
-      />
+      <CardBlock>
+        <Card
+          imgUrl={rescue}
+          mainHeading="Rescue Chicago"
+          content="Building an interactive data visualization dashboard to explore how different dog characteristics affect the average length of stay."
+        />
+        <Card
+          imgUrl={CfCSite}
+          mainHeading="Code for Chicago Website"
+          content="Designing and building the Code for Chicago website and design system."
+        />
+        <Card
+          imgUrl={voma}
+          mainHeading="Voma"
+          content="Building a better volunteer management tool for the Code for America Brigade network."
+        />
+        <Card
+          imgUrl={cst}
+          mainHeading="Chicago Council on Science and Technology"
+          content="Transition the org\’s website from Wordpress to Wix. Improve the exisitng designs and develop it on the Wix platform."
+        />
+      </CardBlock>
       <Heading
-        // browText="Start onboarding today"
-        // headingText="Ready to join?"
-        // description="This is content that describes this section."
-        // headingLevel="3"
+        browText="Teams At Capacity"
+        headingText="Not Recruiting"
+        description="These projects are active, but don't have room for additional volunteers."
+        headingLevel="3"
       />
-      <IconGrid />
+      <IconGrid icons={icons} />
       <Hero
-        // mainHeading="Have you completed the pre-onboarding checklist?"
-        // buttonText="Start Onboarding"
+        mainHeading="Learn more on how you can join a project"
+        buttonText="Join A Project"
       />
     </Layout>
   )
