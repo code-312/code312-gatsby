@@ -61,15 +61,6 @@ const StyledNav = styled.nav`
   .meetup {
     min-width: 2.25rem;
   }
-
-  .donateButton {
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--dark-red);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 2.2px;
-    text-decoration: none;
-    color: var(--blizzard-black);
-  }
 `
 
 const Nav = () => {
@@ -136,6 +127,7 @@ const Nav = () => {
             <Button
               link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
               text="Donate"
+              arrow
             />
           </li>
         </ul>
