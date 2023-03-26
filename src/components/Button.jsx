@@ -7,7 +7,7 @@ const StyledButton = styled.div`
   align-self: ${(props) => (props.center ? 'center' : 'flex-start')};
 
   a,
-  button &:visited {
+  button {
     text-decoration: none;
     outline: none;
     color: var(--blizzard-black);
@@ -39,7 +39,6 @@ const StyledButton = styled.div`
   .primary.small {
     &:visited {
       color: black;
-      text-decoration: none;
     }
     &:hover {
       color: var(--white);
@@ -184,7 +183,7 @@ const Button = ({
         ) : (
           <Link to={link} className={className}>
             {text}
-            {arrow && <img src={textArrow} alt="right arrow" />}
+            {arrow && <FaLongArrowAltRight alt="right arrow" />}
           </Link>
         )
       ) : (

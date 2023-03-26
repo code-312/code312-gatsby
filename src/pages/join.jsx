@@ -25,7 +25,7 @@ const JoinPage = () => {
     {
       img: question,
       title: 'Ask Questions',
-      description: 'Don\’t be afraid to ask someone questions!',
+      description: 'Don’t be afraid to ask someone questions!',
       link: 'View Projects',
     },
     {
@@ -69,12 +69,17 @@ const JoinPage = () => {
       linkUrl: '/random',
     },
   ]
+
+  const handleClick = () => {}
+
   return (
     <Layout>
       <Hero
         eyebrowText="JOIN US"
         mainHeading="Be part of the change in your community"
         buttonText="Start Onboarding"
+        link="/"
+        arrow
       />
       <Heading
         browText="Volunteer Expectations"
@@ -129,6 +134,8 @@ const JoinPage = () => {
       <Hero
         mainHeading="Have you completed the pre-onboarding checklist?"
         buttonText="Start Onboarding"
+        link="/"
+        arrow
       />
     </Layout>
   )

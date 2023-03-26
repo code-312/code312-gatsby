@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import heroImg from '../images/skyline.svg'
+import Button from './Button'
 
 const StyledHeroSection = styled.section`
   background-color: var(--blizzard-blue);
@@ -24,7 +25,7 @@ const StyledHeroSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 7rem 0 3.5rem;
+    margin: 5rem 0 5rem;
 
     @media (min-width: 769px) {
       align-items: flex-start;
@@ -63,7 +64,7 @@ const StyledHeroSection = styled.section`
     }
     @media (min-width: 769px) {
       text-align: left;
-      margin: 0;
+      margin: 0 0 1.5rem 0;
     }
   }
 
@@ -115,6 +116,8 @@ const Hero = ({
   img,
   imgDescription,
   buttonText,
+  link,
+  arrow,
 }) => {
   return (
     <StyledHeroSection className={img ? null : 'no-image'}>
@@ -129,9 +132,12 @@ const Hero = ({
         >
           {mainHeading ? mainHeading : 'Community service in a digital age'}
         </h2>
-        <button className="button label-2">
+        {/* <button className="button label-2">
           {buttonText ? buttonText : 'Get Started'}
-        </button>
+        </button> */}
+        {buttonText && (
+          <Button text={buttonText} link={link} arrow={arrow} center />
+        )}
       </div>
       {img ? (
         <div className="hero-image-container">
