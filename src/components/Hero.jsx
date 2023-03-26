@@ -132,9 +132,6 @@ const Hero = ({
         >
           {mainHeading ? mainHeading : 'Community service in a digital age'}
         </h2>
-        {/* <button className="button label-2">
-          {buttonText ? buttonText : 'Get Started'}
-        </button> */}
         {buttonText && (
           <Button text={buttonText} link={link} arrow={arrow} center />
         )}
