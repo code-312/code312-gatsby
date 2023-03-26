@@ -1,16 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-// TODO: talk to Doug about best way to handle dynamic classes based on props
-
 const StyledRadioOption = styled.div`
   .button-container {
-    *,
-    *:before,
-    *:after {
-      box-sizing: border-box;
-    }
-
     display: flex;
     align-items: center;
     border: 1px solid var(--dark-grey);
@@ -140,38 +132,21 @@ const StyledRadioOption = styled.div`
   }
 `
 
-const StyledSampleRadioButtons = styled.div`
-  display: flex;
-  gap: 1rem;
-`
-
-export const SampleRadioButtons = ({
-  optionLabel,
-  disabled,
-  error,
-  handleActive,
-}) => {
-  return (
-    <StyledSampleRadioButtons>
-      <RadioOption optionLabel="Sample Option" error disabled />
-      <RadioOption optionLabel="Sample Option" />
-    </StyledSampleRadioButtons>
-  )
-}
-
 const RadioOption = ({ optionLabel, disabled, error }) => {
+  let className = ['button-container']
+  if (disabled) className.push('disabled')
+  if (error) className.push('error')
+  className = className.join(' ')
   const [active, setActive] = useState(false)
 
   const handleActive = () => {
     setActive(!active)
   }
 
-  let buttonContainer = ['button-container']
-
   return (
     <StyledRadioOption>
-      <div className={buttonContainer}>
-        <input type="radio" name="radio" onChange={handleActive} />
+      <div className={className} onChange={handleActive}>
+        <input type="radio" name="radio" />
         <label className="form-control" htmlFor={optionLabel}>
           {optionLabel}
         </label>
