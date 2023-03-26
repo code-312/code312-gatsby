@@ -63,6 +63,8 @@ const ProjectsPage = () => {
       <Hero
         mainHeading="Learn more on how you can join a project"
         buttonText="Join A Project"
+        link="/join"
+        arrow
       />
     </Layout>
   )
