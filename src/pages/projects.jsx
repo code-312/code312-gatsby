@@ -9,15 +9,6 @@ import CfCSite from '../images/projects/CfCSite.png'
 import voma from '../images/projects/voma.png'
 import rescue from '../images/projects/rescue.png'
 import cst from '../images/projects/cst.png'
-import question from '../images/join-us/question-mark.svg'
-import available from '../images/join-us/available.svg'
-import active from '../images/join-us/active.svg'
-import slack from '../images/join-us/slack.svg'
-import codeconduct2 from '../images/join-us/codeconduct2.svg'
-import handOff from '../images/join-us/hand-off.svg'
-import form3 from '../images/join-us/form3.png'
-import form2 from '../images/join-us/form2.png'
-import form from '../images/join-us/form.png'
 
 const ProjectsPage = () => {
   const icons = [

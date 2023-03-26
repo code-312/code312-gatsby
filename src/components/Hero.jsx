@@ -16,10 +16,6 @@ const StyledHeroSection = styled.section`
     gap: 1.5rem;
   }
 
-  @media (min-width: 1400px) {
-    /* padding-left: 6rem; */
-  }
-
   .no-image {
     padding: 0;
   }
