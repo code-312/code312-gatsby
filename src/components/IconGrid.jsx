@@ -17,10 +17,6 @@ const StyledIconGrid = styled.div`
   @media (max-width: 1080px) {
     gap: 1.5rem;
   }
-
-  /* @media (max-width: 640px) {
-    grid-template-columns: 1fr 1fr;
-  } */
 `
 
 const IconGrid = ({ icons }) => {

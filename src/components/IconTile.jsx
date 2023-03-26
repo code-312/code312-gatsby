@@ -25,9 +25,7 @@ const StyledTile = styled.article`
   .tile-link {
     text-decoration: none;
     color: var(--red);
-    /* width: 10.603rem; */
     display: block;
-    /* margin-bottom: 0.5rem; */
     display: flex;
     align-items: center;
     gap: 0.5rem;
