@@ -8,6 +8,7 @@ const StyledHeroSection = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  max-width: 100%;
 
   @media (min-width: 769px) {
     flex-direction: row;
@@ -36,6 +37,10 @@ const StyledHeroSection = styled.section`
   .container-no-image {
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1200px) {
+      padding-top: 2.4rem;
+    }
   }
 
   .eyebrow-text {

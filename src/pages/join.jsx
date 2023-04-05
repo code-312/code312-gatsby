@@ -89,6 +89,7 @@ const JoinPage = () => {
       />
       <IconGrid icons={icons} />
       <ContentSection
+        background="var(--light-grey)"
         eyebrowText={'PART 1: START ONBOARDING REGISTRATION'}
         mainHeading={'To start onboarding, complete our onboarding form'}
         content={
@@ -100,6 +101,7 @@ const JoinPage = () => {
         imageDescription={'picture of the onboarding form step 1'}
       />
       <ContentSection
+        background="var(--light-grey)"
         eyebrowText={'PART 2: VOLUNTEER SKILLS'}
         mainHeading={"Next, we'll learn more about your specific skills"}
         content={
@@ -112,6 +114,7 @@ const JoinPage = () => {
         imageDescription={'picture of the onboarding form step 2'}
       />
       <ContentSection
+        background="var(--light-grey)"
         eyebrowText={'PART 3: PROJECT FIT'}
         mainHeading={
           "Finally, you'll be assigned a project that is a best fit for you"
