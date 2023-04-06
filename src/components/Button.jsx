@@ -113,7 +113,7 @@ const StyledButton = styled.div`
     width: 8.5rem;
     height: 1.31rem;
     display: flex;
-    justify-content: left;
+    justify-content: ${(props) => (props.center ? 'center' : 'flex-start')};
     align-items: center;
     padding: 0px;
     border: none;
