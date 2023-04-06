@@ -53,6 +53,10 @@ const StyledNav = styled.nav`
     gap: 1rem;
     margin-right: 1.5rem;
     padding: 0;
+
+    .donate {
+      margin-left: 1rem;
+    }
   }
   .social-img {
     min-width: 1.875rem;
@@ -123,7 +127,7 @@ const Nav = () => {
               <img className="social-img" src={githubLogo} alt="GitHub" />
             </a>
           </li>
-          <li>
+          <li className="donate">
             <Button
               link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
               text="Donate"
