@@ -25,7 +25,7 @@ const JoinPage = () => {
     {
       img: question,
       title: 'Ask Questions',
-      description: 'Don’t be afraid to ask someone questions!',
+      description: 'Don\’t be afraid to ask someone questions!',
       link: 'View Projects',
     },
     {
