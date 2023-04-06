@@ -8,7 +8,7 @@ import code from '../images/join-us/code.svg'
 import question from '../images/join-us/question-mark.svg'
 import available from '../images/join-us/available.svg'
 import active from '../images/join-us/active.svg'
-import slack from '../images/join-us/slack.svg'
+import slack from '../images/slack.svg'
 import codeconduct2 from '../images/join-us/codeconduct2.svg'
 import handOff from '../images/join-us/hand-off.svg'
 import form3 from '../images/join-us/form3.png'
@@ -51,14 +51,14 @@ const JoinPage = () => {
       description:
         'Check out the projects that are actively recruiting volunteers.',
       btnText: 'View Projects',
-      linkUrl: '/random',
+      linkUrl: '/',
     },
     {
       img: codeconduct2,
       title: 'Code of Conduct',
       description: 'Review and agree to our code of conduct.',
       btnText: 'View Conduct',
-      linkUrl: '/random',
+      linkUrl: '/',
     },
     {
       img: slack,
@@ -66,7 +66,7 @@ const JoinPage = () => {
       description:
         'Check out our Slack where all of our collaboration happens.',
       btnText: 'Join Slack',
-      linkUrl: '/random',
+      linkUrl: '/',
     },
   ]
 

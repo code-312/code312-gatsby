@@ -26,7 +26,7 @@ const StyledHeroSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5rem 0 5rem;
+    margin: 5rem 0;
 
     @media (min-width: 769px) {
       align-items: flex-start;
