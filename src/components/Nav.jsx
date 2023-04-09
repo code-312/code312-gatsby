@@ -11,7 +11,7 @@ import useWindow from '../hooks/useWindow'
 
 const StyledNav = styled.nav`
   height: 6rem;
-  padding: 1.5rem 6rem;
+  padding: 1.5rem 3.375rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,7 +51,6 @@ const StyledNav = styled.nav`
     align-items: center;
     list-style-type: none;
     gap: 1rem;
-    margin-right: 1.5rem;
     padding: 0;
 
     .donate {
