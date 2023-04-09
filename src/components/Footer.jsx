@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import longArrowAltRight from '../images/join-us/long-arrow-alt-right.svg'
 
 const StyledFooter = styled.footer`
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 0;
   display: block;
   margin: 0 auto;
   max-width: 45.5rem;
