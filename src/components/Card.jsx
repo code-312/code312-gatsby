@@ -77,9 +77,9 @@ const Card = ({
         <div className="content-container">
           <h3 className="card-header heading-3">
             <span className="eyebrow-text eyebrow-1">
-              {eyebrowText ? eyebrowText : 'Subtitle'}
+              {eyebrowText ? eyebrowText : null}
             </span>
-            {mainHeading ? mainHeading : 'Title'}
+            {mainHeading ? mainHeading : null}
           </h3>
           <p className="p2-body ">
             {content

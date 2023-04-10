@@ -7,10 +7,10 @@ import CardBlock from '../components/CardBlock'
 import Card from '../components/Card'
 import Layout from '../components/Layout'
 import IconGrid from '../components/IconGrid'
-import CfCSite from '../images/projects/TestImage.png'
-import voma from '../images/projects/TestImage.png'
+// import CfCSite from '../images/projects/TestImage.png'
+// import voma from '../images/projects/TestImage.png'
 import rescue from '../images/projects/TestImage.png'
-import ccst from '../images/projects/TestImage.png'
+// import ccst from '../images/projects/TestImage.png'
 
 const StyledSection = styled.section`
   background-color: var(--light-grey);
@@ -36,7 +36,7 @@ const ProjectsPage = ({ data }) => {
   for (const active of activeRaw) {
     let newActive = Object.create(null)
     newActive.imgUrl = active.frontmatter.thumbnail
-      ? `... + ${active.frontmatter.thumbnail}`
+      ? `../..${active.frontmatter.thumbnail}`
       : null
     newActive.imageDescription = active.frontmatter.alt
       ? active.frontmatter.alt
@@ -50,15 +50,14 @@ const ProjectsPage = ({ data }) => {
     newActive.labels = active.frontmatter.areas
       ? active.frontmatter.areas.split(', ')
       : null
-    newActive.linkUrl = active.frontmatter.linkUrl
-      ? active.frontmatter.linkUrl
+    newActive.linkUrl = active.frontmatter.thumbnail
+      ? active.frontmatter.thumbnail
       : null
-    newActive.linkText = active.frontmatter.linkText
-      ? active.frontmatter.linkText
-      : null
+    newActive.linkText = active.frontmatter.alt ? active.frontmatter.alt : null
     newActiveList.push(newActive)
   }
 
+  console.log(newActiveList)
   //loop through inactiveRaw list and create new objects to match props of tileGrid & tileCard.  ONLY NEED TITLE/title & DESCRIPTION/description
   let newInactiveList = []
 
@@ -105,21 +104,6 @@ const ProjectsPage = ({ data }) => {
           mainHeading="Rescue Chicago"
           content="Building an interactive data visualization dashboard to explore how different dog characteristics affect the average length of stay."
         />
-        {/* <Card
-          imgUrl={CfCSite}
-          mainHeading="Code for Chicago Website"
-          content="Designing and building the Code for Chicago website and design system."
-        />
-        <Card
-          imgUrl={voma}
-          mainHeading="Voma"
-          content="Building a better volunteer management tool for the Code for America Brigade network."
-        />
-        <Card
-          imgUrl={ccst}
-          mainHeading="Chicago Council on Science and Technology"
-          content="Transition the org\’s website from Wordpress to Wix. Improve the exisitng designs and develop it on the Wix platform."
-        /> */}
       </CardBlock>
       <StyledSection>
         <Heading
