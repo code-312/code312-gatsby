@@ -17,7 +17,6 @@ const StyledContentSection = styled.section`
 
     @media (min-width: 769px) {
       flex-direction: ${(props) => (props.imgLeft ? 'row-reverse' : 'row')};
-      /* flex-direction: row; */
     }
   }
 
