@@ -9,7 +9,7 @@ import Layout from '../components/Layout'
 import IconGrid from '../components/IconGrid'
 // import CfCSite from '../images/projects/TestImage.png'
 // import voma from '../images/projects/TestImage.png'
-import rescue from '../images/projects/TestImage.png'
+// import rescue from '../images/projects/TestImage.png'
 // import ccst from '../images/projects/TestImage.png'
 
 const StyledSection = styled.section`
@@ -36,7 +36,7 @@ const ProjectsPage = ({ data }) => {
   for (const active of activeRaw) {
     let newActive = Object.create(null)
     newActive.imgUrl = active.frontmatter.thumbnail
-      ? `../..${active.frontmatter.thumbnail}`
+      ? `../src${active.frontmatter.thumbnail}`
       : null
     newActive.imageDescription = active.frontmatter.alt
       ? active.frontmatter.alt
@@ -99,11 +99,11 @@ const ProjectsPage = ({ data }) => {
             />
           )
         })}
-        <Card
+        {/* <Card
           imgUrl={rescue}
           mainHeading="Rescue Chicago"
           content="Building an interactive data visualization dashboard to explore how different dog characteristics affect the average length of stay."
-        />
+        /> */}
       </CardBlock>
       <StyledSection>
         <Heading
