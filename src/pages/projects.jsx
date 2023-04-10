@@ -20,7 +20,7 @@ const ProjectsPage = ({ data }) => {
   const activeRaw = []
   const inactiveRaw = []
 
-  console.log(data)
+  //loop through data and separate out active and inactive projects
 
   for (const project of data.allMarkdownRemark.nodes) {
     if (project.frontmatter.areas.toLowerCase() === 'not actively recruiting') {
@@ -30,34 +30,48 @@ const ProjectsPage = ({ data }) => {
     }
   }
 
-  console.log(inactiveRaw, activeRaw)
-  let newActiveList = []
+  //loop through activeRaw and create new objects to match props format of CARD component
 
+  let newActiveList = []
   for (const active of activeRaw) {
     let newActive = Object.create(null)
-    newActive.imageUrl = active.frontmatter.thumbnail
+    newActive.imgUrl = active.frontmatter.thumbnail
       ? `... + ${active.frontmatter.thumbnail}`
       : null
-    newActive.imageDescription = active.frontmatter.alt ? active.frontmatter.alt : null
-    newActive.mainHeading = active.frontmatter.title ? active.frontmatter.title : null
+    newActive.imageDescription = active.frontmatter.alt
+      ? active.frontmatter.alt
+      : null
+    newActive.mainHeading = active.frontmatter.title
+      ? active.frontmatter.title
+      : null
     newActive.content = active.frontmatter.description
       ? active.frontmatter.description
       : null
     newActive.labels = active.frontmatter.areas
       ? active.frontmatter.areas.split(', ')
       : null
+    newActive.linkUrl = active.frontmatter.linkUrl
+      ? active.frontmatter.linkUrl
+      : null
+    newActive.linkText = active.frontmatter.linkText
+      ? active.frontmatter.linkText
+      : null
     newActiveList.push(newActive)
   }
 
-  console.log(newActiveList)
+  //loop through inactiveRaw list and create new objects to match props of tileGrid & tileCard.  ONLY NEED TITLE/title & DESCRIPTION/description
+  let newInactiveList = []
 
-  const icons = [
-    {
-      title: 'Cannabis Equity Illinois Coalition',
-      description: 'Website redesign and build.',
-    },
-  ]
-
+  for (const inactive of inactiveRaw) {
+    let newInactive = Object.create(null)
+    newInactive.title = inactive.frontmatter.title
+      ? inactive.frontmatter.title
+      : null
+    newInactive.description = inactive.frontmatter.description
+      ? inactive.frontmatter.description
+      : null
+    newInactiveList.push(newInactive)
+  }
 
   return (
     <Layout>
@@ -72,12 +86,26 @@ const ProjectsPage = ({ data }) => {
         headingLevel="3"
       />
       <CardBlock>
+        {newActiveList.map((project) => {
+          return (
+            <Card
+              key={project.mainHeading}
+              imgUrl={project.imgUrl}
+              imageDescription={project.imageDescription}
+              mainHeading={project.mainHeading}
+              content={project.content}
+              labels={project.labels}
+              linkUrl={project.linkUrl}
+              linkText={project.linkText}
+            />
+          )
+        })}
         <Card
           imgUrl={rescue}
           mainHeading="Rescue Chicago"
           content="Building an interactive data visualization dashboard to explore how different dog characteristics affect the average length of stay."
         />
-        <Card
+        {/* <Card
           imgUrl={CfCSite}
           mainHeading="Code for Chicago Website"
           content="Designing and building the Code for Chicago website and design system."
@@ -91,7 +119,7 @@ const ProjectsPage = ({ data }) => {
           imgUrl={ccst}
           mainHeading="Chicago Council on Science and Technology"
           content="Transition the org\’s website from Wordpress to Wix. Improve the exisitng designs and develop it on the Wix platform."
-        />
+        /> */}
       </CardBlock>
       <StyledSection>
         <Heading
@@ -100,7 +128,7 @@ const ProjectsPage = ({ data }) => {
           description="These projects are active, but don't have room for additional volunteers."
           headingLevel="3"
         />
-        <IconGrid icons={icons} />
+        <IconGrid icons={newInactiveList} />
       </StyledSection>
       <Hero
         mainHeading="Learn more on how you can join a project"
