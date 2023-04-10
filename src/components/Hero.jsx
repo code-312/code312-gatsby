@@ -11,18 +11,13 @@ const StyledHeroSection = styled.section`
   @media (min-width: 769px) {
     flex-direction: row;
     align-items: center;
-    padding-left: 3rem;
-  }
-
-  @media (min-width: 1400px) {
-    padding-left: 6rem;
   }
 
   .content-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 7rem 0 3.5rem;
+    margin: 7rem 0 3.5rem 3rem;
 
     @media (min-width: 769px) {
       align-items: flex-start;
