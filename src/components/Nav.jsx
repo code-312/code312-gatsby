@@ -11,7 +11,7 @@ import useWindow from '../hooks/useWindow'
 
 const StyledNav = styled.nav`
   height: 6rem;
-  padding: 1.5rem 3.375rem;
+  padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
