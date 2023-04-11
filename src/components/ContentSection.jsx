@@ -73,7 +73,7 @@ const ContentSection = ({
             {mainHeading}
           </h3>
           <p className="p1-body">{content}</p>
-          <Button text={linkText} link={linkUrl} />
+          {linkUrl ? <Button text={linkText} link={linkUrl}/>  : null }
         </div>
         <div className="image-container">
           <img src={imgUrl ? imgUrl : TestImage} alt={imageDescription} />
