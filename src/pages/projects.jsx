@@ -6,7 +6,6 @@ import Heading from '../components/Heading'
 import CardBlock from '../components/CardBlock'
 import Card from '../components/Card'
 import Layout from '../components/Layout'
-import IconGrid from '../components/IconGrid'
 // import CfCSite from '../images/projects/TestImage.png'
 // import voma from '../images/projects/TestImage.png'
 // import rescue from '../images/projects/TestImage.png'
@@ -36,7 +35,7 @@ const ProjectsPage = ({ data }) => {
   for (const active of activeRaw) {
     let newActive = Object.create(null)
     newActive.imgUrl = active.frontmatter.thumbnail
-      ? `../src${active.frontmatter.thumbnail}`
+      ? `src${active.frontmatter.thumbnail}`
       : null
     newActive.imageDescription = active.frontmatter.alt
       ? active.frontmatter.alt
@@ -56,21 +55,21 @@ const ProjectsPage = ({ data }) => {
     newActive.linkText = active.frontmatter.alt ? active.frontmatter.alt : null
     newActiveList.push(newActive)
   }
-console.log(newActiveList)
+  console.log(newActiveList)
   //loop through inactiveRaw list and create new objects to match props of tileGrid & tileCard.  ONLY NEED TITLE/title & DESCRIPTION/description
   let newInactiveList = []
-  
+
   for (const inactive of inactiveRaw) {
     let newInactive = Object.create(null)
     newInactive.mainHeading = inactive.frontmatter.title
-    ? inactive.frontmatter.title
+      ? inactive.frontmatter.title
       : null
-      newInactive.content = inactive.frontmatter.description
+    newInactive.content = inactive.frontmatter.description
       ? inactive.frontmatter.description
       : null
-      newInactiveList.push(newInactive)
-    }
-    console.log(newInactiveList)
+    newInactiveList.push(newInactive)
+  }
+  console.log(newInactiveList)
 
   return (
     <Layout>
@@ -108,20 +107,20 @@ console.log(newActiveList)
           headingLevel="3"
         />
         <CardBlock>
-        {newInactiveList.map((project) => {
-          return (
-            <Card
-              key={project.mainHeading}
-              imgUrl={project.imgUrl}
-              imageDescription={project.imageDescription}
-              mainHeading={project.mainHeading}
-              content={project.content}
-              labels={project.labels}
-              linkUrl={project.linkUrl}
-              linkText={project.linkText}
-            />
-          )
-        })}
+          {newInactiveList.map((project) => {
+            return (
+              <Card
+                key={project.mainHeading}
+                imgUrl={project.imgUrl}
+                imageDescription={project.imageDescription}
+                mainHeading={project.mainHeading}
+                content={project.content}
+                labels={project.labels}
+                linkUrl={project.linkUrl}
+                linkText={project.linkText}
+              />
+            )
+          })}
         </CardBlock>
       </StyledSection>
       <Hero
@@ -135,22 +134,22 @@ console.log(newActiveList)
 }
 
 export const query = graphql`
-query PortfolioListQuery {
-  allMarkdownRemark(filter: {frontmatter: {layout: {eq: "project"}}}) {
-    nodes {
-      frontmatter {
-        title
-        thumbnail
-        layout
-        imgtext
-        date
-        areas
-        alt
-        description
+  query PortfolioListQuery {
+    allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
+      nodes {
+        frontmatter {
+          title
+          thumbnail
+          layout
+          imgtext
+          date
+          areas
+          alt
+          description
+        }
       }
     }
   }
-}
 `
 
 export default ProjectsPage

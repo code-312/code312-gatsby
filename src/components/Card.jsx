@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import GatsbyImageWrapper from './GatsbyImageWrapper'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import defaultCardImage from '../images/card-placeholder.svg'
@@ -86,12 +87,19 @@ const Card = ({
   return (
     <StyledCard>
       {imgUrl ? (
+        <GatsbyImageWrapper
+          id="card-image"
+          imageUrl={imgUrl}
+          alt={imageDescription}
+        />
+      ) : null}
+      {/* {imgUrl ? (
         <img
           id="card-image"
           src={imgUrl ? imgUrl : defaultCardImage}
           alt={imageDescription ? imageDescription : 'Description'}
         />
-      ) : null}
+      ) : null} */}
       <div className="card-details">
         <div className="content-container">
           <h3 className="card-header heading-3">
