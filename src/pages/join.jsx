@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import IconGrid from '../components/IconGrid'
 import Hero from '../components/Hero'
 import Heading from '../components/Heading'
@@ -14,6 +15,10 @@ import codeconduct2 from '../images/join-us/codeconduct2.svg'
 import form3 from '../images/join-us/form3.png'
 import form2 from '../images/join-us/form2.png'
 import form from '../images/join-us/form.png'
+
+const StyledSection = styled.section`
+  background-color: var(--light-grey);
+`
 
 const JoinPage = () => {
   const icons = [
@@ -124,12 +129,21 @@ const JoinPage = () => {
         imageDescription={'picture of the onboarding form step 3'}
       />
       <Heading
-        browText="Start onboarding today"
-        headingText="Ready to join?"
+        browText="STEP 1"
+        headingText="Ready to join? Start with these tasks"
         description="This is content that describes this section."
         headingLevel="3"
       />
       <IconGrid icons={icons2} />
+      <StyledSection>
+        <Heading
+          browText="STEP 1"
+          headingText="Ready to join? Start with these tasks"
+          // description="This is content that describes this section."
+          headingLevel="3"
+        />
+        <IconGrid icons={icons2} />
+      </StyledSection>
       <Hero
         mainHeading="Have you completed the pre-onboarding checklist?"
         buttonText="Start Onboarding"
