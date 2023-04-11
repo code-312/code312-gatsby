@@ -4,13 +4,13 @@ import Hero from '../components/Hero'
 import Heading from '../components/Heading'
 import Layout from '../components/Layout'
 import ContentSection from '../components/ContentSection'
-import code from '../images/join-us/code.svg'
-import question from '../images/join-us/question-mark.svg'
-import available from '../images/join-us/available.svg'
+import attend from '../images/join-us/attend.svg'
+import ghost from '../images/join-us/ghost.svg'
+import initiative from '../images/join-us/initiative.svg'
+import handOff from '../images/join-us/hand-off.svg'
 import active from '../images/join-us/active.svg'
 import slack from '../images/slack.svg'
 import codeconduct2 from '../images/join-us/codeconduct2.svg'
-import handOff from '../images/join-us/hand-off.svg'
 import form3 from '../images/join-us/form3.png'
 import form2 from '../images/join-us/form2.png'
 import form from '../images/join-us/form.png'
@@ -18,29 +18,24 @@ import form from '../images/join-us/form.png'
 const JoinPage = () => {
   const icons = [
     {
-      img: code,
-      title: 'Code of Conduct',
-      description: 'We ensure we keep teamwork safe and fun.',
+      img: attend,
+      title: 'Attend Meetings',
+      description: 'All project teams have a regular meeting schedule.',
     },
     {
-      img: question,
-      title: 'Ask Questions',
-      description: 'Don\’t be afraid to ask someone questions!',
-      link: 'View Projects',
+      img: ghost,
+      title: "Don't ghost us",
+      description: 'We know life happens so keep your team updated.',
     },
     {
-      img: available,
-      title: 'Availability',
-      description:
-        'We know life happens so let your team know if you have capacity.',
-      link: 'View Conduct',
+      img: initiative,
+      title: 'Take initiative',
+      description: 'We work best when we fill in the gaps in the workflow.',
     },
     {
       img: handOff,
       title: 'Hand-Off Tasks',
-      description:
-        'Ensure your work continues and transfer your tasks to another!',
-      link: 'Join Slack',
+      description: 'When you can’t participate anymore then let us know!',
     },
   ]
 
@@ -77,14 +72,15 @@ const JoinPage = () => {
       <Hero
         eyebrowText="JOIN US"
         mainHeading="Be part of the change in your community"
+        description="Start the process of joining one of our on-going projects."
         buttonText="Start Onboarding"
         link="/"
         arrow
       />
       <Heading
         browText="Volunteer Expectations"
-        headingText="Our culture is scrappy"
-        description="This is content that describes this section."
+        headingText="Our workflow is scrappy"
+        description="We try our best to be organized, but we rely on our volunteers to shape how they want to contribute."
         headingLevel="3"
       />
       <IconGrid icons={icons} />

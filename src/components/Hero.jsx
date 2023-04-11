@@ -26,7 +26,7 @@ const StyledHeroSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 7rem 0 3.5rem 3rem;
+    margin: 7rem 1.5rem 3.5rem 1.5rem;
 
     @media (min-width: 769px) {
       align-items: flex-start;
@@ -69,7 +69,7 @@ const StyledHeroSection = styled.section`
     }
     @media (min-width: 769px) {
       text-align: left;
-      margin: 0 0 1.5rem 0;
+      margin: 0 0 0.5rem 0;
     }
   }
 
@@ -113,11 +113,31 @@ const StyledHeroSection = styled.section`
     border-radius: 2.2px;
     color: var(--blizzard-black);
   }
+
+  .description {
+    /* margin-top: 0.5rem; */
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.87rem;
+    text-align: center;
+    text-indent: 0;
+
+    @media (min-width: 649px) {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-align: center;
+    text-indent: 0;
+    }
+  }
 `
 
 const Hero = ({
   eyebrowText,
   mainHeading,
+  description,
   img,
   imgDescription,
   buttonText,
@@ -137,6 +157,7 @@ const Hero = ({
         >
           {mainHeading ? mainHeading : 'Community service in a digital age'}
         </h2>
+        <p className="description">{description}</p>
         {buttonText && (
           <Button text={buttonText} link={link} arrow={arrow} center />
         )}
