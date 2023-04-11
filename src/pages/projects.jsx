@@ -19,7 +19,7 @@ const StyledSection = styled.section`
 const ProjectsPage = ({ data }) => {
   const activeRaw = []
   const inactiveRaw = []
-
+  console.log(data)
   //loop through data and separate out active and inactive projects
 
   for (const project of data.allMarkdownRemark.nodes) {
@@ -56,21 +56,21 @@ const ProjectsPage = ({ data }) => {
     newActive.linkText = active.frontmatter.alt ? active.frontmatter.alt : null
     newActiveList.push(newActive)
   }
-
-  console.log(newActiveList)
+console.log(newActiveList)
   //loop through inactiveRaw list and create new objects to match props of tileGrid & tileCard.  ONLY NEED TITLE/title & DESCRIPTION/description
   let newInactiveList = []
-
+  
   for (const inactive of inactiveRaw) {
     let newInactive = Object.create(null)
-    newInactive.title = inactive.frontmatter.title
-      ? inactive.frontmatter.title
+    newInactive.mainHeading = inactive.frontmatter.title
+    ? inactive.frontmatter.title
       : null
-    newInactive.description = inactive.frontmatter.description
+      newInactive.content = inactive.frontmatter.description
       ? inactive.frontmatter.description
       : null
-    newInactiveList.push(newInactive)
-  }
+      newInactiveList.push(newInactive)
+    }
+    console.log(newInactiveList)
 
   return (
     <Layout>
@@ -94,16 +94,11 @@ const ProjectsPage = ({ data }) => {
               mainHeading={project.mainHeading}
               content={project.content}
               labels={project.labels}
-              linkUrl={project.linkUrl}
-              linkText={project.linkText}
+              // linkUrl={project.linkUrl}
+              // linkText={project.linkText}
             />
           )
         })}
-        {/* <Card
-          imgUrl={rescue}
-          mainHeading="Rescue Chicago"
-          content="Building an interactive data visualization dashboard to explore how different dog characteristics affect the average length of stay."
-        /> */}
       </CardBlock>
       <StyledSection>
         <Heading
@@ -112,11 +107,26 @@ const ProjectsPage = ({ data }) => {
           description="These projects are active, but don't have room for additional volunteers."
           headingLevel="3"
         />
-        <IconGrid icons={newInactiveList} />
+        <CardBlock>
+        {newInactiveList.map((project) => {
+          return (
+            <Card
+              key={project.mainHeading}
+              imgUrl={project.imgUrl}
+              imageDescription={project.imageDescription}
+              mainHeading={project.mainHeading}
+              content={project.content}
+              labels={project.labels}
+              linkUrl={project.linkUrl}
+              linkText={project.linkText}
+            />
+          )
+        })}
+        </CardBlock>
       </StyledSection>
       <Hero
         mainHeading="Learn more on how you can join a project"
-        buttonText="Join A Project"
+        buttonText="Volunteer With Us"
         link="/join"
         arrow
       />
@@ -125,22 +135,22 @@ const ProjectsPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query PortfolioListQuery {
-    allMarkdownRemark(filter: { frontmatter: {} }) {
-      nodes {
-        frontmatter {
-          title
-          layout
-          date
-          thumbnail
-          imgtext
-          alt
-          description
-          areas
-        }
+query PortfolioListQuery {
+  allMarkdownRemark(filter: {frontmatter: {layout: {eq: "project"}}}) {
+    nodes {
+      frontmatter {
+        title
+        thumbnail
+        layout
+        imgtext
+        date
+        areas
+        alt
+        description
       }
     }
   }
+}
 `
 
 export default ProjectsPage

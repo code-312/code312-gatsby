@@ -2,10 +2,10 @@
 layout: project
 title: Chicago Council on Science and Technology
 date: 2022-01-10T12:23:37.832Z
-areas: Not actively recruiting
+areas: Front-End, UX Research, UX Design
 thumbnail: /images/uploads/Site_Map-Chicago_Council.png
 imgtext: Modernizing a website to increase volunteer and event participation
-description: "     "
+description: "Transition the org’s website from Wordpress to Wix. Improve the exisitng designs and develop it on the Wix platform."
 alt: "null"
 ---
 **Recruitment Status:** Not actively recruiting

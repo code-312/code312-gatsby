@@ -2,10 +2,11 @@
 layout: project
 title: Code for Chicago Website
 date: 2022-01-10T12:37:32.593Z
-areas: Front-end, UX/UI Design
+areas: Front-end, UX/UI Design, UX Research, Content
 thumbnail: /images/uploads/Site_Map-CfC_Website.png
 imgtext: Help build our website and design system for the brigade network
 alt: "null"
+description: "Designing and building the Code for Chicago website and design system."
 ---
 **Recruitment Status:** Actively recruiting
 
