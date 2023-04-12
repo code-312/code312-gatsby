@@ -35,7 +35,7 @@ const ProjectsPage = ({ data }) => {
   for (const active of activeRaw) {
     let newActive = Object.create(null)
     newActive.imgUrl = active.frontmatter.thumbnail
-      ? `src${active.frontmatter.thumbnail}`
+      ? `..${active.frontmatter.thumbnail}`
       : null
     newActive.imageDescription = active.frontmatter.alt
       ? active.frontmatter.alt
@@ -69,7 +69,6 @@ const ProjectsPage = ({ data }) => {
       : null
     newInactiveList.push(newInactive)
   }
-  console.log(newInactiveList)
 
   return (
     <Layout>
@@ -84,7 +83,7 @@ const ProjectsPage = ({ data }) => {
         headingLevel="3"
       />
       <CardBlock>
-        {newActiveList.map((project) => {
+        {newActiveList?.map((project) => {
           return (
             <Card
               key={project.mainHeading}
@@ -93,8 +92,6 @@ const ProjectsPage = ({ data }) => {
               mainHeading={project.mainHeading}
               content={project.content}
               labels={project.labels}
-              // linkUrl={project.linkUrl}
-              // linkText={project.linkText}
             />
           )
         })}

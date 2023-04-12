@@ -1,18 +1,17 @@
 import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
-const GatsbyImageWrapper = ({ imageUrl, alt }) => {
-  console.log(imageUrl)
+const ImageWrapper = ({ image, alt }) => {
   return (
     <StaticImage
-      src={imageUrl}
+      src={image}
       alt={alt}
       placeholder="blurred"
       layout="fixed"
-      width={300}
-      height={300}
+      width={200}
+      height={200}
     />
   )
 }
 
-export default GatsbyImageWrapper
+export default ImageWrapper
