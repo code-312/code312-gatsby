@@ -6,10 +6,6 @@ import Heading from '../components/Heading'
 import CardBlock from '../components/CardBlock'
 import Card from '../components/Card'
 import Layout from '../components/Layout'
-// import CfCSite from '../images/projects/TestImage.png'
-// import voma from '../images/projects/TestImage.png'
-// import rescue from '../images/projects/TestImage.png'
-// import ccst from '../images/projects/TestImage.png'
 
 const StyledSection = styled.section`
   background-color: var(--light-grey);
@@ -18,7 +14,7 @@ const StyledSection = styled.section`
 const ProjectsPage = ({ data }) => {
   const activeRaw = []
   const inactiveRaw = []
-  console.log(data)
+  console.log(data.allMarkdownRemark.nodes[0].frontmatter.thumbnail.childImageSharp.fluid.src)
   //loop through data and separate out active and inactive projects
 
   for (const project of data.allMarkdownRemark.nodes) {
@@ -34,9 +30,9 @@ const ProjectsPage = ({ data }) => {
   let newActiveList = []
   for (const active of activeRaw) {
     let newActive = Object.create(null)
-    newActive.imgUrl = active.frontmatter.thumbnail
-      ? `..${active.frontmatter.thumbnail}`
-      : null
+    newActive.imgUrl = active.frontmatter.thumbnail && active.frontmatter.thumbnail.childImageSharp
+    ? active.frontmatter.thumbnail.childImageSharp.fluid.src
+    : null
     newActive.imageDescription = active.frontmatter.alt
       ? active.frontmatter.alt
       : null
@@ -136,7 +132,13 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          thumbnail
+          thumbnail {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
           layout
           imgtext
           date
