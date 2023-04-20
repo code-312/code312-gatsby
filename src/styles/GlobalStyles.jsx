@@ -69,8 +69,14 @@ const GlobalStyles = createGlobalStyle`
     white-space: nowrap; /* added line */
   }
 
+  .width-wrapper {
+    max-width: 75rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
   .heading-1 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 2rem;
     line-height: 2.625rem;
 
@@ -80,7 +86,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .heading-2 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.5rem;
     line-height: 1.9375rem;
 
@@ -90,7 +96,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .heading-3 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.125rem;
     line-height: 1.438rem;
 
@@ -100,7 +106,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .heading-4 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1rem;
     line-height: 1.313rem;
 
@@ -110,7 +116,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .heading-5 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.875rem;
     line-height: 1.125rem;
 
@@ -120,7 +126,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .heading-6 {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 0.75rem;
     line-height: 1rem;
 
@@ -130,7 +136,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .eyebrow-1 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     line-height: 1.313rem;
 
@@ -140,7 +146,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .eyebrow-2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.875rem;
     line-height: 1.125rem;
 
@@ -150,7 +156,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .eyebrow-3 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.75rem;
     line-height: 1rem;
 
@@ -161,7 +167,7 @@ const GlobalStyles = createGlobalStyle`
   }
   
   .p1-strong {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1rem;
     line-height: 1.5rem;
 
@@ -171,7 +177,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .p1-body {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 1rem;
     line-height: 1.5rem;
 
@@ -182,7 +188,7 @@ const GlobalStyles = createGlobalStyle`
   }
   
   .p2-body {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 0.875rem;
     line-height: 1.313rem;
 
@@ -192,7 +198,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .p3-body {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 0.75rem;
     line-height: 1rem;
 
@@ -202,7 +208,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .label-1 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     line-height: 1.313rem;
 
@@ -212,7 +218,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .label-2 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.875rem;
     line-height: 1.125rem;
 
@@ -222,7 +228,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .label-3 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.75rem;
     line-height: 1rem;
 
@@ -232,7 +238,7 @@ const GlobalStyles = createGlobalStyle`
     }
   }
   .quote {
-    font-weight: 700;
+    font-weight: 800;
     font-size: 1.25rem;
     line-height: 1.875rem;
 

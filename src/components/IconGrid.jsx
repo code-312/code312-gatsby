@@ -3,27 +3,23 @@ import styled from 'styled-components'
 import IconTile from '../components/IconTile'
 
 const StyledIconGrid = styled.div`
-  max-width: 68.75rem;
-  margin: 0 auto;
-  display: grid;
   width: 100vw;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  gap: 1.5rem;
+  max-width: 89.5rem;
   margin: 0 auto;
-  padding: 2rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: wrap;
+  gap: 1.5rem;
+  padding: 0 2rem 2rem;
 
   @media (max-width: 1080px) {
-    gap: 1rem;
-  }
-
-  @media (max-width: 640px) {
-    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
 `
 
 const IconGrid = ({ icons }) => {
-  console.log(icons.length)
   return (
     <StyledIconGrid>
       {icons.map((icon) => {
@@ -33,6 +29,8 @@ const IconGrid = ({ icons }) => {
             title={icon.title}
             description={icon.description}
             key={icon.title}
+            btnText={icon.btnText ? icon.btnText : null}
+            linkUrl={icon.linkUrl ? icon.linkUrl : null}
           />
         )
       })}

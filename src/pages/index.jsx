@@ -16,6 +16,7 @@ import developers from '../images/icons/developers.svg'
 import productmanagers from '../images/icons/productmanagers.svg'
 import projectmanagers from '../images/icons/projectmanagers.svg'
 import socialworkers from '../images/icons/socialworkers.svg'
+import skyline from '../images/skyline.svg'
 
 const WorkWithUs = styled.section`
   margin-bottom: 4rem;
@@ -35,7 +36,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Hero />
+      <Hero img={skyline} imgDescription={'Skyline of Chicago'} />
       <WorkWithUs>
         <Heading
           headingText="Work With Us"
@@ -78,6 +79,8 @@ const IndexPage = () => {
       <Heading
         headingText="No Upcoming Events"
         description="Join our Meetup group to stay up to date on what’s coming up."
+        ctaButton="Join our Meetup Group"
+        ctaLink="https://www.meetup.com/code-for-chicago/"
       />
       <ContactUs />
     </Layout>

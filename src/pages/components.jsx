@@ -29,7 +29,7 @@ const Components = () => {
       />
       <Checklist />
       <Quote />
-      <Button text="Submit" secondary small />
+      <Button text="Submit" textBtn arrow link="/" />
       <ShortTextInput
         label="Email*"
         type="email"

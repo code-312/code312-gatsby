@@ -11,7 +11,7 @@ import useWindow from '../hooks/useWindow'
 
 const StyledNav = styled.nav`
   height: 6rem;
-  padding: 1.5rem 6rem;
+  padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,9 +50,12 @@ const StyledNav = styled.nav`
     display: flex;
     align-items: center;
     list-style-type: none;
-    gap: 2rem;
-    margin-right: 1.5rem;
+    gap: 1rem;
     padding: 0;
+
+    .donate {
+      margin-left: 1rem;
+    }
   }
   .social-img {
     min-width: 1.875rem;
@@ -60,15 +63,6 @@ const StyledNav = styled.nav`
 
   .meetup {
     min-width: 2.25rem;
-  }
-
-  .donateButton {
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--dark-red);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 2.2px;
-    text-decoration: none;
-    color: var(--blizzard-black);
   }
 `
 
@@ -79,7 +73,7 @@ const Nav = () => {
     return <MobileNav windowWidth={windowWidth} />
   }
   return (
-    <StyledNav className="navbar" aria-label="main">
+    <StyledNav className="width-wrapper" aria-label="main">
       <ul className="internal-links label-1">
         <li id="logo-container">
           <Link to="/">
@@ -132,10 +126,11 @@ const Nav = () => {
               <img className="social-img" src={githubLogo} alt="GitHub" />
             </a>
           </li>
-          <li>
+          <li className="donate">
             <Button
               link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
               text="Donate"
+              arrow
             />
           </li>
         </ul>
