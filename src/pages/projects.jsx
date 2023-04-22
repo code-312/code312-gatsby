@@ -17,8 +17,8 @@ const Projects = () => {
   return (
     <Layout>
       <Hero
-        eyebrowText={'Active Projects'}
-        mainHeading={'Explore active projects to get involved'}
+        eyebrowText="Active Projects"
+        mainHeading="Explore active projects to get involved"
       />
       <Heading
         browText="NEEDS VOLUNTEERS"
@@ -44,7 +44,12 @@ const Projects = () => {
         </CardBlock>
       </StyledSection>
 
-      <Hero />
+      <Hero
+        eyebrowText="Voluteer Registration"
+        mainHeading="Learn more on how you can join a project."
+        buttonText="Volunteer With Us"
+        arrow
+      />
     </Layout>
   )
 }
