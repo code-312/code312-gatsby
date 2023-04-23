@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Card from '../components/Card'
@@ -13,7 +14,16 @@ const StyledSection = styled.div`
   padding-bottom: 4rem;
 `
 
-const Projects = () => {
+const Projects = ({ data }) => {
+  const showCards = (data, isActive = true) => {
+    return data.allMarkdownRemark.nodes.map((info) => {
+      const { title, thumbnail, areas, imgtext } = info.frontmatter
+      if (isActive && areas.toLowerCase() !== 'not actively recruiting')
+        return <Card imgUrl={thumbnail} mainHeading={title} content={imgtext} />
+      if (!isActive && areas.toLowerCase() === 'not actively recruiting')
+        return <Card imgUrl={thumbnail} mainHeading={title} content={imgtext} />
+    })
+  }
   return (
     <Layout>
       <Hero
@@ -26,12 +36,7 @@ const Projects = () => {
         description="These projects are actively recruiting for new volunteers."
         headingLevel="3"
       />
-      <CardBlock>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-      </CardBlock>
+      <CardBlock>{showCards(data)}</CardBlock>
       <StyledSection>
         <Heading
           browText="TEAMS AT CAPACITY"
@@ -39,9 +44,7 @@ const Projects = () => {
           description="These projects are active, but don’t have room for additional volunteers."
           headingLevel="3"
         />
-        <CardBlock>
-          <Card></Card>
-        </CardBlock>
+        <CardBlock>{showCards(data, false)}</CardBlock>
       </StyledSection>
 
       <Hero
@@ -55,3 +58,18 @@ const Projects = () => {
 }
 
 export default Projects
+
+export const query = graphql`
+  query projectsQuery {
+    allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
+      nodes {
+        frontmatter {
+          title
+          thumbnail
+          areas
+          imgtext
+        }
+      }
+    }
+  }
+`
