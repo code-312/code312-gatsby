@@ -14,7 +14,7 @@ const StyledSection = styled.section`
 const ProjectsPage = ({ data }) => {
   const activeRaw = []
   const inactiveRaw = []
-  console.log(data.allMarkdownRemark.nodes[0].frontmatter.thumbnail.childImageSharp.fluid.src)
+  // console.log(data.allMarkdownRemark.nodes[0].frontmatter.thumbnail.childImageSharp.fluid.src)
   //loop through data and separate out active and inactive projects
 
   for (const project of data.allMarkdownRemark.nodes) {
@@ -30,9 +30,11 @@ const ProjectsPage = ({ data }) => {
   let newActiveList = []
   for (const active of activeRaw) {
     let newActive = Object.create(null)
-    newActive.imgUrl = active.frontmatter.thumbnail && active.frontmatter.thumbnail.childImageSharp
-    ? active.frontmatter.thumbnail.childImageSharp.fluid.src
-    : null
+    newActive.imgUrl =
+      active.frontmatter.thumbnail &&
+      active.frontmatter.thumbnail.childImageSharp
+        ? active.frontmatter.thumbnail
+        : null
     newActive.imageDescription = active.frontmatter.alt
       ? active.frontmatter.alt
       : null
@@ -82,6 +84,7 @@ const ProjectsPage = ({ data }) => {
         {newActiveList?.map((project) => {
           return (
             <Card
+              graphql
               key={project.mainHeading}
               imgUrl={project.imgUrl}
               imageDescription={project.imageDescription}
@@ -89,6 +92,7 @@ const ProjectsPage = ({ data }) => {
               content={project.content}
               labels={project.labels}
             />
+
           )
         })}
       </CardBlock>
@@ -132,24 +136,46 @@ export const query = graphql`
       nodes {
         frontmatter {
           title
-          thumbnail {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
           layout
           imgtext
           date
           areas
           alt
           description
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
     }
   }
 `
+// export const query = graphql`
+//   query PortfolioListQuery {
+//     allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
+//       nodes {
+//         frontmatter {
+//           title
+//           thumbnail {
+//             childImageSharp {
+//               fluid {
+//                 src
+//               }
+//             }
+//           }
+//           layout
+//           imgtext
+//           date
+//           areas
+//           alt
+//           description
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default ProjectsPage
 

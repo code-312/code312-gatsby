@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import pic from '../images/join-us/form.png'
 import styled from 'styled-components'
-import ImageWrapper from './ImageWrapper'
-import { StaticImage } from 'gatsby-plugin-image'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import arrow from '../images/long-arrow-right-red.svg'
 
 const StyledCard = styled.article`
@@ -84,12 +82,14 @@ const Card = ({
   imgUrl,
   imageDescription,
   labels,
+  graphql
 }) => {
   const [isDisabled, setIsDisabled] = useState(false)
   console.log(imgUrl)
   return (
     <StyledCard imgUrl={imgUrl}>
-      <ImageWrapper image={imgUrl} alt={imageDescription} />
+      {graphql ? <GatsbyImage image={getImage(imgUrl)}/>:
+      <img alt={imageDescription} src={imgUrl}/>}
       <div className="card-details">
         <div className="content-container">
           <h3 className="card-header heading-3">
