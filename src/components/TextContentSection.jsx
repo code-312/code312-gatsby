@@ -3,18 +3,28 @@ import styled from "styled-components";
 
 const StyledTextComponentSection = styled.section`
   background: ${(props) => props.background || 'var(--white)'};
+
   .width-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 3rem 1.5rem;
+    padding: 4rem 3rem;
     gap: 1.5rem;
-    @media (min-width: 649px) {
-      padding: 4rem 3rem;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0rem;
+      gap: 1.5rem;
+      width: 33.68rem;
+      height: 15.94rem;
     }
 
-    @media (min-width: 769px) {
-      flex-direction: ${(props) => (props.imgLeft ? 'row-reverse' : 'row')};
+    .info > h3 > span {
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
   }
   .heading-2 {
@@ -22,19 +32,32 @@ const StyledTextComponentSection = styled.section`
     flex-direction: column;
     gap: 0.5rem;
     color: var(--blizzard-black);
+    font-size: 2rem;
+    font-weight:  700;
+    line-height:  2.63rem;
+    font-style: normal;
   }
+  .content > p {
+    height: 5.625rem;
+    order: 2;
+    font-weight: 25rem;
+    font-size: 1.25rem;
+}
 `
 
-const TextContentSection = ({ eyebrowText, mainHeading, children, background, content }) => {
+const TextContentSection = ({ eyebrowText, mainHeading, children, background }) => {
   return (
     <StyledTextComponentSection background={background}>
       <div className="width-wrapper">
-        <h3 className="heading-2">
-          {eyebrowText && <span className="eyebrow-1">{eyebrowText}</span>}
-          {mainHeading}
-        </h3>
-        <p>{content}</p>
-          {children}
+        <div className="info">
+          <h2 className="heading-2">
+            {eyebrowText && <span className="eyebrow-1">{eyebrowText}</span>}
+            {mainHeading}
+          </h2>
+          <div className="content">
+            {children}
+          </div>
+        </div>
       </div>
     </StyledTextComponentSection>
   )
