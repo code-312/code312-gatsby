@@ -8,12 +8,6 @@ module.exports = {
     siteUrl: `https://www.codeforchicago.org`,
   },
   plugins: [
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -38,5 +32,11 @@ module.exports = {
       },
       __key: 'projects',
     },
+    'gatsby-plugin-styled-components',
+    `gatsby-plugin-netlify-cms`,
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    `gatsby-transformer-remark`,
   ],
 }
