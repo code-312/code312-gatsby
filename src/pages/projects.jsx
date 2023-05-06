@@ -92,7 +92,6 @@ const ProjectsPage = ({ data }) => {
               content={project.content}
               labels={project.labels}
             />
-
           )
         })}
       </CardBlock>
@@ -152,30 +151,6 @@ export const query = graphql`
     }
   }
 `
-// export const query = graphql`
-//   query PortfolioListQuery {
-//     allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
-//       nodes {
-//         frontmatter {
-//           title
-//           thumbnail {
-//             childImageSharp {
-//               fluid {
-//                 src
-//               }
-//             }
-//           }
-//           layout
-//           imgtext
-//           date
-//           areas
-//           alt
-//           description
-//         }
-//       }
-//     }
-//   }
-// `
 
 export default ProjectsPage
 
