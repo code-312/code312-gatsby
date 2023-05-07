@@ -14,15 +14,10 @@ const StyledSection = styled.div`
 `
 
 const Portfolio = ({ data }) => {
-  const showCards = (data, isActive = true) => {
-    return data.allMarkdownRemark.nodes.map((info) => {
-      const { title, thumbnail, areas, imgtext } = info.frontmatter
-      if (isActive && areas.toLowerCase() !== 'not actively recruiting')
-        return <Card imgUrl={thumbnail} mainHeading={title} content={imgtext} />
-      if (!isActive && areas.toLowerCase() === 'not actively recruiting')
-        return <Card imgUrl={thumbnail} mainHeading={title} content={imgtext} />
-    })
-  }
+  const showCards = data.allMarkdownRemark.nodes.map(({ frontmatter }) => {
+    const { title, thumbnail, imgtext } = frontmatter
+    return <Card imgUrl={thumbnail} mainHeading={title} content={imgtext} />
+  })
   return (
     <Layout>
       <Hero
@@ -30,7 +25,7 @@ const Portfolio = ({ data }) => {
         mainHeading="Learn how we finish volunteer-led projects"
       />
       <StyledSection>
-        <CardBlock>{showCards(data)}</CardBlock>
+        <CardBlock>{showCards}</CardBlock>
       </StyledSection>
       <ContactUs />
     </Layout>
