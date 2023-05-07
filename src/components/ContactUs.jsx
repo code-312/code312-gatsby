@@ -1,92 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ShortTextInput from './ShortTextInput'
+import LongTextInput from './LongTextInput'
+import Button from './Button'
 import styled from 'styled-components'
 
 const StyledSection = styled.section`
-  margin: 0 auto;
-  width: min-content;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   color: var(--white);
   background-color: var(--blizzard-blue);
+
   h3 {
     text-align: center;
-    font-size: 2.5rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
+    color: var(--blizzard-black);
+
+    @media (max-width: 640px) {
+      padding-top: 3rem;
+    }
   }
+
   form {
     display: flex;
     flex-direction: column;
-    margin: 0 2rem 0 2rem;
-    input,
-    textarea {
-      margin: 1rem 0;
-      padding: 1rem;
-      border: 1px solid var(--dark-grey);
-      border-radius: 2.2px;
-      background-color: var(--white);
-      outline: none;
-      resize: none;
-      &.error {
-        border: 2px solid var(--dark-red);
-      }
-    }
-    label {
-      font-weight: bold;
-    }
-    #message {
-      height: 15rem;
-      width: 37.5rem;
-    }
-    #email {
-      height: 3.75rem;
-      width: 37.5rem;
-      &:hover,
-      &:active {
-        border: 2px solid var(--medium-blue);
-      }
-      &:focus {
-        outline: 2px solid var(--medium-blue);
-      }
-      &:disabled {
-        background-color: var(--white);
-        border: none;
-      }
-    }
-    button {
-      margin: 1rem 0 3rem 0;
-      padding: 1rem;
-      justify-content: center;
-      color: var(--white);
-      background-color: transparent;
-      border: 1px solid var(--white);
-      border-radius: 2.2px;
-      font-weight: bold;
-      width: 37.5rem;
-      cursor: pointer;
+    gap: 1.625rem;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1.5rem 0 4rem;
+    min-width: 37.5rem;
+    @media (max-width: 640px) {
+      min-width: 0;
+      width: 100%;
+      padding: 1.5rem 1.5rem 3rem;
     }
   }
 `
 
-const ContactUs = () => (
-  <StyledSection>
-    <h3>Contact Us</h3>
-    <form>
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="email"
-        maxLength={50}
-      />
-      <label htmlFor="message">Message</label>
-      <textarea
-        name="message"
-        id="message"
-        placeholder="message"
-        maxLength={300}
-      ></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </StyledSection>
-)
+const ContactUs = () => {
+  const [info, setInfo] = useState({ email: '', message: '' })
+  const handleChange = (e) => {
+    setInfo({ ...info, [e.target.name]: e.target.value })
+  }
+
+  return (
+    <StyledSection>
+      <h3 className="heading-1">Contact Us</h3>
+      <form>
+        <ShortTextInput
+          type="email"
+          label="Email"
+          value={info.email}
+          handleChange={handleChange}
+          required
+        />
+        <LongTextInput value={info.message} handleChange={handleChange} />
+        <Button text="Submit" center />
+      </form>
+    </StyledSection>
+  )
+}
 
 export default ContactUs

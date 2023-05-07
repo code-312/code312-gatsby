@@ -1,7 +1,9 @@
 import React from 'react'
 import CallToAction from '../components/CallToAction'
 import Button from '../components/Button'
+import ShortTextInput from '../components/ShortTextInput'
 import Card from '../components/Card'
+import CardBlock from '../components/CardBlock'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
 import Hero from '../components/Hero'
@@ -14,6 +16,8 @@ import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
 import Heading from '../components/Heading'
 import LongtextInput from '../components/LongTextInput'
+import Checklist from '../components/Checklist'
+import Quote from '../components/Quote'
 
 const Components = () => {
   return (
@@ -24,7 +28,16 @@ const Components = () => {
         description="this content describes this section"
         headingLevel="3"
       />
-      <Button text="Submit" secondary small />
+      <Checklist />
+      <Quote />
+      <Button text="Submit" textBtn arrow link="/" />
+      <ShortTextInput
+        label="Email*"
+        type="email"
+        required
+        helper="This is helper text"
+        error="This is an error"
+      />
       <LongtextInput />
       <CallToAction
         title="Title Goes Here"
@@ -40,6 +53,12 @@ const Components = () => {
         imgUrl={CardPlaceholder}
         imageDescription={'image for testing components'}
       />
+      <CardBlock>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+      </CardBlock>
       <ContactUs />
       <ContentSection
         eyebrowText={'Eyebrow Text Goes Here'}

@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 
-const CallToAction = ({title, link, buttonDisplay}) => (
+const CallToAction = ({ title, link, buttonDisplay }) => (
   <section>
-    <h3>{title}</h3>
+    <h3 className="">{title}</h3>
     <Link to={link}>{buttonDisplay}</Link>
   </section>
 )

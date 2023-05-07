@@ -1,12 +1,40 @@
 import React from 'react'
+import styled from 'styled-components'
+import Button from './Button'
 
-const IconTile = ({ icon, title, description }) => {
+const StyledTile = styled.article`
+  min-height: 11.4375rem;
+  max-width: 16rem;
+  min-width: 12rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  width: 100%;
+
+  h4 {
+    text-align: center;
+  }
+
+  .tile-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+`
+
+const IconTile = ({ icon, title, description, btnText, linkUrl }) => {
   return (
-    <article>
-      <img src={icon} alt={title} />
-      <h4>{title}</h4>
-      <p>{description}</p>
-    </article>
+    <StyledTile>
+      {icon && <img className="tile-icon" src={icon} alt={title} />}
+      {title && <h4 className="heading-3">{title}</h4>}
+      {description && <p className="p2-body">{description}</p>}
+      {btnText && <Button text={btnText} link={linkUrl} textBtn arrow center />}
+    </StyledTile>
   )
 }
 

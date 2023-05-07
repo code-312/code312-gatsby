@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button'
 import styled from 'styled-components'
 
 const StyledHeading = styled.div`
@@ -15,6 +16,11 @@ const StyledHeading = styled.div`
     text-transform: uppercase;
     padding-bottom: 0.5rem;
   }
+
+  button,
+  a {
+    margin-top: 1rem;
+  }
 `
 
 const Heading = ({
@@ -22,6 +28,8 @@ const Heading = ({
   browText,
   headingLevel = '3',
   description,
+  ctaButton,
+  ctaLink,
 }) => {
   const HeadingTag = `h${headingLevel}`
 
@@ -37,6 +45,7 @@ const Heading = ({
         <span className="heading-2">{headingText}</span>
       </HeadingTag>
       {description && <p className="p1-body">{description}</p>}
+      {ctaLink && <Button text={ctaButton} link={ctaLink} center />}
     </StyledHeading>
   )
 }

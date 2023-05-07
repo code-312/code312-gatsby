@@ -1,23 +1,22 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import hamburgerOpenMenu from '../images/hamburger-open-menu.svg'
 import brigadeLogo from '../images/cfc_logo_2021.svg'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
+import MobileNav from './MobileNav'
+import Button from './Button'
+import useWindow from '../hooks/useWindow'
 
 const StyledNav = styled.nav`
   height: 6rem;
-  padding: 1.5rem 6rem;
+  padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--white);
-
-  .hamburger-menu {
-    display: none;
-  }
+  overflow: hidden;
 
   .internal-links {
     display: flex;
@@ -51,22 +50,31 @@ const StyledNav = styled.nav`
     display: flex;
     align-items: center;
     list-style-type: none;
-    gap: 2rem;
-    margin-right: 1.5rem;
+    gap: 1rem;
     padding: 0;
+
+    .donate {
+      margin-left: 1rem;
+    }
   }
   .social-img {
-    min-width: 1.5rem;
+    min-width: 1.875rem;
+  }
+
+  .meetup {
+    min-width: 2.25rem;
   }
 `
 
 const Nav = () => {
+  const windowWidth = useWindow()
+
+  if (windowWidth < 1200) {
+    return <MobileNav windowWidth={windowWidth} />
+  }
   return (
-    <StyledNav className="navbar" aria-label="main">
-      <button aria-label="open" className="hamburger-menu">
-        <img src={hamburgerOpenMenu} alt="open menu" aria-hidden="true" />
-      </button>
-      <ul className="internal-links">
+    <StyledNav className="width-wrapper" aria-label="main">
+      <ul className="internal-links label-1">
         <li id="logo-container">
           <Link to="/">
             <img
@@ -76,16 +84,16 @@ const Nav = () => {
             />
           </Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/projects">Projects</Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/portfolio">Portfolio</Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/join">Join Us</Link>
         </li>
-        <li activeClassName="active">
+        <li activeclassname="active">
           <Link to="/about">About</Link>
         </li>
       </ul>
@@ -97,7 +105,7 @@ const Nav = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className="social-img" src={meetup} alt="Meetup" />
+              <img className="social-img meetup" src={meetup} alt="Meetup" />
             </a>
           </li>
           <li className="social-logo">
@@ -118,15 +126,14 @@ const Nav = () => {
               <img className="social-img" src={githubLogo} alt="GitHub" />
             </a>
           </li>
+          <li className="donate">
+            <Button
+              link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
+              text="Donate"
+              arrow
+            />
+          </li>
         </ul>
-        <a
-          href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-          target="blank"
-          rel="noopener noreferrer"
-          className="button donateButton"
-        >
-          Donate
-        </a>
       </div>
     </StyledNav>
   )
