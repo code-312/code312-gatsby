@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import TextContentSection from '../components/TextContentSection'
+import FAQSection from '../components/FAQSection'
 
 const AboutPage = () => {
   return (
@@ -11,7 +11,7 @@ const AboutPage = () => {
         mainHeading="Making Tech Accessible to Everyone"
         buttonText="Button"
       />
-      <TextContentSection
+      <FAQSection
         background={'var(--white)'}
         eyebrowText={'WHAT IS CIVIC TECH?'}
         mainHeading={
@@ -20,7 +20,7 @@ const AboutPage = () => {
       >
         <p>It’s utilizing technology practices like design, engineering, data science, etc. to optimize the processes for civic organizations. Think about tools like tax filing portals and city transit apps.
         </p>
-      </TextContentSection>
+      </FAQSection>
     </Layout>
   )
 }

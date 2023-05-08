@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledTextComponentSection = styled.section`
+const StyledFAQSection = styled.section`
   background: ${(props) => props.background || 'var(--white)'};
 
   .width-wrapper {
@@ -45,9 +45,9 @@ const StyledTextComponentSection = styled.section`
 }
 `
 
-const TextContentSection = ({ eyebrowText, mainHeading, children, background }) => {
+const FAQSection = ({ eyebrowText, mainHeading, children, background }) => {
   return (
-    <StyledTextComponentSection background={background}>
+    <StyledFAQSection background={background}>
       <div className="width-wrapper">
         <div className="info">
           <h2 className="heading-2">
@@ -59,7 +59,7 @@ const TextContentSection = ({ eyebrowText, mainHeading, children, background }) 
           </div>
         </div>
       </div>
-    </StyledTextComponentSection>
+    </StyledFAQSection>
   )
 }
-export default TextContentSection
+export default FAQSection
