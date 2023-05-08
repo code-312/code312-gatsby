@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const StyledRadioOption = styled.div`
+  cursor: pointer;
+
   .button-container {
     display: flex;
     align-items: center;
@@ -33,6 +35,7 @@ const StyledRadioOption = styled.div`
       border: 1px solid var(--blizzard-black);
       border-radius: 50%;
       transform: translateY(-0.5px);
+      cursor: pointer;
 
       :before {
         content: '';
@@ -146,7 +149,7 @@ const RadioOption = ({ optionLabel, disabled, error }) => {
   return (
     <StyledRadioOption>
       <div className={className} onChange={handleActive}>
-        <input type="radio" name="radio" />
+        <input type="radio" name="radio" checked={active === true} />
         <label className="form-control" htmlFor={optionLabel}>
           {optionLabel}
         </label>

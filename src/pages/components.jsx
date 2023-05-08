@@ -82,6 +82,7 @@ const Components = () => {
         description={'Description goes Here'}
       />
       <RadioOption optionLabel="Sample Option" />
+      <RadioOption optionLabel="Sample Option" />
     </Layout>
   )
 }
