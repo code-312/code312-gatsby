@@ -9,7 +9,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -19,6 +18,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `./images/uploads/`,
+        plugins: [
+          `gatsby-remark-relative-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {},
+          },
+        ],
       },
       __key: `images`,
     },
@@ -38,5 +44,6 @@ module.exports = {
       },
       __key: `projects`,
     },
+    `gatsby-plugin-netlify-cms`,
   ],
 }
