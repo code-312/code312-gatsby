@@ -9,15 +9,12 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        name: `images`,
-        path: `./images/uploads/`,
         plugins: [
           `gatsby-remark-relative-images`,
           {
@@ -25,6 +22,13 @@ module.exports = {
             options: {},
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `./images/uploads/`,
       },
       __key: `images`,
     },
