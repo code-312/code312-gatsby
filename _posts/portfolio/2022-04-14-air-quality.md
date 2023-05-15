@@ -4,7 +4,7 @@ title: Air Quality
 date: 2022-04-14T22:43:38.267Z
 areas: Data Analysis
 description: Measuring air quality at a local level using public sensors.
-thumbnail: https://upload.wikimedia.org/wikipedia/commons/2/2c/20-chicago-mckinley-park.jpg
+thumbnail: ../../images/uploads/chicagofairtrade_hero.png
 imgtext: "Landscape shot of McKinley Park (Source: Alfred Twu -
   https://commons.wikimedia.org/w/index.php?curid=46089200)"
 alt: "Landscape shot of McKinley Park (Source: Alfred Twu -
