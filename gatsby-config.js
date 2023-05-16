@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: `https://www.codeforchicago.org`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

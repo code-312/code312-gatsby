@@ -16,7 +16,6 @@ const ProjectsPage = ({ data }) => {
   const inactiveRaw = []
   // console.log(data.allMarkdownRemark.nodes[0].frontmatter.thumbnail.childImageSharp.fluid.src)
   //loop through data and separate out active and inactive projects
-  //test to prove this won't build
 
   for (const project of data.allMarkdownRemark.nodes) {
     if (project.frontmatter.areas.toLowerCase() === 'not actively recruiting') {
