@@ -19,7 +19,7 @@ const StyledFAQSection = styled.section`
       padding: 0rem;
       gap: 1.5rem;
       width: 33.68rem;
-      height: 15.94rem;
+      /* height: 15.94rem; */
     }
 
     .info > h3 > span {

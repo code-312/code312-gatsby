@@ -4,6 +4,16 @@ import Hero from '../components/Hero'
 import FAQSection from '../components/FAQSection'
 import Quote from '../components/Quote'
 import Button from '../components/Button'
+import styled from 'styled-components'
+
+const ButtonGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 1.5rem;
+  height: 2.3125rem;
+`
 const AboutPage = () => {
   return (
     <Layout>
@@ -61,10 +71,10 @@ const AboutPage = () => {
             Volunteers typically join to try out civic tech, network with
             like-minded people, and learn new skills.
           </p>
-          <div className="button-group">
-           <Button text={'Volunteer With Us'}></Button>
-           <Button text={'Partner with Us'}></Button>
-          </div>
+          <ButtonGroup>
+            <Button text={'Volunteer With Us'}></Button>
+            <Button text={'Partner with Us'}></Button>
+          </ButtonGroup>
         </div>
       </FAQSection>
     </Layout>
