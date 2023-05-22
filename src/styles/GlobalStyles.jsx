@@ -30,7 +30,7 @@ const GlobalStyles = createGlobalStyle`
     a {
       color: var(--dark-blue);
       font-weight: 400;
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     a:hover {

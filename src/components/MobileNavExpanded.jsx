@@ -71,13 +71,16 @@ const MobileNavExpanded = () => {
     <StyledMobileNav>
       <ul className="internal-links label-1">
         <li activeclassname="active">
-          <Link to="/projects">Projects</Link>
+          <Link to="/projects">Active Projects</Link>
         </li>
         <li activeclassname="active">
-          <Link to="/portfolio">Portfolio</Link>
+          <Link to="/portfolio">Case Studies</Link>
         </li>
         <li activeclassname="active">
-          <Link to="/join">Join Us</Link>
+          <Link to="/join">Volunteer</Link>
+        </li>
+        <li activeclassname="active">
+          <Link to="/">Partner</Link>
         </li>
         <li activeclassname="active">
           <Link to="/about">About</Link>

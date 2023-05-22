@@ -116,8 +116,6 @@ const JoinPage = () => {
     },
   ]
 
-  const handleClick = () => {}
-
   return (
     <Layout>
       <Hero
