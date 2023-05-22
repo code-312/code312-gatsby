@@ -3,10 +3,8 @@ import styled from 'styled-components'
 import Button from './Button'
 
 const StyledTile = styled.article`
-  /* padding-top: 1rem;
-  padding-bottom: 1rem; */
+  background-color: var(--white);
   max-width: 16rem;
-  /* min-height: 12.56rem; */
   padding: 0.5rem 1rem;
   box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
