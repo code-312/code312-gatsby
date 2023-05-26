@@ -9,25 +9,55 @@ import Layout from '../components/Layout'
 
 const StyledSection = styled.section`
   background-color: var(--light-grey);
-`
+  `
 
 const ProjectsPage = ({ data }) => {
   const activeRaw = []
   const inactiveRaw = []
-  // console.log(data.allMarkdownRemark.nodes[0].frontmatter.thumbnail.childImageSharp.fluid.src)
-  //loop through data and separate out active and inactive projects
+  let newActiveList = []
+  let newInactiveList = []
 
   for (const project of data.allMarkdownRemark.nodes) {
     if (project.frontmatter.areas.toLowerCase() === 'not actively recruiting') {
-      inactiveRaw.push(project)
+      let newInactive = Object.create(null)
+      newInactive.mainHeading = project.frontmatter.title
+        ? project.frontmatter.title
+        : null
+      newInactive.content = project.frontmatter.description
+        ? project.frontmatter.description
+        : null
+      newInactiveList.push(newInactive)
+      // inactiveRaw.push(project)
     } else {
-      activeRaw.push(project)
+      let newActive = Object.create(null)
+      newActive.imgUrl =
+        project.frontmatter.thumbnail &&
+        project.frontmatter.thumbnail.childImageSharp
+          ? project.frontmatter.thumbnail
+          : null
+      newActive.imageDescription = project.frontmatter.alt
+        ? project.frontmatter.alt
+        : null
+      newActive.mainHeading = project.frontmatter.title
+        ? project.frontmatter.title
+        : null
+      newActive.content = project.frontmatter.description
+        ? project.frontmatter.description
+        : null
+      newActive.labels = project.frontmatter.areas
+        ? project.frontmatter.areas.split(', ')
+        : null
+      newActive.linkUrl = project.frontmatter.thumbnail
+        ? project.frontmatter.thumbnail
+        : null
+      newActive.linkText = project.frontmatter.alt ? project.frontmatter.alt : null
+      newActiveList.push(newActive)
+      // activeRaw.push(project)
     }
   }
 
   //loop through activeRaw and create new objects to match props format of CARD component
 
-  let newActiveList = []
   for (const active of activeRaw) {
     let newActive = Object.create(null)
     newActive.imgUrl =
@@ -53,9 +83,8 @@ const ProjectsPage = ({ data }) => {
     newActive.linkText = active.frontmatter.alt ? active.frontmatter.alt : null
     newActiveList.push(newActive)
   }
-  console.log(newActiveList)
+
   //loop through inactiveRaw list and create new objects to match props of tileGrid & tileCard.  ONLY NEED TITLE/title & DESCRIPTION/description
-  let newInactiveList = []
 
   for (const inactive of inactiveRaw) {
     let newInactive = Object.create(null)
@@ -84,7 +113,6 @@ const ProjectsPage = ({ data }) => {
         {newActiveList?.map((project) => {
           return (
             <Card
-              graphql
               key={project.mainHeading}
               imgUrl={project.imgUrl}
               imageDescription={project.imageDescription}
@@ -152,30 +180,7 @@ export const query = graphql`
     }
   }
 `
-// export const query = graphql`
-//   query PortfolioListQuery {
-//     allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
-//       nodes {
-//         frontmatter {
-//           title
-//           thumbnail {
-//             childImageSharp {
-//               fluid {
-//                 src
-//               }
-//             }
-//           }
-//           layout
-//           imgtext
-//           date
-//           areas
-//           alt
-//           description
-//         }
-//       }
-//     }
-//   }
-// `
+
 
 export default ProjectsPage
 

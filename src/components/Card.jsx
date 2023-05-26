@@ -82,13 +82,11 @@ const Card = ({
   imgUrl,
   imageDescription,
   labels,
-  graphql
 }) => {
   const [isDisabled, setIsDisabled] = useState(false)
   return (
     <StyledCard imgUrl={imgUrl}>
-      {/* if you pass true for the graphql prop, the imgURL prop must then be gastbyImageData from a graphQL call which will use the <GastbyImage> component. otherwise pass false to graphql prop and pass a regular image src in the <img> */}
-      {graphql ? <GatsbyImage image={getImage(imgUrl)}/>:
+      {typeof imgUrl === "object" ? <GatsbyImage image={getImage(imgUrl)}/>:
       <img alt={imageDescription} src={imgUrl}/>}
       <div className="card-details">
         <div className="content-container">
