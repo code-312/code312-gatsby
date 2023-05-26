@@ -3,8 +3,9 @@ import Layout from '../../components/Layout'
 import { graphql } from 'gatsby'
 
 const Project = ({ data }) => {
-  const title = data.markdownRemark.title
   const html = data.markdownRemark.html
+  const { title, thumbnail, imgText, description } =
+    data.markdownRemark.frontmatter
 
   return (
     <Layout>
@@ -27,6 +28,8 @@ export const query = graphql`
         date
         description
         title
+        thumbnail
+        imgtext
       }
     }
   }
