@@ -18,7 +18,7 @@ import LongtextInput from '../components/LongTextInput'
 import Checklist from '../components/Checklist'
 import Quote from '../components/Quote'
 import IntroTile from '../components/IntroTile'
-import TilePhoto from "../../images/uploads/allie_serd.png"
+import TilePhoto from '../../images/uploads/allie_serd.png'
 // /Users/dior/cfc/code-for-chicago-gatsby/images/uploads/allie_serd.png
 const Components = () => {
   return (
@@ -82,8 +82,11 @@ const Components = () => {
         title={'Title'}
         description={'Description goes Here'}
       />
-      <IntroTile memberName={"Allie Serd"}
-        imageSrc={TilePhoto} positionTitle={"Volunteer Lead"}></IntroTile>
+      <IntroTile
+        memberName={'Allie Serd'}
+        imageSrc={TilePhoto}
+        positionTitle={'Volunteer Lead'}
+      ></IntroTile>
     </Layout>
   )
 }
