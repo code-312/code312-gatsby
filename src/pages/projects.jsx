@@ -120,7 +120,6 @@ const ProjectsPage = ({ data }) => {
               content={project.content}
               labels={project.labels}
             />
-
           )
         })}
       </CardBlock>
