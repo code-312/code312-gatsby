@@ -12,8 +12,6 @@ const StyledSection = styled.section`
   `
 
 const ProjectsPage = ({ data }) => {
-  const activeRaw = []
-  const inactiveRaw = []
   let newActiveList = []
   let newInactiveList = []
 
@@ -27,7 +25,6 @@ const ProjectsPage = ({ data }) => {
         ? project.frontmatter.description
         : null
       newInactiveList.push(newInactive)
-      // inactiveRaw.push(project)
     } else {
       let newActive = Object.create(null)
       newActive.imgUrl =
@@ -52,49 +49,7 @@ const ProjectsPage = ({ data }) => {
         : null
       newActive.linkText = project.frontmatter.alt ? project.frontmatter.alt : null
       newActiveList.push(newActive)
-      // activeRaw.push(project)
     }
-  }
-
-  //loop through activeRaw and create new objects to match props format of CARD component
-
-  for (const active of activeRaw) {
-    let newActive = Object.create(null)
-    newActive.imgUrl =
-      active.frontmatter.thumbnail &&
-      active.frontmatter.thumbnail.childImageSharp
-        ? active.frontmatter.thumbnail
-        : null
-    newActive.imageDescription = active.frontmatter.alt
-      ? active.frontmatter.alt
-      : null
-    newActive.mainHeading = active.frontmatter.title
-      ? active.frontmatter.title
-      : null
-    newActive.content = active.frontmatter.description
-      ? active.frontmatter.description
-      : null
-    newActive.labels = active.frontmatter.areas
-      ? active.frontmatter.areas.split(', ')
-      : null
-    newActive.linkUrl = active.frontmatter.thumbnail
-      ? active.frontmatter.thumbnail
-      : null
-    newActive.linkText = active.frontmatter.alt ? active.frontmatter.alt : null
-    newActiveList.push(newActive)
-  }
-
-  //loop through inactiveRaw list and create new objects to match props of tileGrid & tileCard.  ONLY NEED TITLE/title & DESCRIPTION/description
-
-  for (const inactive of inactiveRaw) {
-    let newInactive = Object.create(null)
-    newInactive.mainHeading = inactive.frontmatter.title
-      ? inactive.frontmatter.title
-      : null
-    newInactive.content = inactive.frontmatter.description
-      ? inactive.frontmatter.description
-      : null
-    newInactiveList.push(newInactive)
   }
 
   return (
