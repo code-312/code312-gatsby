@@ -14,10 +14,6 @@ const StyledCard = styled.article`
   margin: 1rem;
   overflow: hidden;
 
-  #card-image {
-    width: 100%;
-  }
-
   .card-header {
     display: flex;
     flex-direction: column;
