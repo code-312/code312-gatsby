@@ -12,7 +12,7 @@ const StyledQuote = styled.section`
     padding: 4rem 3rem;
     gap: 1.5rem;
     width: 75rem;
-    height: 22.75rem;
+    height: 22.75rem; 
   }
   .blockquote {
     display: flex;
@@ -20,7 +20,7 @@ const StyledQuote = styled.section`
     align-items: flex-start;
     padding: 0rem;
     gap: 1.5rem;
-    width: 33.69rem;
+    width: 33.6875rem;
     height: 14.75rem; 
     line-height: 2.63rem;
     font-size: 1.75rem;

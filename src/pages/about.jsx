@@ -14,6 +14,19 @@ const ButtonGroup = styled.div`
   gap: 1.5rem;
   height: 2.3125rem;
 `
+const EyebrowHeaderGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+`
+const EyeBrowHeaderSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 33.6875;
+`
 const AboutPage = () => {
   return (
     <Layout>
@@ -50,32 +63,38 @@ const AboutPage = () => {
           'Code for Chicago operates like a pro-bono digital consultancy'
         }
       >
-        <div className="eyebrow-header-group">
-          <h3 className="h3-eyebrow">Operating Shoulder-to-Shoulder</h3>
-          <p className="text-content">
-            When we start a new project we typically partner up with a local
-            organization. Since we aren't our users, this ensures we are
-            effectively addressing the needs of the community and not operating
-            from our own perspective as practitioners.
-          </p>
-          <h3 className="h3-eyebrow">Establishing Our Process</h3>
-          <p className="text-content">
-            We begin by identifying the needs of the organization, drafting a
-            problem statement, and collaborating throughout the project to
-            ensure needs are met.
-          </p>
-          <h3 className="h3-eyebrow">Volunteer Work</h3>
-          <p className="text-content">
-            Our process requires an army of volunteers of various skill sets who
-            are all on a mission to improve technology for the people.
-            Volunteers typically join to try out civic tech, network with
-            like-minded people, and learn new skills.
-          </p>
+        <EyebrowHeaderGroup>
+          <EyeBrowHeaderSection>
+            <h3 className="h3-eyebrow">Operating Shoulder-to-Shoulder</h3>
+            <p className="text-content">
+              When we start a new project we typically partner up with a local
+              organization. Since we aren't our users, this ensures we are
+              effectively addressing the needs of the community and not
+              operating from our own perspective as practitioners.
+            </p>
+          </EyeBrowHeaderSection>
+          <EyeBrowHeaderSection>
+            <h3 className="h3-eyebrow">Establishing Our Process</h3>
+            <p className="text-content">
+              We begin by identifying the needs of the organization, drafting a
+              problem statement, and collaborating throughout the project to
+              ensure needs are met.
+            </p>
+          </EyeBrowHeaderSection>
+          <EyeBrowHeaderSection>
+            <h3 className="h3-eyebrow">Volunteer Work</h3>
+            <p className="text-content">
+              Our process requires an army of volunteers of various skill sets
+              who are all on a mission to improve technology for the people.
+              Volunteers typically join to try out civic tech, network with
+              like-minded people, and learn new skills.
+            </p>
+          </EyeBrowHeaderSection>
           <ButtonGroup>
             <Button text={'Volunteer With Us'}></Button>
-            <Button text={'Partner with Us'}></Button>
+            <Button text={'Partner With Us'}></Button>
           </ButtonGroup>
-        </div>
+        </EyebrowHeaderGroup>
       </FAQSection>
     </Layout>
   )
