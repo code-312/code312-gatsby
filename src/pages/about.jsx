@@ -25,7 +25,6 @@ const EyeBrowHeaderSection = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  width: 33.6875;
 `
 const AboutPage = () => {
   return (

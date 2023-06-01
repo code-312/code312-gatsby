@@ -11,19 +11,13 @@ const StyledQuote = styled.section`
     align-items: center;
     padding: 4rem 3rem;
     gap: 1.5rem;
-    width: 75rem;
-    height: 22.75rem; 
   }
   .blockquote {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0rem;
     gap: 1.5rem;
     width: 33.6875rem;
-    height: 14.75rem; 
-    line-height: 2.63rem;
-    font-size: 1.75rem;
     font-weight: 300;
     font-style: normal;
   }

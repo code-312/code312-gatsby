@@ -19,7 +19,6 @@ const StyledFAQSection = styled.section`
       padding: 0rem;
       gap: 1.5rem;
       width: 33.68rem;
-      /* height: 15.94rem; */
     }
 
     .info > h3 > span {
@@ -38,7 +37,6 @@ const StyledFAQSection = styled.section`
     font-style: normal;
   }
   .content > p {
-    height: 5.625rem;
     order: 2;
     font-weight: 25rem;
     font-size: 1.25rem;
