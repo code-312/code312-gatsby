@@ -12,7 +12,13 @@ const ButtonGroup = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 1.5rem;
-  height: 2.3125rem;
+  @media screen and (max-width: 426px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 1rem;
+    width: 17rem;
+  }
 `
 const EyebrowHeaderGroup = styled.div`
   display: flex;
@@ -90,8 +96,8 @@ const AboutPage = () => {
             </p>
           </EyeBrowHeaderSection>
           <ButtonGroup>
-            <Button text={'Volunteer With Us'}></Button>
-            <Button text={'Partner With Us'}></Button>
+            <Button center={'center'} text={'Volunteer With Us'}></Button>
+            <Button center={'center'} text={'Partner With Us'}></Button>
           </ButtonGroup>
         </EyebrowHeaderGroup>
       </FAQSection>
