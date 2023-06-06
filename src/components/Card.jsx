@@ -1,20 +1,18 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import defaultCardImage from '../images/card-placeholder.svg'
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import arrow from '../images/long-arrow-right-red.svg'
 
 const StyledCard = styled.article`
+  background-color: var(--white);
   width: 12.563rem;
+  max-width: 16.12rem;
   padding: 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   margin: 1rem;
   overflow: hidden;
-
-  #card-image{
-    width: 100%;
-  }
 
   .card-header {
     display: flex;
@@ -54,6 +52,21 @@ const StyledCard = styled.article`
   .disabled {
     color: gray;
   }
+
+  .labels-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .label-areas {
+    background-color: var(--light-grey);
+    padding: 0.25rem;
+    border-radius: 0.1375rem;
+    white-space: nowrap;
+    flex-grow: 0;
+  }
 `
 
 const Card = ({
@@ -64,22 +77,20 @@ const Card = ({
   linkText,
   imgUrl,
   imageDescription,
+  labels,
 }) => {
   const [isDisabled, setIsDisabled] = useState(false)
   return (
-    <StyledCard>
-      <img
-        id="card-image"
-        src={imgUrl ? imgUrl : defaultCardImage}
-        alt={imageDescription ? imageDescription : 'Description'}
-      />
+    <StyledCard imgUrl={imgUrl}>
+      {typeof imgUrl === "object" ? <GatsbyImage image={getImage(imgUrl)}/>:
+      <img alt={imageDescription} src={imgUrl}/>}
       <div className="card-details">
         <div className="content-container">
           <h3 className="card-header heading-3">
             <span className="eyebrow-text eyebrow-1">
-              {eyebrowText ? eyebrowText : 'Subtitle'}
+              {eyebrowText ? eyebrowText : null}
             </span>
-            {mainHeading ? mainHeading : 'Title'}
+            {mainHeading ? mainHeading : null}
           </h3>
           <p className="p2-body ">
             {content
@@ -87,22 +98,31 @@ const Card = ({
               : 'content dkajskldjas kdnaskdnajs djansljdnasld'}
           </p>
         </div>
-        <div className="buttons-container">
-          {isDisabled ? (
-            <Link
-              to={linkUrl}
-              className="card-link label-2 disabled"
-              disabled={isDisabled}
-            >
-              More Info Coming Soon
-            </Link>
-          ) : (
-            <Link to={linkUrl} className="card-link label-2">
-              Join us on Slack
-              <img src={arrow} alt="right-arrow" />
-            </Link>
-          )}
-        </div>
+        {linkUrl ? (
+          <div className="buttons-container">
+            {isDisabled ? (
+              <Link
+                to={linkUrl}
+                className="card-link label-2 disabled"
+                disabled={isDisabled}
+              >
+                More Info Coming Soon
+              </Link>
+            ) : (
+              <Link to={linkUrl} className="card-link label-2">
+                Join us on Slack
+                <img src={arrow} alt="right-arrow" />
+              </Link>
+            )}
+          </div>
+        ) : null}
+        {labels ? (
+          <div className="labels-container">
+            {labels.map((label) => {
+              return <span className="label-areas label-3">{label}</span>
+            })}
+          </div>
+        ) : null}
       </div>
     </StyledCard>
   )

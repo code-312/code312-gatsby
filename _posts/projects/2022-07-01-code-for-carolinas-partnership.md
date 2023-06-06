@@ -3,9 +3,9 @@ layout: project
 title: Code for the Carolinas Partnership
 date: 2022-07-01T18:16:51.265Z
 areas: Not Actively Recruiting
-thumbnail: /images/uploads/codeforchicago_codeforcarolinas_finalfinal.png
+thumbnail: ../../images/uploads/codeforchicago_codeforcarolinas_finalfinal.png
 imgtext: Partnership on Educational Toolkit
-description: " "
+description: "Partnership on Educational Toolkit."
 alt: "null"
 ---
 **Recruitment Status:**  Not actively recruiting
