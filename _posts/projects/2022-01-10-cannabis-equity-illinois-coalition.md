@@ -3,9 +3,9 @@ layout: project
 title: Cannabis Equity Illinois Coalition
 date: 2022-01-10T12:02:19.061Z
 areas: Not actively recruiting
-thumbnail: /images/uploads/Site_Map-CEIC.png
+thumbnail: ../../images/uploads/Site_Map-CEIC.png
 imgtext: Improving UX/UI to align with org goals and built to scale.
-description: " "
+description: "Website redesign and build."
 alt: "null"
 ---
 **Recruitment Status:** Actively recruiting developers only

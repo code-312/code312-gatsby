@@ -4,7 +4,7 @@ title: Chicago Milkweed Project
 date: 2022-01-28T01:48:09.208Z
 areas: Design, Front-End
 description: Designing and developing for an environmental campaign.
-thumbnail: /images/uploads/chicagomilkweed_hero.png
+thumbnail: ../../images/uploads/chicagomilkweed_hero.png
 imgtext: Chicago Milkweed Project Landing Page
 alt: Chicago Milkweed Project Landing Page
 is_preview: false
