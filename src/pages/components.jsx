@@ -9,6 +9,7 @@ import ContentSection from '../components/ContentSection'
 import Hero from '../components/Hero'
 import IconTile from '../components/IconTile'
 import Layout from '../components/Layout'
+import RadioOption from '../components/RadioOption'
 import TestImage from '../images/TestImage.png'
 import skyline from '../images/skyline.svg'
 import codeOfConduct from '../images/code-of-conduct.svg'
@@ -80,6 +81,8 @@ const Components = () => {
         title={'Title'}
         description={'Description goes Here'}
       />
+      <RadioOption optionLabel="Sample Option" />
+      <RadioOption optionLabel="Sample Option" />
     </Layout>
   )
 }
