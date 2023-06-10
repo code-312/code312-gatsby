@@ -2,10 +2,10 @@
 layout: project
 title: Rescue Chicago
 date: 2022-09-06T15:14:21.946Z
-areas: Backend, Data Analysts
-thumbnail: /images/uploads/screen-shot-2022-09-06-at-10.27.23-am.png
+areas: Backend, Data Analysis
+thumbnail: ../../images/uploads/screen-shot-2022-09-06-dog_rescue_trends.png
 imgtext: Petfinder Dashboard
-description: "   "
+description: "Building an interactive data visualization dashboard to explore how different dog characteristics affect the average length of stay."
 alt: "null"
 ---
 **Recruitment Status:** Actively recruiting

@@ -5,7 +5,7 @@ date: 2022-04-13T15:08:02.181Z
 areas: Squarespace, Brand Design, UX/UI Design
 description: Identify a technical solution that fits the partner's use case and
   developing/designing a new brand and website.
-thumbnail: /images/uploads/home.png
+thumbnail: ../../images/uploads/home.png
 imgtext: Wireframes for the home page of the new Chicago Defender Charities website
 alt: Wireframes for the home page of the new Chicago Defender Charities website
 is_preview: false

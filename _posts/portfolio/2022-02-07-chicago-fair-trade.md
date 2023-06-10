@@ -4,7 +4,7 @@ title: Chicago Fair Trade
 date: 2022-02-07T11:57:01.965Z
 areas: Backend
 description: Recommend an eComm platform solution that integrated with CFT’s current website
-thumbnail: /images/uploads/chicagofairtrade_hero.png
+thumbnail: ../../images/uploads/chicagofairtrade_hero.png
 imgtext: Chicago Fair Trade Promo for Shop Online
 alt: Chicago Fair Trade Promo for Shop Online
 is_preview: false

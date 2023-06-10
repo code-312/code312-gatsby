@@ -4,7 +4,7 @@ title: Transportation Mediation - Oak Park
 date: 2022-09-30T11:25:45.178Z
 areas: Discovery
 description: Mediating discussion for the Parks of Oak Park residents
-thumbnail: /images/uploads/mediation-screen-cap-1.png
+thumbnail: ../../images/uploads/mediation-screen-cap-1.png
 imgtext: Screen cap of the Zoom call
 alt: Screen cap of the Zoom call
 is_preview: false
