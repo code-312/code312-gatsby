@@ -1,15 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import Hero from '../components/Hero'
 import Heading from '../components/Heading'
 import CardBlock from '../components/CardBlock'
 import Card from '../components/Card'
 import Layout from '../components/Layout'
+import styled from 'styled-components'
 
 const StyledSection = styled.section`
   background-color: var(--light-grey);
-  `
+`
 
 const ProjectsPage = ({ data }) => {
   let newActiveList = []
@@ -47,7 +47,9 @@ const ProjectsPage = ({ data }) => {
       newActive.linkUrl = project.frontmatter.thumbnail
         ? project.frontmatter.thumbnail
         : null
-      newActive.linkText = project.frontmatter.alt ? project.frontmatter.alt : null
+      newActive.linkText = project.frontmatter.alt
+        ? project.frontmatter.alt
+        : null
       newActiveList.push(newActive)
     }
   }
@@ -134,7 +136,6 @@ export const query = graphql`
     }
   }
 `
-
 
 export default ProjectsPage
 
