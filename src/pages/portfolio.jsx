@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
 import Card from '../components/Card'
 import CardBlock from '../components/CardBlock'
@@ -14,9 +13,17 @@ const StyledSection = styled.div`
 `
 
 const Portfolio = ({ data }) => {
-  const showCards = data.allMarkdownRemark.nodes.map(({ frontmatter }) => {
-    const { title, thumbnail, imgtext } = frontmatter
-    return <Card imgUrl={thumbnail} mainHeading={title} content={imgtext} />
+  const showCards = data.allMarkdownRemark.nodes.map((node, idx) => {
+    const { thumbnail, title, imgtext } = node.frontmatter
+    return (
+      <Card
+        imgUrl={thumbnail.childImageSharp}
+        imageDescription={'project thumbnail'}
+        mainHeading={title}
+        content={imgtext}
+        key={idx}
+      />
+    )
   })
   return (
     <Layout>
@@ -32,21 +39,31 @@ const Portfolio = ({ data }) => {
   )
 }
 
-export default Portfolio
-
 export const query = graphql`
-  query portfolioQuery {
+  query PortfolioListQuery {
     allMarkdownRemark(
       filter: { frontmatter: { layout: { eq: "portfolio" } } }
     ) {
       nodes {
         frontmatter {
           title
-          thumbnail
-          areas
+          layout
           imgtext
+          date
+          areas
+          alt
+          description
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
       }
     }
   }
 `
+
+export default Portfolio
+
+export const Head = () => <title>Porfolio</title>

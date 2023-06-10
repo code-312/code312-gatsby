@@ -82,8 +82,11 @@ const Card = ({
   const [isDisabled, setIsDisabled] = useState(false)
   return (
     <StyledCard imgUrl={imgUrl}>
-      {typeof imgUrl === "object" ? <GatsbyImage image={getImage(imgUrl)}/>:
-      <img alt={imageDescription} src={imgUrl}/>}
+      {typeof imgUrl === 'object' ? (
+        <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
+      ) : (
+        <img alt={imageDescription} src={imgUrl} />
+      )}
       <div className="card-details">
         <div className="content-container">
           <h3 className="card-header heading-3">
