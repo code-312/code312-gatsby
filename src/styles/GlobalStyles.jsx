@@ -31,6 +31,10 @@ const GlobalStyles = createGlobalStyle`
       color: var(--dark-blue);
       font-weight: 400;
       text-decoration: underline;
+
+      :visited {
+        color: var(--dark-blue);
+      }
     }
 
     a:hover {
@@ -71,8 +75,12 @@ const GlobalStyles = createGlobalStyle`
 
   .width-wrapper {
     max-width: 75rem;
+    padding: 0 3rem;
     margin: 0 auto;
     width: 100%;
+    @media(max-width: 40rem) {
+      padding: 0 1.5rem;
+    }
   }
 
   .heading-1 {
