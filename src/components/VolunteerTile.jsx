@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledIntroTile = styled.div`
+const StyledVolunteerTile = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,18 +30,18 @@ const StyledIntroTile = styled.div`
   }
 `
 
-const IntroTile = ({imageSrc, description, memberName, positionTitle}) => {
+const VolunteerTile = ({imageSrc, description, memberName, positionTitle}) => {
   return (
-    <StyledIntroTile>
-      <div className="card">
+    <StyledVolunteerTile>
+      <article className="card">
         <img className="cardImage"
           src={imageSrc} alt={description} />
         <div className="details">
-          <p className="name">{memberName}</p>
+          <h4 className="name">{memberName}</h4>
           <p className="title">{positionTitle}</p> 
         </div>
-      </div>
-    </StyledIntroTile>
+      </article>
+    </StyledVolunteerTile>
   )
 }
-export default IntroTile
+export default VolunteerTile
