@@ -14,6 +14,10 @@ const StyledCard = styled.article`
   margin: 1rem;
   overflow: hidden;
 
+  .image {
+    width: 100%;
+  }
+
   .card-header {
     display: flex;
     flex-direction: column;
@@ -81,11 +85,15 @@ const Card = ({
 }) => {
   const [isDisabled, setIsDisabled] = useState(false)
   return (
-    <StyledCard imgUrl={imgUrl}>
+    <StyledCard>
       {typeof imgUrl === 'object' ? (
-        <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
+        <GatsbyImage
+          image={getImage(imgUrl)}
+          alt={imageDescription}
+          className="image"
+        />
       ) : (
-        <img alt={imageDescription} src={imgUrl} />
+        <img alt={imageDescription} className="image" src={imgUrl} />
       )}
       <div className="card-details">
         <div className="content-container">
