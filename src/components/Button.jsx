@@ -5,6 +5,8 @@ import { FaLongArrowAltRight } from 'react-icons/fa'
 import textArrow from '../images/text-button-arrow.svg'
 const StyledButton = styled.div`
   align-self: ${(props) => (props.center ? 'center' : 'flex-start')};
+  display: inline-flex;
+  text-decoration: none;
 
   a,
   button {
@@ -16,23 +18,29 @@ const StyledButton = styled.div`
       margin-right: -0.25rem;
       padding: 0.12rem;
     }
+
+    :visited {
+      color: var(--blizzard-black);
+    }
   }
+
   .primary {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem 1rem;
     height: 2.3rem;
+    text-decoration: none;
     background: var(--white);
     border: 3px solid var(--dark-red);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
-    &.small {
+    .small {
       width: 6rem;
       height: 2rem;
     }
     svg {
-      fill: red;
+      fill: var(--red);
     }
   }
   .primary,
@@ -73,6 +81,7 @@ const StyledButton = styled.div`
       }
     }
   }
+
   .secondary {
     display: flex;
     justify-content: center;
@@ -83,7 +92,7 @@ const StyledButton = styled.div`
     border: 2px solid var(--blizzard-blue);
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 2.2px;
-    &.small {
+    .small {
       width: 4.63rem;
       height: 2.13rem;
     }
@@ -121,7 +130,12 @@ const StyledButton = styled.div`
     border-radius: 2.2px;
     background: none;
     text-decoration: none;
-    &.small {
+
+    &:visited {
+      color: var(--dark-red);
+    }
+
+    .small {
       height: 1.12rem;
       width: 5.75rem;
     }
@@ -129,6 +143,7 @@ const StyledButton = styled.div`
   .textBtn,
   .textBtn.small {
     img {
+      padding-left: 0.25rem;
       transition: padding-left 250ms ease;
     }
     &:hover {

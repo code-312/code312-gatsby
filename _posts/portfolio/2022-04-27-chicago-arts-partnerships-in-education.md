@@ -4,7 +4,7 @@ title: Chicago Arts Partnerships in Education
 date: 2022-04-27T10:36:54.116Z
 areas: Service Design, Brand Design
 description: Increasing student attendance by improving their marketing and logistics.
-thumbnail: /images/uploads/sticker-deliverable.png
+thumbnail: ../../images/uploads/sticker-deliverable.png
 imgtext: Final output for the logo and sticker concepts
 alt: Final output for the logo and sticker concepts
 is_preview: false

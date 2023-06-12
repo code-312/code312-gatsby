@@ -4,7 +4,7 @@ title: Between Friends
 date: 2022-09-02T16:39:47.025Z
 areas: UX Research, UX Design, UI Design, Wordpress
 description: Improve the backend workflow to enable more autonomy.
-thumbnail: /images/uploads/bf-home.png
+thumbnail: ../../images/uploads/bf-home.png
 imgtext: Initial home page (left), and its redesign (right). The team designed
   custom illustrations to communicate the specific service.
 alt: Final design for the home page

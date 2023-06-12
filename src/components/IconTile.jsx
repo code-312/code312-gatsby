@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Button from './Button'
 
 const StyledTile = styled.article`
+  background-color: var(--white);
   min-height: 11.4375rem;
   max-width: 16rem;
   min-width: 12rem;

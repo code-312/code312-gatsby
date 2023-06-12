@@ -12,7 +12,7 @@ const StyledMobileNav = styled.nav`
   flex-direction: column;
   width: 100%;
   background: var(--white);
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 10;
