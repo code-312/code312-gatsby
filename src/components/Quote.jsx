@@ -21,6 +21,9 @@ const StyledQuote = styled.section`
     font-weight: 300;
     font-style: normal;
   }
+  .quote {
+    font-weight: 300;
+  }
   .heading-3 {
     flex: none;
     align-self: stretch;
@@ -33,12 +36,11 @@ const StyledQuote = styled.section`
 const Quote = ({ quote, author, source, background }) => {
   return (
     <StyledQuote background={background}>
-      <div className='quote-wrapper'>
-        <blockquote className='blockquote'>
+      <div className="quote-wrapper">
+        <blockquote className="blockquote">
           <p className="quote">{quote}</p>
           <cite className="heading-3">
-            {author},
-            {source}
+            {author},{source}
           </cite>
         </blockquote>
       </div>
