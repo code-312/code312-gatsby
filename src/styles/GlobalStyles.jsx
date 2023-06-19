@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import '@fontsource/source-sans-pro'
 
 const GlobalStyles = createGlobalStyle`
   :root {
