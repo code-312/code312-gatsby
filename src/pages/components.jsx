@@ -23,6 +23,8 @@ import skyline from '../images/skyline.svg'
 import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
 import styled from 'styled-components'
+import VolunteerTile from '../components/VolunteerTile'
+import TilePhoto from '../../images/uploads/allie_serd.png'
 
 const StyledSection = styled.section`
   margin-bottom: 3rem;
@@ -172,6 +174,11 @@ const Components = () => {
         <h3>UpcomingEvents</h3>
         <UpcomingEvents />
       </StyledSection>
+      <VolunteerTile
+        memberName={'Allie Serd'}
+        imageSrc={TilePhoto}
+        positionTitle={'Volunteer Lead'}
+      ></VolunteerTile>
     </Layout>
   )
 }
