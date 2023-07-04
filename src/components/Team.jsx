@@ -12,13 +12,13 @@ const StyledTeam = styled.section`
     gap: 3rem;
     align-self: stretch;
 
-    .info {
+    .content {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       padding: 0rem;
-      gap: 1.5rem;
+      gap: 3rem;
       width: 33.68rem;
+      text-align: center;
     }
 
     .content > h2 > span {
@@ -29,13 +29,8 @@ const StyledTeam = styled.section`
   .heading-2 {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    color: var(--blizzard-black);
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 2.63rem;
-    font-style: normal;
-    text-align: center;
+    align-items: center;
+    gap: 1.5rem;
   }
   .leadership {
     display: flex;
