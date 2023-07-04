@@ -7,7 +7,6 @@ const StyledTile = styled.article`
   min-height: 11.4375rem;
   max-width: 16rem;
   min-width: 12rem;
-  padding: 0.5rem 1rem;
   box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
   display: flex;
@@ -15,7 +14,7 @@ const StyledTile = styled.article`
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   width: 100%;
 
   h4 {

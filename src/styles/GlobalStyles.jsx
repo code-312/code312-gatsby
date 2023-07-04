@@ -74,8 +74,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .heading-1 {
-    font-weight: 800;
-    font-size: 2rem;
+    font-weight: 700;
+    font-size: 2.625rem;
     line-height: 2.625rem;
 
     @media (min-width: 40.5rem) {
