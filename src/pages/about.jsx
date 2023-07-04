@@ -5,7 +5,11 @@ import FAQSection from '../components/FAQSection'
 import Quote from '../components/Quote'
 import Button from '../components/Button'
 import styled from 'styled-components'
-
+import Team from '../components/Team'
+import VolunteerTile from '../components/VolunteerTile'
+import Donovon from '../../images/uploads/donovan_bacon.png'
+import Allie from '../../images/uploads/allie_serd.png'
+  
 const ButtonGroup = styled.div`
   display: flex;
   flex-direction: row;
@@ -101,6 +105,21 @@ const AboutPage = () => {
           </ButtonGroup>
         </EyebrowHeaderGroup>
       </FAQSection>
+      <Team
+        eyebrowText={'Who are we?'}
+        mainHeading={'Meet our Leadership Team'}
+      >
+        <VolunteerTile
+          memberName={'Donovon Bacon'}
+          imageSrc={Donovon}
+          positionTitle={'Brigade Captain'}
+        ></VolunteerTile>
+        <VolunteerTile
+          memberName={'Allie Serd'}
+          imageSrc={Allie}
+          positionTitle={'Volunteer Lead'}
+        ></VolunteerTile>
+      </Team>
     </Layout>
   )
 }

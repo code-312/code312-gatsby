@@ -17,7 +17,6 @@ const StyledTeam = styled.section`
       flex-direction: column;
       padding: 0rem;
       gap: 3rem;
-      width: 33.68rem;
       text-align: center;
     }
 
@@ -30,12 +29,15 @@ const StyledTeam = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 0.5rem;
   }
   .leadership {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
+    @media screen and (max-width: 426px) {
+      flex-direction: column;
+    }
   }
 `
 
