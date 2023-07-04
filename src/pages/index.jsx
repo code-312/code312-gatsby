@@ -58,7 +58,7 @@ const IndexPage = () => {
       >
         <HeroContent>
           <div>
-            <Button text="Get Started" link="/join" arrow />
+            <Button text="Get Started" link="/join" />
           </div>
         </HeroContent>
       </Hero>

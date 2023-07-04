@@ -14,12 +14,7 @@ const StyledHeroSection = styled.section`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-left: 3rem;
     gap: 1.5rem;
-  }
-
-  .no-image {
-    padding: 0;
   }
 
   .content-container {
@@ -33,26 +28,28 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  .image-container {
+    padding-left: 3rem;
+  }
+
   .container-no-image {
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 6rem 0;
 
-    @media (max-width: 1200px) {
-      padding-top: 2.4rem;
+    .eyebrow-text {
+      text-align: center;
     }
   }
 
   .eyebrow-text {
     font-style: normal;
     letter-spacing: 0.05em;
-    text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--blizzard-black);
-
-    @media (min-width: 769px) {
-      text-align: left;
-    }
   }
 
   .main-heading {
@@ -123,8 +120,12 @@ const Hero = ({
   arrow,
 }) => {
   return (
-    <StyledHeroSection className={img ? null : 'no-image'}>
-      <div className={`content-container ${img ? null : 'container-no-image'}`}>
+    <StyledHeroSection>
+      <div
+        className={`content-container ${
+          img ? 'image-container' : 'container-no-image'
+        }`}
+      >
         <h2>
           <div className="eyebrow-text eyebrow-1">
             {eyebrowText ? eyebrowText : null}

@@ -19,9 +19,8 @@ const StyledButton = styled.div`
       padding: 0.12rem;
     }
 
-    &:visited {
-      color: var(--blizzard-black) !important;
-      text-decoration: none !important;
+    :visited {
+      color: var(--blizzard-black);
     }
   }
 
@@ -47,8 +46,7 @@ const StyledButton = styled.div`
   .primary,
   .primary.small {
     &:visited {
-      color: var(--blizzard-black) !important;
-      text-decoration: none !important;
+      color: black;
     }
     &:hover {
       color: var(--white);
@@ -134,8 +132,7 @@ const StyledButton = styled.div`
     text-decoration: none;
 
     &:visited {
-      color: var(--blizzard-black) !important;
-      text-decoration: none !important;
+      color: var(--dark-red);
     }
 
     .small {
