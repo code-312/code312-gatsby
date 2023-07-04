@@ -55,7 +55,7 @@ const Components = () => {
           mainHeading={'Main Heading Goes Here'}
           content={'Content paragraph goes here. Lorem Ipsum.'}
           linkUrl={'/components'}
-          linkText={'To Components Page'}
+          linkText={'Components'}
           imgUrl={CardPlaceholder}
           imageDescription={'image for testing components'}
         />
@@ -68,7 +68,7 @@ const Components = () => {
             mainHeading={'Main Heading Goes Here'}
             content={'Content paragraph goes here. Lorem Ipsum.'}
             linkUrl={'/components'}
-            linkText={'To Components Page'}
+            linkText={'Components'}
             imgUrl={CardPlaceholder}
             imageDescription={'image for testing components'}
           />
@@ -77,7 +77,7 @@ const Components = () => {
             mainHeading={'Main Heading Goes Here'}
             content={'Content paragraph goes here. Lorem Ipsum.'}
             linkUrl={'/components'}
-            linkText={'To Components Page'}
+            linkText={'Components'}
             imgUrl={CardPlaceholder}
             imageDescription={'image for testing components'}
           />
@@ -86,7 +86,7 @@ const Components = () => {
             mainHeading={'Main Heading Goes Here'}
             content={'Content paragraph goes here. Lorem Ipsum.'}
             linkUrl={'/components'}
-            linkText={'To Components Page'}
+            linkText={'Components'}
             imgUrl={CardPlaceholder}
             imageDescription={'image for testing components'}
           />
@@ -95,16 +95,16 @@ const Components = () => {
             mainHeading={'Main Heading Goes Here'}
             content={'Content paragraph goes here. Lorem Ipsum.'}
             linkUrl={'/components'}
-            linkText={'To Components Page'}
+            linkText={'Components'}
             imgUrl={CardPlaceholder}
             imageDescription={'image for testing components'}
           />
         </CardBlock>
       </StyledSection>
-      <StyledSection className="width-wrapper">
+      {/* <StyledSection className="width-wrapper">
         <h3>Checklist</h3>
         <Checklist />
-      </StyledSection>
+      </StyledSection> */}
       <StyledSection>
         <h3>ContactUs</h3>
         <ContactUs />
@@ -116,7 +116,7 @@ const Components = () => {
           mainHeading={'Main Heading Goes Here'}
           content={'Content paragraph goes here. Lorem Ipsum.'}
           linkUrl={'/components'}
-          linkText={'To Components Page'}
+          linkText={'Components'}
           imgUrl={TestImage}
           imageDescription={'image for testing components'}
         />
@@ -132,11 +132,19 @@ const Components = () => {
       </StyledSection>
       <StyledSection>
         <h3>Hero</h3>
+        <h4>Hero with image</h4>
         <Hero
           eyebrowText={'Eyebrow Text Goes Here'}
           mainHeading={'Main Heading Goes Here'}
           content={'Content goes here.'}
           img={skyline}
+          imgDescription={'Skyline of Chicago'}
+        />
+        <h4>Hero with no image</h4>
+        <Hero
+          eyebrowText={'Eyebrow Text Goes Here'}
+          mainHeading={'Main Heading Goes Here'}
+          content={'Content goes here.'}
           imgDescription={'Skyline of Chicago'}
         />
       </StyledSection>

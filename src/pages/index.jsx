@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Button from '../components/Button'
 import ContentSection from '../components/ContentSection'
 import ContactUs from '../components/ContactUs'
 import Organizations from '../images/Organizations.png'
@@ -18,9 +19,20 @@ import projectmanagers from '../images/icons/projectmanagers.svg'
 import socialworkers from '../images/icons/socialworkers.svg'
 import skyline from '../images/skyline.svg'
 
-const WorkWithUs = styled.section`
-  margin-bottom: 4rem;
+const HeroContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 0;
+
+  div {
+    display: flex;
+    gap: 1.5rem;
+  }
 `
+
+const WorkWithUs = styled.section``
 
 const IndexPage = () => {
   const icons = [
@@ -36,7 +48,18 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Hero img={skyline} imgDescription={'Skyline of Chicago'} />
+      <Hero
+        mainHeading="Making community services work in a digital age"
+        eyebrowText="A Code for America Brigade"
+        img={skyline}
+        imgDescription={'Skyline of Chicago'}
+      >
+        <HeroContent>
+          <div>
+            <Button text="Get Started" link="/join" />
+          </div>
+        </HeroContent>
+      </Hero>
       <WorkWithUs>
         <Heading
           headingText="Work With Us"

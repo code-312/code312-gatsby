@@ -14,19 +14,13 @@ const StyledHeroSection = styled.section`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-left: 0rem;
     gap: 1.5rem;
-  }
-
-  .no-image {
-    padding: 0;
   }
 
   .content-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 7rem 0 3.5rem 3rem;
 
     @media (min-width: 769px) {
       align-items: flex-start;
@@ -34,28 +28,28 @@ const StyledHeroSection = styled.section`
     }
   }
 
+  .image-container {
+    padding-left: 3rem;
+  }
+
   .container-no-image {
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 6rem 0;
 
-    @media (max-width: 1200px) {
-      padding-top: 2.4rem;
+    .eyebrow-text {
+      text-align: center;
     }
   }
 
   .eyebrow-text {
     font-style: normal;
     letter-spacing: 0.05em;
-    text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    height: 1.313rem;
     color: var(--blizzard-black);
-    margin-bottom: 0.5rem;
-
-    @media (min-width: 769px) {
-      text-align: left;
-    }
   }
 
   .main-heading {
@@ -64,12 +58,8 @@ const StyledHeroSection = styled.section`
     flex: none;
     line-height: 1.4;
 
-    @media (min-width: 649px) {
-      margin: 0 3rem 0.5rem;
-    }
     @media (min-width: 769px) {
       text-align: left;
-      margin: 0 0 1.5rem 0;
     }
   }
 
@@ -118,6 +108,7 @@ const StyledHeroSection = styled.section`
 const Hero = ({
   eyebrowText,
   mainHeading,
+  children,
   img,
   imgDescription,
   buttonText,
@@ -125,18 +116,25 @@ const Hero = ({
   arrow,
 }) => {
   return (
-    <StyledHeroSection className={img ? null : 'no-image'}>
-      <div className={`content-container ${img ? null : 'container-no-image'}`}>
-        <span className="eyebrow-text eyebrow-1">
-          {eyebrowText ? eyebrowText : null}
-        </span>
-        <h2
-          className={`main-heading heading-1 ${
-            img ? null : 'heading-no-image'
-          }`}
-        >
-          {mainHeading ? mainHeading : 'Community service in a digital age'}
+    <StyledHeroSection>
+      <div
+        className={`content-container ${
+          img ? 'image-container' : 'container-no-image'
+        }`}
+      >
+        <h2>
+          <div className="eyebrow-text eyebrow-1">
+            {eyebrowText ? eyebrowText : null}
+          </div>
+          <div
+            className={`main-heading heading-1 ${
+              img ? null : 'heading-no-image'
+            }`}
+          >
+            {mainHeading ? mainHeading : null}
+          </div>
         </h2>
+        {children}
         {buttonText && (
           <Button text={buttonText} link={link} arrow={arrow} center />
         )}
