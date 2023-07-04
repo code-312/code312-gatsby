@@ -6,6 +6,10 @@ import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
 
 const StyledMobileNav = styled.nav`
+  border-top: 1px solid var(--light-grey);
+  position: absolute;
+  top: 5rem;
+  background: var(--white);
   width: 100%;
 
   .label-1 {
@@ -21,6 +25,7 @@ const StyledMobileNav = styled.nav`
       align-items: center;
 
       a {
+        width: 100%;
         height: 3.313rem;
         padding: 1rem;
         display: flex;
