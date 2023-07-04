@@ -30,35 +30,26 @@ const GlobalStyles = createGlobalStyle`
       color: var(--dark-blue);
       font-weight: 400;
       text-decoration: underline;
-
-      :visited {
+      &:active {
         color: var(--dark-blue);
+        text-decoration: none;
       }
-    }
-
-    a:hover {
-      color: var(--dark-red);
-    }
-
-    a:active {
-      color: var(--dark-blue);
-      text-decoration: none;
-    }
-
-    a:focus {
-      border: 2px solid var(--dark-blue);
-      text-decoration: none;
-    }
-
-    a:visited {
-      color: var(--dark-purple);
-      text-decoration: none;
-    }
-
-    a[aria-disabled="true"] {
-      color: var(--blizzard-black);
-      text-decoration: none;
-      pointer-events: none;
+      &:hover {
+        color: var(--dark-red);
+      }
+      &:focus {
+        border: 2px solid var(--dark-blue);
+        text-decoration: none;
+      }
+      &:visited {
+        color: var(--dark-purple);
+        text-decoration: none;
+      }
+      &[aria-disabled="true"] {
+        color: var(--blizzard-black);
+        text-decoration: none;
+        pointer-events: none;
+      }
     }
   }
 
