@@ -20,6 +20,7 @@ const StyledButton = styled.div`
     }
 
     :visited {
+      text-decoration: none;
       color: var(--blizzard-black);
     }
   }
