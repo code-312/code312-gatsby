@@ -14,7 +14,7 @@ const StyledHeroSection = styled.section`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-left: 0rem;
+    padding-left: 3rem;
     gap: 1.5rem;
   }
 
@@ -26,7 +26,6 @@ const StyledHeroSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 7rem 0 3.5rem 3rem;
 
     @media (min-width: 769px) {
       align-items: flex-start;
@@ -49,9 +48,7 @@ const StyledHeroSection = styled.section`
     text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    height: 1.313rem;
     color: var(--blizzard-black);
-    margin-bottom: 0.5rem;
 
     @media (min-width: 769px) {
       text-align: left;
@@ -118,6 +115,7 @@ const StyledHeroSection = styled.section`
 const Hero = ({
   eyebrowText,
   mainHeading,
+  children,
   img,
   imgDescription,
   buttonText,
@@ -127,16 +125,19 @@ const Hero = ({
   return (
     <StyledHeroSection className={img ? null : 'no-image'}>
       <div className={`content-container ${img ? null : 'container-no-image'}`}>
-        <span className="eyebrow-text eyebrow-1">
-          {eyebrowText ? eyebrowText : null}
-        </span>
-        <h2
-          className={`main-heading heading-1 ${
-            img ? null : 'heading-no-image'
-          }`}
-        >
-          {mainHeading ? mainHeading : 'Community service in a digital age'}
+        <h2>
+          <div className="eyebrow-text eyebrow-1">
+            {eyebrowText ? eyebrowText : null}
+          </div>
+          <div
+            className={`main-heading heading-1 ${
+              img ? null : 'heading-no-image'
+            }`}
+          >
+            {mainHeading ? mainHeading : null}
+          </div>
         </h2>
+        {children}
         {buttonText && (
           <Button text={buttonText} link={link} arrow={arrow} center />
         )}
