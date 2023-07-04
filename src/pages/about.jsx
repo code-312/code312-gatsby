@@ -101,7 +101,7 @@ const AboutPage = () => {
           </EyeBrowHeaderSection>
           <ButtonGroup>
             <Button center={'center'} text={'Volunteer With Us'}></Button>
-            <Button center={'center'} text={'Partner With Us'}></Button>
+            <Button secondary center={'center'} text={'Partner With Us'}></Button>
           </ButtonGroup>
         </EyebrowHeaderGroup>
       </FAQSection>
