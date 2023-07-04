@@ -25,31 +25,31 @@ const GlobalStyles = createGlobalStyle`
     // Font
     font-family: 'Source Sans Pro', sans-serif;
 
-    // Inline Hyperlinks
-    a {
+  }
+  // Inline Hyperlinks
+  a {
+    color: var(--dark-blue);
+    font-weight: 400;
+    text-decoration: underline;
+    &:active {
       color: var(--dark-blue);
-      font-weight: 400;
-      text-decoration: underline;
-      &:active {
-        color: var(--dark-blue);
-        text-decoration: none;
-      }
-      &:hover {
-        color: var(--dark-red);
-      }
-      &:focus {
-        border: 2px solid var(--dark-blue);
-        text-decoration: none;
-      }
-      &:visited {
-        color: var(--dark-purple);
-        text-decoration: none;
-      }
-      &[aria-disabled="true"] {
-        color: var(--blizzard-black);
-        text-decoration: none;
-        pointer-events: none;
-      }
+      text-decoration: none;
+    }
+    &:hover {
+      color: var(--dark-red);
+    }
+    &:focus {
+      border: 2px solid var(--dark-blue);
+      text-decoration: none;
+    }
+    &:visited {
+      color: var(--dark-purple);
+      text-decoration: none;
+    }
+    &[aria-disabled="true"] {
+      color: var(--blizzard-black);
+      text-decoration: none;
+      pointer-events: none;
     }
   }
 

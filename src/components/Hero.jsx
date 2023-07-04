@@ -58,12 +58,8 @@ const StyledHeroSection = styled.section`
     flex: none;
     line-height: 1.4;
 
-    @media (min-width: 649px) {
-      margin: 0 3rem 0.5rem;
-    }
     @media (min-width: 769px) {
       text-align: left;
-      margin: 0 0 1.5rem 0;
     }
   }
 
