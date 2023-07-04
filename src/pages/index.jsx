@@ -32,9 +32,7 @@ const HeroContent = styled.div`
   }
 `
 
-const WorkWithUs = styled.section`
-  margin-bottom: 4rem;
-`
+const WorkWithUs = styled.section``
 
 const IndexPage = () => {
   const icons = [
