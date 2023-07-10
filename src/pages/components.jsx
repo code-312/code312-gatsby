@@ -23,6 +23,8 @@ import skyline from '../images/skyline.svg'
 import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
 import styled from 'styled-components'
+import VolunteerTile from '../components/VolunteerTile'
+import TilePhoto from '../../images/uploads/allie_serd.png'
 
 const StyledSection = styled.section`
   margin-bottom: 3rem;
@@ -47,95 +49,144 @@ const Components = () => {
         link="/components"
         buttonDisplay="Components Page"
       /> NOT EVEN USED */}
-      <Card
-        eyebrowText={'Eyebrow Text Goes Here'}
-        mainHeading={'Main Heading Goes Here'}
-        content={'Content paragraph goes here. Lorem Ipsum.'}
-        linkUrl={'/components'}
-        linkText={'To Components Page'}
-        imgUrl={CardPlaceholder}
-        imageDescription={'image for testing components'}
-      />
-      <CardBlock>
+      <StyledSection className="width-wrapper">
+        <h3>Card</h3>
         <Card
           eyebrowText={'Eyebrow Text Goes Here'}
           mainHeading={'Main Heading Goes Here'}
           content={'Content paragraph goes here. Lorem Ipsum.'}
           linkUrl={'/components'}
-          linkText={'To Components Page'}
+          linkText={'Components'}
           imgUrl={CardPlaceholder}
           imageDescription={'image for testing components'}
         />
-        <Card
+      </StyledSection>
+      <StyledSection className="width-wrapper">
+        <h3>Card Block</h3>
+        <CardBlock>
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+        </CardBlock>
+      </StyledSection>
+      {/* <StyledSection className="width-wrapper">
+        <h3>Checklist</h3>
+        <Checklist />
+      </StyledSection> */}
+      <StyledSection>
+        <h3>ContactUs</h3>
+        <ContactUs />
+      </StyledSection>
+      <StyledSection className="width-wrapper">
+        <h3>ContentSection</h3>
+        <ContentSection
           eyebrowText={'Eyebrow Text Goes Here'}
           mainHeading={'Main Heading Goes Here'}
           content={'Content paragraph goes here. Lorem Ipsum.'}
           linkUrl={'/components'}
-          linkText={'To Components Page'}
-          imgUrl={CardPlaceholder}
+          linkText={'Components'}
+          imgUrl={TestImage}
           imageDescription={'image for testing components'}
         />
-        <Card
+      </StyledSection>
+      <StyledSection className="width-wrapper">
+        <h3>Heading</h3>
+        <Heading
+          browText="Volunteer Expectations"
+          headingText="Our culture is scrappy"
+          description="this content describes this section"
+          headingLevel="3"
+        />
+      </StyledSection>
+      <StyledSection>
+        <h3>Hero</h3>
+        <h4>Hero with image</h4>
+        <Hero
           eyebrowText={'Eyebrow Text Goes Here'}
           mainHeading={'Main Heading Goes Here'}
-          content={'Content paragraph goes here. Lorem Ipsum.'}
-          linkUrl={'/components'}
-          linkText={'To Components Page'}
-          imgUrl={CardPlaceholder}
-          imageDescription={'image for testing components'}
+          content={'Content goes here.'}
+          img={skyline}
+          imgDescription={'Skyline of Chicago'}
         />
-        <Card
+        <h4>Hero with no image</h4>
+        <Hero
           eyebrowText={'Eyebrow Text Goes Here'}
           mainHeading={'Main Heading Goes Here'}
-          content={'Content paragraph goes here. Lorem Ipsum.'}
-          linkUrl={'/components'}
-          linkText={'To Components Page'}
-          imgUrl={CardPlaceholder}
-          imageDescription={'image for testing components'}
+          content={'Content goes here.'}
+          imgDescription={'Skyline of Chicago'}
         />
-      </CardBlock>
-      <Checklist />
-      <ContactUs />
-      <ContentSection
-        eyebrowText={'Eyebrow Text Goes Here'}
-        mainHeading={'Main Heading Goes Here'}
-        content={'Content paragraph goes here. Lorem Ipsum.'}
-        linkUrl={'/components'}
-        linkText={'To Components Page'}
-        imgUrl={TestImage}
-        imageDescription={'image for testing components'}
-      />
-      <Heading
-        browText="Volunteer Expectations"
-        headingText="Our culture is scrappy"
-        description="this content describes this section"
-        headingLevel="3"
-      />
-      <Hero
-        eyebrowText={'Eyebrow Text Goes Here'}
-        mainHeading={'Main Heading Goes Here'}
-        content={'Content goes here.'}
-        img={skyline}
-        imgDescription={'Skyline of Chicago'}
-      />
+      </StyledSection>
       {/* <IconGrid /> */}
-      <IconTile
-        icon={codeOfConduct}
-        title={'Title'}
-        description={'Description goes Here'}
-      />
-      <LongtextInput />
-      <Quote />
+      <StyledSection className="width-wrapper">
+        <h3>IconTile</h3>
+        <IconTile
+          icon={codeOfConduct}
+          title={'Title'}
+          description={'Description goes Here'}
+        />
+      </StyledSection>
+      <StyledSection className="width-wrapper">
+        <h3>LongtextInput</h3>
+        <LongtextInput />
+      </StyledSection>
+      {/* <StyledSection className="width-wrapper">
+        <h3>Quote</h3>
+        <Quote />
+      </StyledSection> NOT EVEN USED */}
       {/* <RadioOption optionLabel="Sample Option" />
         <RadioOption optionLabel="Sample Option" /> */}
-      <ShortTextInput
-        label="Email*"
-        type="email"
-        required
-        helper="This is helper text"
-        error="This is an error"
-      />
-      <UpcomingEvents />
+      <StyledSection className="width-wrapper">
+        <h3>ShortTextInput</h3>
+        <ShortTextInput
+          label="Email*"
+          type="email"
+          required
+          helper="This is helper text"
+          error="This is an error"
+        />
+      </StyledSection>
+      <StyledSection className="width-wrapper">
+        <h3>UpcomingEvents</h3>
+        <UpcomingEvents />
+      </StyledSection>
+      <VolunteerTile
+        memberName={'Allie Serd'}
+        imageSrc={TilePhoto}
+        positionTitle={'Volunteer Lead'}
+      ></VolunteerTile>
     </Layout>
   )
 }

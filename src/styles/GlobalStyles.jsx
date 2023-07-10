@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import '@fontsource/source-sans-pro'
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -26,37 +25,28 @@ const GlobalStyles = createGlobalStyle`
     // Font
     font-family: 'Source Sans Pro', sans-serif;
 
-    // Inline Hyperlinks
-    a {
-      color: var(--dark-blue);
-      font-weight: 400;
-      text-decoration: underline;
-
-      :visited {
-        color: var(--dark-blue);
-      }
-    }
-
-    a:hover {
-      color: var(--dark-red);
-    }
-
-    a:active {
+  }
+  // Inline Hyperlinks
+  a {
+    color: var(--dark-blue);
+    font-weight: 400;
+    text-decoration: underline;
+    &:active {
       color: var(--dark-blue);
       text-decoration: none;
     }
-
-    a:focus {
+    &:hover {
+      color: var(--dark-red);
+    }
+    &:focus {
       border: 2px solid var(--dark-blue);
       text-decoration: none;
     }
-
-    a:visited {
+    &:visited {
       color: var(--dark-purple);
       text-decoration: none;
     }
-
-    a[aria-disabled="true"] {
+    &[aria-disabled="true"] {
       color: var(--blizzard-black);
       text-decoration: none;
       pointer-events: none;
@@ -84,8 +74,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .heading-1 {
-    font-weight: 800;
-    font-size: 2rem;
+    font-weight: 700;
+    font-size: 2.625rem;
     line-height: 2.625rem;
 
     @media (min-width: 40.5rem) {

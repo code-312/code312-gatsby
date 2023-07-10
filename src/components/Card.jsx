@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import arrow from '../images/long-arrow-right-red.svg'
+import Button from './Button'
 
 const StyledCard = styled.article`
   background-color: var(--white);
@@ -13,6 +14,10 @@ const StyledCard = styled.article`
   border-radius: 0.5rem;
   margin: 1rem;
   overflow: hidden;
+
+  .image {
+    width: 100%;
+  }
 
   .card-header {
     display: flex;
@@ -81,11 +86,15 @@ const Card = ({
 }) => {
   const [isDisabled, setIsDisabled] = useState(false)
   return (
-    <StyledCard imgUrl={imgUrl}>
+    <StyledCard>
       {typeof imgUrl === 'object' ? (
-        <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
+        <GatsbyImage
+          image={getImage(imgUrl)}
+          alt={imageDescription}
+          className="image"
+        />
       ) : (
-        <img alt={imageDescription} src={imgUrl} />
+        <img alt={imageDescription} className="image" src={imgUrl} />
       )}
       <div className="card-details">
         <div className="content-container">
@@ -101,7 +110,7 @@ const Card = ({
               : 'content dkajskldjas kdnaskdnajs djansljdnasld'}
           </p>
         </div>
-        {linkUrl ? (
+        {linkUrl && (
           <div className="buttons-container">
             {isDisabled ? (
               <Link
@@ -112,13 +121,10 @@ const Card = ({
                 More Info Coming Soon
               </Link>
             ) : (
-              <Link to={linkUrl} className="card-link label-2">
-                Join us on Slack
-                <img src={arrow} alt="right-arrow" />
-              </Link>
+              <Button text={linkText} link={linkUrl} textBtn arrow />
             )}
           </div>
-        ) : null}
+        )}
         {labels ? (
           <div className="labels-container">
             {labels.map((label) => {

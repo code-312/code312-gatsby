@@ -20,6 +20,7 @@ const StyledButton = styled.div`
     }
 
     :visited {
+      text-decoration: none;
       color: var(--blizzard-black);
     }
   }
@@ -30,6 +31,7 @@ const StyledButton = styled.div`
     align-items: center;
     padding: 0.5rem 1rem;
     height: 2.3rem;
+    text-decoration: none;
     background: var(--white);
     border: 3px solid var(--dark-red);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
