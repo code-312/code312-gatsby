@@ -25,7 +25,7 @@ const StyledTeam = styled.section`
       letter-spacing: 0.05em;
     }
   }
-  .heading-2 {
+  .heading- {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,10 +46,10 @@ const Team = ({ eyebrowText, mainHeading, children, background }) => {
     <StyledTeam background={background}>
       <div className="width-wrapper">
         <div className="content">
-          <h2 className="heading-2">
+          <h3 className="heading-3">
             {eyebrowText && <span className="eyebrow-1">{eyebrowText}</span>}
             {mainHeading}
-          </h2>
+          </h3>
           <div className="leadership">{children}</div>
         </div>
       </div>
