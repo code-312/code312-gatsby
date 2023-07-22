@@ -5,11 +5,21 @@ import FAQSection from '../components/FAQSection'
 import Quote from '../components/Quote'
 import Button from '../components/Button'
 import styled from 'styled-components'
-import Team from '../components/Team'
 import VolunteerTile from '../components/VolunteerTile'
 import Donovon from '../../images/uploads/donovan_bacon.png'
 import Allie from '../../images/uploads/allie_serd.png'
-  
+import Heading from '../components/Heading'
+
+const TeamWrapper = styled.div`
+  background: #EFEFEF;
+  display: flex;
+  padding: 4rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  align-self: stretch;
+`
 const ButtonGroup = styled.div`
   display: flex;
   flex-direction: row;
@@ -36,6 +46,15 @@ const EyeBrowHeaderSection = styled.div`
   align-items: flex-start;
   gap: 0.5rem;
 `
+const Leadership = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  @media screen and (max-width: 426px) {
+    flex-direction: column;
+  }
+`
+
 const AboutPage = () => {
   return (
     <Layout>
@@ -101,25 +120,32 @@ const AboutPage = () => {
           </EyeBrowHeaderSection>
           <ButtonGroup>
             <Button center={'center'} text={'Volunteer With Us'}></Button>
-            <Button secondary center={'center'} text={'Partner With Us'}></Button>
+            <Button
+              secondary
+              center={'center'}
+              text={'Partner With Us'}
+            ></Button>
           </ButtonGroup>
         </EyebrowHeaderGroup>
       </FAQSection>
-      <Team
-        eyebrowText={'Who are we?'}
-        mainHeading={'Meet our Leadership Team'}
-      >
-        <VolunteerTile
-          memberName={'Donovon Bacon'}
-          imageSrc={Donovon}
-          positionTitle={'Brigade Captain'}
-        ></VolunteerTile>
-        <VolunteerTile
-          memberName={'Allie Serd'}
-          imageSrc={Allie}
-          positionTitle={'Volunteer Lead'}
-        ></VolunteerTile>
-      </Team>
+      <TeamWrapper>
+        <Heading
+          browText={'Who are we?'}
+          headingText={'Meet our Leadership Team'}
+        />
+          <Leadership>
+            <VolunteerTile
+              memberName={'Donovon Bacon'}
+              imageSrc={Donovon}
+              positionTitle={'Brigade Captain'}
+            ></VolunteerTile>
+            <VolunteerTile
+              memberName={'Allie Serd'}
+              imageSrc={Allie}
+              positionTitle={'Volunteer Lead'}
+            ></VolunteerTile>
+          </Leadership>
+      </TeamWrapper>
     </Layout>
   )
 }

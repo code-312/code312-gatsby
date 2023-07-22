@@ -2,14 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledHeading = styled.div`
-  background: ${(props) => props.background || 'var(--white)'};
   color: var(--tints-blizzard-black);
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin: 0 auto;
-  padding: 4rem 1.5rem 1.5rem;
+  /* padding: 4rem 1.5rem 1.5rem; */
   max-width: 35.1875rem;
 
   .eyebrow-1 {
@@ -29,23 +28,22 @@ const Heading = ({
   headingLevel = '3',
   description,
   children,
-  background
 }) => {
   const HeadingTag = `h${headingLevel}`
 
   return (
-    <StyledHeading background= {background}>
-      <HeadingTag>
-        {browText && (
-          <>
-            <span className="eyebrow-1">{browText}</span>
-            <br />
-          </>
-        )}
-        <span className="heading-2">{headingText}</span>
-      </HeadingTag>
-      {description && <p className="p1-body">{description}</p>}
-      {children}
+    <StyledHeading >
+        <HeadingTag>
+          {browText && (
+            <>
+              <span className="eyebrow-1">{browText}</span>
+              <br />
+            </>
+          )}
+          <span className="heading-2">{headingText}</span>
+        </HeadingTag>
+        {description && <p className="p1-body">{description}</p>}
+        {children}
     </StyledHeading>
   )
 }
