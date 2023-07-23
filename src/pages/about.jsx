@@ -11,7 +11,7 @@ import Allie from '../../images/uploads/allie_serd.png'
 import Heading from '../components/Heading'
 
 const TeamWrapper = styled.div`
-  background: #EFEFEF;
+  background: #efefef;
   display: flex;
   padding: 4rem 3rem;
   flex-direction: column;
@@ -133,18 +133,18 @@ const AboutPage = () => {
           browText={'Who are we?'}
           headingText={'Meet our Leadership Team'}
         />
-          <Leadership>
-            <VolunteerTile
-              memberName={'Donovon Bacon'}
-              imageSrc={Donovon}
-              positionTitle={'Brigade Captain'}
-            ></VolunteerTile>
-            <VolunteerTile
-              memberName={'Allie Serd'}
-              imageSrc={Allie}
-              positionTitle={'Volunteer Lead'}
-            ></VolunteerTile>
-          </Leadership>
+        <Leadership>
+          <VolunteerTile
+            memberName={'Donovon Bacon'}
+            imageSrc={Donovon}
+            positionTitle={'Brigade Captain'}
+          ></VolunteerTile>
+          <VolunteerTile
+            memberName={'Allie Serd'}
+            imageSrc={Allie}
+            positionTitle={'Volunteer Lead'}
+          ></VolunteerTile>
+        </Leadership>
       </TeamWrapper>
     </Layout>
   )

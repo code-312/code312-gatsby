@@ -32,18 +32,18 @@ const Heading = ({
   const HeadingTag = `h${headingLevel}`
 
   return (
-    <StyledHeading >
-        <HeadingTag>
-          {browText && (
-            <>
-              <span className="eyebrow-1">{browText}</span>
-              <br />
-            </>
-          )}
-          <span className="heading-2">{headingText}</span>
-        </HeadingTag>
-        {description && <p className="p1-body">{description}</p>}
-        {children}
+    <StyledHeading>
+      <HeadingTag>
+        {browText && (
+          <>
+            <span className="eyebrow-1">{browText}</span>
+            <br />
+          </>
+        )}
+        <span className="heading-2">{headingText}</span>
+      </HeadingTag>
+      {description && <p className="p1-body">{description}</p>}
+      {children}
     </StyledHeading>
   )
 }
