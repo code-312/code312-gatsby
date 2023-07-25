@@ -25,11 +25,13 @@ const StyledQuote = styled.section`
     font-weight: 300;
   }
   .heading-3 {
-    flex: none;
-    align-self: stretch;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    color: var(--tints-blizzard-black, #001426);
+    font-size: 0.875rem;
+    font-style: normal;
     font-weight: 600;
+    line-height: 1.125rem;
+    letter-spacing: 0.04375rem;
+    text-transform: uppercase;
   }
 `
 

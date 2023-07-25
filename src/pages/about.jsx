@@ -59,13 +59,13 @@ const AboutPage = () => {
   return (
     <Layout>
       <Hero
-        eyebrowText="ABOUT US"
+        eyebrowText="about us"
         mainHeading="Making Tech Accessible to Everyone"
         buttonText="Button"
       />
       <FAQSection
         background={'var(--white)'}
-        eyebrowText={'WHAT IS CIVIC TECH?'}
+        eyebrowText={'what is civic tech?'}
         mainHeading={
           'Civic tech bridges the gap between the people and the government through technology.'
         }
@@ -86,7 +86,7 @@ const AboutPage = () => {
       />
       <FAQSection
         background={'var(--white)'}
-        eyebrowText={'WHAT IS CODE FOR CHICAGO?'}
+        eyebrowText={'What is Code for Chicago?'}
         mainHeading={
           'Code for Chicago operates like a pro-bono digital consultancy'
         }

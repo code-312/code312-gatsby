@@ -1,9 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const StyledFAQSection = styled.section`
   background: ${(props) => props.background || 'var(--white)'};
-
+  .eyebrow-1 {
+    text-transform: uppercase;
+  }
   .width-wrapper {
     display: flex;
     flex-direction: row;
@@ -32,15 +34,15 @@ const StyledFAQSection = styled.section`
     gap: 0.5rem;
     color: var(--blizzard-black);
     font-size: 2rem;
-    font-weight:  700;
-    line-height:  2.63rem;
+    font-weight: 700;
+    line-height: 2.63rem;
     font-style: normal;
   }
   .content > p {
     order: 2;
     font-weight: 25rem;
     font-size: 1.25rem;
-}
+  }
 `
 
 const FAQSection = ({ eyebrowText, mainHeading, children, background }) => {
@@ -52,9 +54,7 @@ const FAQSection = ({ eyebrowText, mainHeading, children, background }) => {
             {eyebrowText && <span className="eyebrow-1">{eyebrowText}</span>}
             {mainHeading}
           </h2>
-          <div className="content">
-            {children}
-          </div>
+          <div className="content">{children}</div>
         </div>
       </div>
     </StyledFAQSection>
