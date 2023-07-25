@@ -19,6 +19,7 @@ import projectmanagers from '../images/icons/projectmanagers.svg'
 import socialworkers from '../images/icons/socialworkers.svg'
 import skyline from '../images/skyline.svg'
 
+
 const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,8 +33,16 @@ const HeroContent = styled.div`
   }
 `
 
-const WorkWithUs = styled.section``
-
+const WorkWithUs = styled.section`
+  padding: 4rem 3rem;
+  gap: 1.5;
+`
+const Events = styled.section`
+  display: flex;
+  padding: 4rem 3rem;
+  flex-direction: column;
+  align-items: center;
+`
 const IndexPage = () => {
   const icons = [
     { img: developers, title: 'Developers' },
@@ -99,17 +108,19 @@ const IndexPage = () => {
         imageDescription={'Organization receiving help from Code for Chicago'}
         imgLeft
       />
-      <Heading
-        headingText="No Upcoming Events"
-        description="Join our Meetup group to
+      <Events>
+        <Heading
+          headingText="No Upcoming Events"
+          description="Join our Meetup group to
         stay up to date on what’s coming up."
-      >
-        <Button
-          center
-          link={'https://www.meetup.com/code-for-chicago/'}
-          text={'Join our Meetup Group'}
-        ></Button>
-      </Heading>
+        >
+          <Button
+            center
+            link={'https://www.meetup.com/code-for-chicago/'}
+            text={'Join our Meetup Group'}
+          ></Button>
+        </Heading>
+      </Events>
       <ContactUs />
     </Layout>
   )
