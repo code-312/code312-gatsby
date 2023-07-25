@@ -8,7 +8,6 @@ const StyledHeading = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   margin: 0 auto;
-  /* padding: 4rem 1.5rem 1.5rem; */
   max-width: 35.1875rem;
 
   .eyebrow-1 {
