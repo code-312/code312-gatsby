@@ -6,8 +6,8 @@ import Button from './Button'
 const StyledHeroSection = styled.section`
   background-color: var(--blizzard-blue);
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: flex-start;
   max-width: 100%;
 
   @media (min-width: 769px) {
@@ -18,18 +18,17 @@ const StyledHeroSection = styled.section`
     gap: 1.5rem;
   }
 
-  .no-image {
-    padding: 0;
-  }
+
 
   .content-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 7rem 0 3.5rem 3rem;
+    margin: 6rem 0 6rem 0;
 
     @media (min-width: 769px) {
-      align-items: flex-start;
+      align-items: center;
       width: 31.188rem;
     }
   }
@@ -39,7 +38,7 @@ const StyledHeroSection = styled.section`
     align-items: center;
 
     @media (max-width: 1200px) {
-      padding-top: 2.4rem;
+      /* padding-top: 2.4rem; */
     }
   }
 
@@ -47,7 +46,6 @@ const StyledHeroSection = styled.section`
     font-style: normal;
     letter-spacing: 0.05em;
     text-align: center;
-    letter-spacing: 0.05em;
     text-transform: uppercase;
     height: 1.313rem;
     color: var(--blizzard-black);
@@ -65,7 +63,7 @@ const StyledHeroSection = styled.section`
     line-height: 1.4;
 
     @media (min-width: 649px) {
-      margin: 0 3rem 0.5rem;
+      margin: 0 3rem;
     }
     @media (min-width: 769px) {
       text-align: left;
@@ -127,9 +125,7 @@ const Hero = ({
   return (
     <StyledHeroSection className={img ? null : 'no-image'}>
       <div className={`content-container ${img ? null : 'container-no-image'}`}>
-        <span className="eyebrow-text eyebrow-1">
-          {eyebrowText ? eyebrowText : null}
-        </span>
+          {eyebrowText && <span className="eyebrow-text eyebrow-1">{eyebrowText}</span>}
         <h2
           className={`main-heading heading-1 ${
             img ? null : 'heading-no-image'

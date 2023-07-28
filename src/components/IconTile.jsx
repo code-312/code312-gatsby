@@ -15,7 +15,7 @@ const StyledTile = styled.article`
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 1.25rem;
+  gap: 1rem;
   width: 100%;
 
   h4 {
@@ -26,14 +26,20 @@ const StyledTile = styled.article`
     height: 1.5rem;
     width: 1.5rem;
   }
+
+  .tile-body {
+    gap: .5rem;
+  }
 `
 
 const IconTile = ({ icon, title, description, btnText, linkUrl }) => {
   return (
     <StyledTile>
       {icon && <img className="tile-icon" src={icon} alt={title} />}
-      {title && <h4 className="heading-3">{title}</h4>}
-      {description && <p className="p2-body">{description}</p>}
+      <div className='tile-body'>
+        {title && <h4 className="heading-3">{title}</h4>}
+        {description && <p className="p2-body">{description}</p>}
+      </div>
       {btnText && <Button text={btnText} link={linkUrl} textBtn arrow center />}
     </StyledTile>
   )
