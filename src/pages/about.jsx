@@ -5,7 +5,21 @@ import FAQSection from '../components/FAQSection'
 import Quote from '../components/Quote'
 import Button from '../components/Button'
 import styled from 'styled-components'
+import VolunteerTile from '../components/VolunteerTile'
+import Donovon from '../../images/uploads/donovan_bacon.png'
+import Allie from '../../images/uploads/allie_serd.png'
+import Heading from '../components/Heading'
 
+const TeamWrapper = styled.div`
+  background: #efefef;
+  display: flex;
+  padding: 4rem 3rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  align-self: stretch;
+`
 const ButtonGroup = styled.div`
   display: flex;
   flex-direction: row;
@@ -32,17 +46,26 @@ const EyeBrowHeaderSection = styled.div`
   align-items: flex-start;
   gap: 0.5rem;
 `
+const Leadership = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  @media screen and (max-width: 426px) {
+    flex-direction: column;
+  }
+`
+
 const AboutPage = () => {
   return (
     <Layout>
       <Hero
-        eyebrowText="ABOUT US"
+        eyebrowText="about us"
         mainHeading="Making Tech Accessible to Everyone"
         buttonText="Button"
       />
       <FAQSection
         background={'var(--white)'}
-        eyebrowText={'WHAT IS CIVIC TECH?'}
+        eyebrowText={'what is civic tech?'}
         mainHeading={
           'Civic tech bridges the gap between the people and the government through technology.'
         }
@@ -63,7 +86,7 @@ const AboutPage = () => {
       />
       <FAQSection
         background={'var(--white)'}
-        eyebrowText={'WHAT IS CODE FOR CHICAGO?'}
+        eyebrowText={'What is Code for Chicago?'}
         mainHeading={
           'Code for Chicago operates like a pro-bono digital consultancy'
         }
@@ -97,10 +120,32 @@ const AboutPage = () => {
           </EyeBrowHeaderSection>
           <ButtonGroup>
             <Button center={'center'} text={'Volunteer With Us'}></Button>
-            <Button center={'center'} text={'Partner With Us'}></Button>
+            <Button
+              secondary
+              center={'center'}
+              text={'Partner With Us'}
+            ></Button>
           </ButtonGroup>
         </EyebrowHeaderGroup>
       </FAQSection>
+      <TeamWrapper>
+        <Heading
+          browText={'Who are we?'}
+          headingText={'Meet our Leadership Team'}
+        />
+        <Leadership>
+          <VolunteerTile
+            memberName={'Donovon Bacon'}
+            imageSrc={Donovon}
+            positionTitle={'Brigade Captain'}
+          ></VolunteerTile>
+          <VolunteerTile
+            memberName={'Allie Serd'}
+            imageSrc={Allie}
+            positionTitle={'Volunteer Lead'}
+          ></VolunteerTile>
+        </Leadership>
+      </TeamWrapper>
     </Layout>
   )
 }

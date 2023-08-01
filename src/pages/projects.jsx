@@ -10,6 +10,9 @@ import styled from 'styled-components'
 const StyledSection = styled.section`
   background-color: var(--light-grey);
 `
+const HeadingWrapper = styled.section`
+  padding: 4rem 1.5rem 1.5rem;
+`
 
 const ProjectsPage = ({ data }) => {
   let newActiveList = []
@@ -60,12 +63,14 @@ const ProjectsPage = ({ data }) => {
         eyebrowText="PROJECTS"
         mainHeading="Explore active projects to get involved"
       />
-      <Heading
-        browText="Needs volunteers"
-        headingText="Currently Recruiting"
-        description="These projects are actively recruiting for new volunteers."
-        headingLevel="3"
-      />
+      <HeadingWrapper>
+        <Heading
+          browText="Needs volunteers"
+          headingText="Currently Recruiting"
+          description="These projects are actively recruiting for new volunteers."
+          headingLevel="3"
+        />
+      </HeadingWrapper>
       <CardBlock>
         {newActiveList?.map((project) => {
           return (
@@ -81,12 +86,14 @@ const ProjectsPage = ({ data }) => {
         })}
       </CardBlock>
       <StyledSection>
-        <Heading
-          browText="Teams At Capacity"
-          headingText="Not Recruiting"
-          description="These projects are active, but don't have room for additional volunteers."
-          headingLevel="3"
-        />
+        <HeadingWrapper>
+          <Heading
+            browText="Teams At Capacity"
+            headingText="Not Recruiting"
+            description="These projects are active, but don't have room for additional volunteers."
+            headingLevel="3"
+          />
+        </HeadingWrapper>
         <CardBlock>
           {newInactiveList.map((project) => {
             return (

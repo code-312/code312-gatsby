@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './Button'
 import styled from 'styled-components'
 
 const StyledHeading = styled.div`
@@ -9,7 +8,6 @@ const StyledHeading = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   margin: 0 auto;
-  padding: 4rem 1.5rem 1.5rem;
   max-width: 35.1875rem;
 
   .eyebrow-1 {
@@ -28,8 +26,7 @@ const Heading = ({
   browText,
   headingLevel = '3',
   description,
-  ctaButton,
-  ctaLink,
+  children,
 }) => {
   const HeadingTag = `h${headingLevel}`
 
@@ -45,7 +42,7 @@ const Heading = ({
         <span className="heading-2">{headingText}</span>
       </HeadingTag>
       {description && <p className="p1-body">{description}</p>}
-      {ctaLink && <Button text={ctaButton} link={ctaLink} center />}
+      {children}
     </StyledHeading>
   )
 }

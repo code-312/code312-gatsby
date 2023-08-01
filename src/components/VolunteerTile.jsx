@@ -22,7 +22,7 @@ const StyledVolunteerTile = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0rem;
+    padding: 1rem 0rem;
     gap: 0.5rem;
   }
   .name {

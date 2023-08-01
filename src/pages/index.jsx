@@ -32,7 +32,12 @@ const HeroContent = styled.div`
   }
 `
 
-const WorkWithUs = styled.section``
+const WorkWithUs = styled.section`
+ 
+`
+const HeadingWrapper = styled.section`
+  padding: 4rem 1.5rem 1.5rem;
+`
 
 const IndexPage = () => {
   const icons = [
@@ -61,10 +66,12 @@ const IndexPage = () => {
         </HeroContent>
       </Hero>
       <WorkWithUs>
-        <Heading
-          headingText="Work With Us"
-          description="Whoever you are, there is a place for you here! Join us for co-working, project, service, and social events."
-        />
+        <HeadingWrapper>
+          <Heading
+            headingText="Work With Us"
+            description="Whoever you are, there is a place for you here! Join us for co-working, project, service, and social events."
+          />
+        </HeadingWrapper>
         <IconGrid icons={icons} />
       </WorkWithUs>
 
@@ -99,12 +106,19 @@ const IndexPage = () => {
         imageDescription={'Organization receiving help from Code for Chicago'}
         imgLeft
       />
-      <Heading
-        headingText="No Upcoming Events"
-        description="Join our Meetup group to stay up to date on what’s coming up."
-        ctaButton="Join our Meetup Group"
-        ctaLink="https://www.meetup.com/code-for-chicago/"
-      />
+      <HeadingWrapper>
+        <Heading
+          headingText="No Upcoming Events"
+          description="Join our Meetup group to
+        stay up to date on what’s coming up."
+        >
+          <Button
+            center
+            link={'https://www.meetup.com/code-for-chicago/'}
+            text={'Join our Meetup Group'}
+          ></Button>
+        </Heading>
+      </HeadingWrapper>
       <ContactUs />
     </Layout>
   )
