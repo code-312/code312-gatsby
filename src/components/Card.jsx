@@ -8,6 +8,7 @@ import Button from './Button'
 const StyledCard = styled.article`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: var(--white);
   width: 12.563rem;
   max-width: 16.12rem;
@@ -18,7 +19,7 @@ const StyledCard = styled.article`
   overflow: hidden;
 
   .image {
-    width: 100%;
+    height: 100%;
   }
 
   .card-header {
@@ -35,10 +36,8 @@ const StyledCard = styled.article`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1rem;
-    min-width: 10.603rem;
-    max-width: 100%;
     height: 100%;
+    gap: 1rem;
     padding: 1rem;
   }
 
