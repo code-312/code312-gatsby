@@ -6,6 +6,8 @@ import arrow from '../images/long-arrow-right-red.svg'
 import Button from './Button'
 
 const StyledCard = styled.article`
+  display: flex;
+  flex-direction: column;
   background-color: var(--white);
   width: 12.563rem;
   max-width: 16.12rem;
@@ -32,9 +34,11 @@ const StyledCard = styled.article`
   .card-details {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 1rem;
     min-width: 10.603rem;
     max-width: 100%;
+    height: 100%;
     padding: 1rem;
   }
 

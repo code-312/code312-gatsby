@@ -5,7 +5,6 @@ const StyledCardContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100vw;
   padding-bottom: 4rem;
   article {
     flex: 1 1 100%;
