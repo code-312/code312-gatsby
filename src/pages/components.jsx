@@ -194,6 +194,12 @@ const Components = () => {
           positionTitle={'Volunteer Lead'}
         ></VolunteerTile>
       </Team>
+      <div>
+        <p>
+          <a href="https://www.github.com"> GitHub </a>
+          <a href="https://www.Nike.com"> Nike </a>
+        </p>
+      </div>
     </Layout>
   )
 }

@@ -27,7 +27,8 @@ const GlobalStyles = createGlobalStyle`
 
   }
   // Inline Hyperlinks
-  a {
+  //Styles links within p tags
+  p > a {
     color: var(--dark-blue);
     font-weight: 400;
     text-decoration: underline;
