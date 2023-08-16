@@ -180,13 +180,11 @@ const Components = () => {
         <h3>UpcomingEvents</h3>
         <UpcomingEvents />
       </StyledSection>
-
       <VolunteerTile
         memberName={'Allie Serd'}
         imageSrc={SampleTilePhoto}
         positionTitle={'Volunteer Lead'}
       ></VolunteerTile>
-
     </Layout>
   )
 }
