@@ -24,7 +24,6 @@ import CardPlaceholder from '../images/card-placeholder.svg'
 import styled from 'styled-components'
 import VolunteerTile from '../components/VolunteerTile'
 import SampleTilePhoto from '../../images/uploads/allie_serd.png'
-import Team from '../components/Team'
 const StyledSection = styled.section`
   margin-bottom: 3rem;
   display: flex;
@@ -182,18 +181,12 @@ const Components = () => {
         <UpcomingEvents />
       </StyledSection>
 
-      <Team eyebrowText={'Who are we'} mainHeading={'Meet our Leadership Team'}>
-        <VolunteerTile
-          memberName={'Allie Serd'}
-          imageSrc={SampleTilePhoto}
-          positionTitle={'Volunteer Lead'}
-        ></VolunteerTile>
-        <VolunteerTile
-          memberName={'Allie Serd'}
-          imageSrc={SampleTilePhoto}
-          positionTitle={'Volunteer Lead'}
-        ></VolunteerTile>
-      </Team>
+      <VolunteerTile
+        memberName={'Allie Serd'}
+        imageSrc={SampleTilePhoto}
+        positionTitle={'Volunteer Lead'}
+      ></VolunteerTile>
+
     </Layout>
   )
 }
