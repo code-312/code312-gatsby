@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-import arrow from '../images/long-arrow-right-red.svg'
 import Button from './Button'
 
 const StyledCard = styled.article`
@@ -17,16 +16,6 @@ const StyledCard = styled.article`
   border-radius: 0.5rem;
   margin: 1rem;
   overflow: hidden;
-
-  /* .image {
-    height: 100%;
-  } */
-
-  /* .card-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  } */
 
   .eyebrow-text {
     text-transform: uppercase;
@@ -134,57 +123,6 @@ const Card = ({
       )}
     </StyledCard>
   )
-
-  // return (
-  //   <StyledCard>
-  //     {typeof imgUrl === 'object' ? (
-  //       <GatsbyImage
-  //         image={getImage(imgUrl)}
-  //         alt={imageDescription}
-  //         className="image"
-  //       />
-  //     ) : (
-  //       <img alt={imageDescription} className="image" src={imgUrl} />
-  //     )}
-  //     <div className="card-details">
-  //       <div className="content-container">
-  //         <h3 className="card-header heading-3">
-  //           <span className="eyebrow-text eyebrow-1">
-  //             {eyebrowText ? eyebrowText : null}
-  //           </span>
-  //           {mainHeading ? mainHeading : null}
-  //         </h3>
-  //         <p className="p2-body ">
-  //           {content
-  //             ? content
-  //             : 'content dkajskldjas kdnaskdnajs djansljdnasld'}
-  //         </p>
-  //       </div>
-  //       {linkUrl && (
-  //         <div className="buttons-container">
-  //           {isDisabled ? (
-  //             <Link
-  //               to={linkUrl}
-  //               className="card-link label-2 disabled"
-  //               disabled={isDisabled}
-  //             >
-  //               More Info Coming Soon
-  //             </Link>
-  //           ) : (
-  //             <Button text={linkText} link={linkUrl} textBtn arrow />
-  //           )}
-  //         </div>
-  //       )}
-  //       {labels ? (
-  //         <div className="labels-container">
-  //           {labels.map((label) => {
-  //             return <span className="label-areas label-3">{label}</span>
-  //           })}
-  //         </div>
-  //       ) : null}
-  //     </div>
-  //   </StyledCard>
-  // )
 }
 
 export default Card
