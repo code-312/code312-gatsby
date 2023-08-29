@@ -58,10 +58,7 @@ const StyledButton = styled.div`
         fill: var(--white);
       }
     }
-    &:active {
-      background: var(--darker-red);
-      box-shadow: none;
-    }
+
     &:focus {
       border: 2px solid var(--white);
       outline: 2px solid var(--medium-blue);
@@ -80,6 +77,10 @@ const StyledButton = styled.div`
       svg {
         fill: var(--dark-grey);
       }
+    }
+    &:active {
+      background: var(--darker-red);
+      box-shadow: none;
     }
   }
 
@@ -103,10 +104,6 @@ const StyledButton = styled.div`
     &:hover {
       box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.6);
     }
-    &:active {
-      background: var(--blizzard-blue);
-      box-shadow: none;
-    }
     &:focus {
       background: var(--white);
       border: 1.5px solid var(--white);
@@ -117,6 +114,10 @@ const StyledButton = styled.div`
     &:disabled {
       border: 2px solid var(--light-grey);
       color: var(--dark-grey);
+    }
+    &:active {
+      background: var(--blizzard-blue);
+      box-shadow: none;
     }
   }
   .textBtn {
@@ -152,15 +153,15 @@ const StyledButton = styled.div`
         padding-left: 0.75rem;
       }
     }
+    &:focus {
+      border: 2px solid var(--medium-blue);
+      border-radius: 2.2px;
+    }
     &:active {
       color: var(--dark-red);
       img {
         display: none;
       }
-    }
-    &:focus {
-      border: 2px solid var(--medium-blue);
-      border-radius: 2.2px;
     }
   }
 `
