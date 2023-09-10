@@ -63,7 +63,7 @@ const ContentSection = ({
   content,
   linkUrl,
   linkText,
-  imgUrl,
+  imgUrl = TestImage,
   imageDescription,
   background,
   imgLeft,
@@ -80,7 +80,7 @@ const ContentSection = ({
           <Button text={linkText} link={linkUrl} />
         </div>
         <div className="image-container">
-          <img src={imgUrl ? imgUrl : TestImage} alt={imageDescription} />
+          <img src={imgUrl} alt={imageDescription} />
         </div>
       </div>
     </StyledContentSection>
