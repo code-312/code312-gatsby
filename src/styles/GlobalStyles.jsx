@@ -26,8 +26,35 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Source Sans Pro', sans-serif;
 
   }
-  // Inline Hyperlinks
-  a {
+
+  // Alt hyperlink used against a dark colored background like Blizzard Blue or Blizzard Black
+  .alt-link-styles {
+    color: var(--white);
+    font-weight: 400;
+    text-decoration: underline;
+    &:active {
+      color: var(--dark-blue);
+      text-decoration: none;
+    }
+    &:hover {
+      color: var(--dark-red);
+    }
+    &:focus {
+      border: 2px solid var(--dark-blue);
+      text-decoration: none;
+    }
+    &:visited {
+      color: var(--dark-purple);
+      text-decoration: none;
+    }
+    &[aria-disabled="true"] {
+      color: var(--blizzard-black);
+      text-decoration: none;
+      pointer-events: none;
+    }
+  }
+  // Default Inline Hyperlinks for white or light grey background
+  p > a {
     color: var(--dark-blue);
     font-weight: 400;
     text-decoration: underline;
@@ -52,7 +79,7 @@ const GlobalStyles = createGlobalStyle`
       pointer-events: none;
     }
   }
-
+  
   .visually-hidden {
     position: absolute !important;
     height: 1px;
