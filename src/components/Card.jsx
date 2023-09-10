@@ -117,7 +117,11 @@ const Card = ({
       {labels && (
         <div className="labels-container">
           {labels.map((label) => {
-            return <span className="label-areas label-3">{label}</span>
+            return (
+              <span key={label} className="label-areas label-3">
+                {label}
+              </span>
+            )
           })}
         </div>
       )}
