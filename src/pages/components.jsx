@@ -214,7 +214,12 @@ const Components = () => {
 
       <StyledSection className="width-wrapper">
         <h3>FAQ Section</h3>
-        <FAQSection />
+        <FAQSection
+          eyebrowText={'Eyebrow text goes here'}
+          mainHeading={'Main heading goes here'}
+          children
+          background
+        />
       </StyledSection>
 
       <StyledSection className="width-wrapper">
@@ -222,14 +227,15 @@ const Components = () => {
         <Footer />
       </StyledSection>
 
-      <StyledSection className="width-wrapper">
+      {/* NEED TO ADD ICONS TO RENDER - LEAVING IT COMMENTED OUT FOR NOW UNLESS IT'LL BE USED */}
+      {/* <StyledSection className="width-wrapper">
         <h3>Icon Grid</h3>
         <IconGrid />
-      </StyledSection>
+      </StyledSection> */}
 
       <StyledSection className="width-wrapper">
         <h3>Image Wrapper</h3>
-        <ImageWrapper />
+        <ImageWrapper alt={'Image description'} image={TestImage} />
       </StyledSection>
 
       <StyledSection className="width-wrapper">
@@ -245,12 +251,16 @@ const Components = () => {
 
       <StyledSection className="width-wrapper">
         <h3>Quote</h3>
-        <Quote />
+        <Quote
+          quote={'Quote text goes here'}
+          author={'Author name goes here'}
+          source={'Source text goes here'}
+        />
       </StyledSection>
 
       <StyledSection className="width-wrapper">
         <h3>Radio Option</h3>
-        <RadioOption />
+        <RadioOption optionLabel={'Label Text'} />
       </StyledSection>
     </Layout>
   )
