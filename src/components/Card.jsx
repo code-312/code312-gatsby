@@ -116,13 +116,11 @@ const Card = ({
 
       {labels && (
         <div className="labels-container">
-          {labels.map((label) => {
-            return (
-              <span key={label} className="label-areas label-3">
-                {label}
-              </span>
-            )
-          })}
+          {labels.map((label) => (
+            <span key={label} className="label-areas label-3">
+              {label}
+            </span>
+          ))}
         </div>
       )}
     </StyledCard>
