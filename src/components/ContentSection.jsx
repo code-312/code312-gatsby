@@ -22,7 +22,7 @@ const StyledContentSection = styled.section`
 
   .info {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     gap: 0.5rem;
 
     h3 {
