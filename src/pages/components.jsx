@@ -35,7 +35,7 @@ const Components = () => {
   return (
     <Layout>
       <h2 style={{ margin: '2rem' }}>Component List</h2>
-      {/* <AlternatingCard /> NOT EVEN USED */}
+
       <StyledSection className="width-wrapper">
         <h3>Buttons</h3>
         <Button text="Button w/ Arrow" textBtn arrow link="/" />
@@ -59,6 +59,7 @@ const Components = () => {
           imageDescription={'image for testing components'}
         />
       </StyledSection>
+
       <StyledSection className="width-wrapper">
         <h3>Card Block</h3>
         <CardBlock>
@@ -99,6 +100,20 @@ const Components = () => {
             imageDescription={'image for testing components'}
           />
         </CardBlock>
+      </StyledSection>
+      {/* ALTERNATING CARD NOT USED PER NOTES */}
+      {/* THIS COMPONENT DOES NOT CURRENTLY INCLUDE A STYLED WRAPPER */}
+      <StyledSection className="width-wrapper">
+        <h3>Alternating Card</h3>
+        <AlternatingCard
+          thumbnail={CardPlaceholder}
+          alt={'description for card image'}
+          areas={'Eyebrow text goes here'}
+          title={'Card title goes here'}
+          description={'Card content description goes here'}
+          url={'/components'}
+          urlText={'Components'}
+        />
       </StyledSection>
       {/* <StyledSection className="width-wrapper">
         <h3>Checklist</h3>
