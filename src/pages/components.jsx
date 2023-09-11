@@ -42,11 +42,7 @@ const Components = () => {
         <Button text="Primary Button" link="/components" />
         <Button text="Secondary Button" link="/components" secondary />
       </StyledSection>
-      {/* <CallToAction
-        title="Title Goes Here"
-        link="/components"
-        buttonDisplay="Components Page"
-      /> NOT EVEN USED */}
+
       <StyledSection className="width-wrapper">
         <h3>Card</h3>
         <Card
@@ -101,20 +97,7 @@ const Components = () => {
           />
         </CardBlock>
       </StyledSection>
-      {/* ALTERNATING CARD NOT USED PER NOTES */}
-      {/* THIS COMPONENT DOES NOT CURRENTLY INCLUDE A STYLED WRAPPER */}
-      <StyledSection className="width-wrapper">
-        <h3>Alternating Card</h3>
-        <AlternatingCard
-          thumbnail={CardPlaceholder}
-          alt={'description for card image'}
-          areas={'Eyebrow text goes here'}
-          title={'Card title goes here'}
-          description={'Card content description goes here'}
-          url={'/components'}
-          urlText={'Components'}
-        />
-      </StyledSection>
+
       {/* <StyledSection className="width-wrapper">
         <h3>Checklist</h3>
         <Checklist />
@@ -200,6 +183,31 @@ const Components = () => {
         imageSrc={SampleTilePhoto}
         positionTitle={'Volunteer Lead'}
       ></VolunteerTile>
+
+      {/* NOT CURRENTLY USED PER NOTES */}
+      {/* THIS COMPONENT DOES NOT CURRENTLY INCLUDE A STYLED WRAPPER */}
+      <StyledSection className="width-wrapper">
+        <h3>Alternating Card</h3>
+        <AlternatingCard
+          thumbnail={CardPlaceholder}
+          alt={'description for card image'}
+          areas={'Eyebrow text goes here'}
+          title={'Card title goes here'}
+          description={'Card content description goes here'}
+          url={'/components'}
+          urlText={'Components'}
+        />
+      </StyledSection>
+
+      {/* NOT CURRENTLY USED PER NOTES */}
+      {/* THIS COMPONENT DOES NOT CURRENTLY INCLUDE A STYLED WRAPPER */}
+      <StyledSection>
+        <CallToAction
+          title="Title Goes Here"
+          link="/components"
+          buttonDisplay="Components Page"
+        />
+      </StyledSection>
     </Layout>
   )
 }
