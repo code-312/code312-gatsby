@@ -7,12 +7,18 @@ import CardBlock from '../components/CardBlock'
 import Checklist from '../components/Checklist'
 import ContactUs from '../components/ContactUs'
 import ContentSection from '../components/ContentSection'
+import FAQSection from '../components/FAQSection'
+import Footer from '../components/Footer'
 import Heading from '../components/Heading'
 import Hero from '../components/Hero'
 import IconGrid from '../components/IconGrid'
 import IconTile from '../components/IconTile'
+import ImageWrapper from '../components/ImageWrapper'
 import Layout from '../components/Layout'
 import LongtextInput from '../components/LongTextInput'
+import MobileNav from '../components/MobileNav'
+import MobileNavExpanded from '../components/MobileNavExpanded'
+import Nav from '../components/Nav'
 import Quote from '../components/Quote'
 import RadioOption from '../components/RadioOption'
 import ShortTextInput from '../components/ShortTextInput'
@@ -140,7 +146,7 @@ const Components = () => {
           imgDescription={'Skyline of Chicago'}
         />
       </StyledSection>
-      {/* <IconGrid /> */}
+
       <StyledSection className="width-wrapper">
         <h3>IconTile</h3>
         <IconTile
@@ -153,12 +159,7 @@ const Components = () => {
         <h3>LongtextInput</h3>
         <LongtextInput />
       </StyledSection>
-      {/* <StyledSection className="width-wrapper">
-        <h3>Quote</h3>
-        <Quote />
-      </StyledSection> NOT EVEN USED */}
-      {/* <RadioOption optionLabel="Sample Option" />
-        <RadioOption optionLabel="Sample Option" /> */}
+
       <StyledSection className="width-wrapper">
         <h3>ShortTextInput</h3>
         <ShortTextInput
@@ -179,7 +180,8 @@ const Components = () => {
         positionTitle={'Volunteer Lead'}
       ></VolunteerTile>
 
-      {/* NOT CURRENTLY USED PER NOTES */}
+      <hr />
+
       {/* THIS COMPONENT DOES NOT CURRENTLY INCLUDE A STYLED WRAPPER */}
       <StyledSection className="width-wrapper">
         <h3>Alternating Card</h3>
@@ -194,9 +196,9 @@ const Components = () => {
         />
       </StyledSection>
 
-      {/* NOT CURRENTLY USED PER NOTES */}
       {/* THIS COMPONENT DOES NOT CURRENTLY INCLUDE A STYLED WRAPPER */}
       <StyledSection>
+        <h3>Call To Action</h3>
         <CallToAction
           title="Title Goes Here"
           link="/components"
@@ -204,9 +206,51 @@ const Components = () => {
         />
       </StyledSection>
 
+      {/* THIS COMPONENT DOES NOT CURRENTLY INCLUDE A STYLED WRAPPER */}
       <StyledSection className="width-wrapper">
         <h3>Checklist</h3>
         <Checklist />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>FAQ Section</h3>
+        <FAQSection />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Footer</h3>
+        <Footer />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Icon Grid</h3>
+        <IconGrid />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Image Wrapper</h3>
+        <ImageWrapper />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Nav</h3>
+        <Nav />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Mobile Nav</h3>
+        <MobileNav />
+        <MobileNavExpanded />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Quote</h3>
+        <Quote />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Radio Option</h3>
+        <RadioOption />
       </StyledSection>
     </Layout>
   )
