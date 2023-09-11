@@ -97,11 +97,6 @@ const Components = () => {
           />
         </CardBlock>
       </StyledSection>
-
-      {/* <StyledSection className="width-wrapper">
-        <h3>Checklist</h3>
-        <Checklist />
-      </StyledSection> */}
       <StyledSection>
         <h3>ContactUs</h3>
         <ContactUs />
@@ -207,6 +202,11 @@ const Components = () => {
           link="/components"
           buttonDisplay="Components Page"
         />
+      </StyledSection>
+
+      <StyledSection className="width-wrapper">
+        <h3>Checklist</h3>
+        <Checklist />
       </StyledSection>
     </Layout>
   )
