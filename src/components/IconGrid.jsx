@@ -11,7 +11,7 @@ const StyledIconGrid = styled.div`
   justify-content: center;
   flex-flow: wrap;
   gap: 1.5rem;
-  padding: 0 2rem 2rem;
+  padding: 0 2rem 4rem;
   margin-bottom: 4rem;
 
   @media (max-width: 1080px) {
