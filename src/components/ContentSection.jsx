@@ -25,25 +25,29 @@ const StyledContentSection = styled.section`
     flex-direction: column;
     gap: 0.5rem;
 
+    h3 {
+      gap: 0.5rem;
+      color: var(--blizzard-black);
+      span {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+
     p:last-of-type {
       margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 769px) {
+      & > * {
+        align-self: ${(props) => (props.imgLeft ? 'last baseline' : 'initial')};
+      }
     }
 
     @media (min-width: 1200px) {
       flex: 1;
     }
-  }
-
-  .info > h3 {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: var(--blizzard-black);
-  }
-
-  .info > h3 > span {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
 
   .image-container {
@@ -59,7 +63,7 @@ const ContentSection = ({
   content,
   linkUrl,
   linkText,
-  imgUrl,
+  imgUrl = TestImage,
   imageDescription,
   background,
   imgLeft,
@@ -76,7 +80,7 @@ const ContentSection = ({
           <Button text={linkText} link={linkUrl} />
         </div>
         <div className="image-container">
-          <img src={imgUrl ? imgUrl : TestImage} alt={imageDescription} />
+          <img src={imgUrl} alt={imageDescription} />
         </div>
       </div>
     </StyledContentSection>

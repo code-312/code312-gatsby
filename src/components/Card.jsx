@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-import arrow from '../images/long-arrow-right-red.svg'
 import Button from './Button'
 
 const StyledCard = styled.article`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--white);
   width: 12.563rem;
   max-width: 16.12rem;
@@ -15,16 +17,6 @@ const StyledCard = styled.article`
   margin: 1rem;
   overflow: hidden;
 
-  .image {
-    width: 100%;
-  }
-
-  .card-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   .eyebrow-text {
     text-transform: uppercase;
   }
@@ -32,10 +24,14 @@ const StyledCard = styled.article`
   .card-details {
     display: flex;
     flex-direction: column;
+    height: 100%;
     gap: 1rem;
-    min-width: 10.603rem;
-    max-width: 100%;
     padding: 1rem;
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
   }
 
   .content-container {
@@ -63,6 +59,7 @@ const StyledCard = styled.article`
     flex-direction: row;
     flex-flow: wrap;
     align-items: flex-start;
+    padding: 0 1rem 1rem;
     gap: 0.5rem;
   }
   .label-areas {
@@ -73,7 +70,6 @@ const StyledCard = styled.article`
     flex-grow: 0;
   }
 `
-
 const Card = ({
   eyebrowText,
   mainHeading,
@@ -85,31 +81,22 @@ const Card = ({
   labels,
 }) => {
   const [isDisabled, setIsDisabled] = useState(false)
+
   return (
     <StyledCard>
-      {typeof imgUrl === 'object' ? (
-        <GatsbyImage
-          image={getImage(imgUrl)}
-          alt={imageDescription}
-          className="image"
-        />
-      ) : (
-        <img alt={imageDescription} className="image" src={imgUrl} />
-      )}
+      <div className="image">
+        {typeof imgUrl === 'object' ? (
+          <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
+        ) : (
+          <img alt={imageDescription} src={imgUrl} />
+        )}
+      </div>
       <div className="card-details">
-        <div className="content-container">
-          <h3 className="card-header heading-3">
-            <span className="eyebrow-text eyebrow-1">
-              {eyebrowText ? eyebrowText : null}
-            </span>
-            {mainHeading ? mainHeading : null}
-          </h3>
-          <p className="p2-body ">
-            {content
-              ? content
-              : 'content dkajskldjas kdnaskdnajs djansljdnasld'}
-          </p>
-        </div>
+        <h3 className="card-header heading-3">
+          <span className="eyebrow-text eyebrow-1">{eyebrowText || null}</span>
+          {mainHeading || null}
+        </h3>
+        <p className="p2-body">{content || ''}</p>
         {linkUrl && (
           <div className="buttons-container">
             {isDisabled ? (
@@ -125,14 +112,17 @@ const Card = ({
             )}
           </div>
         )}
-        {labels ? (
-          <div className="labels-container">
-            {labels.map((label) => {
-              return <span className="label-areas label-3">{label}</span>
-            })}
-          </div>
-        ) : null}
       </div>
+
+      {labels && (
+        <div className="labels-container">
+          {labels.map((label) => (
+            <span key={label} className="label-areas label-3">
+              {label}
+            </span>
+          ))}
+        </div>
+      )}
     </StyledCard>
   )
 }

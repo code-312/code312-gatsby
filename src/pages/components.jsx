@@ -119,6 +119,28 @@ const Components = () => {
           imgUrl={TestImage}
           imageDescription={'image for testing components'}
         />
+        <h4>ContentSection w/imgLeft</h4>
+        <ContentSection
+          eyebrowText={'Eyebrow Text Goes Here'}
+          mainHeading={'Main Heading Goes Here'}
+          content={'Content paragraph goes here. Lorem Ipsum.'}
+          linkUrl={'/components'}
+          linkText={'Components'}
+          imgUrl={TestImage}
+          imageDescription={'image for testing components'}
+          imgLeft
+        />
+        <h4>ContentSection w/background</h4>
+        <ContentSection
+          background={'lightgrey'}
+          eyebrowText={'Eyebrow Text Goes Here'}
+          mainHeading={'Main Heading Goes Here'}
+          content={'Content paragraph goes here. Lorem Ipsum.'}
+          linkUrl={'/components'}
+          linkText={'Components'}
+          imgUrl={TestImage}
+          imageDescription={'image for testing components'}
+        />
       </StyledSection>
       <StyledSection className="width-wrapper">
         <h3>Heading</h3>
