@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import '@fontsource/source-sans-pro'
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -26,39 +25,61 @@ const GlobalStyles = createGlobalStyle`
     // Font
     font-family: 'Source Sans Pro', sans-serif;
 
-    // Inline Hyperlinks
-    a {
-      color: var(--dark-blue);
-      font-weight: 400;
-      text-decoration: underline;
-    }
+  }
 
-    a:hover {
-      color: var(--dark-red);
-    }
-
-    a:active {
+  // Alt hyperlink used against a dark colored background like Blizzard Blue or Blizzard Black
+  .alt-link-styles {
+    color: var(--white);
+    font-weight: 400;
+    text-decoration: underline;
+    &:active {
       color: var(--dark-blue);
       text-decoration: none;
     }
-
-    a:focus {
+    &:hover {
+      color: var(--dark-red);
+    }
+    &:focus {
       border: 2px solid var(--dark-blue);
       text-decoration: none;
     }
-
-    a:visited {
+    &:visited {
       color: var(--dark-purple);
       text-decoration: none;
     }
-
-    a[aria-disabled="true"] {
+    &[aria-disabled="true"] {
       color: var(--blizzard-black);
       text-decoration: none;
       pointer-events: none;
     }
   }
-
+  // Default Inline Hyperlinks for white or light grey background
+  p > a {
+    color: var(--dark-blue);
+    font-weight: 400;
+    text-decoration: underline;
+    &:active {
+      color: var(--dark-blue);
+      text-decoration: none;
+    }
+    &:hover {
+      color: var(--dark-red);
+    }
+    &:focus {
+      border: 2px solid var(--dark-blue);
+      text-decoration: none;
+    }
+    &:visited {
+      color: var(--dark-purple);
+      text-decoration: none;
+    }
+    &[aria-disabled="true"] {
+      color: var(--blizzard-black);
+      text-decoration: none;
+      pointer-events: none;
+    }
+  }
+  
   .visually-hidden {
     position: absolute !important;
     height: 1px;
@@ -71,13 +92,17 @@ const GlobalStyles = createGlobalStyle`
 
   .width-wrapper {
     max-width: 75rem;
+    padding: 0 3rem;
     margin: 0 auto;
     width: 100%;
+    @media(max-width: 40rem) {
+      padding: 0 1.5rem;
+    }
   }
 
   .heading-1 {
-    font-weight: 800;
-    font-size: 2rem;
+    font-weight: 700;
+    font-size: 2.625rem;
     line-height: 2.625rem;
 
     @media (min-width: 40.5rem) {

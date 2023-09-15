@@ -21,6 +21,7 @@
     "gatsby-plugin-netlify-cms": "^7.7.0",
     "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-plugin-styled-components": "^6.2.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^5.8.0",
     "gatsby-transformer-remark": "^6.7.0",
     "gatsby-transformer-sharp": "^5.8.0",
@@ -28,6 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
+    "slugify": "^1.6.6",
     "styled-components": "^5.3.6"
   }
 }

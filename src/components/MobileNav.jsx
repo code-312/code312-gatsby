@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from './Button'
 import styled from 'styled-components'
 import mobileMenuClosed from '../images/mobile-menu-closed.svg'
 import mobileMenuExpanded from '../images/mobile-menu-expanded.svg'
@@ -12,7 +13,7 @@ const StyledMobileNav = styled.nav`
   flex-direction: column;
   width: 100%;
   background: var(--white);
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 10;
@@ -77,14 +78,10 @@ const MobileNav = ({ windowWidth }) => {
             className="brigade-logo"
           />
         </Link>
-        <a
-          href="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-          target="blank"
-          rel="noopener noreferrer"
-          className="button donateButton label-3"
-        >
-          Donate
-        </a>
+        <Button
+          text="Donate"
+          link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
+        />
       </div>
       {isExpanded && <MobileNavExpanded />}
     </StyledMobileNav>

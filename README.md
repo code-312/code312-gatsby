@@ -6,7 +6,9 @@ This is the repository for the [Code for Chicago](www.codeforchicago.org) homepa
 
 Clone the project to your local computer.
 
-If you have Gatsby CLI then run `gatsby develop`
+Install Gatsby CLI by running `npm install -g gatsby-cli` (make sure you are running Node v18 or greater)
+
+To run the projcect locally, run `gatsby develop`
 
 Otherwise `npm start` will also work
 

@@ -14,7 +14,11 @@ import handOff from '../images/join-us/hand-off.svg'
 import form3 from '../images/join-us/form3.png'
 import form2 from '../images/join-us/form2.png'
 import form from '../images/join-us/form.png'
+import styled from 'styled-components'
 
+const HeadingWrapper = styled.section`
+  padding: 4rem 1.5rem 1.5rem;
+`
 const JoinPage = () => {
   const icons = [
     {
@@ -25,7 +29,7 @@ const JoinPage = () => {
     {
       img: question,
       title: 'Ask Questions',
-      description: 'Don\’t be afraid to ask someone questions!',
+      description: 'Don’t be afraid to ask someone questions!',
       link: 'View Projects',
     },
     {
@@ -81,12 +85,14 @@ const JoinPage = () => {
         link="/"
         arrow
       />
-      <Heading
-        browText="Volunteer Expectations"
-        headingText="Our culture is scrappy"
-        description="This is content that describes this section."
-        headingLevel="3"
-      />
+      <HeadingWrapper>
+        <Heading
+          browText="Volunteer Expectations"
+          headingText="Our culture is scrappy"
+          description="This is content that describes this section."
+          headingLevel="3"
+        />
+      </HeadingWrapper>
       <IconGrid icons={icons} />
       <ContentSection
         background="var(--light-grey)"
@@ -127,12 +133,14 @@ const JoinPage = () => {
         imgUrl={form3}
         imageDescription={'picture of the onboarding form step 3'}
       />
-      <Heading
-        browText="Start onboarding today"
-        headingText="Ready to join?"
-        description="This is content that describes this section."
-        headingLevel="3"
-      />
+      <HeadingWrapper>
+        <Heading
+          browText="Start onboarding today"
+          headingText="Ready to join?"
+          description="This is content that describes this section."
+          headingLevel="3"
+        />
+      </HeadingWrapper>
       <IconGrid icons={icons2} />
       <Hero
         mainHeading="Have you completed the pre-onboarding checklist?"

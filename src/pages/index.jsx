@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Button from '../components/Button'
 import ContentSection from '../components/ContentSection'
 import ContactUs from '../components/ContactUs'
 import Organizations from '../images/Organizations.png'
@@ -18,8 +19,24 @@ import projectmanagers from '../images/icons/projectmanagers.svg'
 import socialworkers from '../images/icons/socialworkers.svg'
 import skyline from '../images/skyline.svg'
 
+const HeroContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  padding: 0;
+
+  div {
+    display: flex;
+    gap: 1.5rem;
+  }
+`
+
 const WorkWithUs = styled.section`
-  margin-bottom: 4rem;
+ 
+`
+const HeadingWrapper = styled.section`
+  padding: 4rem 1.5rem 1.5rem;
 `
 
 const IndexPage = () => {
@@ -36,12 +53,25 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Hero img={skyline} imgDescription={'Skyline of Chicago'} />
+      <Hero
+        mainHeading="Making community services work in a digital age"
+        eyebrowText="A Code for America Brigade"
+        img={skyline}
+        imgDescription={'Skyline of Chicago'}
+      >
+        <HeroContent>
+          <div>
+            <Button text="Get Started" link="/join" />
+          </div>
+        </HeroContent>
+      </Hero>
       <WorkWithUs>
-        <Heading
-          headingText="Work With Us"
-          description="Whoever you are, there is a place for you here! Join us for co-working, project, service, and social events."
-        />
+        <HeadingWrapper>
+          <Heading
+            headingText="Work With Us"
+            description="Whoever you are, there is a place for you here! Join us for co-working, project, service, and social events."
+          />
+        </HeadingWrapper>
         <IconGrid icons={icons} />
       </WorkWithUs>
 
@@ -76,12 +106,19 @@ const IndexPage = () => {
         imageDescription={'Organization receiving help from Code for Chicago'}
         imgLeft
       />
-      <Heading
-        headingText="No Upcoming Events"
-        description="Join our Meetup group to stay up to date on what’s coming up."
-        ctaButton="Join our Meetup Group"
-        ctaLink="https://www.meetup.com/code-for-chicago/"
-      />
+      <HeadingWrapper>
+        <Heading
+          headingText="No Upcoming Events"
+          description="Join our Meetup group to
+        stay up to date on what’s coming up."
+        >
+          <Button
+            center
+            link={'https://www.meetup.com/code-for-chicago/'}
+            text={'Join our Meetup Group'}
+          ></Button>
+        </Heading>
+      </HeadingWrapper>
       <ContactUs />
     </Layout>
   )

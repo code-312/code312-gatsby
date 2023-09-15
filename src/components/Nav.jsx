@@ -28,6 +28,9 @@ const StyledNav = styled.nav`
     a {
       color: var(--black);
       text-decoration: none;
+      :visited {
+        color: unset;
+      }
     }
   }
 
