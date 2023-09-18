@@ -222,11 +222,6 @@ const Components = () => {
         />
       </StyledSection>
 
-      <StyledSection className="width-wrapper">
-        <h3>Footer</h3>
-        <Footer />
-      </StyledSection>
-
       {/* NEED TO ADD ICONS TO RENDER - LEAVING IT COMMENTED OUT FOR NOW UNLESS IT'LL BE USED */}
       {/* <StyledSection className="width-wrapper">
         <h3>Icon Grid</h3>
@@ -236,17 +231,6 @@ const Components = () => {
       <StyledSection className="width-wrapper">
         <h3>Image Wrapper</h3>
         <ImageWrapper alt={'Image description'} image={TestImage} />
-      </StyledSection>
-
-      <StyledSection className="width-wrapper">
-        <h3>Nav</h3>
-        <Nav />
-      </StyledSection>
-
-      <StyledSection className="width-wrapper">
-        <h3>Mobile Nav</h3>
-        <MobileNav />
-        <MobileNavExpanded />
       </StyledSection>
 
       <StyledSection className="width-wrapper">
