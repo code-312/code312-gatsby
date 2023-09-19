@@ -23,7 +23,7 @@ import codeOfConduct from '../images/code-of-conduct.svg'
 import CardPlaceholder from '../images/card-placeholder.svg'
 import styled from 'styled-components'
 import VolunteerTile from '../components/VolunteerTile'
-import SampleTilePhoto from '../../images/uploads/allie_serd.png'
+// import SampleTilePhoto from '../../images/uploads/allie_serd.png'
 const StyledSection = styled.section`
   margin-bottom: 3rem;
   display: flex;
@@ -202,11 +202,11 @@ const Components = () => {
         <h3>UpcomingEvents</h3>
         <UpcomingEvents />
       </StyledSection>
-      <VolunteerTile
+      {/* <VolunteerTile
         memberName={'Allie Serd'}
         imageSrc={SampleTilePhoto}
         positionTitle={'Volunteer Lead'}
-      ></VolunteerTile>
+      ></VolunteerTile> */}
     </Layout>
   )
 }

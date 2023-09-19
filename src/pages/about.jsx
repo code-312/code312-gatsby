@@ -6,8 +6,8 @@ import Quote from '../components/Quote'
 import Button from '../components/Button'
 import styled from 'styled-components'
 import VolunteerTile from '../components/VolunteerTile'
-import Donovon from '../../images/uploads/donovan_bacon.png'
-import Allie from '../../images/uploads/allie_serd.png'
+// import Donovon from '../../images/uploads/donovan_bacon.png'
+// import Allie from '../../images/uploads/allie_serd.png'
 import Heading from '../components/Heading'
 
 const TeamWrapper = styled.div`
@@ -133,7 +133,7 @@ const AboutPage = () => {
           browText={'Who are we?'}
           headingText={'Meet our Leadership Team'}
         />
-        <Leadership>
+        {/* <Leadership>
           <VolunteerTile
             memberName={'Donovon Bacon'}
             imageSrc={Donovon}
@@ -144,7 +144,7 @@ const AboutPage = () => {
             imageSrc={Allie}
             positionTitle={'Volunteer Lead'}
           ></VolunteerTile>
-        </Leadership>
+        </Leadership> */}
       </TeamWrapper>
     </Layout>
   )

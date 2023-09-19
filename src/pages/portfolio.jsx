@@ -13,14 +13,15 @@ const StyledSection = styled.div`
 `
 
 const Portfolio = ({ data }) => {
-  const showCards = data.allMarkdownRemark.nodes.map((node, idx) => {
-    const { thumbnail, title, imgtext } = node.frontmatter
+  console.log(data)
+  const cards = data.allSanityPortfolio.nodes.map((portfolio, idx) => {
+    const { mainImage, title, subHeading } = portfolio
     return (
       <Card
-        imgUrl={thumbnail.childImageSharp}
-        imageDescription={'project thumbnail'}
+        imgUrl={mainImage?.asset.gatsbyImage}
+        imageDescription={title}
         mainHeading={title}
-        content={imgtext}
+        content={subHeading}
         key={idx}
       />
     )
@@ -32,7 +33,7 @@ const Portfolio = ({ data }) => {
         mainHeading="Learn how we finish volunteer-led projects"
       />
       <StyledSection>
-        <CardBlock>{showCards}</CardBlock>
+        <CardBlock>{cards}</CardBlock>
       </StyledSection>
       <ContactUs />
     </Layout>
@@ -41,24 +42,18 @@ const Portfolio = ({ data }) => {
 
 export const query = graphql`
   query PortfolioListQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { layout: { eq: "portfolio" } } }
-    ) {
+    allSanityPortfolio {
       nodes {
-        frontmatter {
-          title
-          layout
-          imgtext
-          date
-          areas
-          alt
-          description
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData
-            }
+        title
+        slug {
+          current
+        }
+        mainImage {
+          asset {
+            gatsbyImage(width: 280)
           }
         }
+        subHeading
       }
     }
   }

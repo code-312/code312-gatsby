@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import Button from './Button'
+import placeholder from '../images/card-placeholder.svg'
 
 const StyledCard = styled.article`
   display: flex;
@@ -87,8 +88,10 @@ const Card = ({
       <div className="image">
         {typeof imgUrl === 'object' ? (
           <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
-        ) : (
+        ) : imgUrl ? (
           <img alt={imageDescription} src={imgUrl} />
+        ) : (
+          <img src={placeholder} alt={imageDescription} />
         )}
       </div>
       <div className="card-details">

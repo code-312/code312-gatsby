@@ -18,44 +18,44 @@ const ProjectsPage = ({ data }) => {
   let newActiveList = []
   let newInactiveList = []
 
-  for (const project of data.allMarkdownRemark.nodes) {
-    if (project.frontmatter.areas.toLowerCase() === 'not actively recruiting') {
-      let newInactive = Object.create(null)
-      newInactive.mainHeading = project.frontmatter.title
-        ? project.frontmatter.title
-        : null
-      newInactive.content = project.frontmatter.description
-        ? project.frontmatter.description
-        : null
-      newInactiveList.push(newInactive)
-    } else {
-      let newActive = Object.create(null)
-      newActive.imgUrl =
-        project.frontmatter.thumbnail &&
-        project.frontmatter.thumbnail.childImageSharp
-          ? project.frontmatter.thumbnail
-          : null
-      newActive.imageDescription = project.frontmatter.alt
-        ? project.frontmatter.alt
-        : null
-      newActive.mainHeading = project.frontmatter.title
-        ? project.frontmatter.title
-        : null
-      newActive.content = project.frontmatter.description
-        ? project.frontmatter.description
-        : null
-      newActive.labels = project.frontmatter.areas
-        ? project.frontmatter.areas.split(', ')
-        : null
-      newActive.linkUrl = project.frontmatter.thumbnail
-        ? project.frontmatter.thumbnail
-        : null
-      newActive.linkText = project.frontmatter.alt
-        ? project.frontmatter.alt
-        : null
-      newActiveList.push(newActive)
-    }
-  }
+  // for (const project of data.allMarkdownRemark.nodes) {
+  //   if (project.frontmatter.areas.toLowerCase() === 'not actively recruiting') {
+  //     let newInactive = Object.create(null)
+  //     newInactive.mainHeading = project.frontmatter.title
+  //       ? project.frontmatter.title
+  //       : null
+  //     newInactive.content = project.frontmatter.description
+  //       ? project.frontmatter.description
+  //       : null
+  //     newInactiveList.push(newInactive)
+  //   } else {
+  //     let newActive = Object.create(null)
+  //     newActive.imgUrl =
+  //       project.frontmatter.thumbnail &&
+  //       project.frontmatter.thumbnail.childImageSharp
+  //         ? project.frontmatter.thumbnail
+  //         : null
+  //     newActive.imageDescription = project.frontmatter.alt
+  //       ? project.frontmatter.alt
+  //       : null
+  //     newActive.mainHeading = project.frontmatter.title
+  //       ? project.frontmatter.title
+  //       : null
+  //     newActive.content = project.frontmatter.description
+  //       ? project.frontmatter.description
+  //       : null
+  //     newActive.labels = project.frontmatter.areas
+  //       ? project.frontmatter.areas.split(', ')
+  //       : null
+  //     newActive.linkUrl = project.frontmatter.thumbnail
+  //       ? project.frontmatter.thumbnail
+  //       : null
+  //     newActive.linkText = project.frontmatter.alt
+  //       ? project.frontmatter.alt
+  //       : null
+  //     newActiveList.push(newActive)
+  //   }
+  // }
 
   return (
     <Layout>
@@ -71,7 +71,7 @@ const ProjectsPage = ({ data }) => {
           headingLevel="3"
         />
       </HeadingWrapper>
-      <CardBlock>
+      {/* <CardBlock>
         {newActiveList?.map((project) => {
           return (
             <Card
@@ -84,7 +84,7 @@ const ProjectsPage = ({ data }) => {
             />
           )
         })}
-      </CardBlock>
+      </CardBlock> */}
       <StyledSection>
         <HeadingWrapper>
           <Heading
@@ -94,7 +94,7 @@ const ProjectsPage = ({ data }) => {
             headingLevel="3"
           />
         </HeadingWrapper>
-        <CardBlock>
+        {/* <CardBlock>
           {newInactiveList.map((project) => {
             return (
               <Card
@@ -109,7 +109,7 @@ const ProjectsPage = ({ data }) => {
               />
             )
           })}
-        </CardBlock>
+        </CardBlock> */}
       </StyledSection>
       <Hero
         mainHeading="Learn more on how you can join a project"
@@ -121,28 +121,28 @@ const ProjectsPage = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query PortfolioListQuery {
-    allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
-      nodes {
-        frontmatter {
-          title
-          layout
-          imgtext
-          date
-          areas
-          alt
-          description
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query PortfolioListQuery {
+//     allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
+//       nodes {
+//         frontmatter {
+//           title
+//           layout
+//           imgtext
+//           date
+//           areas
+//           alt
+//           description
+//           thumbnail {
+//             childImageSharp {
+//               gatsbyImageData
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default ProjectsPage
 
