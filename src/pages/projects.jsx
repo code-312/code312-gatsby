@@ -15,47 +15,15 @@ const HeadingWrapper = styled.section`
 `
 
 const ProjectsPage = ({ data }) => {
-  let newActiveList = []
-  let newInactiveList = []
+  console.log('DATA: ', data)
 
-  // for (const project of data.allMarkdownRemark.nodes) {
-  //   if (project.frontmatter.areas.toLowerCase() === 'not actively recruiting') {
-  //     let newInactive = Object.create(null)
-  //     newInactive.mainHeading = project.frontmatter.title
-  //       ? project.frontmatter.title
-  //       : null
-  //     newInactive.content = project.frontmatter.description
-  //       ? project.frontmatter.description
-  //       : null
-  //     newInactiveList.push(newInactive)
-  //   } else {
-  //     let newActive = Object.create(null)
-  //     newActive.imgUrl =
-  //       project.frontmatter.thumbnail &&
-  //       project.frontmatter.thumbnail.childImageSharp
-  //         ? project.frontmatter.thumbnail
-  //         : null
-  //     newActive.imageDescription = project.frontmatter.alt
-  //       ? project.frontmatter.alt
-  //       : null
-  //     newActive.mainHeading = project.frontmatter.title
-  //       ? project.frontmatter.title
-  //       : null
-  //     newActive.content = project.frontmatter.description
-  //       ? project.frontmatter.description
-  //       : null
-  //     newActive.labels = project.frontmatter.areas
-  //       ? project.frontmatter.areas.split(', ')
-  //       : null
-  //     newActive.linkUrl = project.frontmatter.thumbnail
-  //       ? project.frontmatter.thumbnail
-  //       : null
-  //     newActive.linkText = project.frontmatter.alt
-  //       ? project.frontmatter.alt
-  //       : null
-  //     newActiveList.push(newActive)
-  //   }
-  // }
+  const activeProjects = data.allSanityProject.nodes.filter(
+    (project) => project.status === 'active'
+  )
+
+  const inactiveProjects = data.allSanityProject.nodes.filter(
+    (project) => project.status !== 'inactive'
+  )
 
   return (
     <Layout>
@@ -71,20 +39,24 @@ const ProjectsPage = ({ data }) => {
           headingLevel="3"
         />
       </HeadingWrapper>
-      {/* <CardBlock>
-        {newActiveList?.map((project) => {
-          return (
-            <Card
-              key={project.mainHeading}
-              imgUrl={project.imgUrl}
-              imageDescription={project.imageDescription}
-              mainHeading={project.mainHeading}
-              content={project.content}
-              labels={project.labels}
-            />
-          )
-        })}
-      </CardBlock> */}
+      <CardBlock>
+        {activeProjects.length > 0 ? (
+          activeProjects.map((project) => {
+            return (
+              <Card
+                key={project.mainHeading}
+                imgUrl={project.imgUrl}
+                imageDescription={project.imageDescription}
+                mainHeading={project.mainHeading}
+                content={project.content}
+                labels={project.labels}
+              />
+            )
+          })
+        ) : (
+          <p>No active projects</p>
+        )}
+      </CardBlock>
       <StyledSection>
         <HeadingWrapper>
           <Heading
@@ -94,22 +66,24 @@ const ProjectsPage = ({ data }) => {
             headingLevel="3"
           />
         </HeadingWrapper>
-        {/* <CardBlock>
-          {newInactiveList.map((project) => {
-            return (
-              <Card
-                key={project.mainHeading}
-                imgUrl={project.imgUrl}
-                imageDescription={project.imageDescription}
-                mainHeading={project.mainHeading}
-                content={project.content}
-                labels={project.labels}
-                linkUrl={project.linkUrl}
-                linkText={project.linkText}
-              />
-            )
-          })}
-        </CardBlock> */}
+        <CardBlock>
+          {inactiveProjects.length > 0 ? (
+            inactiveProjects.map((project) => {
+              return (
+                <Card
+                  key={project.title}
+                  imgUrl={project.mainImage.asset.gatsbyImage}
+                  imageDescription={'hi'}
+                  mainHeading={project.title}
+                  content={'hi'}
+                  // labels={'what?'}
+                />
+              )
+            })
+          ) : (
+            <p>No active projects</p>
+          )}
+        </CardBlock>
       </StyledSection>
       <Hero
         mainHeading="Learn more on how you can join a project"
@@ -121,28 +95,28 @@ const ProjectsPage = ({ data }) => {
   )
 }
 
-// export const query = graphql`
-//   query PortfolioListQuery {
-//     allMarkdownRemark(filter: { frontmatter: { layout: { eq: "project" } } }) {
-//       nodes {
-//         frontmatter {
-//           title
-//           layout
-//           imgtext
-//           date
-//           areas
-//           alt
-//           description
-//           thumbnail {
-//             childImageSharp {
-//               gatsbyImageData
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query ProjectListQuery {
+    allSanityProject {
+      nodes {
+        title
+        slug {
+          current
+        }
+        mainImage {
+          asset {
+            gatsbyImage(width: 258)
+          }
+        }
+        aboutThisProject {
+          children {
+            text
+          }
+        }
+      }
+    }
+  }
+`
 
 export default ProjectsPage
 
