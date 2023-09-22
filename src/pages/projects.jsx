@@ -15,14 +15,13 @@ const HeadingWrapper = styled.section`
 `
 
 const ProjectsPage = ({ data }) => {
-  console.log('DATA: ', data)
-
+  console.log(data)
   const activeProjects = data.allSanityProject.nodes.filter(
-    (project) => project.status === 'active'
+    (project) => project.active === true
   )
 
   const inactiveProjects = data.allSanityProject.nodes.filter(
-    (project) => project.status !== 'inactive'
+    (project) => project.active !== true
   )
 
   return (
@@ -44,12 +43,11 @@ const ProjectsPage = ({ data }) => {
           activeProjects.map((project) => {
             return (
               <Card
-                key={project.mainHeading}
-                imgUrl={project.imgUrl}
-                imageDescription={project.imageDescription}
-                mainHeading={project.mainHeading}
-                content={project.content}
-                labels={project.labels}
+                key={project.title}
+                imgUrl={project.mainImage.asset.gatsbyImage}
+                imageDescription={project.title}
+                mainHeading={project.title}
+                content={project.aboutThisProject[0].children[0].text}
               />
             )
           })
@@ -73,15 +71,14 @@ const ProjectsPage = ({ data }) => {
                 <Card
                   key={project.title}
                   imgUrl={project.mainImage.asset.gatsbyImage}
-                  imageDescription={'hi'}
+                  imageDescription={project.title}
                   mainHeading={project.title}
-                  content={'hi'}
-                  // labels={'what?'}
+                  content={project.aboutThisProject[0].children[0].text}
                 />
               )
             })
           ) : (
-            <p>No active projects</p>
+            <p>Currently no inactive projects</p>
           )}
         </CardBlock>
       </StyledSection>
@@ -113,6 +110,7 @@ export const query = graphql`
             text
           }
         }
+        active
       }
     }
   }
