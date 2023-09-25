@@ -14,22 +14,22 @@ export default function Project({ data }) {
   )
 }
 
-export const query = graphql`
-  query ($title: String!) {
-    markdownRemark(frontmatter: { title: { eq: $title } }) {
-      id
-      html
-      frontmatter {
-        date
-        description
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-        imgtext
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query ($title: String!) {
+//     markdownRemark(frontmatter: { title: { eq: $title } }) {
+//       id
+//       html
+//       frontmatter {
+//         date
+//         description
+//         title
+//         thumbnail {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//         imgtext
+//       }
+//     }
+//   }
+// `

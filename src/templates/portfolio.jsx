@@ -7,29 +7,11 @@ export default function Portfolio({ data }) {
   return (
     <Layout>
       <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {/* <h1>{post.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
       </div>
     </Layout>
   )
 }
 
-export const query = graphql`
-  query ($title: String!) {
-    markdownRemark(frontmatter: { title: { eq: $title } }) {
-      id
-      html
-      frontmatter {
-        date
-        description
-        title
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-        imgtext
-      }
-    }
-  }
-`
+// export const query = graphql``

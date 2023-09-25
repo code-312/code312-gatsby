@@ -25,8 +25,8 @@ This project requires you to have Prettier installed. [Here](https://www.robinwi
 
 We make use of CSS-in-JS as our approach to styles and specifically Styled Components. If you use VS Code it's strongly recommended you install the [styled components syntax highlighting plugin](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components).
 
-## Netlify CMS
+## Sanity CMS
 
-The previous instance of the Code for Chicago site used Netlify CMS so we will be implementing that again with Gatsby so that all our content transfers seamlessly.
+This project uses Sanity as a CMS.
 
 Currently the CMS is not set up.
