@@ -1,16 +1,19 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { PortableText } from '@portabletext/react'
 import Layout from '../../components/Layout'
 
 export default function Portfolio({ data }) {
   console.log(data)
+  const portfolio = data.sanityPortfolio
+
   return (
     <Layout>
-      <div>
-        hi hi
-        {/* <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} /> */}
-      </div>
+      <h2>{portfolio.title}</h2>
+      <h3>Overview</h3>
+      <PortableText value={portfolio.overview} />
+      <h3>Methodology</h3>
+      <PortableText value={portfolio.methodology} />
     </Layout>
   )
 }
@@ -28,14 +31,10 @@ export const query = graphql`
         }
       }
       overview {
-        children {
-          text
-        }
+        _rawChildren(resolveReferences: { maxDepth: 10 })
       }
       methodology {
-        children {
-          text
-        }
+        _rawChildren(resolveReferences: { maxDepth: 10 })
       }
       subHeading
     }
