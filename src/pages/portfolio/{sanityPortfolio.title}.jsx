@@ -10,10 +10,8 @@ export default function Portfolio({ data }) {
   return (
     <Layout>
       <h2>{portfolio.title}</h2>
-      <h3>Overview</h3>
-      <PortableText value={portfolio.overview} />
-      <h3>Methodology</h3>
-      <PortableText value={portfolio.methodology} />
+      <PortableText value={portfolio._rawOverview} />
+      <PortableText value={portfolio._rawMethodology} />
     </Layout>
   )
 }
@@ -30,12 +28,8 @@ export const query = graphql`
           url
         }
       }
-      overview {
-        _rawChildren(resolveReferences: { maxDepth: 10 })
-      }
-      methodology {
-        _rawChildren(resolveReferences: { maxDepth: 10 })
-      }
+      _rawOverview(resolveReferences: { maxDepth: 10 })
+      _rawMethodology(resolveReferences: { maxDepth: 10 })
       subHeading
     }
   }
