@@ -12,6 +12,7 @@ const StyledSection = styled.div`
 `
 
 const Portfolio = ({ data }) => {
+  console.log(data)
   const cards = data.allSanityPortfolio.nodes.map((portfolio, idx) => {
     const { mainImage, title, subHeading } = portfolio
     return (
