@@ -79,6 +79,7 @@ const components = {
     h4: ({ children }) => <h4 className="heading-3">{children}</h4>,
     h5: ({ children }) => <h5 className="heading-4">{children}</h5>,
     h6: ({ children }) => <h6 className="heading-5">{children}</h6>,
+    p: ({ children }) => <p className="p1-body">{children}</p>,
   },
 }
 
