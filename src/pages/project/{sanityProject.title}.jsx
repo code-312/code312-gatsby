@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { PortableText } from '@portabletext/react'
 import Layout from '../../components/Layout'
 import Button from '../../components/Button'
 import IconTile from '../../components/IconTile'
@@ -11,6 +10,8 @@ import history from '../../images/icons/history.svg'
 import VolunteerTile from '../../components/VolunteerTile'
 import cardplaceholder from '../../images/card-placeholder.svg'
 import CardBlock from '../../components/CardBlock'
+import Accordion from '../../components/Accordion'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 
   const PrimaryContent = styled.div`
@@ -28,6 +29,12 @@ import styled from 'styled-components'
     align-items: flex-start;
     gap: 2rem;
   `
+  const DetailsList = styled.div`
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    align-self: stretch;
+  `
   const Left = styled.div`
     display: flex;
     flex-direction: column;
@@ -44,9 +51,20 @@ import styled from 'styled-components'
     align-items: center;
     gap: 3rem;
   `
+  const accordionList = [
+    {position:'UX Research',
+      role:['As a UX designer on this team you will support the project by iterating on interface designs based on research findings and then handing off designs to developers'], 
+      responsibilities: ['You will complete tasks in two week sprints and present designs to the team for feedback'],
+      preferreedSkills: ['Familiar with Figma or other prototyping tools','Ability to collaborate with other designers, researchers, and developers',
+      'Must be comfortable giving and receiving constructive feedback'],
+      },
+    
+    {position:'UX Design',
+        role: 'role description',
+        responsibilities: 'role responsibilities',
+      },
+  ]
 export default function Project({ data }) {
-
-
   console.log(data)
   const project = data.sanityProject
   let about = project.aboutThisPartner[0].children[0].text
@@ -55,12 +73,15 @@ export default function Project({ data }) {
   
   return (
     <Layout>
-      <PortableText value={project.aboutThisPartner[0].children[0].text} />
       <PrimaryContent>
         <Left>
           <h2>About this Project</h2>
           <p>{about}</p>
           <h3>The Team</h3>
+          <p>Open Positions</p>
+          <Accordion accordionList={accordionList}></Accordion>
+          <h3>Tech Stack</h3>
+          <Button text={"Join us"} textBtn arrow ></Button>
         </Left>
         <Right>
           <h1>{project.title}</h1>
@@ -71,21 +92,23 @@ export default function Project({ data }) {
           {/* Add chevron down to Read More button */}
           <Button text={'Read More'} textBtn></Button>
           <h2>Project Details</h2>
-          <IconTile
-            icon={calendardays}
-            title={'Availability'}
-            description={project.availability}
-          ></IconTile>
-          <IconTile
-            icon={alarmclock}
-            title={'Commitment'}
-            description={project.commitment}
-          ></IconTile>
-          <IconTile
-            icon={check}
-            title={'Deliverable'}
-            description={project.deliverable}
-          ></IconTile>
+          <DetailsList>
+            <IconTile
+              icon={calendardays}
+              title={'Availability'}
+              description={project.availability}
+            ></IconTile>
+            <IconTile
+              icon={alarmclock}
+              title={'Commitment'}
+              description={project.commitment}
+            ></IconTile>
+            <IconTile
+              icon={check}
+              title={'Deliverable'}
+              description={project.deliverable}
+            ></IconTile>
+          </DetailsList>
           <IconTile
             icon={history}
             title={'Project Status and Timeline'}
