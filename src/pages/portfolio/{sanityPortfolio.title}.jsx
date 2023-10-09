@@ -13,7 +13,7 @@ const StyledPortfolio = styled.article`
   width: 100%;
 
   @media (max-width: 40rem) {
-    padding: 0 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
 
   h2 {
