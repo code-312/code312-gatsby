@@ -35,6 +35,7 @@ const StyledPortfolio = styled.article`
   li {
     max-width: 33.6875rem;
     margin: 0 auto;
+    padding: 0.5rem 0;
   }
 
   .hero-image {
@@ -71,6 +72,13 @@ const components = {
     image: SampleImageComponent,
     // Any other custom types you have in your content
     // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
+  },
+  block: {
+    // Ex. 1: customizing common block types
+    h3: ({ children }) => <h3 className="heading-2">{children}</h3>,
+    h4: ({ children }) => <h4 className="heading-3">{children}</h4>,
+    h5: ({ children }) => <h5 className="heading-4">{children}</h5>,
+    h6: ({ children }) => <h6 className="heading-5">{children}</h6>,
   },
 }
 
