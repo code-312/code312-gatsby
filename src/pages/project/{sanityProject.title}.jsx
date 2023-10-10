@@ -41,6 +41,7 @@ import styled from 'styled-components'
     align-items: flex-start;
     gap: 1.5rem;
     align-self: stretch;
+    margin-right: 8.63rem;
   `
   const Bottom = styled.div`
     display: flex;
