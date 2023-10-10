@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import placeholder from '../images/card-placeholder.svg'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import Button from './Button'
-import placeholder from '../images/card-placeholder.svg'
+import ConditionalWrapper from './ConditionalWrapper'
+import styled from 'styled-components'
 
 const StyledCard = styled.article`
   display: flex;
@@ -17,6 +18,16 @@ const StyledCard = styled.article`
   border-radius: 0.5rem;
   margin: 1rem;
   overflow: hidden;
+
+  h3,
+  p {
+    text-decoration: none;
+    color: var(--black);
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   .eyebrow-text {
     text-transform: uppercase;
@@ -81,51 +92,45 @@ const Card = ({
   imageDescription,
   labels,
 }) => {
-  const [isDisabled, setIsDisabled] = useState(false)
-
   return (
     <StyledCard>
-      <div className="image">
-        {typeof imgUrl === 'object' ? (
-          <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
-        ) : imgUrl ? (
-          <img alt={imageDescription} src={imgUrl} />
-        ) : (
-          <img src={placeholder} alt={imageDescription} />
-        )}
-      </div>
-      <div className="card-details">
-        <h3 className="card-header heading-3">
-          <span className="eyebrow-text eyebrow-1">{eyebrowText || null}</span>
-          {mainHeading || null}
-        </h3>
-        <p className="p2-body">{content || ''}</p>
-        {linkUrl && (
-          <div className="buttons-container">
-            {isDisabled ? (
-              <Link
-                to={linkUrl}
-                className="card-link label-2 disabled"
-                disabled={isDisabled}
-              >
-                More Info Coming Soon
-              </Link>
-            ) : (
-              <Button text={linkText} link={linkUrl} textBtn arrow />
-            )}
+      <ConditionalWrapper
+        condition={linkUrl}
+        wrapper={(children) => <Link to={linkUrl}>{children}</Link>}
+      >
+        <div className="image">
+          {typeof imgUrl === 'object' ? (
+            <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
+          ) : imgUrl ? (
+            <img alt={imageDescription} src={imgUrl} />
+          ) : (
+            <img src={placeholder} alt={imageDescription} />
+          )}
+        </div>
+        <div className="card-details">
+          <h3 className="card-header heading-3">
+            <span className="eyebrow-text eyebrow-1">
+              {eyebrowText || null}
+            </span>
+            {mainHeading || null}
+          </h3>
+          <p className="p2-body">{content || ''}</p>
+          {linkUrl && (
+            <div className="buttons-container">
+              <Button text={linkText} textBtn arrow />
+            </div>
+          )}
+        </div>
+        {labels && (
+          <div className="labels-container">
+            {labels.map((label) => (
+              <span key={label} className="label-areas label-3">
+                {label}
+              </span>
+            ))}
           </div>
         )}
-      </div>
-
-      {labels && (
-        <div className="labels-container">
-          {labels.map((label) => (
-            <span key={label} className="label-areas label-3">
-              {label}
-            </span>
-          ))}
-        </div>
-      )}
+      </ConditionalWrapper>
     </StyledCard>
   )
 }

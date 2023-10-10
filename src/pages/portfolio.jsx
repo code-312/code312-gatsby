@@ -5,7 +5,6 @@ import Card from '../components/Card'
 import CardBlock from '../components/CardBlock'
 import ContactUs from '../components/ContactUs'
 import Hero from '../components/Hero'
-
 import styled from 'styled-components'
 
 const StyledSection = styled.div`
@@ -22,6 +21,8 @@ const Portfolio = ({ data }) => {
         imageDescription={title}
         mainHeading={title}
         content={subHeading}
+        linkUrl={`/portfolio/${portfolio.slug.current}`}
+        linkText="Learn More"
         key={idx}
       />
     )
