@@ -17,17 +17,19 @@ import Card from '../../components/Card'
 import CardPlaceholder from '../../images/card-placeholder.svg'
 
 
-const PrimaryContent = styled.div`
+const PrimaryContent = styled.div.attrs({
+  className: 'width-wrapper',
+})`
   display: flex;
   padding: 2rem 3rem 4rem 3rem;
   justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
+  gap: 10%;
 
   @media screen and (max-width: 426px) {
     padding: 1rem 1rem 3rem 1rem;
     flex-direction: column;
-    align-items: flex-start;
     gap: 2rem;
   }
 `
@@ -36,8 +38,8 @@ const Left = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
+  width: 39.5rem;
   align-self: stretch;
-  padding-right: 8.63rem;
   @media screen and (max-width: 426px) {
     padding: 0;
   }
