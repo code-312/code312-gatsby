@@ -9,10 +9,13 @@ import check from '../../images/icons/check.svg'
 import history from '../../images/icons/history.svg'
 import VolunteerTile from '../../components/VolunteerTile'
 import cardplaceholder from '../../images/card-placeholder.svg'
-import CardBlock from '../../components/CardBlock'
 import Accordion from '../../components/Accordion'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
+import CardBlock from '../../components/CardBlock'
+import Card from '../../components/Card'
+import CardPlaceholder from '../../images/card-placeholder.svg'
+
 
 const PrimaryContent = styled.div`
   display: flex;
@@ -70,6 +73,7 @@ const CardDetailsRow = styled.div`
   }
 `
 const Bottom = styled.div`
+  background-color: var(--light-grey);
   display: flex;
   padding: 4rem 3rem;
   flex-direction: column;
@@ -161,8 +165,45 @@ export default function Project({ data }) {
         </Right>
       </PrimaryContent>
       <Bottom>
-        <h2>More Projects</h2>
-        <CardBlock></CardBlock>
+      <h2>More Projects</h2>
+        <CardBlock>
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+          <Card
+            eyebrowText={'Eyebrow Text Goes Here'}
+            mainHeading={'Main Heading Goes Here'}
+            content={'Content paragraph goes here. Lorem Ipsum.'}
+            linkUrl={'/components'}
+            linkText={'Components'}
+            imgUrl={CardPlaceholder}
+            imageDescription={'image for testing components'}
+          />
+        </CardBlock>
       </Bottom>
     </Layout>
   )
