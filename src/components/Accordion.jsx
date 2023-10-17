@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import chevrondown from '../images/icons/chevronDown.svg'
+import chevrondown from '../images/icons/chevrondown.svg'
 import styled from 'styled-components'
 
 const StyledAccordion = styled.dl`
@@ -41,8 +41,6 @@ const StyledAccordion = styled.dl`
     transition: max-height 1s cubic-bezier(0, 1, 0, 1);
   }
 `
-
-
 
 const Accordion = ({ accordionList }) => {
   const [open, setOpen] = useState(accordionList.map((accordion) => false))
