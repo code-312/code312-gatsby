@@ -42,6 +42,7 @@ const Left = styled.div`
   align-self: stretch;
   @media screen and (max-width: 426px) {
     padding: 0;
+    width: auto;
   }
 `
 const Right = styled.div`
@@ -54,7 +55,7 @@ const Right = styled.div`
     align-self: stretch;
   }
 `
-const CarDetailsColumn = styled.div`
+const CardDetailsColumn = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -150,7 +151,7 @@ export default function Project({ data }) {
               description={project.deliverable}
             ></IconTile>
           </CardDetailsRow>
-          <CarDetailsColumn>
+          <CardDetailsColumn>
             <IconTile
               icon={history}
               title={'Project Status and Timeline'}
@@ -163,7 +164,7 @@ export default function Project({ data }) {
               memberName={project.primaryContact.name}
               positionTitle={project.primaryContact.title}
             ></VolunteerTile>
-          </CarDetailsColumn>
+          </CardDetailsColumn>
         </Right>
       </PrimaryContent>
       <Bottom>
