@@ -117,23 +117,23 @@ export default function Project({ data }) {
     <Layout>
       <PrimaryContent>
         <Left>
-          <h2>About this Project</h2>
+          <h3>About this Project</h3>
           <p>{about}</p>
-          <h3>The Team</h3>
+          <h4>The Team</h4>
           <p>Open Positions</p>
           <Accordion accordionList={accordionList}></Accordion>
-          <h3>Tech Stack</h3>
+          <h4>Tech Stack</h4>
           <Button text={'Join us'} textBtn arrow></Button>
         </Left>
         <Right>
-          <h1>{project.title}</h1>
-          <h2>About this Partner</h2>
+          <h2>{project.title}</h2>
+          <h3>About this Partner</h3>
           <p>{about}</p>
-          <h2>Problem to Solve</h2>
+          <h3>Problem to Solve</h3>
           <p>{problem}</p>
           {/* Add chevron down to Read More button */}
           <Button text={'Read More'} textBtn></Button>
-          <h2>Project Details</h2>
+          <h3>Project Details</h3>
           <CardDetailsRow>
             <IconTile
               icon={calendardays}
@@ -168,7 +168,7 @@ export default function Project({ data }) {
         </Right>
       </PrimaryContent>
       <Bottom>
-      <h2>More Projects</h2>
+      <h3>More Projects</h3>
         <CardBlock>
           <Card
             eyebrowText={'Eyebrow Text Goes Here'}
