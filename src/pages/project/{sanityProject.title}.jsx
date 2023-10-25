@@ -116,15 +116,6 @@ export default function Project({ data }) {
   return (
     <Layout>
       <PrimaryContent>
-        <Left>
-          <h3>About this Project</h3>
-          <p>{about}</p>
-          <h4>The Team</h4>
-          <p>Open Positions</p>
-          <Accordion accordionList={accordionList}></Accordion>
-          <h4>Tech Stack</h4>
-          <Button text={'Join us'} textBtn arrow></Button>
-        </Left>
         <Right>
           <h2>{project.title}</h2>
           <h3>About this Partner</h3>
@@ -166,9 +157,18 @@ export default function Project({ data }) {
             ></VolunteerTile>
           </CardDetailsColumn>
         </Right>
+        <Left>
+          <h3>About this Project</h3>
+          <p>{about}</p>
+          <h4>The Team</h4>
+          <p>Open Positions</p>
+          <Accordion accordionList={accordionList}></Accordion>
+          <h4>Tech Stack</h4>
+          <Button text={'Join us'} textBtn arrow></Button>
+        </Left>
       </PrimaryContent>
       <Bottom>
-      <h3>More Projects</h3>
+        <h3>More Projects</h3>
         <CardBlock>
           <Card
             eyebrowText={'Eyebrow Text Goes Here'}
