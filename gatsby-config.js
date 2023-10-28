@@ -39,5 +39,11 @@ module.exports = {
         graphqlTag: 'default',
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/images/cfc_logo_short.svg',
+      },
+    },
   ],
 }
