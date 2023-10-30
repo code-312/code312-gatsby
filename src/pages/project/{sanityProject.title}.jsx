@@ -16,11 +16,11 @@ import CardBlock from '../../components/CardBlock'
 import Card from '../../components/Card'
 import CardPlaceholder from '../../images/card-placeholder.svg'
 
-
 const PrimaryContent = styled.div.attrs({
   className: 'width-wrapper',
 })`
   display: flex;
+  flex-direction: row-reverse;
   padding: 2rem 3rem 4rem 3rem;
   justify-content: space-between;
   align-items: flex-start;
@@ -69,10 +69,10 @@ const CardDetailsRow = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-    @media screen and (max-width: 426px) {
-  flex-direction: column;
-  align-items: center;
-  align-self: stretch;
+  @media screen and (max-width: 426px) {
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
   }
 `
 const Bottom = styled.div`
