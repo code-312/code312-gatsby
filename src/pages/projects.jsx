@@ -48,6 +48,8 @@ const ProjectsPage = ({ data }) => {
                 imageDescription={project.title}
                 mainHeading={project.title}
                 content={project.aboutThisProject[0].children[0].text}
+                linkUrl={`/project/${project.slug.current}`}
+                linkText="Learn More"
               />
             )
           })
@@ -74,6 +76,7 @@ const ProjectsPage = ({ data }) => {
                   imageDescription={project.title}
                   mainHeading={project.title}
                   content={project.aboutThisProject[0].children[0].text}
+                  linkUrl={`/projects/${project.slug.current}`}
                 />
               )
             })

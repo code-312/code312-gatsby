@@ -16,9 +16,11 @@
   "dependencies": {
     "@fontsource/source-sans-pro": "^4.5.11",
     "@portabletext/react": "^3.0.9",
+    "@sanity/block-content-to-react": "^3.0.0",
     "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^5.2.0",
     "gatsby-plugin-image": "^3.12.0",
+    "gatsby-plugin-manifest": "^5.12.1",
     "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-plugin-styled-components": "^6.2.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
