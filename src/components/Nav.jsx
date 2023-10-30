@@ -14,7 +14,7 @@ const StyledNav = styled.nav`
   padding: 1.5rem 3rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background: var(--white);
   overflow: hidden;
 
