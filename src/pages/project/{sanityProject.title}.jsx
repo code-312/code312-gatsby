@@ -1,5 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { PortableText } from '@portabletext/react'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/Layout'
 import Button from '../../components/Button'
 import IconTile from '../../components/IconTile'
@@ -10,7 +12,6 @@ import history from '../../images/icons/history.svg'
 import VolunteerTile from '../../components/VolunteerTile'
 import cardplaceholder from '../../images/card-placeholder.svg'
 import Accordion from '../../components/Accordion'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import CardBlock from '../../components/CardBlock'
 import Card from '../../components/Card'
@@ -106,12 +107,48 @@ const accordionList = [
     responsibilities: 'role responsibilities',
   },
 ]
+
+// Barebones lazy-loaded image component
+const SampleImageComponent = ({ value, isInline }) => {
+  // const { width, height } = getImageDimensions(value)
+  return (
+    <img
+      src={value.asset.url}
+      alt={value.alt || ' '}
+      loading="lazy"
+      style={{
+        // Display alongside text if image appears inside a block text span
+        display: 'block',
+
+        // Avoid jumping around with aspect-ratio CSS property
+        // aspectRatio: width / height,
+      }}
+    />
+  )
+}
+
+const components = {
+  types: {
+    image: SampleImageComponent,
+    // Any other custom types you have in your content
+    // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
+  },
+  block: {
+    // Ex. 1: customizing common block types
+    h3: ({ children }) => <h3 className="heading-2">{children}</h3>,
+    h4: ({ children }) => <h4 className="heading-3">{children}</h4>,
+    h5: ({ children }) => <h5 className="heading-4">{children}</h5>,
+    h6: ({ children }) => <h6 className="heading-5">{children}</h6>,
+    p: ({ children }) => <p className="p1-body">{children}</p>,
+  },
+}
+
 export default function Project({ data }) {
   console.log(data)
   const project = data.sanityProject
-  let about = project.aboutThisPartner[0].children[0].text
+  // let firstAboutParagraph = project.aboutThisPartner[0].children[0].text
 
-  let problem = project.problemToSolve[0].children[0].text
+  // let firstProblemParagraph = project.problemToSolve[0].children[0].text
 
   return (
     <Layout>
@@ -119,9 +156,15 @@ export default function Project({ data }) {
         <Right>
           <h2>{project.title}</h2>
           <h3>About this Partner</h3>
-          <p>{about}</p>
+          <PortableText
+            value={project.aboutThisPartner}
+            components={components}
+          />
           <h3>Problem to Solve</h3>
-          <p>{problem}</p>
+          <PortableText
+            value={project.problemToSolve}
+            components={components}
+          />
           {/* Add chevron down to Read More button */}
           <Button text={'Read More'} textBtn></Button>
           <h3>Project Details</h3>
@@ -159,7 +202,10 @@ export default function Project({ data }) {
         </Right>
         <Left>
           <h3>About this Project</h3>
-          <p>{about}</p>
+          <PortableText
+            value={project.aboutThisProject}
+            components={components}
+          />
           <h4>The Team</h4>
           <p>Open Positions</p>
           <Accordion accordionList={accordionList}></Accordion>
@@ -224,16 +270,9 @@ export const query = graphql`
           url
         }
       }
-      aboutThisProject {
-        children {
-          text
-        }
-      }
-      aboutThisPartner {
-        children {
-          text
-        }
-      }
+      _rawAboutThisProject(resolveReferences: { maxDepth: 10 })
+      _rawAboutThisPartner(resolveReferences: { maxDepth: 10 })
+      _rawProblemToSolve(resolveReferences: { maxDepth: 10 })
       active
       availability
       commitment
@@ -245,11 +284,6 @@ export const query = graphql`
       openPositions {
         positionTitle
         positionDescription
-      }
-      problemToSolve {
-        children {
-          text
-        }
       }
       primaryContact {
         name
