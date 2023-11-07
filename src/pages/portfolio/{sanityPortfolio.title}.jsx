@@ -84,7 +84,6 @@ const components = {
 }
 
 export default function Portfolio({ data }) {
-  console.log(data)
   const portfolio = data.sanityPortfolio
 
   return (

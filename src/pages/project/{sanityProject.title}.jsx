@@ -144,11 +144,7 @@ const components = {
 }
 
 export default function Project({ data }) {
-  console.log(data)
   const project = data.sanityProject
-  // let firstAboutParagraph = project.aboutThisPartner[0].children[0].text
-
-  // let firstProblemParagraph = project.problemToSolve[0].children[0].text
 
   return (
     <Layout>
