@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import placeholder from '../images/card-placeholder.svg'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 import Button from './Button'
+import LabelList from './LabelList'
 import ConditionalWrapper from './ConditionalWrapper'
 import styled from 'styled-components'
 
@@ -90,7 +91,7 @@ const Card = ({
   linkText,
   imgUrl,
   imageDescription,
-  labels,
+  labels
 }) => {
   return (
     <StyledCard>
@@ -122,13 +123,7 @@ const Card = ({
           )}
         </div>
         {labels && (
-          <div className="labels-container">
-            {labels.map((label) => (
-              <span key={label} className="label-areas label-3">
-                {label}
-              </span>
-            ))}
-          </div>
+        <LabelList labelArray={labels}/>
         )}
       </ConditionalWrapper>
     </StyledCard>

@@ -12,6 +12,7 @@ const StyledLabelList = styled.span`
   
 
   .label-areas {
+    color: var(--blizzard-black);
     background-color: var(--light-grey);
     padding: 0.25rem;
     border-radius: 0.1375rem;
@@ -20,15 +21,15 @@ const StyledLabelList = styled.span`
   }
 `
 const LabelList = ({
-  labels,
+  labelArray
 }) => {
   return (
     <StyledLabelList>
-      {labels.map((label, i)=>{
-        <span key={i} className="label-areas label-3">
+      {labelArray.map((label, i) => (
+        <span key={i} className="label-areas label-4">
           {label}
         </span>
-      })}
+      ))}
     </StyledLabelList>
   )
 }

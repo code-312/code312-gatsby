@@ -57,7 +57,7 @@ const Components = () => {
           linkText={'Components'}
           imgUrl={CardPlaceholder}
           imageDescription={'image for testing components'}
-          labels={['cool', 'awesome', 'rad']}
+          labels={['UX/UI', 'Front-End', 'UX Research']}
         />
       </StyledSection>
       <StyledSection className="width-wrapper">

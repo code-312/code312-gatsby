@@ -262,6 +262,16 @@ const GlobalStyles = createGlobalStyle`
       line-height: 1.125rem;
     }
   }
+  .label-4 {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1rem;
+
+    @media (min-width: 40.5rem) {
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+    }
+  }
   .quote {
     font-weight: 800;
     font-size: 1.25rem;
