@@ -57,6 +57,7 @@ const Components = () => {
           linkText={'Components'}
           imgUrl={CardPlaceholder}
           imageDescription={'image for testing components'}
+          labels={['cool', 'awesome', 'rad']}
         />
       </StyledSection>
       <StyledSection className="width-wrapper">
@@ -79,6 +80,7 @@ const Components = () => {
             linkText={'Components'}
             imgUrl={CardPlaceholder}
             imageDescription={'image for testing components'}
+            
           />
           <Card
             eyebrowText={'Eyebrow Text Goes Here'}
