@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const StyledVolunteerTile = styled.div`
   display: flex;
@@ -7,11 +7,19 @@ const StyledVolunteerTile = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0rem 1rem;
-  width: 16.0625rem;
+  width: ${(props) => (props.fullWidth ? '100%' : '16.0625rem')};
   height: 12.4375rem;
   background: var(--white);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
+
+  article {
+    display: flex;
+    flex-direction: ${(props) => (props.fullWidth ? 'row' : 'column')};
+    justify-content: center;
+    align-items: center;
+  }
+
   .cardImage {
     height: 6rem;
     width: 6rem;
@@ -30,15 +38,20 @@ const StyledVolunteerTile = styled.div`
   }
 `
 
-const VolunteerTile = ({imageSrc, description, memberName, positionTitle}) => {
+const VolunteerTile = ({
+  imageSrc,
+  description,
+  memberName,
+  positionTitle,
+  fullWidth,
+}) => {
   return (
-    <StyledVolunteerTile>
+    <StyledVolunteerTile fullWidth={fullWidth}>
       <article className="card">
-        <img className="cardImage"
-          src={imageSrc} alt={description} />
+        <img className="cardImage" src={imageSrc} alt={description} />
         <div className="details">
           <h4 className="name">{memberName}</h4>
-          <p className="title">{positionTitle}</p> 
+          <p className="title">{positionTitle}</p>
         </div>
       </article>
     </StyledVolunteerTile>

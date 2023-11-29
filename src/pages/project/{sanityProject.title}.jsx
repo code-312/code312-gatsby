@@ -193,6 +193,7 @@ export default function Project({ data }) {
               imageSrc={cardplaceholder}
               memberName={project.primaryContact.name}
               positionTitle={project.primaryContact.title}
+              fullWidth
             ></VolunteerTile>
           </CardDetailsColumn>
         </Right>
