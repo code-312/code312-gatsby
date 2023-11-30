@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const StyledVolunteerTile = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  justify-content: ${(props) => (props.fullWidth ? 'start' : 'center')};
   align-items: center;
   padding: 0rem 1rem;
   width: ${(props) => (props.fullWidth ? '100%' : '16.0625rem')};
