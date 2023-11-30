@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/Layout'
 import Button from '../../components/Button'
 import IconTile from '../../components/IconTile'
+import FullWidthTile from '../../components/FullWidthTile'
 import calendardays from '../../images/icons/calendardays.svg'
 import alarmclock from '../../images/icons/alarmclock.svg'
 import check from '../../images/icons/check.svg'
@@ -182,13 +183,13 @@ export default function Project({ data }) {
             ></IconTile>
           </CardDetailsRow>
           <CardDetailsColumn>
-            <IconTile
+            <FullWidthTile
               icon={history}
               title={'Project Status and Timeline'}
               description={
                 'Visit the project links below to learn about what’s been done so far, upcoming tasks, and how you might contribute with your time and ability.'
               }
-            ></IconTile>
+            ></FullWidthTile>
             <VolunteerTile
               imageSrc={cardplaceholder}
               memberName={project.primaryContact.name}
