@@ -15,7 +15,6 @@ const HeadingWrapper = styled.section`
 `
 
 const ProjectsPage = ({ data }) => {
-  console.log(data)
   const activeProjects = data.allSanityProject.nodes.filter(
     (project) => project.active === true
   )
@@ -23,6 +22,8 @@ const ProjectsPage = ({ data }) => {
   const inactiveProjects = data.allSanityProject.nodes.filter(
     (project) => project.active !== true
   )
+
+  console.log('inactiveProjects: ', inactiveProjects)
 
   return (
     <Layout>
@@ -47,7 +48,11 @@ const ProjectsPage = ({ data }) => {
                 imgUrl={project.mainImage.asset.gatsbyImage}
                 imageDescription={project.title}
                 mainHeading={project.title}
-                content={project.aboutThisProject[0].children[0].text}
+                content={
+                  project.aboutThisProject
+                    ? project.aboutThisProject[0].children[0].text
+                    : null
+                }
                 linkUrl={`/project/${project.slug.current}`}
                 linkText="Learn More"
               />
@@ -75,8 +80,12 @@ const ProjectsPage = ({ data }) => {
                   imgUrl={project.mainImage.asset.gatsbyImage}
                   imageDescription={project.title}
                   mainHeading={project.title}
-                  content={project.aboutThisProject[0].children[0].text}
-                  linkUrl={`/projects/${project.slug.current}`}
+                  content={
+                    project.aboutThisProject
+                      ? project.aboutThisProject[0].children[0].text
+                      : null
+                  }
+                  linkUrl={`/project/${project.slug.current}`}
                 />
               )
             })

@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/Layout'
 import Button from '../../components/Button'
 import IconTile from '../../components/IconTile'
+import FullWidthTile from '../../components/FullWidthTile'
 import calendardays from '../../images/icons/calendardays.svg'
 import alarmclock from '../../images/icons/alarmclock.svg'
 import check from '../../images/icons/check.svg'
@@ -28,9 +29,10 @@ const PrimaryContent = styled.div.attrs({
   align-self: stretch;
   gap: 10%;
 
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     padding: 1rem 1rem 3rem 1rem;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
   }
 `
@@ -41,7 +43,7 @@ const Left = styled.div`
   gap: 1.5rem;
   width: 39.5rem;
   align-self: stretch;
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     padding: 0;
     width: auto;
   }
@@ -50,7 +52,7 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 980px) {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
@@ -61,7 +63,7 @@ const CardDetailsColumn = styled.div`
   align-items: flex-start;
   gap: 1rem;
   flex-direction: column;
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     align-items: center;
     align-self: stretch;
   }
@@ -70,7 +72,7 @@ const CardDetailsRow = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
@@ -182,18 +184,21 @@ export default function Project({ data }) {
             ></IconTile>
           </CardDetailsRow>
           <CardDetailsColumn>
-            <IconTile
+            <FullWidthTile
               icon={history}
               title={'Project Status and Timeline'}
               description={
                 'Visit the project links below to learn about what’s been done so far, upcoming tasks, and how you might contribute with your time and ability.'
               }
-            ></IconTile>
-            <VolunteerTile
-              imageSrc={cardplaceholder}
-              memberName={project.primaryContact.name}
-              positionTitle={project.primaryContact.title}
-            ></VolunteerTile>
+            ></FullWidthTile>
+            {project.primaryContact && (
+              <VolunteerTile
+                imageSrc={cardplaceholder}
+                memberName={project.primaryContact.name}
+                positionTitle={project.primaryContact.title}
+                fullWidth
+              ></VolunteerTile>
+            )}
           </CardDetailsColumn>
         </Right>
         <Left>
