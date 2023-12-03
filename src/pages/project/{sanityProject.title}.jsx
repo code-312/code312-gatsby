@@ -29,9 +29,10 @@ const PrimaryContent = styled.div.attrs({
   align-self: stretch;
   gap: 10%;
 
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     padding: 1rem 1rem 3rem 1rem;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
   }
 `
@@ -42,7 +43,7 @@ const Left = styled.div`
   gap: 1.5rem;
   width: 39.5rem;
   align-self: stretch;
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     padding: 0;
     width: auto;
   }
@@ -51,7 +52,7 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 980px) {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
@@ -62,7 +63,7 @@ const CardDetailsColumn = styled.div`
   align-items: flex-start;
   gap: 1rem;
   flex-direction: column;
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     align-items: center;
     align-self: stretch;
   }
@@ -71,7 +72,7 @@ const CardDetailsRow = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 980px) {
     flex-direction: column;
     align-items: center;
     align-self: stretch;
@@ -190,12 +191,14 @@ export default function Project({ data }) {
                 'Visit the project links below to learn about what’s been done so far, upcoming tasks, and how you might contribute with your time and ability.'
               }
             ></FullWidthTile>
-            <VolunteerTile
-              imageSrc={cardplaceholder}
-              memberName={project.primaryContact.name}
-              positionTitle={project.primaryContact.title}
-              fullWidth
-            ></VolunteerTile>
+            {project.primaryContact && (
+              <VolunteerTile
+                imageSrc={cardplaceholder}
+                memberName={project.primaryContact.name}
+                positionTitle={project.primaryContact.title}
+                fullWidth
+              ></VolunteerTile>
+            )}
           </CardDetailsColumn>
         </Right>
         <Left>
