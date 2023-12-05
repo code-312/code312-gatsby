@@ -3,8 +3,8 @@ import Button from './Button'
 import styled from 'styled-components'
 import mobileMenuClosed from '../images/mobile-menu-closed.svg'
 import mobileMenuExpanded from '../images/mobile-menu-expanded.svg'
-import CfCLogoMobile from '../images/cfc-logo-mobile.svg'
-import brigadeLogo from '../images/cfc_logo_2021.svg'
+import CfCLogoMobile from '../images/Code312_2024_Small.png'
+import brigadeLogo from '../images/Code312_2024_Small.png'
 import MobileNavExpanded from './MobileNavExpanded'
 import { Link } from 'gatsby'
 
@@ -49,8 +49,7 @@ const StyledMobileNav = styled.nav`
   .brigade-logo {
     display: block;
     height: auto;
-    width: 7.404rem;
-    height: 2.5rem;
+    height: 3rem;
   }
 `
 
@@ -74,7 +73,7 @@ const MobileNav = ({ windowWidth }) => {
         <Link to="/">
           <img
             src={windowWidth < 648 ? CfCLogoMobile : brigadeLogo}
-            alt="CfC logo"
+            alt="Code 312"
             className="brigade-logo"
           />
         </Link>
