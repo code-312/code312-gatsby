@@ -164,7 +164,7 @@ export default function Project({ data }) {
             components={components}
           />
           {/* Add chevron down to Read More button */}
-          <Button text={'Read More'} textBtn></Button>
+          {/* <Button text={'Read More'} textBtn></Button> */}
           <h3>Project Details</h3>
           <CardDetailsRow>
             <IconTile
@@ -188,8 +188,9 @@ export default function Project({ data }) {
               icon={history}
               title={'Project Status and Timeline'}
               description={
-                'Visit the project links below to learn about what’s been done so far, upcoming tasks, and how you might contribute with your time and ability.'
+                "Visit the project links below to learn about what's been done so far, upcoming tasks, and how you might contribute with your time and ability."
               }
+              projectLinks={project.projectLinks}
             ></FullWidthTile>
             {project.primaryContact && (
               <VolunteerTile

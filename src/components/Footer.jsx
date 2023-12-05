@@ -95,12 +95,6 @@ const Footer = () => {
     <StyledFooter>
       <div className="footer-content">
         <div className="footer-links">
-          <Button
-            text="Donate"
-            link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-            center
-            arrow
-          />
           <ul className="internal-links p2-body">
             <li activeclassname="active">
               <Link to="/projects">Projects</Link>
@@ -145,18 +139,6 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </div>
-        <div className="footer-text">
-          <p className="p3-body">
-            <a
-              href="https://codeforamerica.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Code for America Labs, Inc.
-            </a>{' '}
-            is a non-partisan, non-political 501(c)(3) charitable organization.
-          </p>
         </div>
       </div>
     </StyledFooter>

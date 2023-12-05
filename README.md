@@ -1,6 +1,6 @@
-# Code for Chicago - Gatsby
+# Code 312 - Gatsby
 
-This is the repository for the [Code for Chicago](www.codeforchicago.org) homepage. The idea is that this will replace the Jekyll implementation.
+This is the repository for the [Code for Chicago](www.code312.org) homepage. The idea is that this will replace the Jekyll implementation.
 
 ## Quick Start
 
