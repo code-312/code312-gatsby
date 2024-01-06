@@ -46,7 +46,9 @@ const ContactUs = () => {
   return (
     <StyledSection>
       <h3 className="heading-1">Contact Us</h3>
-      <form>
+      <form name="contact-us" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        {/* You need to add the hidden input with the form name to your JSX form */}
+        <input type="hidden" name="form-name" value="contact-us" />
         <ShortTextInput
           type="email"
           label="Email"
