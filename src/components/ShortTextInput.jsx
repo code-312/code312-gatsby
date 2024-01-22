@@ -76,11 +76,11 @@ const StyledShortTextInput = styled.section`
   }
 `
 
-const ShortTextInput = ({ type, label, error, helper, required, disabled }) => {
+const ShortTextInput = ({ type, label, error, helper, required, disabled, handleChange }) => {
   const [text, setText] = useState('')
   const [focus, setFocus] = useState(false)
 
-  const handleChange = (e) => {
+  const handleText = (e) => {
     setText(e.target.value)
   }
 
@@ -106,10 +106,12 @@ const ShortTextInput = ({ type, label, error, helper, required, disabled }) => {
         {label}
         <input
           disabled={disabled ? true : false}
-          name="short-text-input"
-          id="short-text-input"
-          value={text}
-          onChange={handleChange}
+          name={label}
+          id={label}
+          onChange={e => {
+            handleText(e)
+            if(handleChange) handleChange(e)
+          }}
           type={type}
           required={required}
           className={text ? 'active-height' : null}

@@ -46,11 +46,11 @@ const StyledLongTextInput = styled.section`
   }
 `
 
-const LongTextInput = ({ maxCharacterCount = 300 }) => {
+const LongTextInput = ({ maxCharacterCount = 300, handleChange, label }) => {
   const [text, setText] = useState('')
   const [characterCount, setCharacterCount] = useState(0)
 
-  const handleChange = (e) => {
+  const handleText = (e) => {
     setText(e.target.value)
   }
 
@@ -71,13 +71,17 @@ const LongTextInput = ({ maxCharacterCount = 300 }) => {
           : null
       }
     >
-      <label htmlFor="long-text-input p2-body">Message</label>
+      <label htmlFor={label} >{label}</label>
       <textarea
-        name="long-text-input"
-        id="long-text-input"
-        value={text}
-        onChange={handleChange}
-      />
+        name={label}
+        id={label}
+        onChange={(e) => {
+          handleText(e)
+          if (handleChange) {
+            handleChange(e)
+          }
+        }}
+        />
       <span
         className={`${characterCount} > ${maxCharacterCount} ? 'max-character p3-body' : 'p3-body'`}
       >

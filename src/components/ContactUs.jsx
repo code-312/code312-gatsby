@@ -38,17 +38,37 @@ const StyledSection = styled.section`
 `
 
 const ContactUs = () => {
-  const [info, setInfo] = useState({ email: '', message: '' })
+  const [info, setInfo] = useState({})
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value })
   }
 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+  const handleSubmit = (e) => {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact-form", ...info })
+      })
+        .then(res => {
+          if (res.status == 200)
+            console.log('We did good')
+        })
+        .catch(error => console.log(error));
+
+      e.preventDefault();
+    };
+
   return (
     <StyledSection>
       <h3 className="heading-1">Contact Us</h3>
-      <form name="contact-us" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
         {/* You need to add the hidden input with the form name to your JSX form */}
-        <input type="hidden" name="form-name" value="contact-us" />
+        <input type="hidden" name="form-name" value="contact-form" />
         <ShortTextInput
           type="email"
           label="Email"
@@ -56,7 +76,7 @@ const ContactUs = () => {
           handleChange={handleChange}
           required
         />
-        <LongTextInput value={info.message} handleChange={handleChange} />
+        <LongTextInput handleChange={(e)=> handleChange(e)} label="Message" />
         <Button text="Submit" center />
       </form>
     </StyledSection>
