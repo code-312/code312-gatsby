@@ -54,11 +54,7 @@ const ContactUs = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact-form", ...info })
       })
-        .then(res => {
-          if (res.status == 200)
-            console.log('We did good')
-        })
-        .catch(error => console.log(error));
+      .catch(error => console.log(error));
 
       e.preventDefault();
     };
