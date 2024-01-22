@@ -68,7 +68,6 @@ const ContactUs = () => {
         <ShortTextInput
           type="email"
           label="Email"
-          value={info.email}
           handleChange={handleChange}
           required
         />
