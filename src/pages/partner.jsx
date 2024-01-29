@@ -30,7 +30,11 @@ const Partner = () => {
             the most.
           </p>
         </Hero>
-        <ContactUs />
+        <ContactUs
+          copy={
+            'Are you a partner that wants to learn more? Reach out to us and we can schedule a quick chat.'
+          }
+        />
       </StyledPartnerPage>
     </Layout>
   )

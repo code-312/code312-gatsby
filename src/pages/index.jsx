@@ -82,7 +82,7 @@ const IndexPage = () => {
           "Have an idea how to make your community better? You've come to the right place. Either contact us or come to one of our meetups to get the conversation started."
         }
         linkText={'Learn More'}
-        linkUrl={'/join'}
+        linkUrl={'/partner'}
         imgUrl={Organizations}
         imageDescription={'Organization receiving help from Code for Chicago'}
       />

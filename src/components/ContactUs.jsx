@@ -7,10 +7,13 @@ import styled from 'styled-components'
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   color: var(--white);
   background-color: ${(props) =>
     props.bgBlue ? 'var(--blizzard-blue)' : 'var(--blizzard-white)'};
+
+  padding: 0 3rem;
 
   h3 {
     text-align: center;
@@ -20,6 +23,13 @@ const StyledSection = styled.section`
     @media (max-width: 640px) {
       padding-top: 3rem;
     }
+  }
+
+  .body-text {
+    text-align: center;
+    padding: 0 3rem;
+    color: var(--blizzard-black);
+    max-width: 37.5rem;
   }
 
   form {
@@ -38,7 +48,7 @@ const StyledSection = styled.section`
   }
 `
 
-const ContactUs = ({ bgBlue }) => {
+const ContactUs = ({ bgBlue, copy }) => {
   const [info, setInfo] = useState({ email: '', message: '' })
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value })
@@ -47,6 +57,7 @@ const ContactUs = ({ bgBlue }) => {
   return (
     <StyledSection bgBlue={bgBlue}>
       <h3 className="heading-1">Contact Us</h3>
+      {copy && <p className="body-text">{copy}</p>}
       <form>
         <ShortTextInput
           type="email"
