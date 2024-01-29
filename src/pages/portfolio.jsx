@@ -12,7 +12,6 @@ const StyledSection = styled.div`
 `
 
 const Portfolio = ({ data }) => {
-  console.log(data)
   const cards = data.allSanityPortfolio.nodes.map((portfolio, idx) => {
     const { mainImage, title, subHeading } = portfolio
     return (
@@ -62,4 +61,4 @@ export const query = graphql`
 
 export default Portfolio
 
-export const Head = () => <title>Porfolio</title>
+export const Head = () => <title>Portfolio</title>
