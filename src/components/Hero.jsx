@@ -23,6 +23,7 @@ const StyledHeroSection = styled.section`
     justify-content: center;
     align-items: center;
     margin: 6rem 0 6rem 0;
+    gap: 1.5rem;
 
     @media (min-width: 769px) {
       align-items: center;

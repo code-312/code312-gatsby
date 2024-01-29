@@ -8,8 +8,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Code for Chicago Gatsby`,
-    siteUrl: `https://www.codeforchicago.org`,
+    title: `Code 312`,
+    siteUrl: `https://www.code312.org`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,

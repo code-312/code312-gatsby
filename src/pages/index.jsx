@@ -32,9 +32,7 @@ const HeroContent = styled.div`
   }
 `
 
-const WorkWithUs = styled.section`
- 
-`
+const WorkWithUs = styled.section``
 const HeadingWrapper = styled.section`
   padding: 4rem 1.5rem 1.5rem;
 `
@@ -55,7 +53,6 @@ const IndexPage = () => {
     <Layout>
       <Hero
         mainHeading="Making community services work in a digital age"
-        eyebrowText="A Code for America Brigade"
         img={skyline}
         imgDescription={'Skyline of Chicago'}
       >
