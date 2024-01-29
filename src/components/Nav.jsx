@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import brigadeLogo from '../images/cfc_logo_2021.svg'
+import brigadeLogo from '../images/Code312_2024_Small.png'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
 import meetup from '../images/meetup.svg'
@@ -34,10 +34,17 @@ const StyledNav = styled.nav`
     }
   }
 
+  #logo-container {
+    object-fit: contain;
+    margin-right: 2rem;
+  }
+
   .brigade-logo {
     display: block;
     height: auto;
-    min-width: 7.5rem;
+    height: 4rem;
+    /* min-width: 7.5rem; */
+    object-fit: contain;
 
     @media (max-width: 576px) {
       min-width: 5.313rem;
@@ -80,11 +87,7 @@ const Nav = () => {
       <ul className="internal-links label-1">
         <li id="logo-container">
           <Link to="/">
-            <img
-              className="brigade-logo"
-              src={brigadeLogo}
-              alt="Code For Chicago Logo"
-            />
+            <img className="brigade-logo" src={brigadeLogo} alt="Code 312" />
           </Link>
         </li>
         <li activeclassname="active">
@@ -113,7 +116,7 @@ const Nav = () => {
           </li>
           <li className="social-logo">
             <a
-              href="https://code-for-chicago-slack-invite.herokuapp.com/"
+              href="https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w"
               target="_blank"
               rel="noopener noreferrer"
             >
