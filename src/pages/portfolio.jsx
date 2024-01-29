@@ -36,7 +36,7 @@ const Portfolio = ({ data }) => {
       <StyledSection>
         <CardBlock>{cards}</CardBlock>
       </StyledSection>
-      <ContactUs />
+      <ContactUs bgBlue />
     </Layout>
   )
 }

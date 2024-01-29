@@ -87,6 +87,9 @@ const MobileNavExpanded = () => {
         <li activeclassname="active">
           <Link to="/about">About</Link>
         </li>
+        <li activeclassname="active">
+          <Link to="/partner">Partner</Link>
+        </li>
       </ul>
       <ul className="external-links">
         <li className="social-logo">

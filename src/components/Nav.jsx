@@ -102,6 +102,9 @@ const Nav = () => {
         <li activeclassname="active">
           <Link to="/about">About</Link>
         </li>
+        <li activeclassname="active">
+          <Link to="/partner">Partner</Link>
+        </li>
       </ul>
       <div className="donate-and-socials-container">
         <ul className="external-links">

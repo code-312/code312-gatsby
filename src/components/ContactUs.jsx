@@ -9,7 +9,8 @@ const StyledSection = styled.section`
   flex-direction: column;
   width: 100%;
   color: var(--white);
-  background-color: var(--blizzard-blue);
+  background-color: ${(props) =>
+    props.bgBlue ? 'var(--blizzard-blue)' : 'var(--blizzard-white)'};
 
   h3 {
     text-align: center;
@@ -37,14 +38,14 @@ const StyledSection = styled.section`
   }
 `
 
-const ContactUs = () => {
+const ContactUs = ({ bgBlue }) => {
   const [info, setInfo] = useState({ email: '', message: '' })
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value })
   }
 
   return (
-    <StyledSection>
+    <StyledSection bgBlue={bgBlue}>
       <h3 className="heading-1">Contact Us</h3>
       <form>
         <ShortTextInput

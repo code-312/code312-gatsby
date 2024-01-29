@@ -82,7 +82,7 @@ const IndexPage = () => {
           "Have an idea how to make your community better? You've come to the right place. Either contact us or come to one of our meetups to get the conversation started."
         }
         linkText={'Learn More'}
-        linkUrl={'/'}
+        linkUrl={'/join'}
         imgUrl={Organizations}
         imageDescription={'Organization receiving help from Code for Chicago'}
       />
@@ -97,7 +97,7 @@ const IndexPage = () => {
         }
         linkText={'Join us on Slack'}
         linkUrl={
-          'https://join.slack.com/t/c4chi/shared_invite/zt-1mvwfme5d-0FtxC_4ZcGW9StKgfBvToQ'
+          'https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w'
         }
         imgUrl={Volunteers}
         imageDescription={'Organization receiving help from Code for Chicago'}
