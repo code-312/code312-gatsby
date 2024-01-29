@@ -102,6 +102,9 @@ const Nav = () => {
         <li activeclassname="active">
           <Link to="/about">About</Link>
         </li>
+        <li activeclassname="active">
+          <Link to="/partner">Partner</Link>
+        </li>
       </ul>
       <div className="donate-and-socials-container">
         <ul className="external-links">
@@ -116,7 +119,7 @@ const Nav = () => {
           </li>
           <li className="social-logo">
             <a
-              href="https://code-for-chicago-slack-invite.herokuapp.com/"
+              href="https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w"
               target="_blank"
               rel="noopener noreferrer"
             >
