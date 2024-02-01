@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
-import meetup from '../images/meetup.svg'
 
 const StyledMobileNav = styled.nav`
   border-top: 1px solid var(--light-grey);
@@ -92,15 +91,6 @@ const MobileNavExpanded = () => {
         </li>
       </ul>
       <ul className="external-links">
-        <li className="social-logo">
-          <a
-            href="https://www.meetup.com/code-for-chicago"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="social-img" src={meetup} alt="Meetup" />
-          </a>
-        </li>
         <li className="social-logo">
           <a
             href="https://code-for-chicago-slack-invite.herokuapp.com/"
