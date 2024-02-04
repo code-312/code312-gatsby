@@ -93,15 +93,6 @@ const MobileNavExpanded = () => {
       <ul className="external-links">
         <li className="social-logo">
           <a
-            href="https://code-for-chicago-slack-invite.herokuapp.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className="social-img" src={slackLogo} alt="Slack" />
-          </a>
-        </li>
-        <li className="social-logo">
-          <a
             href="https://github.com/Code-For-Chicago/"
             target="_blank"
             rel="noopener noreferrer"

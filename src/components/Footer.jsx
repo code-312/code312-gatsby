@@ -115,7 +115,7 @@ const Footer = () => {
           <ul className="external-links">
             <li className="social-logo">
               <a
-                href="https://code-for-chicago-slack-invite.herokuapp.com/"
+                href="https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -124,7 +124,7 @@ const Footer = () => {
             </li>
             <li className="social-logo">
               <a
-                href="https://github.com/Code-For-Chicago/"
+                href="https://github.com/code-312/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
