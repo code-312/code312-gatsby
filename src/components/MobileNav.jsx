@@ -3,8 +3,7 @@ import Button from './Button'
 import styled from 'styled-components'
 import mobileMenuClosed from '../images/mobile-menu-closed.svg'
 import mobileMenuExpanded from '../images/mobile-menu-expanded.svg'
-import CfCLogoMobile from '../images/Code312_2024_Small.png'
-import brigadeLogo from '../images/Code312_2024_Small.png'
+import code312Logo from '../images/Code312_2024_Small.png'
 import MobileNavExpanded from './MobileNavExpanded'
 import { Link } from 'gatsby'
 
@@ -46,7 +45,7 @@ const StyledMobileNav = styled.nav`
     color: var(--blizzard-black);
   }
 
-  .brigade-logo {
+  .logo {
     display: block;
     height: auto;
     height: 3rem;
@@ -71,15 +70,11 @@ const MobileNav = ({ windowWidth }) => {
           />
         </button>
         <Link to="/">
-          <img
-            src={windowWidth < 648 ? CfCLogoMobile : brigadeLogo}
-            alt="Code 312"
-            className="brigade-logo"
-          />
+          <img src={code312Logo} alt="Code 312" className="logo" />
         </Link>
         <Button
-          text="Donate"
-          link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
+          text="Join our Slack"
+          link="https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w"
         />
       </div>
       {isExpanded && <MobileNavExpanded />}

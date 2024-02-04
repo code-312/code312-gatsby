@@ -84,7 +84,7 @@ const IndexPage = () => {
         linkText={'Learn More'}
         linkUrl={'/partner'}
         imgUrl={Organizations}
-        imageDescription={'Organization receiving help from Code for Chicago'}
+        imageDescription={'Organization receiving help from Code 312'}
       />
       <ContentSection
         background={'var(--light-grey)'}
@@ -100,14 +100,11 @@ const IndexPage = () => {
           'https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w'
         }
         imgUrl={Volunteers}
-        imageDescription={'Organization receiving help from Code for Chicago'}
+        imageDescription={'Organization receiving help from Code 312'}
         imgLeft
       />
       <HeadingWrapper>
-        <Heading
-          headingText="No Upcoming Events"
-        >
-        </Heading>
+        <Heading headingText="No Upcoming Events"></Heading>
       </HeadingWrapper>
       <ContactUs />
     </Layout>
