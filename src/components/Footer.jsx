@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
 import Button from './Button'
-import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
 import longArrowAltRight from '../images/join-us/long-arrow-alt-right.svg'
 
@@ -114,15 +113,6 @@ const Footer = () => {
           </ul>
 
           <ul className="external-links">
-            <li className="social-logo">
-              <a
-                href="https://www.meetup.com/code-for-chicago"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img className="social-img" src={meetup} alt="Meetup" />
-              </a>
-            </li>
             <li className="social-logo">
               <a
                 href="https://code-for-chicago-slack-invite.herokuapp.com/"

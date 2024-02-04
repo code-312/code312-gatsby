@@ -79,7 +79,7 @@ const IndexPage = () => {
           'Are you a Chicagoland nonprofit that needs some tech help?'
         }
         content={
-          "Have an idea how to make your community better? You've come to the right place. Either contact us or come to one of our meetups to get the conversation started."
+          "Have an idea how to make your community better? You've come to the right place. Contact us to get the conversation started."
         }
         linkText={'Learn More'}
         linkUrl={'/partner'}
@@ -93,7 +93,7 @@ const IndexPage = () => {
           'Looking to use your skills for the greater good and build your resume?'
         }
         content={
-          'Maybe you’re looking to pick up a new tech skill. You too, have come to the right place. Sign up for our meetups or join us on Slack.'
+          'Maybe you’re looking to pick up a new tech skill. You too, have come to the right place. Sign up or join us on Slack.'
         }
         linkText={'Join us on Slack'}
         linkUrl={
@@ -106,14 +106,7 @@ const IndexPage = () => {
       <HeadingWrapper>
         <Heading
           headingText="No Upcoming Events"
-          description="Join our Meetup group to
-        stay up to date on what’s coming up."
         >
-          <Button
-            center
-            link={'https://www.meetup.com/code-for-chicago/'}
-            text={'Join our Meetup Group'}
-          ></Button>
         </Heading>
       </HeadingWrapper>
       <ContactUs />

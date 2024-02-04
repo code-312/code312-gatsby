@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import brigadeLogo from '../images/Code312_2024_Small.png'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
-import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
 import MobileNav from './MobileNav'
 import Button from './Button'
@@ -70,10 +69,6 @@ const StyledNav = styled.nav`
   .social-img {
     min-width: 1.875rem;
   }
-
-  .meetup {
-    min-width: 2.25rem;
-  }
 `
 
 const Nav = () => {
@@ -108,15 +103,6 @@ const Nav = () => {
       </ul>
       <div className="donate-and-socials-container">
         <ul className="external-links">
-          <li className="social-logo">
-            <a
-              href="https://www.meetup.com/code-for-chicago"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="social-img meetup" src={meetup} alt="Meetup" />
-            </a>
-          </li>
           <li className="social-logo">
             <a
               href="https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w"
