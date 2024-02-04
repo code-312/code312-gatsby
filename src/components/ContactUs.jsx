@@ -46,10 +46,22 @@ const StyledSection = styled.section`
       padding: 1.5rem 1.5rem 3rem;
     }
   }
+
+  .thanks {
+    text-align: center;
+    margin: 5rem;
+    color: var(--blizzard-black);
+
+    @media (max-width: 640px) {
+      margin: 3rem;
+    }
+  }
 `
 
 const ContactUs = ({ bgBlue, copy }) => {
   const [info, setInfo] = useState({ email: '', message: '' })
+  const [submitted, setSubmitted] = useState(false)
+
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value })
   }
@@ -62,37 +74,51 @@ const ContactUs = ({ bgBlue, copy }) => {
       .join('&')
   }
   const handleSubmit = (e) => {
+    e.preventDefault()
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact-form', ...info }),
     }).catch((error) => console.log(error))
 
-    e.preventDefault()
+    setSubmitted(true)
   }
 
   return (
     <StyledSection bgBlue={bgBlue}>
-      <h3 className="heading-1">Contact Us</h3>
+      <h3 className="heading-1">
+        {submitted ? 'Thanks for Contacting Us!' : 'Contact Us'}
+      </h3>
       {copy && <p className="body-text">{copy}</p>}
-      <form
-        name="contact-form"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={handleSubmit}
-      >
-        {/* You need to add the hidden input with the form name to your JSX form */}
-        <input type="hidden" name="form-name" value="contact-form" />
-        <ShortTextInput
-          type="email"
-          label="Email"
-          handleChange={handleChange}
-          required
-        />
-        <LongTextInput handleChange={(e) => handleChange(e)} label="Message" />
-        <Button text="Submit" center />
-      </form>
+
+      {submitted ? (
+        <p className="body-text thanks">
+          We'll get back to you as soon as possible.
+        </p>
+      ) : (
+        <form
+          name="contact-form"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
+          {/* You need to add the hidden input with the form name to your JSX form */}
+          <input type="hidden" name="form-name" value="contact-form" />
+          <ShortTextInput
+            type="email"
+            label="Email"
+            handleChange={handleChange}
+            required
+          />
+          <LongTextInput
+            handleChange={(e) => handleChange(e)}
+            label="Message"
+          />
+          <Button text="Submit" center />
+        </form>
+      )}
     </StyledSection>
   )
 }
