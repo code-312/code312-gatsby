@@ -7,9 +7,13 @@ import styled from 'styled-components'
 const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   color: var(--white);
-  background-color: var(--blizzard-blue);
+  background-color: ${(props) =>
+    props.bgBlue ? 'var(--blizzard-blue)' : 'var(--blizzard-white)'};
+
+  padding: 0 3rem;
 
   h3 {
     text-align: center;
@@ -19,6 +23,13 @@ const StyledSection = styled.section`
     @media (max-width: 640px) {
       padding-top: 3rem;
     }
+  }
+
+  .body-text {
+    text-align: center;
+    padding: 0 3rem;
+    color: var(--blizzard-black);
+    max-width: 37.5rem;
   }
 
   form {
@@ -37,32 +48,40 @@ const StyledSection = styled.section`
   }
 `
 
-const ContactUs = () => {
-  const [info, setInfo] = useState({})
+const ContactUs = ({ bgBlue, copy }) => {
+  const [info, setInfo] = useState({ email: '', message: '' })
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value })
   }
 
   const encode = (data) => {
     return Object.keys(data)
-        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-        .join("&");
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&')
   }
   const handleSubmit = (e) => {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact-form", ...info })
-      })
-      .catch(error => console.log(error));
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact-form', ...info }),
+    }).catch((error) => console.log(error))
 
-      e.preventDefault();
-    };
+    e.preventDefault()
+  }
 
   return (
-    <StyledSection>
+    <StyledSection bgBlue={bgBlue}>
       <h3 className="heading-1">Contact Us</h3>
-      <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+      {copy && <p className="body-text">{copy}</p>}
+      <form
+        name="contact-form"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
         {/* You need to add the hidden input with the form name to your JSX form */}
         <input type="hidden" name="form-name" value="contact-form" />
         <ShortTextInput
@@ -71,7 +90,7 @@ const ContactUs = () => {
           handleChange={handleChange}
           required
         />
-        <LongTextInput handleChange={(e)=> handleChange(e)} label="Message" />
+        <LongTextInput handleChange={(e) => handleChange(e)} label="Message" />
         <Button text="Submit" center />
       </form>
     </StyledSection>

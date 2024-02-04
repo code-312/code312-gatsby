@@ -31,7 +31,7 @@ const Checklist = () => {
         <li>
           <img src={checkmark} alt="checkmark" className="joinCheckmark" />
           <a
-            href="https://code-for-chicago-slack-invite.herokuapp.com/"
+            href="https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w"
             target="_blank"
             rel="noreferrer"
             className="label-2"

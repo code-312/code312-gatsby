@@ -22,13 +22,8 @@ const StyledHeroSection = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 6rem 0 6rem 0;
     gap: 1.5rem;
-
-    @media (min-width: 769px) {
-      align-items: center;
-      width: 31.188rem;
-    }
+    max-width: 45.3125rem;
   }
 
   .image-container {

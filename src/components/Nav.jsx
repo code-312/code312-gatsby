@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import brigadeLogo from '../images/Code312_2024_Small.png'
+import code312Logo from '../images/Code312_2024_Small.png'
 import slackLogo from '../images/slack.svg'
 import githubLogo from '../images/github.svg'
-import meetup from '../images/meetup.svg'
 import styled from 'styled-components'
 import MobileNav from './MobileNav'
 import Button from './Button'
@@ -39,7 +38,7 @@ const StyledNav = styled.nav`
     margin-right: 2rem;
   }
 
-  .brigade-logo {
+  .logo {
     display: block;
     height: auto;
     height: 4rem;
@@ -50,7 +49,7 @@ const StyledNav = styled.nav`
       min-width: 5.313rem;
     }
   }
-  .donate-and-socials-container {
+  .slack-and-socials-container {
     display: flex;
     align-items: center;
     list-style-type: none;
@@ -63,16 +62,12 @@ const StyledNav = styled.nav`
     gap: 1rem;
     padding: 0;
 
-    .donate {
+    .slack {
       margin-left: 1rem;
     }
   }
   .social-img {
     min-width: 1.875rem;
-  }
-
-  .meetup {
-    min-width: 2.25rem;
   }
 `
 
@@ -87,7 +82,7 @@ const Nav = () => {
       <ul className="internal-links label-1">
         <li id="logo-container">
           <Link to="/">
-            <img className="brigade-logo" src={brigadeLogo} alt="Code 312" />
+            <img className="logo" src={code312Logo} alt="Code 312" />
           </Link>
         </li>
         <li activeclassname="active">
@@ -102,40 +97,25 @@ const Nav = () => {
         <li activeclassname="active">
           <Link to="/about">About</Link>
         </li>
+        <li activeclassname="active">
+          <Link to="/partner">Partner</Link>
+        </li>
       </ul>
-      <div className="donate-and-socials-container">
+      <div className="slack-and-socials-container">
         <ul className="external-links">
           <li className="social-logo">
             <a
-              href="https://www.meetup.com/code-for-chicago"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="social-img meetup" src={meetup} alt="Meetup" />
-            </a>
-          </li>
-          <li className="social-logo">
-            <a
-              href="https://code-for-chicago-slack-invite.herokuapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className="social-img" src={slackLogo} alt="Slack" />
-            </a>
-          </li>
-          <li className="social-logo">
-            <a
-              href="https://github.com/Code-For-Chicago/"
+              href="https://github.com/code-312/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img className="social-img" src={githubLogo} alt="GitHub" />
             </a>
           </li>
-          <li className="donate">
+          <li className="slack">
             <Button
-              link="https://www.codeforamerica.org/donate-to-a-brigade?utm_campaign=Code%20for%20Chicago&utm_source=Brigade%20site"
-              text="Donate"
+              link="https://join.slack.com/t/code312/shared_invite/zt-2acnn36rl-kNFFP9E_NqxWORqHfBIO2w"
+              text="Join our Slack"
               arrow
             />
           </li>
