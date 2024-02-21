@@ -83,7 +83,6 @@ const StyledCard = styled.article`
 
   .image {
     object-fit: cover;
-    height: 10.625rem;
     max-height: 10.625rem;
     
   }
@@ -91,7 +90,6 @@ const StyledCard = styled.article`
   .image-object {
     width: auto;
     height: 100%;
-    // height: 10.625rem;
   }
 `
 const Card = ({
