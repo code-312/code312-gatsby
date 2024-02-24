@@ -24,6 +24,7 @@ const ProjectsPage = ({ data }) => {
   )
 
   console.log('inactiveProjects: ', inactiveProjects)
+  console.log('activeProjects: ', activeProjects)
 
   return (
     <Layout>
@@ -77,7 +78,7 @@ const ProjectsPage = ({ data }) => {
               return (
                 <Card
                   key={project.title}
-                  imgUrl={project.mainImage.asset.gatsbyImage}
+                  imgUrl={project.mainImage?.asset.gatsbyImage}
                   imageDescription={project.title}
                   mainHeading={project.title}
                   content={
