@@ -4,3 +4,4 @@ public
 yarn.lock
 .DS_Store
 .env.develop
+.env.development
