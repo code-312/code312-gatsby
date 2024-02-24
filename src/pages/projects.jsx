@@ -23,9 +23,6 @@ const ProjectsPage = ({ data }) => {
     (project) => project.active !== true
   )
 
-  console.log('inactiveProjects: ', inactiveProjects)
-  console.log('activeProjects: ', activeProjects)
-
   return (
     <Layout>
       <Hero
