@@ -215,8 +215,8 @@ const Button = ({
       ) : (
         <button
           className={className}
-          onClick={!Link && !handleClick ? null : handleClick}
-          type={!Link && !handleClick ? 'submit' : 'button'}
+          onClick={!link && !handleClick ? null : handleClick}
+          type={!link && !handleClick ? 'submit' : 'button'}
           disabled={isDisabled}
         >
           {text}

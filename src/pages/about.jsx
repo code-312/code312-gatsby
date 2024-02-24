@@ -86,10 +86,8 @@ const AboutPage = () => {
       />
       <FAQSection
         background={'var(--white)'}
-        eyebrowText={'What is Code for Chicago?'}
-        mainHeading={
-          'Code for Chicago operates like a pro-bono digital consultancy'
-        }
+        eyebrowText={'What is Code 312?'}
+        mainHeading={'Code 312 operates like a pro-bono digital consultancy'}
       >
         <EyebrowHeaderGroup>
           <EyeBrowHeaderSection>
