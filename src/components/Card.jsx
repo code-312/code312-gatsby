@@ -11,8 +11,7 @@ const StyledCard = styled.article`
   flex-direction: column;
   justify-content: space-between;
   background-color: var(--white);
-  width: 12.563rem;
-  max-width: 16.12rem;
+  width: 16.12rem;
   padding: 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 0.5rem;
@@ -81,6 +80,16 @@ const StyledCard = styled.article`
     white-space: nowrap;
     flex-grow: 0;
   }
+
+  .image {
+    object-fit: cover;
+    height: 10.625rem;
+  }
+
+  .image-object {
+    width: auto;
+    height: 100%;
+  }
 `
 const Card = ({
   eyebrowText,
@@ -100,11 +109,19 @@ const Card = ({
       >
         <div className="image">
           {typeof imgUrl === 'object' ? (
-            <GatsbyImage image={getImage(imgUrl)} alt={imageDescription} />
+            <GatsbyImage
+              className="image-object"
+              image={getImage(imgUrl)}
+              alt={imageDescription}
+            />
           ) : imgUrl ? (
-            <img alt={imageDescription} src={imgUrl} />
+            <img className="image-object" alt={imageDescription} src={imgUrl} />
           ) : (
-            <img src={placeholder} alt={imageDescription} />
+            <img
+              className="image-object"
+              src={placeholder}
+              alt={imageDescription}
+            />
           )}
         </div>
         <div className="card-details">
