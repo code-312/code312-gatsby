@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import IconGrid from '../components/IconGrid'
 import Hero from '../components/Hero'
 import Heading from '../components/Heading'
 import Layout from '../components/Layout'
-import ContentSection from '../components/ContentSection'
+import AlternatingCard from '../components/AlternatingCard'
 import code from '../images/join-us/code.svg'
 import question from '../images/join-us/question-mark.svg'
 import available from '../images/join-us/available.svg'
@@ -11,9 +12,9 @@ import active from '../images/join-us/active.svg'
 import slack from '../images/slack.svg'
 import codeconduct2 from '../images/join-us/codeconduct2.svg'
 import handOff from '../images/join-us/hand-off.svg'
-import form3 from '../images/join-us/form3.png'
-import form2 from '../images/join-us/form2.png'
-import form from '../images/join-us/form.png'
+import zoom from '../images/join-us/zoom.png'
+import meet from '../images/join-us/meet.jpeg'
+import sloth from '../images/join-us/sloth.jpeg'
 import styled from 'styled-components'
 
 const HeadingWrapper = styled.section`
@@ -23,27 +24,25 @@ const JoinPage = () => {
   const icons = [
     {
       img: code,
-      title: 'Code of Conduct',
-      description: 'We ensure we keep teamwork safe and fun.',
+      title: 'Attend Meetings',
+      description: 'All project teams have a regular meeting schedule.',
     },
     {
       img: question,
-      title: 'Ask Questions',
-      description: 'Don’t be afraid to ask someone questions!',
+      title: "Don't ghost us",
+      description: 'We know life happens so keep your team updated.',
       link: 'View Projects',
     },
     {
       img: available,
-      title: 'Availability',
-      description:
-        'We know life happens so let your team know if you have capacity.',
+      title: 'Take initiative',
+      description: 'We work best when we fill in the gaps in the workflow.',
       link: 'View Conduct',
     },
     {
       img: handOff,
       title: 'Hand-Off Tasks',
-      description:
-        'Ensure your work continues and transfer your tasks to another!',
+      description: 'When you can’t participate anymore then let us know!',
       link: 'Join Slack',
     },
   ]
@@ -74,7 +73,46 @@ const JoinPage = () => {
     },
   ]
 
-  const handleClick = () => {}
+  const icons3 = [
+    {
+      img: active,
+      title: 'Data Analysts',
+      description:
+        'Use data tools (e.g. SQL) to gather, clean, and interpret data.',
+    },
+    {
+      img: codeconduct2,
+      title: 'Developers',
+      description:
+        'From React to PostgreSQL, help us on the front and back-end.',
+    },
+    {
+      img: slack,
+      title: 'Designers',
+      description:
+        'We facilitate the entire design-thinking process from UX to UI.',
+    },
+    {
+      img: slack,
+      title: 'Researchers',
+      description: 'Talk to actual users to help us validate our solutions.',
+    },
+    {
+      img: slack,
+      title: 'Operations',
+      description: 'We need people behind the scenes to keep us organized.',
+    },
+    {
+      img: slack,
+      title: 'Project Managers',
+      description: 'Talk to our partners and manage the project teams.',
+    },
+    {
+      img: slack,
+      title: 'Product Managers',
+      description: 'Identify which features to implement and plan work.',
+    },
+  ]
 
   return (
     <Layout>
@@ -82,62 +120,55 @@ const JoinPage = () => {
         eyebrowText="JOIN US"
         mainHeading="Be part of the change in your community"
         buttonText="Start Onboarding"
-        link="/"
+        link="https://docs.google.com/presentation/d/1NrxKFWd3hhG5gn1Uyvaz-nM34kREHzquW_p4TwzIfCk/edit?usp=sharing"
         arrow
-      />
+      >
+        <p>
+          Start the process of joining one of our on-going{' '}
+          <Link to="/projects">projects</Link>.
+        </p>
+      </Hero>
       <HeadingWrapper>
         <Heading
           browText="Volunteer Expectations"
           headingText="Our culture is scrappy"
-          description="This is content that describes this section."
+          description="We try our best to be organized, but we rely on our volunteers to shape how they want to contribute."
           headingLevel="3"
         />
       </HeadingWrapper>
       <IconGrid icons={icons} />
-      <ContentSection
-        background="var(--light-grey)"
-        eyebrowText={'PART 1: START ONBOARDING REGISTRATION'}
-        mainHeading={'To start onboarding, complete our onboarding form'}
-        content={
-          'The form gathers basic info like which project you want to join and your availability. Someone will review your response within 7 actual days and follow-up in Slack.'
-        }
-        linkUrl={'/components'}
-        linkText={'Start Onboarding'}
-        imgUrl={form}
-        imageDescription={'picture of the onboarding form step 1'}
+      <AlternatingCard
+        thumbnail={zoom}
+        alt="Asynchronous Communication via Zoom"
+        eyebrow="how do volunteers participate?"
+        title="We meet at least twice a month, and work asynchronously"
+        description="We meet at least once a month in person and work asynchronously."
       />
-      <ContentSection
-        background="var(--light-grey)"
-        eyebrowText={'PART 2: VOLUNTEER SKILLS'}
-        mainHeading={"Next, we'll learn more about your specific skills"}
-        content={
-          'Someone will reach out in Slack to assign you a new task of completing another form. This will give us a better idea of which project to place you.'
-        }
-        linkUrl={'/components'}
-        linkText={'Join Our Slack'}
+      <AlternatingCard
+        thumbnail={meet}
+        alt="Asynchronous Communication via Zoom"
+        eyebrow="What is the time commitment?"
+        title="Expect at least 1-4 hours a week"
+        description="Aside from the meetings, members are responsible for how they want to spend their time on tasks. We know this isn’t your full time job so we expect volunteers to try their best."
         imgLeft={true}
-        imgUrl={form2}
-        imageDescription={'picture of the onboarding form step 2'}
       />
-      <ContentSection
-        background="var(--light-grey)"
-        eyebrowText={'PART 3: PROJECT FIT'}
-        mainHeading={
-          "Finally, you'll be assigned a project that is a best fit for you"
-        }
-        content={
-          "In this process you'll learn more about the project, shadow a meeting, and meet the people you'll collaborate with."
-        }
-        linkUrl={'/components'}
-        linkText={'View Active Projects'}
-        imgUrl={form3}
-        imageDescription={'picture of the onboarding form step 3'}
+      <AlternatingCard
+        thumbnail={sloth}
+        alt="Asynchronous Communication via Zoom"
+        eyebrow="How long do projects last?"
+        title="Projects vary and timelines change"
+        description="We operate on our volunteer’s capacity so our pace is slow. Depending on scope and volunteer contribution, we’ve completed projects anywhere between 3 months and 1 year."
       />
+      <Heading
+        browText="How can you contribute?"
+        headingText="Our teams are cross-functional and operate in different industries"
+        description="We use design thinking to resolve technical challenges."
+      />
+      <IconGrid icons={icons3} />
       <HeadingWrapper>
         <Heading
-          browText="Start onboarding today"
-          headingText="Ready to join?"
-          description="This is content that describes this section."
+          browText="Step 1"
+          headingText="Ready to join? Start with these tasks"
           headingLevel="3"
         />
       </HeadingWrapper>
