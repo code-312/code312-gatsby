@@ -5,7 +5,7 @@ import ContactUs from '../components/ContactUs'
 
 import styled from 'styled-components'
 
-const StyledPartnerPage = styled.div`
+const StyledWorkWithUsPage = styled.div`
   .hero {
     display: flex;
     flex-direction: column;
@@ -13,12 +13,12 @@ const StyledPartnerPage = styled.div`
   }
 `
 
-const Partner = () => {
+const WorkWithUs = () => {
   return (
     <Layout>
-      <StyledPartnerPage>
+      <StyledWorkWithUsPage>
         <Hero
-          eyebrowText={'Partner with us'}
+          eyebrowText={'Work with us'}
           mainHeading={
             'Do you need help with your website, app, or other technical needs?'
           }
@@ -32,11 +32,11 @@ const Partner = () => {
         </Hero>
         <ContactUs
           copy={
-            'Are you a partner that wants to learn more? Reach out to us and we can schedule a quick chat.'
+            'Are you with a not-for-profit and want to learn more? Reach out to us and we can schedule a quick chat.'
           }
         />
-      </StyledPartnerPage>
+      </StyledWorkWithUsPage>
     </Layout>
   )
 }
-export default Partner
+export default WorkWithUs
