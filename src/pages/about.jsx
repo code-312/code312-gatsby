@@ -149,3 +149,5 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+
+export const Head = () => <title>About | Code312</title>

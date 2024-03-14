@@ -113,6 +113,8 @@ export default function Portfolio({ data }) {
   )
 }
 
+export const Head = ({data}) => <title>{data.sanityPortfolio.title} | Code312</title>
+
 export const query = graphql`
   query ($id: String!) {
     sanityPortfolio(id: { eq: $id }) {

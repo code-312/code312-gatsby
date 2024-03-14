@@ -21,9 +21,11 @@ import CardPlaceholder from '../../images/card-placeholder.svg'
 const PrimaryContent = styled.div.attrs({
   className: 'width-wrapper',
 })`
+
   display: flex;
   flex-direction: row-reverse;
-  padding: 2rem 3rem 4rem 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
@@ -153,18 +155,22 @@ export default function Project({ data }) {
       <PrimaryContent>
         <Right>
           <h2>{project.title}</h2>
-          <h3>About this Partner</h3>
-          <PortableText
-            value={project.aboutThisPartner}
-            components={components}
-          />
-          <h3>Problem to Solve</h3>
-          <PortableText
-            value={project.problemToSolve}
-            components={components}
-          />
-          {/* Add chevron down to Read More button */}
-          {/* <Button text={'Read More'} textBtn></Button> */}
+          <div>
+            <h3>About this Partner</h3>
+            <PortableText
+              value={project._rawAboutThisPartner}
+              components={components}
+            />
+          </div>
+          <div>
+            <h3>Problem to Solve</h3>
+            <PortableText
+              value={project._rawProblemToSolve}
+              components={components}
+            />
+            {/* Add chevron down to Read More button */}
+            {/* <Button text={'Read More'} textBtn></Button> */}
+          </div>
           <h3>Project Details</h3>
           <CardDetailsRow>
             <IconTile
@@ -259,6 +265,8 @@ export default function Project({ data }) {
     </Layout>
   )
 }
+
+export const Head = ({data}) => <title>{data.sanityProject.title} | Code312</title>
 
 export const query = graphql`
   query ($id: String!) {

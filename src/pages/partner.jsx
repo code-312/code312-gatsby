@@ -40,3 +40,5 @@ const Partner = () => {
   )
 }
 export default Partner
+
+export const Head = () => <title>Partner With Us | Code312</title>
