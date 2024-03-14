@@ -21,7 +21,6 @@ import CardPlaceholder from '../../images/card-placeholder.svg'
 const PrimaryContent = styled.div.attrs({
   className: 'width-wrapper',
 })`
-
   display: flex;
   flex-direction: row-reverse;
   margin-top: 3rem;
@@ -155,22 +154,26 @@ export default function Project({ data }) {
       <PrimaryContent>
         <Right>
           <h2>{project.title}</h2>
-          <div>
-            <h3>About this Partner</h3>
-            <PortableText
-              value={project._rawAboutThisPartner}
-              components={components}
-            />
-          </div>
-          <div>
-            <h3>Problem to Solve</h3>
-            <PortableText
-              value={project._rawProblemToSolve}
-              components={components}
-            />
-            {/* Add chevron down to Read More button */}
-            {/* <Button text={'Read More'} textBtn></Button> */}
-          </div>
+          {project._rawAboutThisPartner && (
+            <div>
+              <h3>About this Partner</h3>
+              <PortableText
+                value={project._rawAboutThisPartner}
+                components={components}
+              />
+            </div>
+          )}
+          {project._rawProblemToSolve && (
+            <div>
+              <h3>Problem to Solve</h3>
+              <PortableText
+                value={project._rawProblemToSolve}
+                components={components}
+              />
+              {/* Add chevron down to Read More button */}
+              {/* <Button text={'Read More'} textBtn></Button> */}
+            </div>
+          )}
           <h3>Project Details</h3>
           <CardDetailsRow>
             <IconTile
@@ -209,11 +212,16 @@ export default function Project({ data }) {
           </CardDetailsColumn>
         </Right>
         <Left>
-          <h3>About this Project</h3>
-          <PortableText
-            value={project.aboutThisProject}
-            components={components}
-          />
+          {project._rawAboutThisProject && (
+            <>
+              {' '}
+              <h3>About this Project</h3>
+              <PortableText
+                value={project._rawAboutThisProject}
+                components={components}
+              />
+            </>
+          )}
           <h4>The Team</h4>
           <p>Open Positions</p>
           <Accordion accordionList={accordionList}></Accordion>
@@ -221,7 +229,7 @@ export default function Project({ data }) {
           <Button text={'Join us'} textBtn arrow></Button>
         </Left>
       </PrimaryContent>
-      <Bottom>
+      {/* <Bottom>
         <h3>More Projects</h3>
         <CardBlock>
           <Card
@@ -261,12 +269,14 @@ export default function Project({ data }) {
             imageDescription={'image for testing components'}
           />
         </CardBlock>
-      </Bottom>
+      </Bottom> */}
     </Layout>
   )
 }
 
-export const Head = ({data}) => <title>{data.sanityProject.title} | Code312</title>
+export const Head = ({ data }) => (
+  <title>{data.sanityProject.title} | Code312</title>
+)
 
 export const query = graphql`
   query ($id: String!) {

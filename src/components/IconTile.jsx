@@ -16,6 +16,7 @@ const StyledTile = styled.article`
   text-align: center;
   gap: 1.5rem;
   width: 100%;
+  padding: 1.5rem;
 
   h4 {
     text-align: center;
