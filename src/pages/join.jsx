@@ -193,4 +193,4 @@ const JoinPage = () => {
 
 export default JoinPage
 
-export const Head = () => <title>Join Us!</title>
+export const Head = () => <title>Join Us! | Code312</title>

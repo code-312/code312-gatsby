@@ -61,4 +61,4 @@ export const query = graphql`
 
 export default Portfolio
 
-export const Head = () => <title>Portfolio</title>
+export const Head = () => <title>Portfolio | Code312</title>

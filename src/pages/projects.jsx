@@ -128,4 +128,4 @@ export const query = graphql`
 
 export default ProjectsPage
 
-export const Head = () => <title>Projects</title>
+export const Head = () => <title>Projects | Code312</title>

@@ -40,3 +40,5 @@ const WorkWithUs = () => {
   )
 }
 export default WorkWithUs
+
+export const Head = () => <title>Work With Us | Code312</title>
