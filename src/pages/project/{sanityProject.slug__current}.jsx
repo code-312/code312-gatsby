@@ -93,6 +93,8 @@ const Bottom = styled.div`
 export default function Project({ data }) {
   const project = data.sanityProject
 
+  console.log('PROJECT: ', project)
+
   return (
     <Layout>
       <PrimaryContent>
@@ -166,7 +168,7 @@ export default function Project({ data }) {
             </>
           )}
           <h4>The Team</h4>
-          {project._rawOpenPostions && (
+          {project._rawOpenPositions && (
             <>
               <p>Open Positions</p>
               <Accordion accordionList={project._rawOpenPositions} />
