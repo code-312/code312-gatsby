@@ -61,7 +61,6 @@ const AboutPage = () => {
       <Hero
         eyebrowText="about us"
         mainHeading="Making Tech Accessible to Everyone"
-        buttonText="Button"
       />
       <FAQSection
         background={'var(--white)'}

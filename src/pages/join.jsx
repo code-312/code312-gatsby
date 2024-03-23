@@ -125,9 +125,6 @@ const JoinPage = () => {
       <Hero
         eyebrowText="JOIN US"
         mainHeading="Be part of the change in your community"
-        buttonText="Start Onboarding"
-        link="https://docs.google.com/presentation/d/1NrxKFWd3hhG5gn1Uyvaz-nM34kREHzquW_p4TwzIfCk/edit?usp=sharing"
-        arrow
       >
         <p>
           Start the process of joining one of our on-going{' '}
@@ -182,11 +179,19 @@ const JoinPage = () => {
       </HeadingWrapper>
       <IconGrid icons={icons2} />
       <Hero
-        mainHeading="Step 2"
-        buttonText="Complete our onboarding form"
+        eyebrowText="Step 2"
+        mainHeading="Complete our onboarding form"
+        buttonText="Start Onboarding"
         link="https://docs.google.com/presentation/d/1NrxKFWd3hhG5gn1Uyvaz-nM34kREHzquW_p4TwzIfCk/edit?usp=sharing"
         arrow
-      />
+      >
+        <p>
+          The form gathers basic info like about you, your availability, your
+          skillsets, and what role you'd like to have at Code312. Once you
+          submit this form, someone will review your response within 7 days and
+          follow-up with you in Slack.
+        </p>
+      </Hero>
     </Layout>
   )
 }
