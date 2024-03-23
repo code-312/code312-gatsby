@@ -70,7 +70,6 @@ const Accordion = ({ accordionList }) => {
     setFocused(newFocused)
   }
 
-  console.log(accordionList)
   return (
     <StyledAccordion>
       {accordionList.map((acc, idx) => (

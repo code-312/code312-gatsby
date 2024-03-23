@@ -93,8 +93,6 @@ const Bottom = styled.div`
 export default function Project({ data }) {
   const project = data.sanityProject
 
-  console.log('PROJECT: ', project.openPositions)
-
   return (
     <Layout>
       <PrimaryContent>
