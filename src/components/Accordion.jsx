@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import chevrondown from '../images/icons/chevrondown.svg'
+import { PortableText } from '@portabletext/react'
 import styled from 'styled-components'
+import { components } from '../lib/sanity-utils'
 
 const StyledAccordion = styled.dl`
   display: flex;
@@ -68,6 +70,7 @@ const Accordion = ({ accordionList }) => {
     setFocused(newFocused)
   }
 
+  console.log(accordionList)
   return (
     <StyledAccordion>
       {accordionList.map((acc, idx) => (
@@ -82,10 +85,17 @@ const Accordion = ({ accordionList }) => {
               tabIndex={'0'}
               role="button"
             >
-              {acc.position}
+              {acc?.positionTitle}
               <img src={chevrondown} alt="collapse accordion" />
             </dt>
-            <dd aria-expanded={!open[idx]}>{acc.role}</dd>
+            {acc.positionDescription && (
+              <dd aria-expanded={!open[idx]}>
+                <PortableText
+                  value={acc.positionDescription}
+                  components={components}
+                />
+              </dd>
+            )}
           </div>
         </React.Fragment>
       ))}
