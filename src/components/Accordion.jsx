@@ -16,7 +16,7 @@ const StyledAccordion = styled.dl`
     cursor: pointer;
   }
 
-  dt[aria-expanded='true'] img {
+  dt[aria-expanded='false'] img {
     transform: rotateZ(90deg);
   }
 
@@ -26,7 +26,7 @@ const StyledAccordion = styled.dl`
     flex-direction: column;
     gap: 1.5rem;
     border-top: 1px solid black;
-    padding: 1.5rem 0 3.5rem 0;
+    padding: 0.5rem 0 1rem 0;
   }
 
   img {

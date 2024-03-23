@@ -166,8 +166,12 @@ export default function Project({ data }) {
             </>
           )}
           <h4>The Team</h4>
-          <p>Open Positions</p>
-          <Accordion accordionList={project._rawOpenPositions} />
+          {project._rawOpenPostions && (
+            <>
+              <p>Open Positions</p>
+              <Accordion accordionList={project._rawOpenPositions} />
+            </>
+          )}
           <h4>Tech Stack</h4>
           <Button text={'Join us'} textBtn arrow></Button>
         </Left>
