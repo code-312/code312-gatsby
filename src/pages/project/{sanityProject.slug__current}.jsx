@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { PortableText } from '@portabletext/react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { components } from '../../lib/sanity-utils'
 import Layout from '../../components/Layout'
 import Button from '../../components/Button'
 import IconTile from '../../components/IconTile'
@@ -88,63 +89,6 @@ const Bottom = styled.div`
   align-items: center;
   gap: 3rem;
 `
-const accordionList = [
-  {
-    position: 'UX Research',
-    role: [
-      'As a UX designer on this team you will support the project by iterating on interface designs based on research findings and then handing off designs to developers',
-    ],
-    responsibilities: [
-      'You will complete tasks in two week sprints and present designs to the team for feedback',
-    ],
-    preferreedSkills: [
-      'Familiar with Figma or other prototyping tools',
-      'Ability to collaborate with other designers, researchers, and developers',
-      'Must be comfortable giving and receiving constructive feedback',
-    ],
-  },
-
-  {
-    position: 'UX Design',
-    role: 'role description',
-    responsibilities: 'role responsibilities',
-  },
-]
-
-// Barebones lazy-loaded image component
-const SampleImageComponent = ({ value, isInline }) => {
-  // const { width, height } = getImageDimensions(value)
-  return (
-    <img
-      src={value.asset.url}
-      alt={value.alt || ' '}
-      loading="lazy"
-      style={{
-        // Display alongside text if image appears inside a block text span
-        display: 'block',
-
-        // Avoid jumping around with aspect-ratio CSS property
-        // aspectRatio: width / height,
-      }}
-    />
-  )
-}
-
-const components = {
-  types: {
-    image: SampleImageComponent,
-    // Any other custom types you have in your content
-    // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
-  },
-  block: {
-    // Ex. 1: customizing common block types
-    h3: ({ children }) => <h3 className="heading-2">{children}</h3>,
-    h4: ({ children }) => <h4 className="heading-3">{children}</h4>,
-    h5: ({ children }) => <h5 className="heading-4">{children}</h5>,
-    h6: ({ children }) => <h6 className="heading-5">{children}</h6>,
-    p: ({ children }) => <p className="p1-body">{children}</p>,
-  },
-}
 
 export default function Project({ data }) {
   const project = data.sanityProject
@@ -214,7 +158,6 @@ export default function Project({ data }) {
         <Left>
           {project._rawAboutThisProject && (
             <>
-              {' '}
               <h3>About this Project</h3>
               <PortableText
                 value={project._rawAboutThisProject}
@@ -223,8 +166,12 @@ export default function Project({ data }) {
             </>
           )}
           <h4>The Team</h4>
-          <p>Open Positions</p>
-          <Accordion accordionList={accordionList}></Accordion>
+          {project._rawOpenPostions && (
+            <>
+              <p>Open Positions</p>
+              <Accordion accordionList={project._rawOpenPositions} />
+            </>
+          )}
           <h4>Tech Stack</h4>
           <Button text={'Join us'} textBtn arrow></Button>
         </Left>
@@ -297,14 +244,8 @@ export const query = graphql`
       availability
       commitment
       deliverable
-      filledPositions {
-        positionTitle
-        positionDescription
-      }
-      openPositions {
-        positionTitle
-        positionDescription
-      }
+      _rawFilledPositions(resolveReferences: { maxDepth: 10 })
+      _rawOpenPositions(resolveReferences: { maxDepth: 10 })
       primaryContact {
         name
         title

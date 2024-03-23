@@ -10,6 +10,10 @@ const StyledHeroSection = styled.section`
   justify-content: flex-start;
   max-width: 100%;
 
+  p {
+    max-width: 33.6875rem;
+  }
+
   @media (min-width: 769px) {
     flex-direction: row;
     justify-content: center;

@@ -78,8 +78,6 @@ const FullWidthTile = ({
     other: <BiSolidBookAlt />,
   }
 
-  console.log(projectLinks)
-
   return (
     <StyledFullWidthTile>
       {icon && <img className="tile-icon" src={icon} alt={title} />}
