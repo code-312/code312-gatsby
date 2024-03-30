@@ -46,9 +46,11 @@ const StyledAccordion = styled.dl`
 `
 
 const Accordion = ({ accordionList }) => {
-  const [open, setOpen] = useState(accordionList.map((accordion) => false))
+  const [open, setOpen] = useState(
+    accordionList.length && accordionList.map((accordion) => false)
+  )
   const [focused, setFocused] = useState(
-    accordionList.map((accordion) => false)
+    accordionList.length && accordionList.map((accordion) => false)
   )
 
   const toggleAccordion = (idx) => {
@@ -72,32 +74,33 @@ const Accordion = ({ accordionList }) => {
 
   return (
     <StyledAccordion>
-      {accordionList.map((acc, idx) => (
-        <React.Fragment key={idx}>
-          <div className="list-group">
-            <dt
-              onClick={() => toggleAccordion(idx)}
-              onKeyDown={(e) => handleKeyboardListener(e, idx)}
-              onFocus={(e) => handleFocus(e, idx)}
-              onBlur={(e) => handleFocus(e, idx)}
-              aria-expanded={open[idx]}
-              tabIndex={'0'}
-              role="button"
-            >
-              {acc?.positionTitle}
-              <img src={chevrondown} alt="collapse accordion" />
-            </dt>
-            {acc.positionDescription && (
-              <dd aria-expanded={!open[idx]}>
-                <PortableText
-                  value={acc.positionDescription}
-                  components={components}
-                />
-              </dd>
-            )}
-          </div>
-        </React.Fragment>
-      ))}
+      {accordionList.length &&
+        accordionList.map((acc, idx) => (
+          <React.Fragment key={idx}>
+            <div className="list-group">
+              <dt
+                onClick={() => toggleAccordion(idx)}
+                onKeyDown={(e) => handleKeyboardListener(e, idx)}
+                onFocus={(e) => handleFocus(e, idx)}
+                onBlur={(e) => handleFocus(e, idx)}
+                aria-expanded={open[idx]}
+                tabIndex={'0'}
+                role="button"
+              >
+                {acc?.positionTitle}
+                <img src={chevrondown} alt="collapse accordion" />
+              </dt>
+              {acc.positionDescription && (
+                <dd aria-expanded={!open[idx]}>
+                  <PortableText
+                    value={acc.positionDescription}
+                    components={components}
+                  />
+                </dd>
+              )}
+            </div>
+          </React.Fragment>
+        ))}
     </StyledAccordion>
   )
 }
