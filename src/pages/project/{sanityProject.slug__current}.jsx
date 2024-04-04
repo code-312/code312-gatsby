@@ -149,7 +149,7 @@ export default function Project({ data }) {
             ></FullWidthTile>
             {project.primaryContact && (
               <VolunteerTile
-                imageSrc={cardplaceholder}
+                imageSrc={project.primaryContact.mainImage.asset.url}
                 memberName={project.primaryContact.name}
                 positionTitle={project.primaryContact.title}
                 fullWidth
@@ -251,6 +251,11 @@ export const query = graphql`
       primaryContact {
         name
         title
+        mainImage {
+          asset {
+            url
+          }
+        }
         slug {
           current
         }
