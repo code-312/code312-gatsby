@@ -21,7 +21,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Source Sans Pro:300,400,700,900'],
+          families: ['Source Sans Pro:300,400,500, 700,900'],
         },
       },
     },
