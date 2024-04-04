@@ -149,7 +149,7 @@ export default function Project({ data }) {
             ></FullWidthTile>
             {project.primaryContact && (
               <VolunteerTile
-                imageSrc={project.primaryContact.mainImage.asset.url}
+                imageSrc={project.primaryContact?.mainImage?.asset?.url}
                 memberName={project.primaryContact.name}
                 positionTitle={project.primaryContact.title}
                 fullWidth
