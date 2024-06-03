@@ -100,7 +100,7 @@ export default function Portfolio({ data }) {
         <img
           className="hero-image"
           src={portfolio.mainImage.asset.url}
-          alt={'TODO: Connect Alt Text'}
+          alt={portfolio.title}
         />
 
         <PortableText value={portfolio._rawOverview} components={components} />
@@ -113,7 +113,9 @@ export default function Portfolio({ data }) {
   )
 }
 
-export const Head = ({data}) => <title>{data.sanityPortfolio.title} | Code312</title>
+export const Head = ({ data }) => (
+  <title>{data.sanityPortfolio.title} | Code312</title>
+)
 
 export const query = graphql`
   query ($id: String!) {
