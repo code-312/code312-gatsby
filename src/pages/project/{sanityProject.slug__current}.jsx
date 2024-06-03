@@ -175,7 +175,7 @@ export default function Project({ data }) {
             </>
           )}
           <h4>Tech Stack</h4>
-          <Button text={'Join us'} textBtn arrow></Button>
+          <Button text={'Join us'} link={'/join'} textBtn arrow></Button>
         </Left>
       </PrimaryContent>
       {/* <Bottom>
